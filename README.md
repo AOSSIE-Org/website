@@ -48,4 +48,4 @@ If you want to get in touch with us first before contributing, you can use:
 
 # **License**
 
-[**Apace License 2.0**](https://www.apache.org/licenses/LICENSE-2.0)
+[**MIT License**](https://choosealicense.com/licenses/mit/)
