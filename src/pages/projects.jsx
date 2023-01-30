@@ -97,7 +97,7 @@ export default function Projects() {
             Active Projects
           </h1> */}
           <SectionHeading>Active Projects</SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>Our currently active projects which are being maintained and are open for contributions!</p>
+          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
               <Card as="li" key={project.name}>
@@ -124,7 +124,7 @@ export default function Projects() {
             InActive Projects
           </h1> */}
           <SectionHeading>Past Projects</SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>Our currently inactive projects which are not being maintained!</p>
+          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently inactive. If you are brave and independent, you are welcome and even encouraged to contribute to these projects as well. However, help from mentors will be significantly reduced.</p>
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
               <Card as="li" key={project.name}>
