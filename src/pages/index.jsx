@@ -69,23 +69,24 @@ export default function Home() {
       </Head>
       <Container className='mt-9'>
         <div className="flex flex-col sm:flex-row">
-          <div className="flex col-6">
+          <div className="flex-1 self-center">
             <Image
               src = '/logo1.png'
               width = {320}
               height = {300}
+              className='mx-auto scale-110'
               alt="AOSSIE Logo"
             />
           </div>
-          <div className=" flex col-6 lg:ml-10 sm:mx-auto lg:mt-0 mt-10">
+          <div className="flex-1 sm:ml-10 lg:ml-0 lg:mt-0 mt-10">
             <div className="max-w-xl">
-              <h1 className="text-6xl sm:text-6xl font-mono lg:text-6xl font-extrabold tracking-tighter text-[#00843D] dark:text-yellow-400">
+              <h1 className="text-6xl sm:text-6xl md:text-5xl font-mono lg:text-6xl font-extrabold tracking-tighter text-[#00843D] dark:text-yellow-400">
                 We Innovate <br /> We Educate
               </h1>
               <p className="mt-4 text-xl text-zinc-600 dark:text-zinc-400 leading-7 font-mono ">
                 We are an Australian not-for-profit umbrella organization for open-source projects. We believe the open-source philosophy provides a resource-efficient channel to transfer knowledge and achieve innovation and education.
               </p>
-              <div className="mt-6 flex gap-6">
+              <div className="mt-6 flex gap-6 ml-4">
                 <Link aria-label="Contact by Mail" className=' text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
                   <FontAwesomeIcon icon={faEnvelope} size='2xl' />
                 </Link>
