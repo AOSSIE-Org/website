@@ -1,17 +1,16 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import { SectionHeading } from '@/components/SectionHeading'
-import { getAllIdeas } from '@/helper/getAllIdeas'
+// import { SectionHeading } from '@/components/SectionHeading'
+import { getAllIdeas } from '@/helper/getAllIdeas2022'
 
 function Article({ article }) {
   return (
     // <article className="h-72 max-lg:w-72 max-xl:w-60 w-72 sm:mb-0 mb-10">
     <article className="md:grid md:grid-cols-4 md:grid-flow-col md:items-baseline sm:mt-0 mt-5">
       <Card className="md:col-span-3">
-        <Card.Title href={`/ideas/2023/${article.slug}`}>
+        <Card.Title href={`/ideas/2022/${article.slug}`}>
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
@@ -30,7 +29,7 @@ export default function Ideas({ articles }) {
         </title>
         <meta
           name="description"
-          content="Idea List for GSOC"
+          content="Idea List for GSOC 2022"
         />
       </Head>
       <Container className="mt-20 mb-28">
@@ -49,13 +48,6 @@ export default function Ideas({ articles }) {
                 <Article key={article.slug} article={article} />
               ))}
             </div>
-          </div>
-          <div className='text-center mt-16'>
-            <Link className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" href="/ideas/2022">
-              <span className="font-mono font-semibold text-center">
-                View 2022 Idea List
-              </span>
-            </Link>
           </div>
         </Container.Inner>
       </Container>
