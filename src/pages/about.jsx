@@ -32,16 +32,13 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base font-mono text-zinc-600 dark:text-zinc-400">
               <p>
-              We are an Australian not-for-profit umbrella organization for open-source projects. We believe the open-source philosophy provides a resource-efficient channel to transfer knowledge and achieve innovation and education.
+                We are a not-for-profit umbrella organization for open-source projects registered in Australia as a charity. We believe the open-source philosophy provides a resource-efficient channel to transfer knowledge and achieve innovation and education.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sequi rerum possimus, eligendi recusandae eaque commodi, culpa deleniti pariatur ut iure sed qui? Ea alias magni esse rem? Adipisci?
+                Since 2016, we have been mentoring from 10 to 20 students per year within the Google Summer of Code programme. Our selection process is competitive and typically only 10% to 20% of students who apply to be mentored by us are accepted. Most of our alumni become long-term contributors to our projects and to the open-source ecosystem as a whole, and go on to have sucessful careers in the academic world or in the open-source industry.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sequi rerum possimus, eligendi recusandae eaque commodi, culpa deleniti pariatur ut iure sed qui? Ea alias magni esse rem? Adipisci?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, quidem! Eaque reiciendis repellendus rerum exercitationem, quasi facilis deleniti et totam impedit aliquid hic quas, ipsum corrupti suscipit voluptatibus officia saepe.
+                Our organization is open and welcomes contributions from everyone. Browse our project repos and start submitting pull requests. 
               </p>
             </div>
           </div>

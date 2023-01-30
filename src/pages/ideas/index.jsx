@@ -10,7 +10,7 @@ function Article({ article }) {
     // <article className="h-72 max-lg:w-72 max-xl:w-60 w-72 sm:mb-0 mb-10">
     <article className="md:grid md:grid-cols-4 md:grid-flow-col md:items-baseline sm:mt-0 mt-5">
       <Card className="md:col-span-3">
-        <Card.Title href={`/ideas/2022/${article.slug}`}>
+        <Card.Title href={`/ideas/2023/${article.slug}`}>
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
