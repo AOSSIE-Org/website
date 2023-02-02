@@ -107,13 +107,13 @@ export default function Home() {
           </div>
         </div>
         <div className='text-center mt-16'>
-          <Link href="#_" className="relative inline-block text-lg group">
+          <Link href="/about" className="relative inline-block text-lg group">
             <span className="relative z-10 block px-5 py-3 overflow-hidden transition-colors duration-300 ease-in-out border-2 border-gray-900 rounded-lg dark:group-hover:text-black group-hover:text-white">
               <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-white"></span>
               <span className="absolute left-0 w-72 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-[#00843D] dark:bg-yellow-400 group-hover:-rotate-180 ease-in-out"></span>
               <span className="relative font-mono text-xl font-black tracking-tighter">Learn More About Us</span>
             </span>
-            <span className="absolute bottom-0 right-0 w-full h-14 -mb-2 -mr-2 transition-all duration-200 ease-linear bg-[#00843D] dark:bg-yellow-400 rounded-lg" data-rounded="rounded-lg"></span>
+            <span className="absolute bottom-0 right-0 w-full h-14 mb-3 mr-2 transition-all duration-200 ease-linear bg-[#00843D] dark:bg-yellow-400 rounded-lg group-hover:m-0" data-rounded="rounded-lg"></span>
           </Link>
         </div>
       </Container>
