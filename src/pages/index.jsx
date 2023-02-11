@@ -8,47 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
-import DefaultLogo from '@/images/default.png'
 import { Banner } from '@/components/Banner'
+import projects from '@/helper/projects'
 
-const projects = [
-  {
-    name: 'Agora',
-    description:
-      'There isn’t just one voting algorithm, there’s hundreds. Therefore, we developed Agora to allow for democratic elections using any algorithm.',
-    logo: DefaultLogo
-  },
-  {
-    name: 'Carbon Footprint',
-    description:
-      'Climate change is happening. Awareness isn’t. Therefore, we developed Carbon Footprint in the hopes of raising awareness of the impacts our everyday actions bring.',
-    logo: DefaultLogo
-  },
-  {
-    name: 'random 4',
-    description:
-      'There isn’t just one voting algorithm, there’s hundreds. Therefore, we developed Agora to allow for democratic elections using any algorithm.',
-    logo: DefaultLogo
-  },
-  {
-    name: 'random 1',
-    description:
-    'Climate change is happening. Awareness isn’t. Therefore, we developed Carbon Footprint in the hopes of raising awareness of the impacts our everyday actions bring.',
-    logo: DefaultLogo
-  },
-  {
-    name: 'random 2',
-    description:
-      'Climate change is happening. Awareness isn’t. Therefore, we developed Carbon Footprint in the hopes of raising awareness of the impacts our everyday actions bring.',
-    logo: DefaultLogo
-  },
-  {
-    name: 'random 3',
-    description:
-      'Climate change is happening. Awareness isn’t. Therefore, we developed Carbon Footprint in the hopes of raising awareness of the impacts our everyday actions bring.',
-    logo: DefaultLogo
-  },
-]
 
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects);
