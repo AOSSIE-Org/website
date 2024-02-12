@@ -59,17 +59,17 @@ export default function About() {
             <Image src={GSoC} width={700} className='mx-auto' />
             {/* <h3 className="text-4xl font-bold">100+</h3> */}
             {/* <h1 className="mt-4 text-4xl font-mono font-black text-gray-500">
-              2023 Program Timeline
+              2024 Program Timeline
             </h1> */}
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
               <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
                 <span className="font-mono font-semibold text-center">
-                  View 2023 Program Announcements
+                  View 2024 Program Announcements
                 </span>
               </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2023">
+              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
                 <span className="font-mono font-semibold text-center">
-                  View 2023 Program Timeline
+                  View 2024 Program Timeline
                 </span>
               </Link>
             </div>
