@@ -13,7 +13,7 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read More</Card.Cta>
+        <Card.Cta>Know More</Card.Cta>
       </Card>
     </article>
   )
@@ -40,7 +40,7 @@ export default function Ideas({ articles }) {
         </div>
         <Container.Inner>
           <div className="mt-10 flex justify-center sm:mt-20">
-            <div className="grid gap-6 gap-y-8 md:grid-flow-col md:grid-rows-4">
+            <div className="grid gap-6 gap-y-8 md:grid-flow-col md:grid-rows-5">
               {articles.map((article) => (
                 <Article key={article.slug} article={article} />
               ))}
