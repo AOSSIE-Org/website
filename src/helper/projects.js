@@ -2,9 +2,10 @@ import DefaultLogo from '@/images/default.png'
 import AgoraLogo from '@/images/Agora.png'
 import SSSLogo from '@/images/SSS.png'
 import ResonateLogo from '@/images/Resonate.png'
+import PictoPy from '@/images/Pictopy.png'
+
 
 // data
-
 const projects = [
   {
     name: 'Agora Blockchain',
@@ -25,6 +26,13 @@ const projects = [
       label: 'Agora-Android',
     },
     logo: AgoraLogo,
+  },
+  {
+    name: 'Pictopy',
+    description:
+      'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
+    link: { href: 'https://github.com/AOSSIE-Org/PictoPy', label: 'PictoPy' },
+    logo: PictoPy,
   },
   {
     name: 'EduAid',
@@ -58,5 +66,6 @@ const projects = [
     logo: SSSLogo,
   },
 ]
+
 
 export default projects
