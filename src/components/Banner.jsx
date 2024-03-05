@@ -11,7 +11,7 @@ export function Banner() {
           <Pattern className="absolute mt-2 -top-32 left-0 w-full sm:left-3/4 sm:top-36 sm:ml-8 sm:w-auto md:left-2/3 lg:left-auto lg:right-2 lg:ml-0 xl:right-auto xl:left-2/3 sm:visible invisible" />
           <div>
             <h2 className="font-mono text-5xl font-black tracking-tighter text-white dark:text-black sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
-              Launch into AOSSIE's open-source world through GSoC!
+              Launch into AOSSIE&apos;s open-source world through GSoC!
             </h2>
             <p className="mt-4 text-lg tracking-tighter text-white dark:text-black font-medium font-mono">
               Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code.
