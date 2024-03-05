@@ -28,6 +28,13 @@ const projects = [
     logo: AgoraLogo,
   },
   {
+    name: 'Djed',
+    description:
+      'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
+    link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
+    logo: Djed,
+  },
+  {
     name: 'Pictopy',
     description:
       'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
