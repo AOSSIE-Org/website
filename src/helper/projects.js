@@ -1,8 +1,10 @@
 import DefaultLogo from '@/images/default.png'
 import AgoraLogo from '@/images/Agora.png'
+import Djed from '@/images/Djed.png'
 import SSSLogo from '@/images/SSS.png'
 import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
+
 
 
 // data
