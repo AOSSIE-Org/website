@@ -78,9 +78,10 @@ jobs:
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          path: ./out
+          name: nextjs-build
+          path: out
 
   # Deployment job
   deploy:
@@ -92,4 +93,13 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: out
+
+      # Verification step
+      - name: Verify deployment
+        run: |
+          curl -sL ${{ steps.deployment.outputs.page_url }} | grep 'Your site is published' || exit 1
