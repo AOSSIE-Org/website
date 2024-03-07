@@ -41,8 +41,6 @@ jobs:
         run: pnpm build
       - name: Static HTML export with Next.js
         run: pnpm export
-      - name: Static HTML export with Next.js
-        run: npm run export
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -50,7 +48,7 @@ jobs:
           name: build-output
           path: ./out
 
-          
+
   # Deployment job
   deploy:
     environment:
