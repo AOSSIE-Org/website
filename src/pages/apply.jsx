@@ -47,11 +47,13 @@ export default function About() {
               title="Discuss with Mentors"
               description="By having a discussion with our mentors, you'll have the opportunity to ask questions, get feedback, and fine-tune your proposal. This will ensure that your proposal is well-aligned with the project goals and that you fully understand the expectations for the project. Our mentors will provide guidance and support to help you craft the best possible proposal, increasing your chances of being selected for the program."
               classCondition='hidden'
+              link = {"#"} // to be replaced with actual link
             />
             <TimelineElement
               title="Submit Final Application"
               description="By submitting your final application for GSoC, you'll be taking the last step in your journey to becoming a part of our community and contributing to projects that are shaping the future of technology. Make sure to submit your application before the deadline and include all the details correctly that are asked by Google. Wait for the selection process to take place and cross your fingers!"
               classCondition='hidden'
+              link={"#"} //to be replaced with actual link
             />
           </ol>
 
