@@ -5,12 +5,15 @@ import rehypePrism from '@mapbox/rehype-prism'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
-  output: "export",  // <=== enables static exports
-
+  output: "export",  
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
 },
+images: {
+  unoptimized: true,
+},
+
 
   experimental: {
     scrollRestoration: true,
