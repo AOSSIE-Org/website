@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy":"pnpm run export && gh-pages -d out"
   },
   "author": "AOSSIE",
   "license": "ISC",
