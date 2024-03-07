@@ -1,7 +1,3 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
 name: Deploy Next.js site to Pages
 
 on:
@@ -29,30 +25,42 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js
+
+      - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
-      - name: Read a variable
-        run: echo "The value of my secret is ${{ vars.DATABASE_URL }}"
+          node-version: "20"
+        
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Build
+      - name: Build with Next.js
         run: pnpm build
+      - name: Static HTML export with Next.js
+        run: pnpm next export
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-output
+          path: ./out
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-output
+          path: ./out
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@4.1.6
+        with:
+          branch: gh-pages
+          folder: out
