@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   # Build job
-  build:
+  build_and_Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,20 +39,15 @@ jobs:
         run: pnpm install
       - name: Build with Next.js
         run: pnpm build
-      - name: Static HTML export with Next.js
-        run: pnpm next export
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-output
-          path: ./out
-
+      - name: Deployment
+        run: pnpm deploy
+    
   # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name : github-pages
-      run : pnpm deploy
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #   - name : github-pages
+  #     run : pnpm deploy
