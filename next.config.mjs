@@ -6,6 +6,7 @@ import rehypePrism from '@mapbox/rehype-prism'
 const nextConfig = {
   output: "export",
   distDir: "output",
+  basePath: '/website',
   pageExtensions: ['js', 'jsx', 'mdx'],
   reactStrictMode: true,
   experimental: {
@@ -13,6 +14,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    path: ".",
   },
 }
 
