@@ -37,7 +37,7 @@ Card.Link = function CardLink({ children, ...props }) {
 
 Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
   return (
-    <Component className="text-lg font-semibold font-mono tracking-tight text-zinc-800 dark:text-zinc-100">
+    <Component className="font-mono text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
@@ -45,7 +45,23 @@ Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
 
 Card.Description = function CardDescription({ children }) {
   return (
-    <p className="relative z-10 mt-2 text-sm font-mono text-zinc-600 dark:text-zinc-400">
+    <p className="relative z-10 mt-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+      {children}
+    </p>
+  )
+}
+
+Card.Tags = function CardTags({ children }) {
+  return (
+    <span className="relative z-10 mt-2 inline-flex w-20 items-center justify-center rounded-full bg-zinc-200 font-mono text-sm text-zinc-600 dark:bg-zinc-500 dark:text-zinc-400">
+      {children}
+    </span>
+  )
+}
+
+Card.Info = function CardInfo({ children }) {
+  return (
+    <p className="relative z-10 mt-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
       {children}
     </p>
   )
@@ -55,7 +71,7 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
+      className="relative z-10 mt-4 flex items-center font-mono text-sm font-semibold text-[#00843D] dark:text-yellow-400"
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
