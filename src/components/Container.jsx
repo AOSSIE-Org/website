@@ -1,19 +1,19 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
-import { motion } from 'framer-motion' // Import motion for animations
+import { motion } from 'framer-motion'
 
 const OuterContainer = forwardRef(function OuterContainer(
-  { className, children, bgColor, ...props }, // Added bgColor prop
+  { className, children, bgColor, ...props },
   ref
 ) {
   return (
-    <motion.div // Wrapped in motion for animation support
-      initial={{ opacity: 0 }} // Initial animation state
-      animate={{ opacity: 1 }} // Animation when component is mounted
-      transition={{ duration: 0.5 }} // Animation duration
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
       ref={ref}
       className={clsx('sm:px-8', className)}
-      style={{ backgroundColor: bgColor }} // Apply background color style
+      style={{ backgroundColor: bgColor }}
       {...props}
     >
       <div className="mx-auto max-w-7xl lg:px-8">{children}</div>
@@ -26,10 +26,10 @@ const InnerContainer = forwardRef(function InnerContainer(
   ref
 ) {
   return (
-    <motion.div // Wrapped in motion for animation support
-      initial={{ opacity: 0 }} // Initial animation state
-      animate={{ opacity: 1 }} // Animation when component is mounted
-      transition={{ duration: 0.5 }} // Animation duration
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
       ref={ref}
       className={clsx('relative px-4 sm:px-8 lg:px-12', className)}
       {...props}
@@ -40,7 +40,7 @@ const InnerContainer = forwardRef(function InnerContainer(
 })
 
 export const Container = forwardRef(function Container(
-  { children, bgColor = 'transparent', ...props }, // Added bgColor prop with default value
+  { children, bgColor = 'transparent', ...props },
   ref
 ) {
   return (
@@ -52,3 +52,4 @@ export const Container = forwardRef(function Container(
 
 Container.Outer = OuterContainer
 Container.Inner = InnerContainer
+
