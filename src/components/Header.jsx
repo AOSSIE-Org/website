@@ -230,7 +230,7 @@ function Home({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image src='/logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
+      <Image src='./logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
     </Link>
   )
 }
