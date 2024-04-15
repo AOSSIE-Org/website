@@ -18,9 +18,9 @@ export function Banner() {
             </p>
             <div className="mt-5">
               <Link href="/apply">
-                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
+                <p className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
                   Apply to GSoC with AOSSIE
-                </a>
+              </p>
               </Link>
             </div>
           </div>
