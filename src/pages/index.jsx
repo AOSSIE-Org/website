@@ -15,6 +15,8 @@ import {
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
+import styles from './index.module.css'
+
 
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
@@ -182,6 +184,13 @@ export default function Home() {
                 View All Projects
               </span>
             </Link>
+          </div>
+          <div>
+          <a
+        className={`group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold ${styles.button}`}
+      >
+        Apply to GSoC with AOSSIE
+      </a>
           </div>
         </div>
       </Container>
