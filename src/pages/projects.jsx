@@ -41,7 +41,9 @@ export default function Projects() {
           <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
-              <Card as="li" key={project.name}>
+              <Card as="li" key={project.name}
+              className="project-card transition-transform duration-300 hover:scale-105 hover:bg-zinc-100 dark:hover:bg-zinc-700"
+              >
                 <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
                   <Image
                     src={project.logo}
