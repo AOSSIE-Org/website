@@ -26,7 +26,7 @@ export default function Ideas({ articles }) {
         <title>Idea List</title>
         <meta name="description" content="Idea List for GSOC" />
       </Head>
-      <Container className="mt-20 mb-28">
+      <Container className="mb-28 mt-20">
         <div className="">
           <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
             Explore the world of open-source possibilities with AOSSIE&apos;s{' '}
@@ -48,7 +48,7 @@ export default function Ideas({ articles }) {
           </div>
           <div className="mt-16 text-center">
             <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
+              className="dark:white dark:white group relative inline-flex items-center overflow-hidden rounded-lg border border-gray-400 bg-white px-8 py-3 font-mono font-semibold text-black transition duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg dark:text-black dark:hover:shadow-lg"
               href="/ideas/2023"
             >
               <span className="text-center font-mono font-semibold">
