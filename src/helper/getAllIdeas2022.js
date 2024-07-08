@@ -9,7 +9,7 @@ async function importIdea(ideaFilename) {
     slug: ideaFilename.replace(/(\/index)?\.mdx$/, ''),
     ...meta,
     component,
-  }
+  };
 }
 
 export async function getAllIdeas() {
