@@ -146,14 +146,16 @@ function NavItem({ href, children }) {
             ? 'text-[#00843D] dark:text-yellow-400'
             : 'hover:text-[#00843D] dark:hover:text-yellow-400'
         )}
-      >
-        {children}
-        {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
-        )}
+        legacyBehavior>
+        <a>
+          {children}
+          {isActive && (
+            <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
+          )}
+        </a>
       </Link>
     </li>
-  )
+  );
 }
 
 function DesktopNavigation(props) {
@@ -229,10 +231,10 @@ function Home({ large = false, className, ...props }) {
       aria-label="Home"
       className={clsx(className, 'pointer-events-auto')}
       {...props}
-    >
+      legacyBehavior>
       <Image src='./logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
     </Link>
-  )
+  );
 }
 
 export function Header() {
@@ -347,10 +349,10 @@ export function Header() {
           marginBottom: 'var(--header-mb)',
         }}
       >
-            <div
-              ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.5)-theme(spacing.8))]"
-            />
+        <div
+          ref={avatarRef}
+          className="order-last mt-[calc(theme(spacing.5)-theme(spacing.8))]"
+        />
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"

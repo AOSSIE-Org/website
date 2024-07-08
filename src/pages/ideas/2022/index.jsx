@@ -20,40 +20,41 @@ function Article({ article }) {
 }
 
 export default function Ideas({ articles }) {
-  return (
-    <>
-      <Head>
-        <title>
-          Idea List
-        </title>
-        <meta
-          name="description"
-          content="Idea List for GSOC 2022"
-        />
-      </Head>
-      <Container className="mt-20 mb-28">
-        <div className="">
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Explore the world of open-source possibilities with AOSSIE&apos;s <b>Idea List</b>. As part of Google Summer of Code, we offer a unique opportunity for developers to explore new ideas,  a wide variety of projects for developers to choose from and contribute to. From developing new features to fixing critical bugs, our idea list is your go-to destination for finding your next big project and kickstart your open-source journey.</p>
+  return <>
+    <Head>
+      <title>
+        Idea List
+      </title>
+      <meta
+        name="description"
+        content="Idea List for GSOC 2022"
+      />
+    </Head>
+    <Container className="mt-20 mb-28">
+      <div className="">
+        <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Explore the world of open-source possibilities with AOSSIE&apos;s <b>Idea List</b>. As part of Google Summer of Code, we offer a unique opportunity for developers to explore new ideas,  a wide variety of projects for developers to choose from and contribute to. From developing new features to fixing critical bugs, our idea list is your go-to destination for finding your next big project and kickstart your open-source journey.</p>
+      </div>
+      <Container.Inner>
+        <div className="mt-10 sm:mt-20 flex justify-center">
+          <div className="grid md:grid-rows-4 md:grid-flow-col gap-6 gap-y-8">
+            {articles.map((article) => (
+              <Article key={article.slug} article={article} />
+            ))}
+          </div>
         </div>
-        <Container.Inner>
-          <div className="mt-10 sm:mt-20 flex justify-center">
-            <div className="grid md:grid-rows-4 md:grid-flow-col gap-6 gap-y-8">
-              {articles.map((article) => (
-                <Article key={article.slug} article={article} />
-              ))}
-            </div>
-          </div>
-          <div className='text-center mt-16'>
-            <Link className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" href="/ideas">
-              <span className="font-mono font-semibold text-center">
-                Go Back
-              </span>
-            </Link>
-          </div>
-        </Container.Inner>
-      </Container>
-    </>
-    )
+        <div className='text-center mt-16'>
+          <Link
+            className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none"
+            href="/ideas"
+            legacyBehavior>
+            <span className="font-mono font-semibold text-center">
+              Go Back
+            </span>
+          </Link>
+        </div>
+      </Container.Inner>
+    </Container>
+  </>;
 }
 
 export async function getStaticProps() {
