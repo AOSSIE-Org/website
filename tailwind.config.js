@@ -20,6 +20,10 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      borderRadius: {
+        '2rem': '2rem', // Custom border radius value
+      },
+      
       scale: {
         180: '1.8',
       },

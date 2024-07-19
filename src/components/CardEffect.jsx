@@ -7,16 +7,17 @@ export function CardEffect({heading, content, logo}) {
 
             {/* <div className="relative flex h-full transform items-end border-4 rounded-lg border-black dark:border-zinc-300 bg-transparent dark:bg-transparent transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"> */}
             {/* <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800/40 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8 transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#9ca3af] dark:group-hover:shadow-[8px_8px_0_0_#e5e7eb]"> */}
-            <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8">
+            <div className="relative shadow-xl flex h-full justify-center rounded-3xl  border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8 transform transition-all duration-300 hover:scale-105 hover:bg-green-100 dark:hover:bg-green-900">
+
                 <div className="px-8 pb-4 self-center transition-opacity group-hover:absolute group-hover:opacity-0">
                     <Image
                         src= {logo}
                         width={150}
                         unoptimized
-                        className='mx-auto'
+                        className='mx-auto rounded-2rem'
                         alt='Project Logo'
                     />
-                    <h2 className="ml-0 leading-9 text-4xl text-center flex font-extrabold justify-center font-mono text-[#00843D] dark:text-yellow-400">{heading}</h2>
+                    <h2 className="ml-0 leading-9 text-4xl text-center flex font-extrabold justify-center font-mono text-[#00843D] dark:text-yellow-400 pt-7">{heading}</h2>
                 </div>
                 <div className="absolute self-center pr-6 lg:scale-90 lg:pb-0 lg:pl-3 lg:pr-0 xl:pl-0 md:p-0 md:scale-95 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 dark:text-zinc-300">
                     <p className="mt-4 font-mono sm:w-100 w-52">{content}</p>
