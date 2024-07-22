@@ -215,7 +215,7 @@ function HomeContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'fixed w-12 rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 hover:ring-black/20 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 flex justify-center items-center'
+        'w-12 rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 hover:ring-black/20 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 flex justify-center items-center'
       )}
       {...props}
     />
@@ -369,11 +369,11 @@ export function Header() {
                 )}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="fixed pointer-events-auto md:hidden" />
-                <DesktopNavigation className="fixed pointer-events-auto hidden md:block" />
+                <MobileNavigation className="pointer-events-auto md:hidden" />
+                <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
               <div className="flex justify-end md:flex-1">
-                <div className="fixed pointer-events-auto">
+                <div className="pointer-events-auto">
                   <ModeToggle />
                 </div>
               </div>
