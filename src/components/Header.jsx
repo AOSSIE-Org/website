@@ -9,7 +9,8 @@ import { Container } from '@/components/Container'
 
 function CloseIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg  viewBox="0 0 24 24"
+     aria-hidden="true" {...props}>
       <path
         d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
         fill="none"
@@ -215,7 +216,7 @@ function HomeContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'w-12 rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 hover:ring-black/20 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 flex justify-center items-center'
+        'fixed w-12 rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 hover:ring-black/20 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 flex justify-center items-center'
       )}
       {...props}
     />
@@ -224,14 +225,18 @@ function HomeContainer({ className, ...props }) {
 
 function Home({ large = false, className, ...props }) {
   return (
+    
     <Link
       href="/"
       aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
+      className={clsx(className, "pointer-events-auto ")}
+      
       {...props}
-    >
-      <Image src='./logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
+    > 
+      <Image src='./logo1.png' width={100} height={100} className= " scale-125" alt='Aossie Logo' />
+    
     </Link>
+    
   )
 }
 
@@ -341,7 +346,7 @@ export function Header() {
   return (
     <>
       <header
-        className="pointer-events-none relative z-50 flex flex-col"
+        className=" pointer-events-none relative z-50 flex flex-col"
         style={{
           height: 'var(--header-height)',
           marginBottom: 'var(--header-mb)',
@@ -360,20 +365,20 @@ export function Header() {
             className="top-[var(--header-top,theme(spacing.6))] w-full"
             style={{ position: 'var(--header-inner-position)' }}
           >
-            <div className="relative flex gap-4">
-              <div className="flex flex-1">
+            <div className="relative  flex gap-4">
+              <div className=" flex flex-1">
                 {!isHomePage && (
-                  <HomeContainer>
+                  <HomeContainer >
                     <Home />
                   </HomeContainer>
                 )}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto md:hidden" />
-                <DesktopNavigation className="pointer-events-auto hidden md:block" />
+                <MobileNavigation className="fixed pointer-events-auto md:hidden" />
+                <DesktopNavigation className="fixed pointer-events-auto hidden md:block" />
               </div>
-              <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto">
+              <div className=" flex justify-end md:flex-1">
+                <div className="fixed pointer-events-auto">
                   <ModeToggle />
                 </div>
               </div>
