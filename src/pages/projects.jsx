@@ -42,7 +42,7 @@ export default function Projects() {
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
               <Card as="li" key={project.name} className="border border-gray-300 rounded-lg p-4" >
-                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10 border border-gray-300 rounded-lg">
+                <div className="relative z-10 flex h-20  w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10 border border-gray-300 rounded-lg">
                   <Image
                     src={project.logo}
                     alt="Project Logo"
