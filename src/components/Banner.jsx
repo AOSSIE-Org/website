@@ -34,9 +34,9 @@ export function Banner() {
                     />
                   </svg>
                 </span>
-                <span className="font-mono font-semibold transition-all group-hover:mr-6">
+                <button className="font-mono font-semibold transition-all group-hover:mr-6">
                   Apply to GSoC with AOSSIE
-                </span>
+                </button>
               </Link>
             </div>
           </div>
