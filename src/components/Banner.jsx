@@ -17,8 +17,26 @@ export function Banner() {
               Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code.
             </p>
             <div className="mt-5">
-              <Link href="/apply" className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
-                Apply to GSoC with AOSSIE
+              <Link href="/apply" className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold ">
+                <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
+                  <svg
+                    className="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(0,132,61)"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+                <span className="font-mono font-semibold transition-all group-hover:mr-6">
+                  Apply to GSoC with AOSSIE
+                </span>
               </Link>
             </div>
           </div>
