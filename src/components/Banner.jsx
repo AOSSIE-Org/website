@@ -17,10 +17,7 @@ export function Banner() {
               Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code.
             </p>
             <div className="mt-5">
-            <Link
-              className="group relative rounded-lg inline-flex items-center gap-4 overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold transition-all duration-300 hover:scale-105"
-              href="/apply"
-            >
+            <Link className="group relative rounded-lg inline-flex items-center gap-4 overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold transition-all duration-300 hover:scale-105" href="/apply">
               <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
                 <svg
                   className="h-5 w-5"
