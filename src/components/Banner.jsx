@@ -18,7 +18,7 @@ export function Banner() {
             </p>
             <div className="mt-5">
               <Link href="/apply" legacyBehavior>
-                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-black focus:outline-none font-mono font-semibold cursor-pointer transition-transform duration-300 ease-in-out hover:bg-yellow-100 dark:hover:bg-yellow-200 hover:shadow-lg">
+                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white:bg-black px-8 py-3 text-black dark:text-black focus:outline-none font-mono font-semibold cursor-pointer transition-transform duration-300 ease-in-out hover:bg-yellow-100 dark:hover:bg-yellow-200 hover:shadow-lg">
                   Apply to GSoC with AOSSIE
                 </a>
               </Link>
