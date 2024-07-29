@@ -18,7 +18,7 @@ export function Banner() {
             </p>
             <div className="mt-5">
               <Link href="/apply">
-                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
+                                  <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold transition-transform transform hover:scale-110 hover:bg-gray-300 shadow-gray-400 shadow-md hover:text-yellow-400">
                   Apply to GSoC with AOSSIE
                 </a>
               </Link>
