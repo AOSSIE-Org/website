@@ -10,7 +10,7 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
@@ -82,9 +82,9 @@ export default function Home() {
                 <Link
                   aria-label="Follow on Twitter"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://twitter.com/aossie_org"
+                  href="https://x.com/aossie_org"
                 >
-                  <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                  <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                 </Link>
               </div>
             </div>
