@@ -1,27 +1,28 @@
+# AOSSIE's Website
 
-# **AOSSIE's Website**
-
-This repository contains the assets required to build the **AOSSIE's website**. We're glad that you want to contribute!
+This repository contains the assets required to build the *AOSSIE's website*. We're glad that you want to contribute!
 
 Contributions to the project are very much welcomed! Please reach out with ideas for new content or issues with existing content!
 
-Th website is a **Next.js** project using **Tailwind** for styling and design.
+The website is a *Next.js* project using *Tailwind* for styling and design.
 
-# **Getting Started**
+## Getting Started
 
 To contribute to this repository you will need to:
-- **Fork this repository**
-- **Push changes to a new branch in your fork**
-- **Create a pull request from that branch to the master branch of this repository**
+
+* Fork this repository
+* Push changes to a new branch in your fork
+* Create a pull request from that branch to the master branch of this repository
 
 Forking only needs to be done once, after which you can push changes to your fork.
 
-# **Running the website Locally**
+## Running the Website Locally
 
-In order to run the site locally,
-- Fork the website and clone that fork on your system
-- Open a terminal/command prompt window and change the current directory to the directory of the cloned fork on your system.
-- In the root directory, you can run the following commands:
+In order to run the site locally:
+
+* Fork the website and clone that fork on your system
+* Open a terminal/command prompt window and change the current directory to the directory of the cloned fork on your system.
+* In the root directory, you can run the following commands:
 
 ```
 npm install
