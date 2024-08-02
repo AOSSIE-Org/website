@@ -29,24 +29,25 @@ npm install
 npm run dev
 ```
 
-The website will be active at **http://localhost:3000**.
+The website will be active at *http://localhost:3000*.
 
-
-# **Contributing**
+## Contributing
 
 You can contribute by:
 
-* Raising any issues you find
-* Fixing issues by opening Pull Requests
-* Improving website
-* Talking about AOSSIE
-
+- Raising any issues you find
+- Fixing issues by opening Pull Requests
+- Improving website
+- Talking about AOSSIE
 
 If you want to get in touch with us first before contributing, you can use:
 
-* [AOSSIE Discord Channel](https://discord.com/invite/6mFZ2S846n)
+- AOSSIE Discord Channel
 
+## License
 
-# **License**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-[**MIT License**](https://choosealicense.com/licenses/mit/)
+The MIT License is a permissive open source license that allows you to use, modify, and distribute this software for both commercial and non-commercial purposes. It comes with no warranties and requires that you include the original copyright notice and license terms in any copy or substantial portion of the software.
+
+For the full text of the license, please refer to the [LICENSE](LICENSE) file in this repository or visit [opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
