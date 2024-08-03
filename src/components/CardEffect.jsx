@@ -1,8 +1,9 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link'
 
 export function CardEffect({heading, content, logo}) {
     return (
-        <a className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer">
+        <Link href="#" className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer">
             {/* <span className="absolute inset-0 border-2 rounded-lg border-dashed border-black dark:border-zinc-300"></span> */}
 
             {/* <div className="relative flex h-full transform items-end border-4 rounded-lg border-black dark:border-zinc-300 bg-transparent dark:bg-transparent transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"> */}
@@ -22,6 +23,6 @@ export function CardEffect({heading, content, logo}) {
                     <p className="mt-4 font-mono sm:w-100 w-52">{content}</p>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
