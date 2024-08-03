@@ -36,16 +36,16 @@ export function Footer() {
                 <Link aria-label="Contact by Mail" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
                   <FontAwesomeIcon icon={faEnvelope} size='xl' />
                 </Link>
-                <Link aria-label="Follow on GitLab" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://gitlab.com/aossie'>
+                <Link aria-label="Follow on GitLab" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-[#F97316] transition' href='https://gitlab.com/aossie'>
                   <FontAwesomeIcon icon={faGitlab} size='xl' />
                 </Link>
                 <Link aria-label="Follow on GitHub" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org'>
                   <FontAwesomeIcon icon={faGithub} size='xl' />
                 </Link>
-                <Link aria-label="Join on Discord" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.com/invite/6mFZ2S846n'>
+                <Link aria-label="Join on Discord" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-[#6D28D9] transition' href='https://discord.com/invite/6mFZ2S846n'>
                   <FontAwesomeIcon icon={faDiscord} size='xl' />
                 </Link>
-                <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
+                <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-[#1DA1F2] transition' href='https://twitter.com/aossie_org'>
                   <FontAwesomeIcon icon={faTwitter} size='xl' />
                 </Link>
               </div>
