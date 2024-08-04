@@ -52,7 +52,7 @@ export default function Ideas({ articles }) {
               href="/ideas/2023"
             >
               <span className="text-center font-mono font-semibold">
-                View 2023 Idea List
+                View 2024 Idea List
               </span>
             </Link>
           </div>
