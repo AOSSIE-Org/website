@@ -44,7 +44,7 @@ export default function Ideas({ articles }) {
             </div>
           </div>
           <div className='text-center mt-16'>
-            <Link className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" href="/ideas">
+            <Link className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" href="/ideas" legacyBehavior>
               <span className="font-mono font-semibold text-center">
                 Go Back
               </span>
