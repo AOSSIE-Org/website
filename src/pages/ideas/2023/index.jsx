@@ -13,7 +13,7 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read More</Card.Cta>
+        {/* <Card.Cta>Read More</Card.Cta> */}
       </Card>
     </article>
   )
