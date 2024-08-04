@@ -8,7 +8,7 @@ import { getAllIdeas } from '@/helper/getAllIdeas'
 function Article({ article }) {
   return (
     <article className="mt-5 sm:mt-0 md:grid md:grid-flow-col md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
+      <Card className="md:col-span-3 transition-all duration-700 transform hover:scale-110 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-silver-300 hover:shadow-2xl hover:rotate-2 hover:translate-y-[-15px] hover:opacity-90">
         <Card.Title href={`/ideas/2024/${article.slug}`}>
           {article.title}
         </Card.Title>
@@ -48,7 +48,7 @@ export default function Ideas({ articles }) {
           </div>
           <div className="mt-16 text-center">
             <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
+              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black hover:bg-yellow-500"
               href="/ideas/2023"
             >
               <span className="text-center font-mono font-semibold">
