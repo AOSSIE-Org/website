@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Head from 'next/head'
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
 import { Card } from '@/components/Card'
@@ -18,15 +18,38 @@ function LinkIcon(props) {
   )
 }
 
+
+
 export default function Projects() {
   const [isHovered, setIsHovered] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isDropdownOpen]);
+
+  const allProjects = [
+    "Social Street Smart",
+    "OpenChat",
+    "Djed",
+    "Agora Vote Android",
+    "Pictopy",
+    "EduAid",
+    "Resonate",
+    "Agora Blockchain"
+  ];
 
   return (
     <>
       <Head>
-        <title>
-          Projects
-        </title>
+        <title>Projects</title>
         <meta
           name="description"
           content="About AOSSIE's Projects"
@@ -34,22 +57,63 @@ export default function Projects() {
       </Head>
       <Container className="mt-20 mb-28">
         <div className="mt-5">
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Our Projects, where we showcase our tech wizardry and code-slinging skills! <br></br> Our portfolio is a treasure trove of open-source gems, featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.</p>
+          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>
+            Our Projects, where we showcase our tech wizardry and code-slinging skills! <br /> 
+            Our portfolio is a treasure trove of open-source gems, featuring projects in a variety of languages and areas. 
+            Take a peek and see how we&apos;re making a difference with our technical spells.
+          </p>
         </div>
         <div className='mt-16'>
-          <SectionHeading>
-            <span
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={{ color: isHovered ? 'orange' : 'inherit', transition: 'color 0.3s' }}
-            >
-              Active Projects
-            </span>
-          </SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
-          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
+        <div className="relative inline-block">
+          <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            style={{ 
+              cursor: 'pointer'
+            }}
+          >
+            <SectionHeading>
+              <span style={{ 
+                color: isHovered ? 'orange' : 'inherit', 
+                transition: 'color 0.3s',
+              }}>
+                Active Projects ▼
+              </span>
+            </SectionHeading>
+          </div>
+          {isDropdownOpen && (
+            <>
+              <div 
+                className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                onClick={() => setIsDropdownOpen(false)}
+              ></div>
+              <div className="absolute z-50 mt-2 w-56 rounded-md bg-black shadow-lg">
+                <div className="py-1">
+                  {allProjects.map((project, index) => (
+                    <Link
+                      key={index}
+                      href="/projects"
+                      className="block px-4 py-2 text-sm text-white hover:bg-gray-900"
+                    >
+                      {project}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+
+  
+          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>
+            The following projects are currently actively maintained and mentors are available!
+          </p>
+          <div className="overflow-hidden"></div>
+          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16 p-4">
+            
             {projects.map((project) => (
-              <Card as="li" key={project.name}>
+               <Card as="li" key={project.name} className="project-card">
                 <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
                   <Image
                     src={project.logo}
