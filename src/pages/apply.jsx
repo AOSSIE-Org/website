@@ -31,7 +31,16 @@ export default function About() {
               button="Join Discord"
               link='https://discord.com/invite/6mFZ2S846n'
             />
+
             <TimelineElement
+              title="Follow us on Twitter"
+              description="Stay updated with the latest news, events, and updates from AOSSIE by following us on Twitter. Connect with our community, get quick announcements, and engage with fellow developers and mentors. Follow us now to be a part of our journey and never miss an important update!"
+              button="twitter"
+              link='https://twitter.com/aossie_org'
+            />
+
+            <TimelineElement
+
               title="Start Contributing"
               description="Contribute to the project and make your mark on open-source development with AOSSIE. By making a Pull Request (PR) to one of our existing projects, you'll have the opportunity to showcase your skills and demonstrate your understanding of the project. This will also give you an opportunity to work with the mentors and get familiar with the project before the official GSoC coding period starts. This is a great way to get started and increase your chances of being selected for the program."
               button="Contribute"

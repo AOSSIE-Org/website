@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -85,6 +86,14 @@ export default function Home() {
                   href="https://twitter.com/aossie_org"
                 >
                   <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                </Link>
+
+                <Link
+                  aria-label="Join on LinkedIn"
+                  className="text-zinc-500 transition hover:text-[#0077B5] dark:text-zinc-400 dark:hover:text-yellow-400"
+                  href="https://www.linkedin.com/company/aossie_org"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} size="2xl" />
                 </Link>
               </div>
             </div>
