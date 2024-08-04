@@ -32,12 +32,12 @@ export default function About() {
               link='https://discord.com/invite/6mFZ2S846n'
             />
 
-            {/* <TimelineElement
+            <TimelineElement
               title="Follow us on Twitter"
               description="Stay updated with the latest news, events, and updates from AOSSIE by following us on Twitter. Connect with our community, get quick announcements, and engage with fellow developers and mentors. Follow us now to be a part of our journey and never miss an important update!"
               button="twitter"
               link='https://twitter.com/aossie_org'
-            /> */}
+            />
 
             <TimelineElement
 
