@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { ContainerPattern } from '@/components/ContainerPattern';
 import { Pattern } from '@/components/Pattern';
+import Link from 'next/link';
 
 export function Banner() {
   return (
@@ -18,9 +18,9 @@ export function Banner() {
             </p>
             <div className="mt-5">
               <Link href="/apply">
-                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
+                <span className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
                   Apply to GSoC with AOSSIE
-                </a>
+                </span>
               </Link>
             </div>
           </div>
