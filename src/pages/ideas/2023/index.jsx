@@ -28,7 +28,7 @@ export default function Ideas({ articles }) {
         </title>
         <meta
           name="description"
-          content="Idea List for GSOC 2023"
+          content="Idea List for GSOC 2024"
         />
       </Head>
       <Container className="mt-20 mb-28">
