@@ -55,6 +55,7 @@ export default function Home() {
                   aria-label="Contact by Mail"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="mailto:aossie.oss@gmail.com"
+                  legacyBehavior
                 >
                   <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                 </Link>
@@ -62,6 +63,7 @@ export default function Home() {
                   aria-label="Follow on GitLab"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://gitlab.com/aossie"
+                  legacyBehavior
                 >
                   <FontAwesomeIcon icon={faGitlab} size="2xl" />
                 </Link>
@@ -69,6 +71,7 @@ export default function Home() {
                   aria-label="Follow on GitHub"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://github.com/AOSSIE-Org"
+                  legacyBehavior
                 >
                   <FontAwesomeIcon icon={faGithub} size="2xl" />
                 </Link>
@@ -76,6 +79,7 @@ export default function Home() {
                   aria-label="Join on Discord"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://discord.com/invite/6mFZ2S846n"
+                  legacyBehavior
                 >
                   <FontAwesomeIcon icon={faDiscord} size="2xl" />
                 </Link>
@@ -83,6 +87,7 @@ export default function Home() {
                   aria-label="Follow on Twitter"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://twitter.com/aossie_org"
+                  legacyBehavior
                 >
                   <FontAwesomeIcon icon={faTwitter} size="2xl" />
                 </Link>
@@ -91,7 +96,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-16 text-center">
-          <Link href="/about" className="group relative inline-block text-lg">
+          <Link href="/about" className="group relative inline-block text-lg" legacyBehavior>
             <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
               <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
               <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
@@ -161,6 +166,7 @@ export default function Home() {
             <Link
               className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
               href="/projects"
+              legacyBehavior
             >
               <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
                 <svg

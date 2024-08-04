@@ -50,6 +50,7 @@ export default function Ideas({ articles }) {
             <Link
               className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
               href="/ideas/2023"
+              legacyBehavior
             >
               <span className="text-center font-mono font-semibold">
                 View 2023 Idea List
