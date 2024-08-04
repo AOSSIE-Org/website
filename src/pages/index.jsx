@@ -16,12 +16,17 @@ import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
 
+
+
+
+
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
 
   useEffect(() => {
     setRandomProjects(projects.sort(() => 0.5 - Math.random()).slice(0, 3))
   }, [])
+
   return (
     <>
       <Head>
@@ -127,67 +132,69 @@ export default function Home() {
                   ></path>
                 </svg>
               </div>
-              <div className="col-span-8 mt-3 self-center lg:col-start-2 lg:-ml-6">
-                <h1 className="font-mono text-3xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
-                  projects
-                </h1>
+              <div className="col-span-8 mt-3 self-center lg:col-start-2 lg:-ml-10 xl:col-start-auto xl:ml-0">
+                <h2 className="font-mono text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+                  Check out our Github repositories:
+                </h2>
               </div>
             </div>
-
-            <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 ">
-              Our Projects, where we showcase our tech wizardry and
-              code-slinging skills!! <br></br> Be a part of our community and
-              contribute to meaningful projects that are making a difference.
-              Explore our selection of projects and find the perfect opportunity
-              to showcase your skills and make an impact.
-            </p>
+            <div className="grid gap-x-10 gap-y-6 lg:grid-cols-2 lg:gap-y-8">
+              {randomProjects.map((project, i) => (
+                <CardEffect
+                  key={i}
+                  index={i}
+                  name={project.name}
+                  description={project.description}
+                  repo={project.repo}
+                  logo={project.logo}
+                  tech={project.tech}
+                />
+              ))}
+            </div>
           </div>
-          <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
-            <Container.Inner>
-              <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-                {randomProjects.map((project) => (
-                  <span key={project.name}>
-                    <CardEffect
-                      heading={project.name}
-                      logo={project.logo}
-                      content={project.description}
-                    />
-                  </span>
-                ))}
-              </div>
-            </Container.Inner>
-          </div>
-          <div className="mt-12 text-center">
-            <Link
-              className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
-              href="/projects"
-            >
-              <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
+          <div className="space-y-10 lg:pr-16 xl:pr-24">
+            <div className="grid grid-cols-12">
+              <div className="relative -left-2 top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
                 <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
+                  aria-hidden="true"
+                  role="img"
+                  className="scale-125 font-extrabold text-white dark:text-black"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
                 >
+                  <path d="M7.25 6a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5A.75.75 0 007.25 6zM12 6a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5A.75.75 0 0012 6zm4 .75a.75.75 0 011.5 0v9.5a.75.75 0 01-1.5 0v-9.5z"></path>
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
+                    fillRule="evenodd"
+                    d="M3.75 2A1.75 1.75 0 002 3.75v16.5c0 .966.784 1.75 1.75 1.75h16.5A1.75 1.75 0 0020.25 2H3.75zM3.5 3.75a.25.25 0 01.25-.25h16.5a.25.25 0 01.25.25v16.5a.25.25 0 01-.25.25H3.75a.25.25 0 01-.25-.25V3.75z"
+                  ></path>
                 </svg>
-              </span>
-              <span className="font-mono font-semibold transition-all group-hover:mr-6">
-                View All Projects
-              </span>
-            </Link>
+              </div>
+              <div className="col-span-8 mt-3 self-center lg:col-start-2 lg:-ml-10 xl:col-start-auto xl:ml-0">
+                <h2 className="font-mono text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+                  Ideas for 2024:
+                </h2>
+              </div>
+            </div>
+            <div className="grid gap-x-10 gap-y-6 lg:grid-cols-2 lg:gap-y-8">
+              {/* Dropdown for Ideas */}
+              <Dropdown options={ideas2024} />
+              {ideas2024.map((idea, i) => (
+                <CardEffect
+                  key={i}
+                  index={i}
+                  name={idea.name}
+                  description={idea.description}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </Container>
-      <Container.Outer className="mt-28">
+      <Container className="mt-24 md:mt-28">
         <Banner />
-      </Container.Outer>
+      </Container>
     </>
   )
 }
