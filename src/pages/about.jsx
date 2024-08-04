@@ -18,12 +18,12 @@ export default function About() {
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="max-w-xs px-2.5 lg:max-w-none">
-              <Image
-                src={BlackLogo}
-                alt="AOSSIE Logo"
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-black object-cover dark:bg-zinc-800 shadow-xl drop-shadow-xl shadow-zinc-900/30 dark:shadow-zinc-400/10"
-              />
+            <Image
+              src={BlackLogo}
+              alt="AOSSIE Logo"
+              sizes="(min-width: 1024px) 32rem, 20rem"
+              className="aspect-square rotate-3 rounded-2xl bg-black object-cover dark:bg-zinc-800 shadow-xl drop-shadow-xl shadow-zinc-900/30 dark:shadow-zinc-400/10 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+            />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
