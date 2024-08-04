@@ -47,6 +47,7 @@ export default function Projects() {
                     src={project.logo}
                     alt="Project Logo"
                     className='p-2'
+                    
                     unoptimized
                   />
                 </div>
