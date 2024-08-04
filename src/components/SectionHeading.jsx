@@ -5,11 +5,13 @@ export function SectionHeading({ number, children, className, ...props }) {
     <h2
       className={clsx(
         className,
-        'inline-flex items-center rounded-full py-1 px-4 text-[#00843D] dark:text-yellow-400 ring-1 ring-inset ring-[#00843D] dark:ring-yellow-400'
+        'inline-flex items-center rounded-full py-1 px-4 text-[#00843D] dark:text-yellow-400 ring-1 ring-inset ring-[#00843D] dark:ring-yellow-400',
+        'hover:bg-[#00843D] hover:text-white dark:hover:bg-yellow-400 dark:hover:text-black'
       )}
       {...props}
     >
       <span className="font-mono text-base font-semibold" aria-hidden="true">
+        {/* You can display the number or any additional content here */}
       </span>
       {/* <span className="ml-3 h-3.5 w-px bg-blue-600/20 dark:bg-white" /> */}
       <span className="ml-3 text-base font-semibold font-mono tracking-tighter">
