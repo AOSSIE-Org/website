@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { ContainerPattern } from '@/components/ContainerPattern';
 import { Pattern } from '@/components/Pattern';
+import Link from 'next/link';
 
 export function Banner() {
   return (
@@ -17,10 +17,8 @@ export function Banner() {
               Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code.
             </p>
             <div className="mt-5">
-              <Link href="/apply">
-                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
-                  Apply to GSoC with AOSSIE
-                </a>
+              <Link href="/apply" className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105">
+                Apply to GSoC with AOSSIE
               </Link>
             </div>
           </div>
