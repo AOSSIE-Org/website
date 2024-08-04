@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faGitlab, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 function NavLink({ href, children }) {
   return (
@@ -48,6 +48,10 @@ export function Footer() {
                 <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-[#1DA1F2] transition' href='https://twitter.com/aossie_org'>
                   <FontAwesomeIcon icon={faTwitter} size='xl' />
                 </Link>
+                <Link aria-label="Follow on LinkedIn" className='text-zinc-400 hover:text-[#0072b1] dark:text-zinc-400 dark:hover:text-[#0072b1] transition' href='https://www.linkedin.com/company/aossie_org'>
+                   <FontAwesomeIcon icon={faLinkedin} size='xl' />
+                   </Link>
+
               </div>
             </div>
           </Container.Inner>
