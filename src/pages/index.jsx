@@ -10,6 +10,7 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
+  faLinkedin,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
@@ -85,6 +86,13 @@ export default function Home() {
                   href="https://twitter.com/aossie_org"
                 >
                   <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                </Link>
+                <Link
+                  aria-label="Join on LinkedIn"
+                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                  href="https://www.linkedin.com/company/aossie/"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} size="2xl" />
                 </Link>
               </div>
             </div>
