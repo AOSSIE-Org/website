@@ -71,6 +71,7 @@ export default function Home() {
                   aria-label="Follow on GitHub"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://github.com/AOSSIE-Org"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faGithub} size="2xl" />
                 </Link>
