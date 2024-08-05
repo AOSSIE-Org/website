@@ -33,7 +33,6 @@ export function Footer() {
                 &copy; 2016-2023 AOSSIE. All rights reserved.
               </p>
               <div className="flex gap-6">
-                  target="_blank"
                 <Link aria-label="Contact by Mail" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com' target="_blank">
                   <FontAwesomeIcon icon={faEnvelope} size='xl' />
                 </Link>
