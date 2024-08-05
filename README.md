@@ -13,7 +13,7 @@ To start contributing to this repository, follow these steps:
 ### **1. Fork the Repository**
 Forking creates a personal copy of the repository under your GitHub account. This is where you will make your changes.
 
-1. Go to the [repository page](link-to-repository).
+1. Go to the [repository page](https://github.com/AOSSIE-Org/website)
 2. Click the "Fork" button at the top right of the page.
 3. GitHub will create a copy of the repository in your account.
 
