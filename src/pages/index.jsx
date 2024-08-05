@@ -55,6 +55,7 @@ export default function Home() {
                   aria-label="Contact by Mail"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="mailto:aossie.oss@gmail.com"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                 </Link>
@@ -62,6 +63,7 @@ export default function Home() {
                   aria-label="Follow on GitLab"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://gitlab.com/aossie"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faGitlab} size="2xl" />
                 </Link>
