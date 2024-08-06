@@ -62,16 +62,48 @@ export default function About() {
               2024 Program Timeline
             </h1> */}
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
-              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
-                <span className="font-mono font-semibold text-center">
+            <Link className="order-1 group relative rounded-lg inline-flex items-center justify-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none transition-all duration-300 hover:scale-105" href="https://summerofcode.withgoogle.com/">
+                <span className="absolute right-0 translate-x-full rounded-full border border-current bg-black dark:bg-white p-1 text-white dark:text-black transition-transform duration-300 group-hover:-translate-x-4">
+                  <svg
+                    className="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+                <span className="font-mono font-semibold text-center transition-all duration-300 group-hover:mr-6">
                   View 2024 Program Announcements
                 </span>
-              </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
-                <span className="font-mono font-semibold text-center">
-                  View 2024 Program Timeline
-                </span>
-              </Link>
+            </Link>
+            <Link className="order-2 group relative rounded-lg inline-flex items-center justify-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none transition-all duration-300 hover:scale-105" href="https://summerofcode.withgoogle.com/programs/2024">
+              <span className="absolute right-0 translate-x-full rounded-full border border-current bg-black dark:bg-white p-1 text-white dark:text-black transition-transform duration-300 group-hover:-translate-x-4">
+                <svg
+                  className="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+              <span className="font-mono font-semibold text-center transition-all duration-300 group-hover:mr-6">
+                View 2024 Program Timeline
+              </span>
+            </Link>
             </div>
           </div>
 
