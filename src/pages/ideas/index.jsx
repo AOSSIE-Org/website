@@ -49,7 +49,7 @@ export default function Ideas({ articles }) {
           <div className="mt-16 text-center">
             <Link
               className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2023"
+              href="/ideas/2023 hover:text-blue-500 hover:scale-110 hover:skew-x-1 hover:skew-y-1 transition-all duration-300 cursor-pointer"
             >
               <span className="text-center font-mono font-semibold">
                 View 2023 Idea List
