@@ -48,10 +48,26 @@ export default function Ideas({ articles }) {
           </div>
           <div className="mt-16 text-center">
             <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black transition-all duration-300 hover:scale-105"
               href="/ideas/2023"
             >
-              <span className="text-center font-mono font-semibold">
+              <span className="absolute right-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform duration-300 group-hover:-translate-x-4">
+                <svg
+                  className="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3 "
+                  />
+                </svg>
+              </span>
+              <span className="font-mono font-semibold transition-all duration-300 group-hover:mr-6">
                 View 2023 Idea List
               </span>
             </Link>
