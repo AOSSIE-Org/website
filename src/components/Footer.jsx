@@ -24,10 +24,10 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex gap-5 text-md font-semibold font-mono text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/ideas">Ideas</NavLink>
-                <NavLink href="/apply">Apply</NavLink>
+                <NavLink href="/about" legacyBehavior>About</NavLink>
+                <NavLink href="/projects" legacyBehavior>Projects</NavLink>
+                <NavLink href="/ideas" legacyBehavior>Ideas</NavLink>
+                <NavLink href="/apply" legacyBehavior>Apply</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
                 &copy; 2016-2023 AOSSIE. All rights reserved.

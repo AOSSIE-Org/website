@@ -1,0 +1,15 @@
+/* Assuming your button has a class of 'idea-list-button' */
+.idea-list-button {
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    transition: box-shadow 0.3s, border-radius 0.3s;
+  }
+  
+  .idea-list-button:hover {
+    transform: scale(1.1);
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 4px 8px rgba(94, 203, 233, 0.2);
+  border-radius: 20px;
+
+  }
+  
