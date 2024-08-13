@@ -11,17 +11,15 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>
-          Application Timeline
-        </title>
-        <meta
-          name="description"
-          content="How to apply for GSOC"
-        />
+      <title>Application Timeline</title>
+      <meta name="description" content="How to apply for GSOC" />
       </Head>
       <Container className="mt-20 mb-28">
         <div className="mt-5">
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code. <br></br> Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!</p>
+        <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>
+            Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code. <br /> 
+            Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
+          </p>
         </div>
         <Container.Inner className='mt-16'>
           <ol className="relative border-l-2 border-gray-200 dark:border-gray-700">
@@ -39,7 +37,7 @@ export default function About() {
             />
             <TimelineElement
               title="Write a Draft Application"
-              description="Select an Idea and write a draft application that expands this ideas with your own proposals and showcases how you will execute and complete your project . This is your chance to demonstrate your understanding of the project, your skills, and your passion for open-source development. Our mentors will provide feedback and help you refine your proposal, increasing your chances of being selected for the program."
+              description="Select an Idea and write a draft application that expands this ideas with your own proposals and showcases how you will execute and complete your project. This is your chance to demonstrate your understanding of the project, your skills, and your passion for open-source development. Our mentors will provide feedback and help you refine your proposal, increasing your chances of being selected for the program."
               button="Choose an Idea"
               link='/ideas'
             />
@@ -57,17 +55,14 @@ export default function About() {
 
           <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
             <Image src={GSoC} width={700} className='mx-auto' />
-            {/* <h3 className="text-4xl font-bold">100+</h3> */}
-            {/* <h1 className="mt-4 text-4xl font-mono font-black text-gray-500">
-              2024 Program Timeline
-            </h1> */}
+            
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
-              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+            <Link href="https://summerofcode.withgoogle.com/" className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" target="_blank" rel="noopener noreferrer" >
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Announcements
                 </span>
               </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
+              <Link href="https://summerofcode.withgoogle.com/programs/2024" className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" target="_blank" rel="noopener noreferrer">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Timeline
                 </span>

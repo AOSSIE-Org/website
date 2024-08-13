@@ -27,9 +27,10 @@ Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/80 sm:-inset-x-6 sm:rounded-2xl" />
-      <Link {...props}>
+      <Link {...props} target="_blank" rel="noopener noreferrer">
         <span className="absolute -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
+
       </Link>
     </>
   )
