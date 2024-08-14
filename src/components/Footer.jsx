@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faGitlab,faXTwitter} from '@fortawesome/free-brands-svg-icons'
 
 function NavLink({ href, children }) {
   return (
@@ -24,10 +24,10 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex gap-5 text-md font-semibold font-mono text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/ideas">Ideas</NavLink>
-                <NavLink href="/apply">Apply</NavLink>
+                <NavLink href="/about" legacyBehavior>About</NavLink>
+                <NavLink href="/projects" legacyBehavior>Projects</NavLink>
+                <NavLink href="/ideas" legacyBehavior>Ideas</NavLink>
+                <NavLink href="/apply" legacyBehavior>Apply</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
                 &copy; 2016-2023 AOSSIE. All rights reserved.
@@ -46,7 +46,7 @@ export function Footer() {
                   <FontAwesomeIcon icon={faDiscord} size='xl' />
                 </Link>
                 <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
-                  <FontAwesomeIcon icon={faTwitter} size='xl' />
+                  <FontAwesomeIcon icon={faXTwitter} size='xl' />
                 </Link>
               </div>
             </div>
