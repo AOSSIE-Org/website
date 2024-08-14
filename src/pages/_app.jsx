@@ -4,7 +4,7 @@ import { Header } from '@/components/Header'
 
 import '@/style/tailwind.css'
 import 'focus-visible'
-import "/Users/sankshay/Downloads/COURSE copy 2/ADVANCED TYPESCRIPT PRACTISE/website/src/pages/ideas/idealist.css";
+import './ideas/idealist.css'
 import { Footer } from '@/components/Footer'
 
 function usePrevious(value) {
