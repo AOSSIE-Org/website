@@ -37,7 +37,7 @@ export default function Projects() {
           {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
             Active Projects
           </h1> */}
-          <h1 className='text-2xl text-yellow-400 border rounded-full border-yellow-400 p-4 max-w-[10vw] inline-flex items-center justify-center transition-colors hover:bg-yellow-400 hover:text-black duration:300'>Active Projects</h1>
+          <h1 className='text-2xl text-yellow-400 border rounded-full border-yellow-400 p-4 max-w-[10vw] inline-flex items-center justify-center transition-colors hover:bg-yellow-400 hover:text-black duration:300 cursor-pointer'>Active Projects</h1>
           <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
