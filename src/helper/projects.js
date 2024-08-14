@@ -53,7 +53,7 @@ const projects = [
   {
     name: 'OpenChat',
     description:
-      'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
+      'A decentralized platform for secure and private messaging and file sharing, built on blockchain technology.',
     link: { href: '#', label: 'OpenChat' },
     logo: DefaultLogo,
   },
