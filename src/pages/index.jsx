@@ -60,7 +60,7 @@ export default function Home() {
                 </Link>
                 <Link
                   aria-label="Follow on GitLab"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-orange-400"
                   href="https://gitlab.com/aossie"
                 >
                   <FontAwesomeIcon icon={faGitlab} size="2xl" />
@@ -74,14 +74,14 @@ export default function Home() {
                 </Link>
                 <Link
                   aria-label="Join on Discord"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-purple-400"
                   href="https://discord.com/invite/6mFZ2S846n"
                 >
                   <FontAwesomeIcon icon={faDiscord} size="2xl" />
                 </Link>
                 <Link
                   aria-label="Follow on Twitter"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-blue-400"
                   href="https://twitter.com/aossie_org"
                 >
                   <FontAwesomeIcon icon={faTwitter} size="2xl" />
