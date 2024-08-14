@@ -29,7 +29,7 @@ export default function About() {
               title="Join us on Discord"
               description="Join the AOSSIE community on Discord and connect with other developers, mentors, and organizers. Our Discord server is a great place to ask questions, share ideas, and get support throughout the Google Summer of Code application process. From proposal writing tips to coding advice, our community is here to help you succeed. Don't go through the process alone, join us on Discord now!"
               button="Join Discord"
-              link='https://discord.com/invite/6mFZ2S846n'
+              link='https://discord.com/invite/6mFZ2S846n'              
             />
             <TimelineElement
               title="Start Contributing"
@@ -62,12 +62,12 @@ export default function About() {
               2024 Program Timeline
             </h1> */}
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
-              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener noreferrer">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Announcements
                 </span>
               </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
+              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024" target="_blank" rel="noopener noreferrer">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Timeline
                 </span>
