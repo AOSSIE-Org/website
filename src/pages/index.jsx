@@ -87,6 +87,7 @@ export default function Home() {
                   aria-label="Follow on Twitter"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://twitter.com/aossie_org"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faTwitter} size="2xl" />
                 </Link>
