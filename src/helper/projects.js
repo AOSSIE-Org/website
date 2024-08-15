@@ -16,6 +16,7 @@ const projects = [
     link: {
       href: 'https://github.com/AOSSIE-Org/Agora-Blockchain',
       label: 'Agora',
+      target: '_blank',
     },
     logo: AgoraLogo,
   },
@@ -26,6 +27,7 @@ const projects = [
     link: {
       href: 'https://gitlab.com/aossie/agora-android',
       label: 'Agora-Android',
+      target: '_blank',
     },
     logo: AgoraLogo,
   },
@@ -33,21 +35,21 @@ const projects = [
     name: 'Djed',
     description:
       'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
-    link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
+    link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed', target: '_blank', },
     logo: Djed,
   },
   {
     name: 'Pictopy',
     description:
       'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
-    link: { href: 'https://github.com/AOSSIE-Org/PictoPy', label: 'PictoPy' },
+    link: { href: 'https://github.com/AOSSIE-Org/PictoPy', label: 'PictoPy', target: '_blank' },
     logo: PictoPy,
   },
   {
     name: 'EduAid',
     description:
       'An online tool that can generate short quizzes on input educational content can be of great use to teachers and students alike as it can help retain important information, frame questions and quickly revise large chunks of content.',
-    link: { href: 'https://github.com/AOSSIE-Org/EduAid', label: 'EduAid' },
+    link: { href: 'https://github.com/AOSSIE-Org/EduAid', label: 'EduAid', target: '_blank' },
     logo: DefaultLogo,
   },
   {
@@ -61,7 +63,7 @@ const projects = [
     name: 'Resonate',
     description:
       'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
-    link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
+    link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate', target: '_blank', },
     logo: ResonateLogo,
   },
   {
@@ -71,6 +73,7 @@ const projects = [
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',
+      target: '_blank',
     },
     logo: SSSLogo,
   },
