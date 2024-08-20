@@ -37,15 +37,15 @@ The website will be active at **http://localhost:3000**.
 
 
 **Here is the some ScreenShots** 
-                                                                        
+
 - **Home Page**  
-  ![Home Page](screenshots/home.png)
+  ![Home Page](./src/screenshots/Home.png)
   
 - **Projects Page**  
-  ![Projects Page](screenshots/projects.png)
+  ![Projects Page](./src/screenshots/Projects.png)
   
 - **About Us Page**  
-  ![About Us Page](screenshots/about.png)
+  ![About Us Page](./src/screenshots/About.png)
 
 
 # **Contributing**
@@ -57,12 +57,22 @@ You can contribute by:
 * Improving website
 * Talking about AOSSIE
 
+# **Development Stack**
+
+Frontend: Next.js, React
+Styling: Tailwind CSS
+Version Control: Git
+Hosting: [Your hosting platform]
 
 If you want to get in touch with us first before contributing, you can use:
 
 * [AOSSIE Discord Channel](https://discord.com/invite/6mFZ2S846n)
 
+# ** Acknowledgements **
+We'd like to thank all our contributors and the open-source community for their continuous support and contributions to AOSSIE.
+
 
 # **License**
+This project is licensed under the MIT License.
 
 [**MIT License**](https://choosealicense.com/licenses/mit/)
