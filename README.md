@@ -28,7 +28,24 @@ npm install
 npm run dev
 ```
 
+``` 
+yarn install
+yarn dev
+```
+
 The website will be active at **http://localhost:3000**.
+
+
+**Here is the some ScreenShots** 
+                                                                        
+- **Home Page**  
+  ![Home Page](screenshots/home.png)
+  
+- **Projects Page**  
+  ![Projects Page](screenshots/projects.png)
+  
+- **About Us Page**  
+  ![About Us Page](screenshots/about.png)
 
 
 # **Contributing**
