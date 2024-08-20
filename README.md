@@ -68,7 +68,7 @@ If you want to get in touch with us first before contributing, you can use:
 
 * [AOSSIE Discord Channel](https://discord.com/invite/6mFZ2S846n)
 
-# ** Acknowledgements **
+# Acknowledgements
 We'd like to thank all our contributors and the open-source community for their continuous support and contributions to AOSSIE.
 
 
