@@ -17,8 +17,7 @@ export function Banner() {
               Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code.
             </p>
             <div className="mt-5">
-              <Link href="/apply">
-                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
+              <Link className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold" href="/apply">
                   Apply to GSoC with AOSSIE
                 </a>
               </Link>
