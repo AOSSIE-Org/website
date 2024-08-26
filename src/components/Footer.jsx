@@ -46,7 +46,7 @@ export function Footer() {
                   <FontAwesomeIcon icon={faDiscord} size='xl' />
                 </Link>
                 <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org' target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faTwitter} size='xl' />
+                  <FontAwesomeIcon icon={faX} size='xl' />
                 </Link>
               </div>
             </div>
