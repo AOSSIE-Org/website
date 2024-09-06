@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import { useState } from 'react'
 
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
@@ -18,6 +19,8 @@ function LinkIcon(props) {
 }
 
 export default function Projects() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <>
       <Head>
@@ -39,11 +42,12 @@ export default function Projects() {
           </h1> */}
           <SectionHeading>Active Projects</SectionHeading>
           <SectionHeading>
-            <span>
+            <span
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               style={{ color: setIsHovered ? 'orange' : 'inherit', transition: 'color0.3s'}}
-              Active Projects
+            >
+            Active Projects
             </span>
           </SectionHeading>
           <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
@@ -99,5 +103,5 @@ export default function Projects() {
         </div>
       </Container>
     </>
-    )
+  )
 }
