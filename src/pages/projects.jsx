@@ -40,12 +40,11 @@ export default function Projects() {
           {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
             Active Projects
           </h1> */}
-          <SectionHeading>Active Projects</SectionHeading>
           <SectionHeading>
             <span
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              style={{ color: setIsHovered ? 'orange' : 'inherit', transition: 'color0.3s'}}
+              style={{ color: setIsHovered ? 'orange' : 'inherit', transition: 'color 0.3s'}}
             >
             Active Projects
             </span>
