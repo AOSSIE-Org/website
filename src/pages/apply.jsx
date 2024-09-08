@@ -30,12 +30,16 @@ export default function About() {
               description="Join the AOSSIE community on Discord and connect with other developers, mentors, and organizers. Our Discord server is a great place to ask questions, share ideas, and get support throughout the Google Summer of Code application process. From proposal writing tips to coding advice, our community is here to help you succeed. Don't go through the process alone, join us on Discord now!"
               button="Join Discord"
               link='https://discord.com/invite/6mFZ2S846n'
+              target="_blank" // This opens the link in a new tab
+              rel="noopener noreferrer" // This ensures security
             />
             <TimelineElement
               title="Start Contributing"
               description="Contribute to the project and make your mark on open-source development with AOSSIE. By making a Pull Request (PR) to one of our existing projects, you'll have the opportunity to showcase your skills and demonstrate your understanding of the project. This will also give you an opportunity to work with the mentors and get familiar with the project before the official GSoC coding period starts. This is a great way to get started and increase your chances of being selected for the program."
               button="Contribute"
               link='https://gitlab.com/aossie'
+              target="_blank" // This opens the link in a new tab
+              rel="noopener noreferrer" // This ensures security
             />
             <TimelineElement
               title="Write a Draft Application"
