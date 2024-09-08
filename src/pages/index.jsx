@@ -51,42 +51,58 @@ export default function Home() {
                 achieve innovation and education.
               </p>
               <div className="mt-6 ml-4 flex gap-6">
-                <Link
-                  aria-label="Contact by Mail"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="mailto:aossie.oss@gmail.com"
-                >
-                  <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Follow on GitLab"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://gitlab.com/aossie"
-                >
-                  <FontAwesomeIcon icon={faGitlab} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Follow on GitHub"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://github.com/AOSSIE-Org"
-                >
-                  <FontAwesomeIcon icon={faGithub} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Join on Discord"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://discord.com/invite/6mFZ2S846n"
-                >
-                  <FontAwesomeIcon icon={faDiscord} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Follow on Twitter"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://twitter.com/aossie_org"
-                >
-                  <FontAwesomeIcon icon={faTwitter} size="2xl" />
-                </Link>
-              </div>
+  <Link
+    aria-label="Contact by Mail"
+    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+    href="mailto:aossie.oss@gmail.com"
+    legacyBehavior
+  >
+    <a target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+    </a>
+  </Link>
+  <Link
+    aria-label="Follow on GitLab"
+    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+    href="https://gitlab.com/aossie"
+    legacyBehavior
+  >
+    <a target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faGitlab} size="2xl" />
+    </a>
+  </Link>
+  <Link
+    aria-label="Follow on GitHub"
+    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+    href="https://github.com/AOSSIE-Org"
+    legacyBehavior
+  >
+    <a target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faGithub} size="2xl" />
+    </a>
+  </Link>
+  <Link
+    aria-label="Join on Discord"
+    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+    href="https://discord.com/invite/6mFZ2S846n"
+    legacyBehavior
+  >
+    <a target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faDiscord} size="2xl" />
+    </a>
+  </Link>
+  <Link
+    aria-label="Follow on Twitter"
+    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+    href="https://twitter.com/aossie_org"
+    legacyBehavior
+  >
+    <a target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faTwitter} size="2xl" />
+    </a>
+  </Link>
+</div>
+
             </div>
           </div>
         </div>
