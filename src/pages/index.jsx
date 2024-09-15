@@ -62,6 +62,8 @@ export default function Home() {
                   aria-label="Follow on GitLab"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://gitlab.com/aossie"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={faGitlab} size="2xl" />
                 </Link>
@@ -69,6 +71,8 @@ export default function Home() {
                   aria-label="Follow on GitHub"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://github.com/AOSSIE-Org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={faGithub} size="2xl" />
                 </Link>
@@ -76,6 +80,8 @@ export default function Home() {
                   aria-label="Join on Discord"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://discord.com/invite/6mFZ2S846n"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={faDiscord} size="2xl" />
                 </Link>
@@ -83,6 +89,8 @@ export default function Home() {
                   aria-label="Follow on Twitter"
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://twitter.com/aossie_org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={faTwitter} size="2xl" />
                 </Link>
