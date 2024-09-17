@@ -14,7 +14,7 @@ export function TimelineElement({
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768) // Adjust breakpoint as needed
+      setIsMobile(window.innerWidth <= 768)
     }
 
     checkMobile()
@@ -25,7 +25,19 @@ export function TimelineElement({
   return (
     <li className="mb-10 ml-6">
       <span className="absolute -left-3 flex h-6 w-6 scale-150 items-center justify-center rounded-full bg-green-100 ring-8 ring-white dark:bg-yellow-900 dark:ring-zinc-900">
-        {/* ... SVG content ... */}
+        <svg
+          aria-hidden="true"
+          className="h-3 w-3 text-green-800 dark:text-yellow-300"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+            clipRule="evenodd"
+          ></path>
+        </svg>
       </span>
 
       <h3 className="mb-1 ml-2 flex items-center font-mono text-xl font-bold tracking-tighter text-gray-900 dark:text-white">
