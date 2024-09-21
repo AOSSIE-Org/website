@@ -25,11 +25,16 @@ export function Banner() {
               Code.
             </p>
             <div className="mt-5">
+fix/Added-Hover-Effect
               <Link
                 href="/apply"
                 className="group relative inline-flex items-center overflow-hidden rounded-lg bg-white px-8 py-3 font-mono font-semibold text-black transition duration-300 ease-in-out hover:translate-y-[-3px] hover:transform hover:shadow-lg dark:bg-black dark:text-white dark:hover:shadow-lg"
               >
                 Apply to GSoC with AOSSIE
+              <Link href="/apply" legacyBehavior>
+                <a className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
+                  Apply to GSoC with AOSSIE
+                </a>
               </Link>
             </div>
           </div>
