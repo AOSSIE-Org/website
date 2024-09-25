@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
@@ -54,10 +55,12 @@ export default function Projects() {
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                  <span className="ml-2">{project.link.label}</span>
-                </p>
+                <Link href={project.link.href}>
+                  <p className="text-md relative z-10 mt-6 flex font-mono font-semibold text-zinc-600 transition group-hover:text-[#00843D] dark:text-zinc-200 dark:group-hover:text-yellow-400">
+                    <LinkIcon className="flex-none w-6 h-6 scale-110" />
+                    <span className="ml-2">{project.link.label}</span>
+                  </p>
+                </Link>
               </Card>
             ))}
           </ul>
