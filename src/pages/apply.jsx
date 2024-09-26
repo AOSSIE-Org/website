@@ -62,12 +62,12 @@ export default function About() {
               2024 Program Timeline
             </h1> */}
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
-              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+              <Link className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 hover:bg-zinc-700 hover:text-white dark:hover:bg-zinc-600" href="https://summerofcode.withgoogle.com/">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Announcements
                 </span>
               </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
+              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 hover:bg-zinc-700 hover:text-white dark:hover:bg-zinc-600" href="https://summerofcode.withgoogle.com/programs/2024">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Timeline
                 </span>
