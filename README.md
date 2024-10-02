@@ -1,51 +1,79 @@
-
 # **AOSSIE's Website**
 
-This repository contains the assets required to build the **AOSSIE's website**. We're glad that you want to contribute!
+This repository contains the necessary assets to build **AOSSIE's website**. We're excited that you're interested in contributing!
 
-Contributions to the project are very much welcomed! Please reach out with ideas for new content or issues with existing content!
+Your contributions are always welcome! Feel free to share new content ideas or report any issues with the existing content.
 
-Th website is a **Next.js** project using **Tailwind** for styling and design.
+The website is a **Next.js** project, styled and designed using **Tailwind CSS**.
 
-# **Getting Started**
+---
 
-To contribute to this repository you will need to:
-- **Fork this repository**
-- **Push changes to a new branch in your fork**
-- **Create a pull request from that branch to the master branch of this repository**
+## **Getting Started**
 
-Forking only needs to be done once, after which you can push changes to your fork.
+To contribute to this repository:
 
-# **Running the website Locally**
+1. **Fork this repository** to your GitHub account.
+2. **Clone your fork** locally:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/aossie-website.git
+   ```
+3. **Create a new branch** to work on:
+   ```bash
+   git checkout -b your-branch-name
+   ```
+4. **Make your changes** and **commit** them:
+   ```bash
+   git add .
+   git commit -m "Your descriptive commit message"
+   ```
+5. **Push the changes** to your fork:
+   ```bash
+   git push origin your-branch-name
+   ```
+6. **Create a Pull Request (PR)** from your branch to the master branch of this repository.
 
-In order to run the site locally,
-- Fork the website and clone that fork on your system
-- Open a terminal/command prompt window and change the current directory to the directory of the cloned fork on your system.
-- In the root directory, you can run the following commands:
+Forking is required only once. After that, you can continue pushing changes to your fork.
 
-```
-npm install
-npm run dev
-```
+---
 
-The website will be active at **http://localhost:3000**.
+## **Running the Website Locally**
 
+To run the website on your local machine:
 
-# **Contributing**
+1. Fork and clone your fork of the repository on your system.
+2. Open a terminal and navigate to the project directory:
+   ```bash
+   cd aossie-website
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+The website should be running at **[http://localhost:3000](http://localhost:3000)**.
+
+---
+
+## **Contributing**
 
 You can contribute by:
 
-* Raising any issues you find
-* Fixing issues by opening Pull Requests
-* Improving website
-* Talking about AOSSIE
+* Raising any issues or suggestions
+* Fixing issues by submitting Pull Requests
+* Enhancing the website design or functionality
+* Spreading the word about AOSSIE
 
+### **Getting in Touch**
 
-If you want to get in touch with us first before contributing, you can use:
+Feel free to reach out to us via our [AOSSIE Discord Channel](https://discord.com/invite/6mFZ2S846n).
 
-* [AOSSIE Discord Channel](https://discord.com/invite/6mFZ2S846n)
+---
 
+## **License**
 
-# **License**
-
-[**MIT License**](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+```
