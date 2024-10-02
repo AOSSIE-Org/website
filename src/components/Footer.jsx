@@ -45,7 +45,7 @@ export function Footer() {
                 <Link aria-label="Join on Discord" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.com/invite/6mFZ2S846n'>
                   <FontAwesomeIcon icon={faDiscord} size='xl' />
                 </Link>
-                <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
+                <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.veeforu.com/wp-content/uploads/2023/07/Twitter-new-cross-mark-Icon-PNG-X.jpg'>
                   <FontAwesomeIcon icon={faTwitter} size='xl' />
                 </Link>
               </div>
