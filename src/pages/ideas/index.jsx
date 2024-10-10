@@ -8,12 +8,14 @@ import { getAllIdeas } from '@/helper/getAllIdeas';
 function Article({ article }) {
   return (
     <article className="mt-5 sm:mt-0 md:grid md:grid-flow-col md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3 border border-gray-300 rounded-lg p-4 shadow-md"> {/* Added border and padding here */}
-        <Card.Title href={`/ideas/2024/${article.slug}`}>
-          {article.title}
-        </Card.Title>
+      <Card className="md:col-span-3 border border-gray-300 rounded-lg p-4 shadow-md">
+        <Link href={`/ideas/2024/${article.slug}`}>
+          <Card.Title>{article.title}</Card.Title>
+        </Link>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Know More</Card.Cta>
+        <Link href={`/ideas/2024/${article.slug}`}>
+          <Card.Cta>Know More</Card.Cta>
+        </Link>
       </Card>
     </article>
   );

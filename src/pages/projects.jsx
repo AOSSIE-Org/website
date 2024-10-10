@@ -1,10 +1,10 @@
-// Projects.js
 import Image from 'next/image';
 import Head from 'next/head';
 import { Container } from '@/components/Container';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Card } from '@/components/Card';
 import projects from '@/helper/projects';
+import Link from 'next/link';
 
 function LinkIcon(props) {
   return (
@@ -42,13 +42,13 @@ export default function Projects() {
                   <Image src={project.logo} alt="Project Logo" className="p-2" unoptimized />
                 </div>
                 <h2 className="mt-6 text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                  <Link href={project.link.href}>{project.name}</Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                <Link href={project.link.href} className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
                   <LinkIcon className="h-6 w-6 flex-none scale-110" />
                   <span className="ml-2">{project.link.label}</span>
-                </p>
+                </Link>
               </Card>
             ))}
           </ul>
