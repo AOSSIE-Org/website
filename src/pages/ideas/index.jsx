@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
-import { getAllIdeas } from '@/helper/getAllIdeas'
+import { Card } from '@/components/Card';
+import { Container } from '@/components/Container';
+import { getAllIdeas } from '@/helper/getAllIdeas';
 
 function Article({ article }) {
   return (
     <article className="mt-5 sm:mt-0 md:grid md:grid-flow-col md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
+      <Card className="md:col-span-3 border border-gray-300 rounded-lg p-4 shadow-md"> {/* Added border and padding here */}
         <Card.Title href={`/ideas/2024/${article.slug}`}>
           {article.title}
         </Card.Title>
@@ -16,7 +16,7 @@ function Article({ article }) {
         <Card.Cta>Know More</Card.Cta>
       </Card>
     </article>
-  )
+  );
 }
 
 export default function Ideas({ articles }) {
@@ -27,11 +27,11 @@ export default function Ideas({ articles }) {
         <meta name="description" content="Idea List for GSOC" />
       </Head>
       <Container className="mt-20 mb-28">
-        <div className="">
+        <div>
           <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
             Explore the world of open-source possibilities with AOSSIE&apos;s{' '}
             <b>Idea List</b>. As part of Google Summer of Code, we offer
-            a unique opportunity for developers to explore new ideas,  a wide
+            a unique opportunity for developers to explore new ideas, a wide
             variety of projects for developers to choose from and contribute to.
             From developing new features to fixing critical bugs, our idea list
             is your go-to destination for finding your next big project and
@@ -59,7 +59,7 @@ export default function Ideas({ articles }) {
         </Container.Inner>
       </Container>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -67,5 +67,5 @@ export async function getStaticProps() {
     props: {
       articles: (await getAllIdeas()).map(({ component, ...meta }) => meta),
     },
-  }
+  };
 }

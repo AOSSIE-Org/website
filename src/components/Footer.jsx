@@ -33,18 +33,18 @@ export function Footer() {
                 &copy; 2016-2023 AOSSIE. All rights reserved.
               </p>
               <div className="flex gap-6">
-              <Link aria-label="Contact by Mail" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'  rel="noopener noreferrer"><FontAwesomeIcon icon={faEnvelope} size='xl' />
+              <Link aria-label="Contact by Mail" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com' target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faEnvelope} size='xl' />
            </Link>
-            <Link aria-label="Follow on GitLab" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://gitlab.com/aossie' rel="noopener noreferrer">
+            <Link aria-label="Follow on GitLab" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://gitlab.com/aossie' target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGitlab} size='xl' />
             </Link>
-            <Link aria-label="Follow on GitHub" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org'  rel="noopener noreferrer">
+            <Link aria-label="Follow on GitHub" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org' target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGithub} size='xl' />
             </Link>
-            <Link aria-label="Join on Discord" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.com/invite/6mFZ2S846n'  rel="noopener noreferrer">
+            <Link aria-label="Join on Discord" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.com/invite/6mFZ2S846n' target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faDiscord} size='xl' />
             </Link>
-            <Link aria-label="Follow on X" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'  rel="noopener noreferrer">
+            <Link aria-label="Follow on X" className='text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org' target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faXTwitter} size='xl' />
             </Link>
               </div>
