@@ -5,6 +5,7 @@ import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
 import { Card } from '@/components/Card'
 import projects from '@/helper/projects'
+import Link from 'next/link'
 
 function LinkIcon(props) {
   return (
@@ -41,7 +42,7 @@ export default function Projects() {
           <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
-              <Card as="li" key={project.name}>
+              <Card as="li" key={project.name} className={'flex flex-col justify-between h-full'}>
                 <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
                   <Image
                     src={project.logo}
@@ -50,14 +51,21 @@ export default function Projects() {
                     unoptimized
                   />
                 </div>
-                <h2 className="mt-6 text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100">
+                <div className='mt-6'>
+                <h2 className="text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100 min-h-[3rem]">
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
+                </div>
+                <div className='flex-grow'>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                </div>
+                
+                <div className="relative z-10 mt-8 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                  <Link href={project.link.href} className='flex items-center mt-6 text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200'>
                   <LinkIcon className="h-6 w-6 flex-none scale-110" />
                   <span className="ml-2">{project.link.label}</span>
-                </p>
+                  </Link>
+                </div>
               </Card>
             ))}
           </ul>
