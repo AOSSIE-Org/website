@@ -51,7 +51,12 @@ export default function Projects() {
                   />
                 </div>
                 <h2 className="mt-6 text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                  <Card.Link 
+                  href={project.link.href}
+                    target="_blank"
+                  >
+                    {project.name}
+                  </Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
                 <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
