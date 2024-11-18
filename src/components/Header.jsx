@@ -146,6 +146,7 @@ function NavItem({ href, children }) {
             ? 'text-[#00843D] dark:text-yellow-400'
             : 'hover:text-[#00843D] dark:hover:text-yellow-400'
         )}
+        legacyBehavior
       >
         {children}
         {isActive && (
@@ -229,6 +230,7 @@ function Home({ large = false, className, ...props }) {
       aria-label="Home"
       className={clsx(className, 'pointer-events-auto')}
       {...props}
+      legacyBehavior
     >
       <Image src='./logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
     </Link>
