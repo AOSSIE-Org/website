@@ -56,23 +56,46 @@ export default function About() {
           </ol>
 
           <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
+          
             <Image src={GSoC} width={700} className='mx-auto' />
             {/* <h3 className="text-4xl font-bold">100+</h3> */}
             {/* <h1 className="mt-4 text-4xl font-mono font-black text-gray-500">
               2024 Program Timeline
             </h1> */}
+
+              <style>
+              {`
+              .quantum-link {
+                  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+              }
+              .quantum-link:hover {
+                  background-color: coral; /* Change background color on hover */
+                  color: white; /* Change text color on hover */
+              }
+              `}
+            </style>
+
+
+
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
-              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+
+            
+
+
+              
+              <Link className="quantum-link order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Announcements
                 </span>
               </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
+              <Link className="quantum-link order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
                 <span className="font-mono font-semibold text-center">
                   View 2024 Program Timeline
                 </span>
               </Link>
             </div>
+
+
           </div>
 
         </Container.Inner>
