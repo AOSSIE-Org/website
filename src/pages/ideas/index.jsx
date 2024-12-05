@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
-import { getAllIdeas } from '@/helper/getAllIdeas'
+import { Card } from '@/components/Card';
+import { Container } from '@/components/Container';
+import { getAllIdeas } from '@/helper/getAllIdeas';
 
 function Article({ article }) {
   return (
@@ -13,13 +14,36 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Know More</Card.Cta>
+        {/* <Card.Cta>Know More</Card.Cta> */}
       </Card>
     </article>
-  )
+  );
+}
+
+function Dropdown({ options, isVisible }) {
+  if (!isVisible) return null;
+  return (
+    <ul className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+      {options.map((option, index) => (
+        <li key={index} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+          {option.name}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default function Ideas({ articles }) {
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const options = [
+    { name: 'Agora Vote API V2', description: 'Agora API is a vote counting API written using Scala 2 and Play Framework.' },
+    { name: 'Agora Vote IOS', description: 'Agora Vote App is an IOS application that lets user create elections, invite voters, vote and view results ...' },
+    { name: 'Monumento', description: 'Monumento is a social media for sharing landmarks, visited places and visualizing their 3D models right from a mobile device ...' },
+    { name: 'Resonate App', description: 'An open source social voice platform' }
+  ];
+  
+
   return (
     <>
       <Head>
@@ -37,6 +61,15 @@ export default function Ideas({ articles }) {
             is your go-to destination for finding your next big project and
             kickstart your open-source journey.
           </p>
+          <div className="relative">
+            <button
+              onClick={() => setDropdownVisible(!isDropdownVisible)}
+              className="mt-4 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-left shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Show Ideas
+            </button>
+            <Dropdown options={options} isVisible={isDropdownVisible} />
+          </div>
         </div>
         <Container.Inner>
           <div className="mt-10 flex justify-center sm:mt-20">
@@ -59,7 +92,7 @@ export default function Ideas({ articles }) {
         </Container.Inner>
       </Container>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -67,5 +100,5 @@ export async function getStaticProps() {
     props: {
       articles: (await getAllIdeas()).map(({ component, ...meta }) => meta),
     },
-  }
+  };
 }
