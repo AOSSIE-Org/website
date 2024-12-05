@@ -51,17 +51,17 @@ Card.Description = function CardDescription({ children }) {
   )
 }
 
-Card.Cta = function CardCta({ children }) {
-  return (
-    <div
-      aria-hidden="true"
-      className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
-    >
-      {children}
-      <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
-    </div>
-  )
-}
+// Card.Cta = function CardCta({ children }) {
+//   return (
+//     <div
+//       aria-hidden="true"
+//       className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
+//     >
+//       {children}
+//       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+//     </div>
+//   )
+// }
 
 Card.Eyebrow = function CardEyebrow({
   as: Component = 'p',
