@@ -12,7 +12,7 @@ export function SectionHeading({ number, children, className, ...props }) {
       <span className="font-mono text-base font-semibold" aria-hidden="true">
       </span>
       {/* <span className="ml-3 h-3.5 w-px bg-blue-600/20 dark:bg-white" /> */}
-      <span className="ml-3 text-base font-semibold font-mono tracking-tighter">
+      <span className="text-base font-semibold font-mono tracking-tighter">
         {children}
       </span>
     </h2>
