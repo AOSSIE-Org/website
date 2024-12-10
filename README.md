@@ -5,7 +5,7 @@ This repository contains the assets required to build the **AOSSIE's website**. 
 
 Contributions to the project are very much welcomed! Please reach out with ideas for new content or issues with existing content!
 
-Th website is a **Next.js** project using **Tailwind** for styling and design.
+The website is a **Next.js** project using **Tailwind** for styling and design.
 
 # **Getting Started**
 
@@ -37,7 +37,7 @@ You can contribute by:
 
 * Raising any issues you find
 * Fixing issues by opening Pull Requests
-* Improving website
+* Improving the website
 * Talking about AOSSIE
 
 
