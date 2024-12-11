@@ -22,8 +22,8 @@ export default function About() {
                 src={BlackLogo}
                 alt="AOSSIE Logo"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-black object-cover dark:bg-zinc-800 shadow-xl drop-shadow-xl shadow-zinc-900/30 dark:shadow-zinc-400/10"
-              />
+                className="aspect-square rotate-3 rounded-2xl bg-black object-cover dark:bg-zinc-800 shadow-xl drop-shadow-xl shadow-zinc-900/30 dark:shadow-zinc-400/10 
+          transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-zinc-800/50"/>
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
