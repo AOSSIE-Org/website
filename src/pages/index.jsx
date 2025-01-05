@@ -42,7 +42,7 @@ export default function Home() {
           <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0">
             <div className="max-w-xl">
               <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843D] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
-                We Innovate <br /> We Educate
+                We Innovate ,  Educate
               </h1>
               <p className="mt-4 font-mono text-xl leading-7 text-zinc-600 dark:text-zinc-400 ">
                 We are an Australian not-for-profit umbrella organization for
