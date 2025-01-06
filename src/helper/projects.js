@@ -51,10 +51,10 @@ const projects = [
     logo: DefaultLogo,
   },
   {
-    name: 'OpenChat',
+    name: 'OpenPeerChat',
     description:
       'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
-    link: { href: '#', label: 'OpenChat' },
+    link: { href: 'https://github.com/AOSSIE-Org/OpenPeerChat-flutter', label: 'OpenChat' },
     logo: DefaultLogo,
   },
   {
