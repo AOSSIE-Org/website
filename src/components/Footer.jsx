@@ -1,9 +1,9 @@
 import Link from 'next/link'
-
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faGitlab } from '@fortawesome/free-brands-svg-icons'
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons' // Import faXTwitter
 
 function NavLink({ href, children }) {
   return (
@@ -33,20 +33,20 @@ export function Footer() {
                 &copy; 2016-2023 AOSSIE. All rights reserved.
               </p>
               <div className="flex gap-6">
-                <Link aria-label="Contact by Mail" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
-                  <FontAwesomeIcon icon={faEnvelope} size='xl' />
+                <Link aria-label="Contact by Mail" className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition" href="mailto:aossie.oss@gmail.com">
+                  <FontAwesomeIcon icon={faEnvelope} size="xl" />
                 </Link>
-                <Link aria-label="Follow on GitLab" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://gitlab.com/aossie'>
-                  <FontAwesomeIcon icon={faGitlab} size='xl' />
+                <Link aria-label="Follow on GitLab" className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition" href="https://gitlab.com/aossie">
+                  <FontAwesomeIcon icon={faGitlab} size="xl" />
                 </Link>
-                <Link aria-label="Follow on GitHub" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org'>
-                  <FontAwesomeIcon icon={faGithub} size='xl' />
+                <Link aria-label="Follow on GitHub" className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition" href="https://github.com/AOSSIE-Org">
+                  <FontAwesomeIcon icon={faGithub} size="xl" />
                 </Link>
-                <Link aria-label="Join on Discord" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.com/invite/6mFZ2S846n'>
-                  <FontAwesomeIcon icon={faDiscord} size='xl' />
+                <Link aria-label="Join on Discord" className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition" href="https://discord.com/invite/6mFZ2S846n">
+                  <FontAwesomeIcon icon={faDiscord} size="xl" />
                 </Link>
-                <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
-                  <FontAwesomeIcon icon={faTwitter} size='xl' />
+                <Link aria-label="Follow on X" className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition" href="https://x.com/aossie_org">
+                  <FontAwesomeIcon icon={faXTwitter} size="xl" /> {/* Use faXTwitter here */}
                 </Link>
               </div>
             </div>
