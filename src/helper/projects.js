@@ -5,8 +5,6 @@ import SSSLogo from '@/images/SSS.png'
 import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
 
-
-
 // data
 const projects = [
   {
@@ -60,14 +58,14 @@ const projects = [
   {
     name: 'Resonate',
     description:
-      'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
+      'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.',
     link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
     logo: ResonateLogo,
   },
   {
     name: 'Social Street Smart',
     description:
-      'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
+      'With the advent of the Internet, the problems faced by the people have also grown. These include abusive languages.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',
@@ -75,6 +73,5 @@ const projects = [
     logo: SSSLogo,
   },
 ]
-
 
 export default projects
