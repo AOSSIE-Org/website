@@ -56,7 +56,8 @@ export default function About() {
           </ol>
 
           <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
-            <Image src={GSoC} width={700} className='mx-auto' />
+          <a href="https://summerofcode.withgoogle.com/get-started"> <Image src={GSoC} width={700} className='mx-auto'alt="GSOC Website" />
+           </a>
             {/* <h3 className="text-4xl font-bold">100+</h3> */}
             {/* <h1 className="mt-4 text-4xl font-mono font-black text-gray-500">
               2024 Program Timeline
