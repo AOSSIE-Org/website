@@ -47,14 +47,18 @@ export default function Ideas({ articles }) {
             </div>
           </div>
           <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
+            <a
+              className="relative inline-flex items-center px-8 py-3 font-semibold text-black bg-white rounded-lg
+   border border-transparent bg-gradient-to-r from-white to-white
+   hover:from-pink-500 hover:to-blue-500 hover:text-white"
+
+
               href="/ideas/2023"
             >
-              <span className="text-center font-mono font-semibold">
-                View 2023 Idea List
-              </span>
-            </Link>
+
+              View 2023 Idea List
+
+            </a>
           </div>
         </Container.Inner>
       </Container>
