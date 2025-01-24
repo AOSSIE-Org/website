@@ -26,7 +26,7 @@ export function Banner() {
             </p>
             <div className="mt-5">
               <Link href="/apply" legacyBehavior>
-                <a className="group relative inline-flex items-center overflow-hidden rounded-lg bg-white px-8 py-3 font-mono font-semibold text-black transition-all duration-300 hover:bg-gradient-to-r hover:from-[#00843D] hover:to-green-500 hover:text-white focus:outline-none dark:bg-black dark:text-white dark:hover:from-green-500 dark:hover:to-blue-500">
+                <a className="group relative inline-flex items-center overflow-hidden rounded-lg bg-white px-8 py-3 font-mono font-semibold text-black transition-all duration-300 hover:bg-gradient-to-r hover:from-[#00843D] hover:to-green-500 hover:text-white focus:outline-none dark:bg-black dark:text-white dark:hover:from-green-500 dark:hover:to-green-500">
                   <span className="absolute inset-0 translate-x-full bg-[#FED41E] transition-transform duration-500 ease-out group-hover:translate-x-0 dark:bg-green-500"></span>
                   <span className="relative z-10">
                     Apply to GSoC with AOSSIE
