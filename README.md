@@ -24,8 +24,9 @@ In order to run the site locally,
 - In the root directory, you can run the following commands:
 
 ```
-npm install
-npm run dev
+1. Install the necessary dependencies using npm install.
+2. Start the development server using npm run dev.
+
 ```
 
 The website will be active at **http://localhost:3000**.
