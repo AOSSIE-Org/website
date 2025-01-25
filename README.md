@@ -5,14 +5,14 @@ This repository contains the assets required to build the **AOSSIE's website**. 
 
 Contributions to the project are very much welcomed! Please reach out with ideas for new content or issues with existing content!
 
-Th website is a **Next.js** project using **Tailwind** for styling and design.
+The website is a **Next.js** project using **Tailwind** for styling and design.
 
 # **Getting Started**
 
 To contribute to this repository you will need to:
 - **Fork this repository**
 - **Push changes to a new branch in your fork**
-- **Create a pull request from that branch to the master branch of this repository**
+- **Create a pull request from that branch to the Main branch of this repository**
 
 Forking only needs to be done once, after which you can push changes to your fork.
 
@@ -24,8 +24,9 @@ In order to run the site locally,
 - In the root directory, you can run the following commands:
 
 ```
-npm install
-npm run dev
+1. Install the necessary dependencies using npm install.
+2. Start the development server using npm run dev.
+
 ```
 
 The website will be active at **http://localhost:3000**.
@@ -37,7 +38,7 @@ You can contribute by:
 
 * Raising any issues you find
 * Fixing issues by opening Pull Requests
-* Improving website
+* Improving the website
 * Talking about AOSSIE
 
 
