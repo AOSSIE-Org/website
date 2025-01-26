@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import React from 'react'
 
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,6 +18,7 @@ function NavLink({ href, children }) {
 }
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="mt-16">
       <Container.Outer>
@@ -29,9 +31,15 @@ export function Footer() {
                 <NavLink href="/ideas">Ideas</NavLink>
                 <NavLink href="/apply">Apply</NavLink>
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
-                &copy; 2016-2023 AOSSIE. All rights reserved.
-              </p>
+              
+                 
+                 
+                    <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
+                     &copy; 2016-{currentYear} AOSSIE. All rights reserved.
+                   </p>
+                  
+              
+              
               <div className="flex gap-6">
                 <Link aria-label="Contact by Mail" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
                   <FontAwesomeIcon icon={faEnvelope} size='xl' />
