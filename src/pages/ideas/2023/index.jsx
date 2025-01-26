@@ -9,7 +9,7 @@ function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:grid-flow-col md:items-baseline sm:mt-0 mt-5">
       <Card className="md:col-span-3">
-        <Card.Title className="bg-red-300" href={`/ideas/2023/${article.slug}`}>
+        <Card.Title  href={`/ideas/2023/${article.slug}`}>
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
