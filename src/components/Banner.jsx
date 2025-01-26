@@ -19,10 +19,10 @@ export function Banner() {
             <div className="mt-5">
               <Link href="/apply" legacyBehavior>
                 <a className="relative inline-flex items-center px-8 py-3 font-semibold text-white bg-black rounded-lg
-    border border-transparent bg-gradient-to-r from-black to-black
-    hover:from-white hover:to-white hover:text-black
-    font-mono text-[font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace]
-    transition-all duration-300 ease-in-out">
+  border border-transparent bg-gradient-to-r from-black to-black
+  hover:from-white hover:to-white hover:text-black
+  font-mono text-[font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace]
+  transition-all duration-300 ease-in-out">
                   Apply to GSoC with AOSSIE
                 </a>
               </Link>
