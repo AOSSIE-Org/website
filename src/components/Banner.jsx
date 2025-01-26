@@ -18,8 +18,7 @@ export function Banner() {
             </p>
             <div className="mt-5">
             <Link href="/apply" legacyBehavior>
-            <a 
-              href="/apply" 
+            <a  
               className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold 
                 transition-all duration-300 ease-in-out
                 transform hover:scale-105 hover:shadow-lg
