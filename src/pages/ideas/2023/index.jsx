@@ -9,7 +9,7 @@ function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:grid-flow-col md:items-baseline sm:mt-0 mt-5">
       <Card className="md:col-span-3">
-        <Card.Title href={`/ideas/2023/${article.slug}`}>
+        <Card.Title className="bg-red-300" href={`/ideas/2023/${article.slug}`}>
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
@@ -43,9 +43,9 @@ export default function Ideas({ articles }) {
               ))}
             </div>
           </div>
-          <div className='text-center mt-16'>
-            <Link className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" href="/ideas">
-              <span className="font-mono font-semibold text-center">
+          <div className='text-center mt-16 '>
+            <Link className="inline-block order-2 mx-auto items-center overflow-hidden bg-zinc-800 hover:bg-yellow-400 hover:scale-110 transition-all duration-300 ease-in-out rounded-lg px-8 py-3 text-white hover:text-black focus:outline-none dark:bg-white dark:text-black dark:hover:bg-yellow-400 dark:hover:text-black hover:border-b-4 hover:font-extrabolde" href="/ideas">
+              <span className="font-mono font-semibold text-center ">
                 Go Back
               </span>
             </Link>

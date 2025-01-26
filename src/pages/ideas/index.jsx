@@ -48,7 +48,7 @@ export default function Ideas({ articles }) {
           </div>
           <div className="mt-16 text-center">
             <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
+              className="inline-block order-2 mx-auto items-center overflow-hidden bg-zinc-800 hover:bg-yellow-400 hover:scale-110 transition-all duration-300 ease-in-out rounded-lg px-8 py-3 text-white hover:text-black focus:outline-none dark:bg-white dark:text-black dark:hover:bg-yellow-400 dark:hover:text-black hover:border-b-4 hover:font-extrabolde"
               href="/ideas/2023"
             >
               <span className="text-center font-mono font-semibold">
