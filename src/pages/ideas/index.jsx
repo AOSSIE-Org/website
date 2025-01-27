@@ -13,7 +13,8 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Know More</Card.Cta>
+        <Card.Cta >Know More</Card.Cta>
+        
       </Card>
     </article>
   )
@@ -48,7 +49,8 @@ export default function Ideas({ articles }) {
           </div>
           <div className="mt-16 text-center">
             <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
+              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black  hover:bg-green-800
+              dark:hover:bg-yellow-500"
               href="/ideas/2023"
             >
               <span className="text-center font-mono font-semibold">
