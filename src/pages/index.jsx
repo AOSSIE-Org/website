@@ -10,8 +10,8 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons'
+} from '@fortawesome/free-brands-svg-icons';
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
@@ -84,7 +84,7 @@ export default function Home() {
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://twitter.com/aossie_org"
                 >
-                  <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                  <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                 </Link>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function Home() {
           </div>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
             <Container.Inner>
-              <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-wrap gap-x-8 items-center justify-evenly gap-y-16 sm:flex-wrap lg:flex-row">
                 {randomProjects.map((project) => (
                   <span key={project.name}>
                     <CardEffect
