@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
+import React, {useState} from 'react'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { getAllIdeas } from '@/helper/getAllIdeas'
@@ -46,14 +46,20 @@ export default function Ideas({ articles }) {
               ))}
             </div>
           </div>
+         
           <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2023"
-            >
-              <span className="text-center font-mono font-semibold">
-                View 2023 Idea List
-              </span>
+           <Link
+                   href="/ideas/2023"
+                  className="group relative mx-auto flex items-center justify-center overflow-hidden rounded-lg px-8 py-3 text-white bg-zinc-400 border-3 border-transparent transition-all duration-300 focus:outline-none dark:bg-white dark:text-black"
+  >
+            {/* Sliding Gradient Background */}
+                      <span className="absolute inset-0 h-0 w-full bg-gradient-to-r from-orange-500 to-purple-500 transition-all duration-300 group-hover:h-full"></span>
+    
+            {/* Button Text */}
+                       <span className="relative z-10 text-center font-mono font-semibold group-hover:text-black dark:group-hover:text-white">
+                          View 2023 Idea List
+                       </span>
+
             </Link>
           </div>
         </Container.Inner>
@@ -61,6 +67,7 @@ export default function Ideas({ articles }) {
     </>
   )
 }
+
 
 export async function getStaticProps() {
   return {
