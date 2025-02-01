@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { getAllIdeas } from '@/helper/getAllIdeas'
+import { HoverButton } from "@/components/HoverButton"
 
 function Article({ article }) {
   return (
@@ -47,14 +48,7 @@ export default function Ideas({ articles }) {
             </div>
           </div>
           <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2023"
-            >
-              <span className="text-center font-mono font-semibold">
-                View 2023 Idea List
-              </span>
-            </Link>
+            <HoverButton href="/ideas/2023">View 2023 Idea List</HoverButton>
           </div>
         </Container.Inner>
       </Container>
