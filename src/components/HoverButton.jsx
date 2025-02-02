@@ -9,8 +9,8 @@ export function HoverButton({ children, href, onClick, className = "" }) {
     transition-all duration-300 ease-in-out
     ${
       isHovered
-        ? "scale-105 bg-gradient-to-r from-green-600 via-green-500 to-lime-400 text-white dark:from-zinc-200 dark:via-zinc-300 dark:to-zinc-400 dark:text-black"
-        : "bg-zinc-800 text-white dark:bg-white dark:text-black"
+        ? "scale-105 bg-gradient-to-r from-[#00843D] to-lime-500 text-white dark:from-yellow-300 dark:via-yellow-400 dark:to-yellow-500 dark:text-black"
+        : "bg-zinc-800 text-white dark:bg-zinc-300 dark:text-black"
     }
     ${className}
   `;
@@ -21,7 +21,7 @@ export function HoverButton({ children, href, onClick, className = "" }) {
       <span
         className={`
           absolute inset-0 z-0 opacity-0 transition-opacity duration-300 ease-in-out
-          ${isHovered ? "opacity-100" : ""}
+          ${isHovered ? "opacity-80" : ""}
         `}
         style={{
           background:
