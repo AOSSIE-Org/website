@@ -76,17 +76,14 @@ const Cards = () => {
       ].map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
+            className='dark:bg-[#2A2A2A] dark:border-white'
             sx={{
               height: 400,
               borderRadius: 2,
               border: '1px solid',
-              borderColor: { xs: '#3c982c', dark: 'white' },
+              borderColor: '#3c982c',
               boxShadow: '0px 4px 4px #00000040',
               backdropFilter: 'blur(4px) brightness(100%)',
-              background: {
-                xs: 'linear-gradient(180deg, rgb(255,255,255) 0%, rgb(255,255,255) 100%)',
-                dark: 'linear-gradient(180deg, rgb(85, 84, 84) 0%, rgb(73, 73, 73) 100%)',
-              },
               display: 'flex',
               flexDirection: 'column',
             }}
@@ -99,17 +96,17 @@ const Cards = () => {
                 height={80}
                 style={{ margin: '0 auto 16px', objectFit: 'contain' }}
               />
-             <Typography
-  variant="h2"
-  className="mt-6 text-2xl font-semibold font-mono text-green-600 dark:text-yellow-400"
-  sx={{
-    fontFamily: 'Nunito-Bold',
-    color: '#3c982c',
-    textAlign: 'center',
-  }}
->
-  {project.title}
-</Typography>
+              <Typography
+                variant="h2"
+                className="mt-6 text-2xl font-semibold font-mono text-green-600 dark:text-yellow-400"
+                sx={{
+                  fontFamily: 'Nunito-Bold',
+                  color: '#3c982c',
+                  textAlign: 'center',
+                }}
+              >
+                {project.title}
+              </Typography>
 
               <Typography
                 variant="body1"
@@ -133,15 +130,16 @@ const Cards = () => {
             <CardActions sx={{ justifyContent: 'center' }}>
               <Link href={project.link} passHref>
                 <Button size="large" sx={{ color: '#3c982c' }} className="font-Nunito-Bold text-green-600 dark:text-yellow-400 text-lg font-mono leading-7 text-center">
-                  
+
                   Know More! <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
                 </Button>
               </Link>
             </CardActions>
           </MuiCard>
         </Grid>
-      ))}
-    </Grid>
+      ))
+      }
+    </Grid >
   );
 };
 
