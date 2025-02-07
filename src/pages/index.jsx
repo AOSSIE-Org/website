@@ -90,7 +90,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-16 text-center">
+        <div  className="mt-16 text-center">
           <Link href="/about" className="group relative inline-block text-lg">
             <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
               <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </Container>
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div id='projects' className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <div className="grid grid-cols-12">
               <div className=" relative -left-2 top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
