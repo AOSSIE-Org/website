@@ -158,30 +158,19 @@ export default function Home() {
             </Container.Inner>
           </div>
           <div className="mt-12 text-center">
-            <Link
-              className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
-              href="/projects"
-            >
-              <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
-                <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+          <Link href="/projects" className="group relative inline-block text-lg">
+            <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
+              <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
+              <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
+              <span className="relative font-mono text-xl font-black tracking-tighter">
+                View ALL Projects
               </span>
-              <span className="font-mono font-semibold transition-all group-hover:mr-6">
-                View All Projects
-              </span>
-            </Link>
+            </span>
+            <span
+              className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
+              data-rounded="rounded-lg"
+            ></span>
+          </Link>
           </div>
         </div>
       </Container>
