@@ -21,51 +21,58 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>
-          Projects
-        </title>
-        <meta
-          name="description"
-          content="About AOSSIE's Projects"
-        />
+        <title>Projects</title>
+        <meta name="description" content="About AOSSIE's Projects" />
       </Head>
       <Container className="mt-20 mb-28">
         <div className="mt-5">
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Our Projects, where we showcase our tech wizardry and code-slinging skills! <br></br> Our portfolio is a treasure trove of open-source gems, featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.</p>
+          <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
+            Our Projects, where we showcase our tech wizardry and code-slinging
+            skills! <br></br> Our portfolio is a treasure trove of open-source
+            gems, featuring projects in a variety of languages and areas. Take a
+            peek and see how we&apos;re making a difference with our technical
+            spells.
+          </p>
         </div>
-        <div className='mt-16'>
+        <div className="mt-16">
           {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
             Active Projects
           </h1> */}
           <SectionHeading>Active Projects</SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
-          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
+          <p className="mt-3 font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
+            The following projects are currently actively maintained and mentors
+            are available!
+          </p>
+          <ul
+            role="list"
+            className="mt-12 mb-16 grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {projects.map((project) => (
-              <Card as="li" key={project.name}>
-                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
+              <Card as="li" key={project.name} href={project.link.href}>
+                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:shadow-white/10 dark:ring-white/10">
                   <Image
                     src={project.logo}
                     alt="Project Logo"
-                    className='p-2'
+                    className="p-2"
                     unoptimized
                   />
                 </div>
-                <h2 className="mt-6 text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                <h2 className="mt-6 font-mono text-2xl font-semibold text-zinc-800 dark:text-zinc-100">
+                  {project.name}
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                <div className="text-md relative z-10 mt-6 flex font-mono font-semibold text-zinc-600 transition group-hover:text-[#00843D] dark:text-zinc-200 dark:group-hover:text-yellow-400">
                   <LinkIcon className="h-6 w-6 flex-none scale-110" />
                   <span className="ml-2">{project.link.label}</span>
-                </p>
+                </div>
               </Card>
             ))}
           </ul>
 
           {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
             InActive Projects
-          </h1> */}
-          {/* <SectionHeading>Past Projects</SectionHeading>
+          </h1> */
+          /* <SectionHeading>Past Projects</SectionHeading>
           <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently inactive. If you are brave and independent, you are welcome and even encouraged to contribute to these projects as well. However, help from mentors will be significantly reduced.</p>
           <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
             {projects.map((project) => (
@@ -91,5 +98,5 @@ export default function Projects() {
         </div>
       </Container>
     </>
-    )
+  )
 }

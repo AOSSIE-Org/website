@@ -13,12 +13,12 @@ function ChevronRightIcon(props) {
     </svg>
   )
 }
-export function Card({ as: Component = 'div', className, children }) {
+export function Card({ as: Component = 'div', className, children, href }) {
   return (
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
-      {children}
+      {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
 }
@@ -29,23 +29,23 @@ Card.Link = function CardLink({ children, ...props }) {
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/80 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
+        <span className="z-100 relative">{children}</span>
       </Link>
     </>
   )
 }
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
+Card.Title = function CardTitle({ as: Component = 'h2', children }) {
   return (
-    <Component className="text-lg font-semibold font-mono tracking-tight text-zinc-800 dark:text-zinc-100">
-      {href ? <Card.Link href={href}>{children}</Card.Link> : children}
+    <Component className="font-mono text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+      {children}
     </Component>
   )
 }
 
 Card.Description = function CardDescription({ children }) {
   return (
-    <p className="relative z-10 mt-2 text-sm font-mono text-zinc-600 dark:text-zinc-400">
+    <p className="relative z-10 mt-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
       {children}
     </p>
   )
@@ -55,7 +55,7 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
+      className="relative z-10 mt-4 flex items-center font-mono text-sm font-semibold text-[#00843D] dark:text-yellow-400"
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />

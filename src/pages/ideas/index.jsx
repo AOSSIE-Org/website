@@ -8,10 +8,8 @@ import { getAllIdeas } from '@/helper/getAllIdeas'
 function Article({ article }) {
   return (
     <article className="mt-5 sm:mt-0 md:grid md:grid-flow-col md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
-        <Card.Title href={`/ideas/2024/${article.slug}`}>
-          {article.title}
-        </Card.Title>
+      <Card href={`/ideas/2024/${article.slug}`} className="md:col-span-3">
+        <Card.Title>{article.title}</Card.Title>
         <Card.Description>{article.description}</Card.Description>
         <Card.Cta>Know More</Card.Cta>
       </Card>
