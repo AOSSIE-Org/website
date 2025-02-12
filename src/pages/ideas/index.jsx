@@ -13,7 +13,7 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Know More</Card.Cta>
+        <Card.Cta href={`/ideas/2025/${article.slug}`}>Know More</Card.Cta>
       </Card>
     </article>
   )
