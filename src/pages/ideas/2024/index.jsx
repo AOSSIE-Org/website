@@ -13,7 +13,7 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read More</Card.Cta>
+        <Card.Cta href={`/ideas/2024/${article.slug}`}>Read More</Card.Cta>
       </Card>
     </article>
   )
@@ -48,7 +48,7 @@ export default function Ideas({ articles }) {
             </div>
           </div>
           <div className='text-center mt-16'>
-            <Link className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" href="/ideas">
+            <Link href="/ideas" className="mx-auto order-2 group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 dark:text-black text-white focus:outline-none" >
               <span className="font-mono font-semibold text-center">
                 Go Back
               </span>
