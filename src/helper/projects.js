@@ -5,8 +5,6 @@ import SSSLogo from '@/images/SSS.png'
 import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
 
-
-
 // data
 const projects = [
   {
@@ -33,7 +31,10 @@ const projects = [
     name: 'Djed',
     description:
       'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
-    link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
+    link: {
+      href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard',
+      label: 'Djed',
+    },
     logo: Djed,
   },
   {
@@ -67,7 +68,7 @@ const projects = [
   {
     name: 'Social Street Smart',
     description:
-      'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
+      'With the advent of Internet, the problems faced by the people have also grown. These include abusive languages.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',
@@ -75,6 +76,5 @@ const projects = [
     logo: SSSLogo,
   },
 ]
-
 
 export default projects
