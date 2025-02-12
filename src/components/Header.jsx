@@ -156,7 +156,7 @@ function NavItem({ href, children }) {
   )
 }
 
-function DesktopNavigation(props) {
+function DesktopNavigation(props) { 
   return (
     <nav {...props}>
       <ul className="flex font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">

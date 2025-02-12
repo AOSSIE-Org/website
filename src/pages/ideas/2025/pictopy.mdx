@@ -1,0 +1,36 @@
+import { IdeaLayout } from '@/components/IdeaLayout'
+
+export const meta = {
+  title: 'Pictopy',
+  description:
+    'Reworking the frontend and enhancing the backend of Pictopy for better performance and ease of contribution.',
+}
+
+export default (props) => <IdeaLayout meta={meta} {...props} />
+
+### Project Type: Medium
+
+## Description:
+
+Pictopy is currently built using Tauri, relying on Rust, but it comes with platform-specific dependencies that make it difficult to containerize and ship. Electron has been considered as an alternative, but issues with rendering local machine photos and bypassing security have caused challenges in the past. This has led to difficulty in onboarding new contributors as many give up during the setup process, resulting in fewer active contributors.
+
+The backend has been stable but stagnant and could use refactoring and design enhancements to improve its growth and functionality. While the backend is working without issues, there is potential for improvement and future scaling.
+
+## Expected Outcomes:
+
+- Rework the frontend to explore other options that can simplify setup and containerization.
+- Address issues related to Electron, including photo rendering and security bypassing.
+- Increase contributions from new developers by simplifying the setup process.
+- Refactor and enhance the backend for better growth and scalability.
+- Provide design improvements to the backend for smoother development and future expansions.
+
+## Required Skills:
+
+- Rust
+- Electron
+- Backend Development
+- Frontend Development
+
+## Mentors:
+
+`Bassam`

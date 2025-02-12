@@ -3,7 +3,7 @@ import * as path from 'path'
 
 async function importIdea(ideaFilename) {
   let { meta, default: component } = await import(
-    `../pages/ideas/2022/${ideaFilename}`
+    `../pages/ideas/2024/${ideaFilename}`
   )
   return {
     slug: ideaFilename.replace(/(\/index)?\.mdx$/, ''),
@@ -14,7 +14,7 @@ async function importIdea(ideaFilename) {
 
 export async function getAllIdeas() {
   let ideaFilenames = await glob(['*.mdx','*/index.mdx'], {
-    cwd: path.join(process.cwd(), 'src/pages/ideas/2022'),
+    cwd: path.join(process.cwd(), 'src/pages/ideas/2024'),
   })
 
   let ideas = await Promise.all(ideaFilenames.map(importIdea))
