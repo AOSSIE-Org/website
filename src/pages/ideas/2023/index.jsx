@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import { getAllIdeas } from '@/helper/getAllIdeas'
+import { getAllIdeas } from '@/helper/getAllIdeas2023'
 
 function Article({ article }) {
   return (
