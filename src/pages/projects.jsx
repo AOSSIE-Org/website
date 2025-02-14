@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import { useRef } from 'react'
 
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
@@ -18,28 +19,36 @@ function LinkIcon(props) {
 }
 
 export default function Projects() {
+  const activeProjectsRef = useRef(null)
+
+  const scrollToActiveProjects = () => {
+    activeProjectsRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <>
       <Head>
-        <title>
-          Projects
-        </title>
-        <meta
-          name="description"
-          content="About AOSSIE's Projects"
-        />
+        <title>Projects</title>
+        <meta name="description" content="About AOSSIE's Projects" />
       </Head>
       <Container className="mt-20 mb-28">
         <div className="mt-5">
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Our Projects, where we showcase our tech wizardry and code-slinging skills! <br></br> Our portfolio is a treasure trove of open-source gems, featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.</p>
+          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>
+            Our Projects, where we showcase our tech wizardry and code-slinging skills! <br />
+            Our portfolio is a treasure trove of open-source gems, featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
+          </p>
         </div>
         <div className='mt-16'>
-          {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
+          <SectionHeading
+            onClick={scrollToActiveProjects}
+            className="cursor-pointer hover:scale-105 hover:text-[#00843D] dark:hover:text-yellow-400 transition-transform duration-300 ease-in-out"
+          >
             Active Projects
-          </h1> */}
-          <SectionHeading>Active Projects</SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
-          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
+          </SectionHeading>
+          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>
+            The following projects are currently actively maintained and mentors are available!
+          </p>
+          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16" ref={activeProjectsRef}>
             {projects.map((project) => (
               <Card as="li" key={project.name}>
                 <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
@@ -61,8 +70,7 @@ export default function Projects() {
               </Card>
             ))}
           </ul>
-
-          {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
+           {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
             InActive Projects
           </h1> */}
           {/* <SectionHeading>Past Projects</SectionHeading>
@@ -91,5 +99,5 @@ export default function Projects() {
         </div>
       </Container>
     </>
-    )
+  )
 }
