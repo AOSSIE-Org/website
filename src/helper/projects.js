@@ -4,7 +4,7 @@ import Djed from '@/images/Djed.png'
 import SSSLogo from '@/images/SSS.png'
 import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
-import MonumentoLogo from '@images/monumento.png'
+import MonumentoLogo from '@/images/monumento.png'
 
 
 
