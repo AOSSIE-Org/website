@@ -4,6 +4,7 @@ import Djed from '@/images/Djed.png'
 import SSSLogo from '@/images/SSS.png'
 import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
+import MonumentoLogo from '@images/monumento.png'
 
 
 
@@ -63,6 +64,13 @@ const projects = [
       'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
     link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
     logo: ResonateLogo,
+  },
+  {
+    name: 'Monumento',
+    description:
+      'Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform.',
+    link: { href: 'https://github.com/AOSSIE-Org/Monumento', label: 'Monumento' },
+    logo: MonumentoLogo,
   },
   {
     name: 'Social Street Smart',
