@@ -33,7 +33,7 @@ export default function Home() {
         <div className="relative">
 
           {/* Background Image */}
-          <div className=" hidden md:absolute z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[100vh] bg-cover bg-center"></div>
+          <div className=" hidden  absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
 
           {/* Main Content */}
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           {/* Green Band with Counts */}
-          <div className="bg-[#3C982C] dark:text-black flex justify-between p-8 px-16 text-center text-white dark:bg-yellow-400">
+          <div className="bg-[#3C982C] relative dark:text-black flex justify-between p-8 px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
             <div>
               <h6 className="text-xl">Active Projects</h6>
               <p className="font-semibold text-2xl">8</p>
