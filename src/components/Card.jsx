@@ -92,5 +92,5 @@ Card.Eyebrow = function CardEyebrow({
       )}
       {children}
     </Component>
-  )
+  ) 
 }
