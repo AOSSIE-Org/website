@@ -211,37 +211,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Container className="mt-24 md:mt-28">
-        <div className="space-y-10 ">
-          <div className="flex text-center items-center justify-center">
-            <div className="relative top-2 hidden h-12 w-12 bg-[url('/images/journey.png')] dark:bg-[url('/images/journey-dark.png')] bg-contain bg-no-repeat translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex hover:bg-green-700 hover:scale-105 transition-transform duration-300">
-            </div>
 
-
-            <div className="col-span-8 mt-3 self-center lg:col-start-2">
-              <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
-                Journey
-              </h1>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row mb-[-500px]">
-            <div className="w-full h-screen md:w-1/2 flex-1 mt-[-150px]">
-
-            </div>
-
-            <div className="p-4 md:w-1/2 flex-1">
-              <h2 className="text-2xl p-4">Aossie 2022</h2>
-              <p className="text-xl pl-4">
-                Our Projects, where we showcase our tech wizardry and code-slinging skills!! Be a part of our community and contribute to meaningful projects that are making a difference. Explore our selection of projects and find the perfect opportunity to showcase your skills and make an impact.
-              </p>
-              <h2 className="text-2xl p-4">Projects</h2>
-            </div>
-          </div>
-
-
-
-        </div>
-      </Container>
       <Container.Outer className="mt-28">
         <Banner />
       </Container.Outer>
