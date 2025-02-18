@@ -33,7 +33,7 @@ export default function Home() {
         <div className="relative">
 
           {/* Background Image */}
-          <div className="absolute z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[100vh] bg-cover bg-center"></div>
+          <div className=" hidden md:absolute z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[100vh] bg-cover bg-center"></div>
 
           {/* Main Content */}
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
@@ -48,10 +48,10 @@ export default function Home() {
             </div>
             <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
               <div className="max-w-xl ml-12">
-                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#FED41E] dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
+                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
                   We Innovate <br /> We Educate
                 </h1>
-                <p className="mt-8 font-mono text-xl leading-7 text-zinc-600 dark:text-[#FED41E]">
+                <p className="mt-8 font-mono text-xl leading-7 text-zinc-600 dark:text-[rgb(161 161 170/var(--tw-text-opacity))]  md:dark:text-[#FED41E]">
                   We are an Australian not-for-profit umbrella organization for
                   open-source projects. We believe the open-source philosophy
                   provides a resource-efficient channel to transfer knowledge and
