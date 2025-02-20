@@ -35,7 +35,7 @@ export default function About() {
               title="Start Contributing"
               description="Contribute to the project and make your mark on open-source development with AOSSIE. By making a Pull Request (PR) to one of our existing projects, you'll have the opportunity to showcase your skills and demonstrate your understanding of the project. This will also give you an opportunity to work with the mentors and get familiar with the project before the official GSoC coding period starts. This is a great way to get started and increase your chances of being selected for the program."
               button="Contribute"
-              link='https://gitlab.com/aossie'
+              link='https://github.com/AOSSIE-Org'
             />
             <TimelineElement
               title="Write a Draft Application"
