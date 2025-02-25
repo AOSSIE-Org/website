@@ -46,14 +46,14 @@ export default function Ideas({ articles }) {
             </div>
           </div>
           <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2024"
+            <button
+              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white transition-all duration-750 ease-in-out hover:bg-yellow-500 hover:text-black dark:bg-white dark:text-black dark:hover:bg-yellow-400 focus:outline-none"
+              onClick={() => window.location.href = "/ideas/2024"}
             >
               <span className="text-center font-mono font-semibold">
                 View 2024 Idea List
               </span>
-            </Link>
+            </button>
           </div>
         </Container.Inner>
       </Container>
