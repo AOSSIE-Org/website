@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import { Container } from '@/components/Container'
 import { TimelineElement } from '@/components/TimelineElement'
 import GSoC from '@/images/logo.svg'
-
 
 export default function About() {
   return (
@@ -57,26 +55,21 @@ export default function About() {
 
           <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
             <Image src={GSoC} width={700} className='mx-auto' />
-            {/* <h3 className="text-4xl font-bold">100+</h3> */}
-            {/* <h1 className="mt-4 text-4xl font-mono font-black text-gray-500">
-              2024 Program Timeline
-            </h1> */}
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
-              <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+              <Link className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none transition hover:bg-[#00a15f] dark:hover:bg-[#00a15f] hover:text-white dark:hover:text-white" href="https://summerofcode.withgoogle.com/">
                 <span className="font-mono font-semibold text-center">
-                  View 2024 Program Announcements
+                  View 2025 Program Announcements
                 </span>
               </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
+              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none transition hover:bg-[#00a15f] dark:hover:bg-[#00a15f] hover:text-white dark:hover:text-white" href="https://summerofcode.withgoogle.com/archive/2025/organizations">
                 <span className="font-mono font-semibold text-center">
-                  View 2024 Program Timeline
+                  View 2025 Program Timeline
                 </span>
               </Link>
             </div>
           </div>
-
         </Container.Inner>
       </Container>
     </>
-    )
+  )
 }
