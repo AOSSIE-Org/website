@@ -13,8 +13,8 @@ export default function About() {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="flex items-center justify-center lg:pl-20">
-            <div className="max-w-xs transform px-2.5 transition-transform duration-300 ease-in-out hover:rotate-6 hover:scale-110 hover:shadow-2xl hover:shadow-zinc-900/40 lg:max-w-none">
+          <div className="lg:pl-20">
+            <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={BlackLogo}
                 alt="AOSSIE Logo"
@@ -23,7 +23,6 @@ export default function About() {
               />
             </div>
           </div>
-
           <div className="lg:order-first lg:row-span-2">
             <h1 className="font-mono text-4xl font-black tracking-tighter text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               AOSSIE
