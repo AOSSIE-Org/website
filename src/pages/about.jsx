@@ -23,7 +23,7 @@ export default function About() {
     datasets: [
       {
         label: 'Number of Completed Projects',
-        data: [null, 3, 3, 17, 9, 11, 8, 7, 17], // Start data points from '2017', leave '0' as null
+        data: [0, 3, 3, 17, 9, 11, 8, 7, 17], // Start data points from '2017', leave '0' as null
         fill: false,
         borderColor: '#32a852',
         tension: 0.4,

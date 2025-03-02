@@ -19,7 +19,7 @@ const Cards = () => {
       spacing={4}
       sx={{ paddingTop: '40px', justifyContent: 'center' }}
     >
-      {[ 
+      {[
         {
           title: 'PictoPy',
           description: 'PictoPy is a privacy-focused desktop app designed to transform the handling of digital photos.',
@@ -91,7 +91,7 @@ const Cards = () => {
                 sx={{ color: '#3c982c' }}
                 className="font-Nunito-Bold text-green-600 dark:text-yellow-400 text-lg font-mono leading-7 text-center"
               >
-                Know More! <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
+                Know More <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
               </Button>
             </CardActions>
           </MuiCard>
@@ -109,11 +109,11 @@ const IdeasSection = () => {
         className="w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/gsoc-logo-ideas.png')] bg-[url('/gsoc-logo-ideas.png')] absolute left-10"
         alt="GSOC Logo"
       ></div>
-      
+
       <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
         IDEAS
       </h1>
-      
+
       {/* Second logo: Absolute positioning to shift it to the right */}
       <div
         className="w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute right-10"
@@ -161,10 +161,10 @@ export default function Ideas({ articles }) {
           <div className="mt-16 text-center">
             <Link
               className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2023"
+              href="/ideas/2024"
             >
               <span className="text-center font-mono font-semibold">
-                View 2023 Idea List
+                View 2024 Idea List
               </span>
             </Link>
           </div>

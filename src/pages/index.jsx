@@ -114,20 +114,21 @@ export default function Home() {
           </div>
 
           {/* Green Band with Counts */}
-          <div className="bg-[#3C982C] relative dark:text-black flex justify-between p-8 px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
-            <div>
+          <div className="bg-[#3C982C] relative dark:text-black flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
+            <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
-              <p className="font-semibold text-2xl">8</p>
+              <p className="font-semibold text-2xl">34+</p>
             </div>
-            <div>
+            <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Total Contributors</h6>
-              <p className="font-semibold text-2xl">30+</p>
+              <p className="font-semibold text-2xl">500+</p>
             </div>
-            <div>
+            <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Community Count</h6>
               <p className="font-semibold text-2xl">2000+</p>
             </div>
           </div>
+
         </div>
       </Container.Outer>
 

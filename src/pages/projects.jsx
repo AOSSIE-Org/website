@@ -131,7 +131,7 @@ const Cards = () => {
               <Link href={project.link} passHref>
                 <Button size="large" sx={{ color: '#3c982c' }} className="font-Nunito-Bold text-green-600 dark:text-yellow-400 text-lg font-mono leading-7 text-center">
 
-                  Know More! <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
+                  Know More <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
                 </Button>
               </Link>
             </CardActions>
