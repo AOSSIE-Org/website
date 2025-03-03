@@ -1,26 +1,78 @@
-import Head from 'next/head'
-import Link from 'next/link'
-
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
-import { getAllIdeas } from '@/helper/getAllIdeas2022'
+import Head from 'next/head';
+import Link from 'next/link';
+import { Container } from '@/components/Container';
+import { getAllIdeas } from '@/helper/getAllIdeas';
+import Grid from '@mui/material/Grid';
+import MuiCard from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Article({ article }) {
     return (
-        <article className="md:grid md:grid-cols-4 md:grid-flow-col md:items-baseline sm:mt-0 mt-5">
-            <Card className="md:col-span-3 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg transition-transform hover:scale-105">
-                <Card.Title href={`/ideas/2024/${article.slug}`} className="text-xl font-semibold text-green-600 dark:text-yellow-400 hover:underline">
-                    {article.title}
-                </Card.Title>
-                <Card.Description className="text-lg text-zinc-600 dark:text-zinc-400 mt-2">
-                    {article.description}
-                </Card.Description>
-                <Card.Cta className="mt-4 text-green-600 dark:text-yellow-400 hover:text-green-700 dark:hover:text-yellow-500 transition-colors">
-                    Read More
-                </Card.Cta>
-            </Card>
-        </article>
-    )
+        <Grid item xs={12} sm={6} md={4}>
+            <MuiCard
+                className="dark:bg-[#2A2A2A] dark:border-white"
+                sx={{
+                    height: 350,
+                    borderRadius: 2,
+                    border: '1px solid',
+                    borderColor: '#3c982c',
+                    boxShadow: '0px 4px 4px #00000040',
+                    backdropFilter: 'blur(4px) brightness(100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'background-color 0.3s ease', // Smooth transition
+                    '&:hover': {
+                        backgroundColor: '#f0f0f0', // Light grey on hover
+                    },
+                }}
+            >
+                <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
+                    <Typography
+                        variant="h5"
+                        className="mt-6 text-2xl font-mono text-green-600 dark:text-yellow-400"
+                        sx={{ fontFamily: 'Nunito-Bold', color: '#3c982c', textAlign: 'center' }}
+                    >
+                        {article.title}
+                    </Typography>
+
+                    <Typography
+                        variant="body1"
+                        className="text-zinc-600 text-base dark:text-zinc-400 text-lg font-mono leading-6 text-center"
+                        sx={{
+                            fontFamily: 'Nunito-Light',
+                            color: 'black',
+                            mt: 2,
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitBoxOrient: 'vertical',
+                            WebkitLineClamp: 4,
+                        }}
+                    >
+                        {article.description}
+                    </Typography>
+                </CardContent>
+
+                <CardActions sx={{ justifyContent: 'center' }}>
+                    <Link href={`/ideas/2024/${article.slug}`} passHref>
+                        <Button
+                            sx={{
+                                color: '#3c982c',
+                                textTransform: 'none', // Prevent uppercase
+                            }}
+                            className="font-Nunito-Bold text-green-600 dark:text-yellow-400 text-lg leading-7 text-center"
+                        >
+                            Know more <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
+                        </Button>
+                    </Link>
+                </CardActions>
+            </MuiCard>
+        </Grid>
+    );
 }
 
 export default function Ideas({ articles }) {
@@ -30,31 +82,37 @@ export default function Ideas({ articles }) {
                 <title>Idea List</title>
                 <meta name="description" content="Idea List for GSOC 2024" />
             </Head>
+
             <Container className="mt-20 mb-28">
-                <div className="text-center">
-                    <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mx-auto sm:w-3/4">
-                        Explore the world of open-source possibilities with AOSSIE&apos;s <b>Idea List</b>. As part of Google Summer of Code, we offer a unique opportunity for developers to explore new ideas, a wide variety of projects for developers to choose from and contribute to. From developing new features to fixing critical bugs, our idea list is your go-to destination for finding your next big project and kickstart your open-source journey.
+                <div className="flex justify-center items-center w-full">
+                    <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
+                        AOSSIE&apos;s{' '}
+                        <b>Idea List</b> for{' '}
+                        <b>Google Summer of Code 2024</b>
                     </p>
                 </div>
+
                 <Container.Inner>
                     <div className="mt-10 sm:mt-20 flex justify-center">
-                        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8">
+                        <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
                             {articles.map((article) => (
                                 <Article key={article.slug} article={article} />
                             ))}
-                        </div>
+                        </Grid>
                     </div>
+
                     <div className="text-center mt-16">
-                        <Link href="/ideas" passHref>
-                            <button className="mx-auto group rounded-lg bg-zinc-800 text-white dark:bg-white dark:text-black px-8 py-3 text-lg font-semibold focus:outline-none hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors">
-                                Go Back
-                            </button>
+                        <Link
+                            href="/ideas"
+                            className="mx-auto group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 text-white focus:outline-none dark:text-black"
+                        >
+                            <span className="font-mono font-semibold">Go Back</span>
                         </Link>
                     </div>
                 </Container.Inner>
             </Container>
         </>
-    )
+    );
 }
 
 export async function getStaticProps() {
@@ -62,5 +120,5 @@ export async function getStaticProps() {
         props: {
             articles: (await getAllIdeas()).map(({ component, ...meta }) => meta),
         },
-    }
+    };
 }

@@ -154,15 +154,15 @@ export default function About() {
         </p>
         <div style={styles.stats}>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>8+</h2>
+            <h2 style={styles.statNumber}>34+</h2>
             <p style={styles.statLabel}>Active Projects</p>
           </div>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>30+</h2>
+            <h2 style={styles.statNumber}>500+</h2>
             <p style={styles.statLabel}>Total Contributors</p>
           </div>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>200+</h2>
+            <h2 style={styles.statNumber}>2000+</h2>
             <p style={styles.statLabel}>Community Count</p>
           </div>
         </div>
@@ -181,10 +181,10 @@ export default function About() {
           <Image
             src={'/gsoc.png'}
             alt="GSOC Logo"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
           />
-          <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
+          <h1 className="font-mono text-2xl md:text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
             GSOC CONTRIBUTION
           </h1>
         </div>

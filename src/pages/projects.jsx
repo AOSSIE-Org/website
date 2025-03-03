@@ -9,71 +9,28 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
 import { useRouter } from 'next/router';
-import Image from 'next/image';  // Import next/image for image optimization
-import Link from 'next/link';  // Import next/link for navigation
+import Image from 'next/image';
+import projects from '@/helper/projects'
+function LinkIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
 
 // Define the Cards component here
 const Cards = () => {
   const router = useRouter();
 
-  // Function to handle redirection
-  const handleRedirect = (title) => {
-    const projectLink = `/projects/${title.toLowerCase().replace(/\s+/g, '-')}`;
-    router.push(projectLink);
-  };
+
 
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
-      {[
-        {
-          title: 'Agora Blockchain',
-          description: 'There isn’t just one voting algorithm, there’s hundreds. Therefore, we developed Agora to allow for democratic elections using any algorithm. This application uses Agora Web API as a backend application.',
-          image: '/Agora.png',
-          link: 'https://github.com/AOSSIE-Org/Agora-Blockchain',
-        },
-        {
-          title: 'Agora Vote Android',
-          description: 'This application uses Agora Web API as a backend application. It allows for elections to be held by using multiple algorithms such as Oklahoma, RangeVoting, RankedPairs, Satisfaction Approval Voting.',
-          image: '/Agora.png',
-          link: 'https://gitlab.com/aossie/agora-android',
-        },
-        {
-          title: 'Djed',
-          description: 'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
-          image: '/Djed.png',
-          link: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard',
-        },
-        {
-          title: 'Pictopy',
-          description: 'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
-          image: '/Pictopy.png',
-          link: 'https://github.com/AOSSIE-Org/PictoPy',
-        },
-        {
-          title: 'EduAid',
-          description: 'An online tool that can generate short quizzes on input educational content can be of great use to teachers and students alike as it can help retain important information, frame questions and quickly revise large chunks of content.',
-          image: '/default.png',
-          link: 'https://github.com/AOSSIE-Org/EduAid',
-        },
-        {
-          title: 'OpenChat',
-          description: 'OpenChat a decentralised platform for secure and private messaging and file sharing built on top of blockchain.',
-          image: '/default.png',
-          link: '',
-        },
-        {
-          title: 'Resonate',
-          description: 'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.',
-          image: '/Resonate.png',
-          link: 'https://github.com/AOSSIE-Org/Resonate',
-        },
-        {
-          title: 'Social Street Smart',
-          description: 'With the advent of the Internet, the problems faced by people have also grown. These include abusive languages.',
-          image: '/SSS.png',
-          link: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
-        },
-      ].map((project, index) => (
+      {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
             className='dark:bg-[#2A2A2A] dark:border-white'
@@ -90,27 +47,27 @@ const Cards = () => {
           >
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <Image
-                src={project.image}
+                src={project.logo}
                 alt={`${project.title} image`}
                 width={80}
                 height={80}
                 style={{ margin: '0 auto 16px', objectFit: 'contain' }}
               />
               <Typography
-                variant="h2"
-                className="mt-6 text-xl font-mono text-green-600 dark:text-yellow-400"
+                variant="h5"
+                className="mt-6 font-mono text-green-600 dark:text-yellow-400"
                 sx={{
                   fontFamily: 'Nunito-Bold',
                   color: '#3c982c',
                   textAlign: 'center',
                 }}
               >
-                {project.title}
+                {project.name}
               </Typography>
 
               <Typography
                 variant="body1"
-                className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
                 sx={{
                   fontFamily: 'Nunito-Light',
                   color: 'black',
@@ -122,18 +79,14 @@ const Cards = () => {
                   WebkitLineClamp: 4,
                 }}
               >
-                {project.description.length > 100
-                  ? `${project.description.slice(0, 100)}...`
-                  : project.description}
+                {project.description}
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <Link href={project.link} passHref>
-                <Button size="large" sx={{ color: '#3c982c' }} className="font-Nunito-Bold text-green-600 dark:text-yellow-400 text-lg font-mono leading-7 text-center">
-
-                  Know More <ArrowForwardIcon sx={{ width: 20, height: 20 }} />
-                </Button>
-              </Link>
+              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
             </CardActions>
           </MuiCard>
         </Grid>
@@ -147,7 +100,7 @@ const ProjectSection = () => {
   return (
     <div className="ideas-text flex items-center justify-center mb-8 relative">
       <div
-        className="w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
+        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
         alt="GSOC Logo"
       ></div>
 
@@ -156,9 +109,11 @@ const ProjectSection = () => {
       </h1>
 
       <div
-        className="w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute right-10"
-        alt="Logo"
+        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
+        style={{ backgroundImage: "url('/logo.png')" }}
+        aria-label="Logo"
       ></div>
+
     </div>
   );
 };
