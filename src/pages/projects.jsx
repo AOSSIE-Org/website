@@ -98,7 +98,7 @@ const Cards = () => {
               />
               <Typography
                 variant="h2"
-                className="mt-6 text-2xl font-semibold font-mono text-green-600 dark:text-yellow-400"
+                className="mt-6 text-xl font-mono text-green-600 dark:text-yellow-400"
                 sx={{
                   fontFamily: 'Nunito-Bold',
                   color: '#3c982c',

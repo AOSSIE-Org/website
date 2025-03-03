@@ -15,6 +15,7 @@ import {
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
+import Journey from '@/components/Journey'
 
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
@@ -211,6 +212,39 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </Container>
+      <Container className="mt-24 md:mt-28">
+        <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
+          <div className="space-y-10 ">
+            <div className="flex text-center items-center justify-center">
+              <div className=" relative top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
+                <svg
+                  aria-hidden="true"
+                  role="img"
+                  className="scale-125 font-extrabold text-white dark:text-black"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                >
+                  <path d="M7.25 6a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5A.75.75 0 007.25 6zM12 6a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5A.75.75 0 0012 6zm4 .75a.75.75 0 011.5 0v9.5a.75.75 0 01-1.5 0v-9.5z"></path>
+                  <path
+                    fillRule="evenodd"
+                    d="M3.75 2A1.75 1.75 0 002 3.75v16.5c0 .966.784 1.75 1.75 1.75h16.5A1.75 1.75 0 0022 20.25V3.75A1.75 1.75 0 0020.25 2H3.75zM3.5 3.75a.25.25 0 01.25-.25h16.5a.25.25 0 01.25.25v16.5a.25.25 0 01-.25.25H3.75a.25.25 0 01-.25-.25V3.75z"
+                  ></path>
+                </svg>
+              </div>
+              <div className="col-span-8 mt-3 self-center lg:col-start-2">
+                <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
+                  journey
+                </h1>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <Journey />
       </Container>
 
       <Container.Outer className="mt-28">

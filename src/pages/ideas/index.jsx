@@ -68,7 +68,7 @@ const Cards = () => {
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography
                 variant="h2"
-                className="mt-6 text-2xl font-semibold font-mono text-green-600 dark:text-yellow-400"
+                className="mt-6 text-xl font-semibold font-mono text-green-600 dark:text-yellow-400"
                 sx={{
                   fontFamily: 'Nunito-Bold',
                   color: '#3c982c',
@@ -149,13 +149,7 @@ export default function Ideas({ articles }) {
           </div>
           <IdeasSection />
           <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center">
-            Explore the world of open-source possibilities with AOSSIE's Idea List.
-            As part of Google Summer of Code, we offer a unique opportunity for
-            developers to explore new ideas, a wide variety of projects for
-            developers to choose from and contribute to. From developing new
-            features to fixing critical bugs, our idea list is your go-to
-            destination for finding your next big project and kickstart your
-            open-source journey.
+            Explore the world of open-source possibilities with AOSSIE's Idea List. As part of Google Summer of Code 2025, we offer a unique opportunity for developers to explore new ideas, a wide variety of projects for developers to choose from and contribute to. From developing new features to fixing critical bugs, our idea list is your go-to destination for finding your next big project and kickstart your open-source journey.
           </p>
           <Cards />
           <div className="mt-16 text-center">
