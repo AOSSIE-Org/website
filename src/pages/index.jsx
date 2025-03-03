@@ -95,7 +95,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faTwitter} size="2xl" />
                   </Link>
                 </div>
-                <div className="mt-8 text-left">
+                <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
                   <Link href="/about" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
@@ -110,6 +110,7 @@ export default function Home() {
                     ></span>
                   </Link>
                 </div>
+
 
               </div>
             </div>

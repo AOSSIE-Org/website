@@ -24,10 +24,8 @@ function Article({ article }) {
                     backdropFilter: 'blur(4px) brightness(100%)',
                     display: 'flex',
                     flexDirection: 'column',
-                    transition: 'background-color 0.3s ease', // Smooth transition
-                    '&:hover': {
-                        backgroundColor: '#f0f0f0', // Light grey on hover
-                    },
+                    transition: 'background-color 0.3s ease',
+
                 }}
             >
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>

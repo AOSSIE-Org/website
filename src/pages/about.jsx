@@ -178,12 +178,7 @@ export default function About() {
             marginBottom: '20px', // Adds space below this section
           }}
         >
-          <Image
-            src={'/gsoc.png'}
-            alt="GSOC Logo"
-            width={70}
-            height={70}
-          />
+          <div className='m-3 w-[60px] h-[60px]  bg-cover bg-[url("/gsoc.png")] dark:bg-[url("/gsoc-dark.png")]'></div>
           <h1 className="font-mono text-2xl md:text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
             GSOC CONTRIBUTION
           </h1>
