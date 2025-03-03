@@ -139,7 +139,7 @@ export default function Projects() {
           <ProjectSection />
           <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
             Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
-            featuring projects in a variety of languages and areas. Take a peek and see how we're making a difference with our technical spells.
+            featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
           </p>
           <Cards />
         </Container.Inner>
