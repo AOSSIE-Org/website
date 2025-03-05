@@ -134,26 +134,27 @@ function MobileNavigation(props) {
 }
 
 function NavItem({ href, children }) {
-  let isActive = useRouter().pathname === href
+  const router = useRouter();
+  const isActive = router.pathname === href;
 
   return (
     <li>
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          "relative block px-3 py-2 transition",
           isActive
-            ? 'text-[#00843D] dark:text-yellow-400'
-            : 'hover:text-[#00843D] dark:hover:text-yellow-400'
+            ? "text-[#00843D] dark:text-yellow-400"
+            : "hover:text-[#00843D] dark:hover:text-yellow-400"
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
         )}
       </Link>
     </li>
-  )
+  );
 }
 
 function DesktopNavigation(props) { 
