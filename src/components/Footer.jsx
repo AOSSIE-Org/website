@@ -29,7 +29,7 @@ export function Footer() {
                 <NavLink href="/ideas">Ideas</NavLink>
                 <NavLink href="/apply">Apply</NavLink>
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
+              <p className="text-center text-sm text-zinc-400 dark:text-zinc-500 font-mono">
                 &copy; 2016-2023 AOSSIE. All rights reserved.
               </p>
               <div className="flex gap-6">
