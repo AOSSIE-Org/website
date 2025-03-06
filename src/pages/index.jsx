@@ -1,3 +1,5 @@
+// This is an old home page(about), currently not in use. It is kept here for reference.
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'

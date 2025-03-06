@@ -6,6 +6,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import Logo from '@/../public/logo1.png'
 
 function CloseIcon(props) {
   return (
@@ -114,12 +115,12 @@ function MobileNavigation(props) {
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
                 <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
-              <h2 className="text-sm font-mono font-black text-zinc-600 dark:text-zinc-400">
+              <h2 className="font-mono text-sm font-black text-zinc-600 dark:text-zinc-400">
                 Navigation
               </h2>
             </div>
             <nav className="mt-6">
-              <ul className="-my-2 font-mono font-black divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+              <ul className="-my-2 divide-y divide-zinc-100 font-mono text-base font-black text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/ideas">Ideas</MobileNavItem>
@@ -149,17 +150,17 @@ function NavItem({ href, children }) {
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
+          <span className="to-aus-[#00843D]/0 absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
         )}
       </Link>
     </li>
   )
 }
 
-function DesktopNavigation(props) { 
+function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="text-md shadow-black/4 flex rounded-full bg-white/90 px-3 font-mono font-semibold text-zinc-800 shadow-2xl ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:shadow-xl dark:shadow-white/5 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/ideas">Ideas</NavItem>
@@ -195,7 +196,7 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 hover:ring-black/20 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 backdrop-blur transition hover:ring-black/20 dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-yellow-400 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-yellow-500" />
@@ -215,7 +216,7 @@ function HomeContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'w-12 rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 hover:ring-black/20 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 flex justify-center items-center'
+        'flex w-12 items-center justify-center rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-black/10 backdrop-blur transition hover:ring-black/20 dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20'
       )}
       {...props}
     />
@@ -230,7 +231,13 @@ function Home({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image src='./logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
+      <Image
+        src={Logo}
+        width={100}
+        height={100}
+        className="scale-125"
+        alt="Aossie Logo"
+      />
     </Link>
   )
 }
@@ -347,10 +354,10 @@ export function Header() {
           marginBottom: 'var(--header-mb)',
         }}
       >
-            <div
-              ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.5)-theme(spacing.8))]"
-            />
+        <div
+          ref={avatarRef}
+          className="order-last mt-[calc(theme(spacing.5)-theme(spacing.8))]"
+        />
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
