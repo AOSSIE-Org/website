@@ -16,7 +16,7 @@ export default function About() {
         </title>
         <meta
           name="description"
-          content="How to apply for GSOC"
+          content="How to apply for GSoC"
         />
       </Head>
       <Container className="mt-20 mb-28">
@@ -29,13 +29,13 @@ export default function About() {
               title="Join us on Discord"
               description="Join the AOSSIE community on Discord and connect with other developers, mentors, and organizers. Our Discord server is a great place to ask questions, share ideas, and get support throughout the Google Summer of Code application process. From proposal writing tips to coding advice, our community is here to help you succeed. Don't go through the process alone, join us on Discord now!"
               button="Join Discord"
-              link='https://discord.com/invite/6mFZ2S846n'
+              link='https://discord.gg/hjUhu33uAn'
             />
             <TimelineElement
               title="Start Contributing"
               description="Contribute to the project and make your mark on open-source development with AOSSIE. By making a Pull Request (PR) to one of our existing projects, you'll have the opportunity to showcase your skills and demonstrate your understanding of the project. This will also give you an opportunity to work with the mentors and get familiar with the project before the official GSoC coding period starts. This is a great way to get started and increase your chances of being selected for the program."
               button="Contribute"
-              link='https://gitlab.com/aossie'
+              link='https://github.com/AOSSIE-Org'
             />
             <TimelineElement
               title="Write a Draft Application"
@@ -64,12 +64,7 @@ export default function About() {
             <div className='mt-10 flex justify-center gap-6 flex-col sm:flex-row'>
               <Link className=" order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
                 <span className="font-mono font-semibold text-center">
-                  View 2024 Program Announcements
-                </span>
-              </Link>
-              <Link className="order-2 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/programs/2024">
-                <span className="font-mono font-semibold text-center">
-                  View 2024 Program Timeline
+                  View Google Summer of Code Program Announcements
                 </span>
               </Link>
             </div>
