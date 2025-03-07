@@ -1,11 +1,16 @@
-import Image from 'next/image'
-import Head from 'next/head'
-
-import { Container } from '@/components/Container'
-import { SectionHeading } from '@/components/SectionHeading'
-import { Card } from '@/components/Card'
+import Head from 'next/head';
+import Grid from '@mui/material/Grid';
+import MuiCard from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Container } from '@/components/Container';
+import { Banner } from '@/components/Banner';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import projects from '@/helper/projects'
-
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -17,79 +22,134 @@ function LinkIcon(props) {
   )
 }
 
+// Define the Cards component here
+const Cards = () => {
+  const router = useRouter();
+
+
+
+  return (
+    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
+      {projects.map((project, index) => (
+        <Grid item xs={12} sm={6} md={4} key={index}>
+          <MuiCard
+            className='dark:bg-[#2A2A2A] dark:border-white'
+            sx={{
+              height: 400,
+              borderRadius: 2,
+              border: '1px solid',
+              borderColor: '#3c982c',
+              boxShadow: '0px 4px 4px #00000040',
+              backdropFilter: 'blur(4px) brightness(100%)',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
+              <Image
+                src={project.logo}
+                alt={`${project.title} image`}
+                width={80}
+                height={80}
+                style={{ margin: '0 auto 16px', objectFit: 'contain' }}
+              />
+              <Typography
+                variant="h5"
+                className="mt-6 font-mono text-green-600 dark:text-yellow-400"
+                sx={{
+                  fontFamily: 'Nunito-Bold',
+                  color: '#3c982c',
+                  textAlign: 'center',
+                }}
+              >
+                {project.name}
+              </Typography>
+
+              <Typography
+                variant="body1"
+                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                sx={{
+                  fontFamily: 'Nunito-Light',
+                  color: 'black',
+                  mt: 2,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: 4,
+                }}
+              >
+                {project.description}
+              </Typography>
+            </CardContent>
+            <CardActions sx={{ justifyContent: 'center' }}>
+              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            </CardActions>
+          </MuiCard>
+        </Grid>
+      ))
+      }
+    </Grid >
+  );
+};
+
+const ProjectSection = () => {
+  return (
+    <div className="ideas-text flex items-center justify-center mb-8 relative">
+      <div
+        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
+        alt="GSOC Logo"
+      ></div>
+
+      <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
+        PROJECTS
+      </h1>
+
+      <div
+        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
+        style={{ backgroundImage: "url('/logo.png')" }}
+        aria-label="Logo"
+      ></div>
+
+    </div>
+  );
+};
+
+const styles = {
+  bannerWrapper: {
+    width: '100vw',
+    marginLeft: 'calc(-50vw + 50%)',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+};
+
 export default function Projects() {
   return (
     <>
       <Head>
-        <title>
-          Projects
-        </title>
-        <meta
-          name="description"
-          content="About AOSSIE's Projects"
-        />
+        <title>PROJECTS</title>
+        <meta name="description" content="PROJECT List for GSOC" />
       </Head>
       <Container className="mt-20 mb-28">
-        <div className="mt-5">
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7'>Our Projects, where we showcase our tech wizardry and code-slinging skills! <br></br> Our portfolio is a treasure trove of open-source gems, featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.</p>
-        </div>
-        <div className='mt-16'>
-          {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
-            Active Projects
-          </h1> */}
-          <SectionHeading>Active Projects</SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently actively maintained and mentors are available!</p>
-          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
-            {projects.map((project) => (
-              <Card as="li" key={project.name}>
-                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
-                  <Image
-                    src={project.logo}
-                    alt="Project Logo"
-                    className='p-2'
-                    unoptimized
-                  />
-                </div>
-                <h2 className="mt-6 text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
-                </h2>
-                <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                  <span className="ml-2">{project.link.label}</span>
-                </p>
-              </Card>
-            ))}
-          </ul>
-
-          {/* <h1 className="text-4xl font-mono font-extrabold tracking-tighter text-zinc-800 dark:text-zinc-100">
-            InActive Projects
-          </h1> */}
-          {/* <SectionHeading>Past Projects</SectionHeading>
-          <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 mt-3'>The following projects are currently inactive. If you are brave and independent, you are welcome and even encouraged to contribute to these projects as well. However, help from mentors will be significantly reduced.</p>
-          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-12 mb-16">
-            {projects.map((project) => (
-              <Card as="li" key={project.name}>
-                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow-md shadow-zinc-800/20 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-white/10 dark:shadow-white/10">
-                  <Image
-                    src={project.logo}
-                    alt="Project Logo"
-                    unoptimized
-                  />
-                </div>
-                <h2 className="mt-6 text-2xl font-semibold font-mono text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
-                </h2>
-                <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                  <span className="ml-2">{project.link.label}</span>
-                </p>
-              </Card>
-            ))}
-          </ul> */}
-        </div>
+        <Container.Inner>
+          <ProjectSection />
+          <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
+            Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
+            featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
+          </p>
+          <Cards />
+        </Container.Inner>
       </Container>
+
+      <div style={styles.bannerWrapper}>
+        <Container.Outer className="mt-28">
+          <Banner />
+        </Container.Outer>
+      </div>
     </>
-    )
+  );
 }

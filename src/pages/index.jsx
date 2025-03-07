@@ -15,6 +15,7 @@ import {
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
+import Journey from '@/components/Journey'
 
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
@@ -28,89 +29,116 @@ export default function Home() {
         <title>AOSSIE</title>
         <meta name="description" content="AOSSIE Website" />
       </Head>
-      <Container className="mt-9">
-        <div className="flex flex-col sm:flex-row">
-          <div className="flex-1 self-center">
-            <Image
-              src="./logo1.png"
-              width={320}
-              height={300}
-              className="mx-auto scale-110"
-              alt="AOSSIE Logo"
-            />
-          </div>
-          <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0">
-            <div className="max-w-xl">
-              <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843D] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
-                We Innovate <br /> We Educate
-              </h1>
-              <p className="mt-4 font-mono text-xl leading-7 text-zinc-600 dark:text-zinc-400 ">
-                We are an Australian not-for-profit umbrella organization for
-                open-source projects. We believe the open-source philosophy
-                provides a resource-efficient channel to transfer knowledge and
-                achieve innovation and education.
-              </p>
-              <div className="mt-6 ml-4 flex gap-6">
-                <Link
-                  aria-label="Contact by Mail"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="mailto:aossie.oss@gmail.com"
-                >
-                  <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Follow on GitLab"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://gitlab.com/aossie"
-                >
-                  <FontAwesomeIcon icon={faGitlab} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Follow on GitHub"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://github.com/AOSSIE-Org"
-                >
-                  <FontAwesomeIcon icon={faGithub} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Join on Discord"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://discord.gg/hjUhu33uAn"
-                >
-                  <FontAwesomeIcon icon={faDiscord} size="2xl" />
-                </Link>
-                <Link
-                  aria-label="Follow on Twitter"
-                  className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                  href="https://twitter.com/aossie_org"
-                >
-                  <FontAwesomeIcon icon={faTwitter} size="2xl" />
-                </Link>
+
+      <Container.Outer className="mt-9 relative">
+        <div className="relative">
+
+          {/* Background Image */}
+          <div className=" hidden  absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
+
+          {/* Main Content */}
+          <div className="flex flex-col sm:flex-row relative z-10 mb-8">
+            <div className="flex-1 self-center">
+              <Image
+                src="./logo1.png"
+                width={320}
+                height={300}
+                className="mx-auto scale-110 m-4"
+                alt="AOSSIE Logo"
+              />
+            </div>
+            <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
+              <div className="max-w-xl ml-12">
+                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
+                  We Innovate <br /> We Educate
+                </h1>
+                <p className="mt-8 font-mono text-xl leading-7 text-zinc-600 dark:text-[rgb(161 161 170/var(--tw-text-opacity))]  md:dark:text-[#FED41E]">
+                  We are an Australian not-for-profit umbrella organization for
+                  open-source projects. We believe the open-source philosophy
+                  provides a resource-efficient channel to transfer knowledge and
+                  achieve innovation and education.
+                </p>
+                <div className="mt-6 ml-4 flex gap-6">
+                  <Link
+                    aria-label="Contact by Mail"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="mailto:aossie.oss@gmail.com"
+                  >
+                    <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+                  </Link>
+                  <Link
+                    aria-label="Follow on GitLab"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="https://gitlab.com/aossie"
+                  >
+                    <FontAwesomeIcon icon={faGitlab} size="2xl" />
+                  </Link>
+                  <Link
+                    aria-label="Follow on GitHub"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="https://github.com/AOSSIE-Org"
+                  >
+                    <FontAwesomeIcon icon={faGithub} size="2xl" />
+                  </Link>
+                  <Link
+                    aria-label="Join on Discord"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="https://discord.gg/hjUhu33uAn"
+                  >
+                    <FontAwesomeIcon icon={faDiscord} size="2xl" />
+                  </Link>
+                  <Link
+                    aria-label="Follow on Twitter"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="https://twitter.com/aossie_org"
+                  >
+                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                  </Link>
+                </div>
+                <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
+                  <Link href="/about" className="group relative inline-block text-lg">
+                    <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
+                      <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
+                      <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
+                      <span className="relative font-mono text-xl font-black tracking-tighter">
+                        Learn More About Us
+                      </span>
+                    </span>
+                    <span
+                      className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
+                      data-rounded="rounded-lg"
+                    ></span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Green Band with Counts */}
+          <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
+            <div className="mb-4 sm:mb-0">
+              <h6 className="text-xl">Active Projects</h6>
+              <p className="font-semibold text-2xl">34+</p>
+            </div>
+            <div className="mb-4 sm:mb-0">
+              <h6 className="text-xl">Total Contributors</h6>
+              <p className="font-semibold text-2xl">500+</p>
+            </div>
+            <div className="mb-4 sm:mb-0">
+              <h6 className="text-xl">Community Count</h6>
+              <p className="font-semibold text-2xl">2000+</p>
+            </div>
+          </div>
+
         </div>
-        <div className="mt-16 text-center">
-          <Link href="/about" className="group relative inline-block text-lg">
-            <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
-              <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
-              <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
-              <span className="relative font-mono text-xl font-black tracking-tighter">
-                Learn More About Us
-              </span>
-            </span>
-            <span
-              className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
-              data-rounded="rounded-lg"
-            ></span>
-          </Link>
-        </div>
-      </Container>
+      </Container.Outer>
+
+
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <div className="grid grid-cols-12">
-              <div className=" relative -left-2 top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
+          <div className="space-y-10 ">
+            <div className="flex text-center items-center justify-center">
+              <div className=" relative top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
                 <svg
                   aria-hidden="true"
                   role="img"
@@ -127,19 +155,19 @@ export default function Home() {
                   ></path>
                 </svg>
               </div>
-              <div className="col-span-8 mt-3 self-center lg:col-start-2 lg:-ml-6">
-                <h1 className="font-mono text-3xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
+              <div className="col-span-8 mt-3 self-center lg:col-start-2">
+                <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
                   projects
                 </h1>
               </div>
             </div>
 
-            <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 ">
+            <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 text-center ">
               Our Projects, where we showcase our tech wizardry and
               code-slinging skills!! <br></br> Be a part of our community and
-              contribute to meaningful projects that are making a difference.
+              contribute to meaningful projects that are <span className="text-[#3C982C] dark:text-yellow-400">making a difference</span>.
               Explore our selection of projects and find the perfect opportunity
-              to showcase your skills and make an impact.
+              to showcase your skills and <span className="text-[#3C982C] dark:text-yellow-400">make an impact</span>.
             </p>
           </div>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
@@ -185,6 +213,8 @@ export default function Home() {
           </div>
         </div>
       </Container>
+
+
       <Container.Outer className="mt-28">
         <Banner />
       </Container.Outer>
