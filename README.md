@@ -43,7 +43,7 @@ You can contribute by:
 
 If you want to get in touch with us first before contributing, you can use:
 
-* [AOSSIE Discord Channel](https://discord.com/invite/6mFZ2S846n)
+* [AOSSIE Discord Channel](https://discord.gg/hjUhu33uAn)
 
 
 # **License**
