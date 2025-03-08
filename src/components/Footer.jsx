@@ -30,7 +30,7 @@ export function Footer() {
                 <NavLink href="/apply">Apply</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
-                &copy; 2016-2023 AOSSIE. All rights reserved.
+                &copy; 2016-2025 AOSSIE. All rights reserved.
               </p>
               <div className="flex gap-6">
                 <Link aria-label="Contact by Mail" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
@@ -43,6 +43,7 @@ export function Footer() {
                   <FontAwesomeIcon icon={faGithub} size='xl' />
                 </Link>
                 <Link aria-label="Join on Discord" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.gg/myEjx4nvJJ'>
+
                   <FontAwesomeIcon icon={faDiscord} size='xl' />
                 </Link>
                 <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>

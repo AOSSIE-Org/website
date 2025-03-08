@@ -156,7 +156,7 @@ function NavItem({ href, children }) {
   )
 }
 
-function DesktopNavigation(props) { 
+function DesktopNavigation(props) {
   return (
     <nav {...props}>
       <ul className="flex font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
@@ -230,7 +230,7 @@ function Home({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image src='./logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
+      <Image src='/logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
     </Link>
   )
 }
@@ -347,10 +347,10 @@ export function Header() {
           marginBottom: 'var(--header-mb)',
         }}
       >
-            <div
-              ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.5)-theme(spacing.8))]"
-            />
+        <div
+          ref={avatarRef}
+          className="order-last mt-[calc(theme(spacing.5)-theme(spacing.8))]"
+        />
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
