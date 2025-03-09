@@ -162,7 +162,7 @@ export default function About() {
             <p style={styles.statLabel}>Total Contributors</p>
           </div>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>2000+</h2>
+            <h2 style={styles.statNumber}>3800+</h2>
             <p style={styles.statLabel}>Community Count</p>
           </div>
         </div>
