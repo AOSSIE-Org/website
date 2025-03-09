@@ -19,11 +19,11 @@ export default function About() {
   }, []);
 
   const data = {
-    labels: ['0', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'], // Include '0' on the x-axis
+    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'], // Include '0' on the x-axis
     datasets: [
       {
         label: 'Number of Completed Projects',
-        data: [0, 3, 3, 17, 9, 11, 8, 7, 17], // Start data points from '2017', leave '0' as null
+        data: [4, 8, 12, 9, 9, 11, 8, 6, 18], // Start data points from '2017', leave '0' as null
         fill: false,
         borderColor: '#32a852',
         tension: 0.4,
