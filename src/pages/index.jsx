@@ -48,11 +48,11 @@ export default function Home() {
               />
             </div>
             <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
-              <div className="max-w-xl ml-12">
-                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
+              <div className="max-w-xl mx-auto px-6 sm:px-8 lg:px-12">
+                <h1 className="text-center sm:text-left font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
                   We Innovate <br /> We Educate
                 </h1>
-                <p className="mt-8 font-mono text-xl leading-7 text-zinc-600 dark:text-[rgb(161 161 170/var(--tw-text-opacity))]  md:dark:text-[#FED41E]">
+                <p className="mt-10 pt-5 max-w-2xl text-center sm:text-left  font-mono text-xl leading-7 text-zinc-600 dark:text-[rgb(161 161 170/var(--tw-text-opacity))]  md:dark:text-[#FED41E]">
                   We are an Australian not-for-profit umbrella organization for
                   open-source projects. We believe the open-source philosophy
                   provides a resource-efficient channel to transfer knowledge and
