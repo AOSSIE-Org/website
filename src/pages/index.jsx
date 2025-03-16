@@ -174,7 +174,13 @@ export default function Home() {
             <Container.Inner>
               <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
                 {randomProjects.map((project) => (
-                  <span key={project.name}>
+                  <span
+                    key={project.name}
+                    style={{
+                      userSelect: "none",
+                      cursor: "pointer",
+                    }}
+                  >
                     <CardEffect
                       heading={project.name}
                       logo={project.logo}
@@ -185,6 +191,7 @@ export default function Home() {
               </div>
             </Container.Inner>
           </div>
+
           <div className="mt-12 text-center">
             <Link
               className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
