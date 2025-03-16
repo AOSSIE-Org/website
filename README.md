@@ -8,40 +8,73 @@ Contributions to the project are very much welcomed! Please reach out with ideas
 Th website is a **Next.js** project using **Tailwind** for styling and design.
 
 # **Getting Started**
+To start contributing to this repository, follow these steps:
 
-To contribute to this repository you will need to:
-- **Fork this repository**
-- **Push changes to a new branch in your fork**
-- **Create a pull request from that branch to the master branch of this repository**
+### **1. Fork the Repository**
+Forking creates a personal copy of the repository under your GitHub account. This is where you will make your changes.
 
-Forking only needs to be done once, after which you can push changes to your fork.
+1. Go to the [repository page](https://github.com/AOSSIE-Org/website)
+2. Click the "Fork" button at the top right of the page.
+3. GitHub will create a copy of the repository in your account.
 
-# **Running the website Locally**
+### **2. Clone Your Fork**
+Cloning downloads your forked repository to your local machine so you can work on it.
 
-In order to run the site locally,
-- Fork the website and clone that fork on your system
-- Open a terminal/command prompt window and change the current directory to the directory of the cloned fork on your system.
-- In the root directory, you can run the following commands:
+1. Navigate to your forked repository on GitHub.
+2. Click the "Code" button and copy the URL provided.
+3. Open your terminal or command prompt and run the following command:
+   ```bash
+   git clone <URL>
+   Replace <URL> with the URL you copied.
 
+4. Change the current directory to your cloned repository:
+```
+cd <repository-name>
+```
+Replace <repository-name> with the name of the repository.
+### **3. Set Up the Project Locally
+To run the site locally, follow these steps:
+
+1. Install the necessary dependencies:
 ```
 npm install
+```
+2. Start the development server:
+```
 npm run dev
 ```
+3. The website will be accessible at **http://localhost:3000**
 
-The website will be active at **http://localhost:3000**.
+### **4. Make Changes and Push to Your Fork
+1. Create a new branch for your changes:
+```
+git checkout -b <branch-name>
+```
+Replace <branch-name> with a descriptive name for your branch.
 
+2. Make your changes and commit them:
+```
+git add .
+git commit -m "Describe your changes here"
+```
+3. Push your changes to your forked repository:
+```
+git push origin <branch-name>
+```
+### **5. Create a Pull Request
+1. Go to the original repository and navigate to the "Pull Requests" tab.
+2. Click "New Pull Request."
+3. Select your fork and branch, then create the pull request to merge your changes into the master branch of the original repository.
 
 # **Contributing**
-
 You can contribute by:
 
 * Raising any issues you find
-* Fixing issues by opening Pull Requests
-* Improving website
-* Talking about AOSSIE
+* Fixing issues and opening Pull Requests
+* Improving the website
+* Engaging in discussions about AOSSIE
 
-
-If you want to get in touch with us first before contributing, you can use:
+If you have any questions or want to discuss your contributions before getting started, you can reach out through our:
 
 * [AOSSIE Discord Channel](https://discord.gg/hjUhu33uAn)
 
