@@ -43,15 +43,82 @@ const Cards = () => {
               backdropFilter: 'blur(4px) brightness(100%)',
               display: 'flex',
               flexDirection: 'column',
+              transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              cursor: 'pointer',
+              position: 'relative',
+              overflow: 'hidden',
+              '&:hover': {
+                transform: 'translateY(-10px) scale(1.03)',
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                borderColor: '#4CAF50',
+                '&:before': {
+                  opacity: 1,
+                },
+                '& .MuiCardContent-root': {
+                  background: 'rgba(255, 255, 255, 0.05)',
+                },
+                '& .MuiTypography-h5': {
+                  color: '#4CAF50',
+                },
+                '& .project-logo': {
+                  transform: 'rotate(360deg) scale(1.1)',
+                  filter: 'drop-shadow(0 0 5px rgba(60, 152, 44, 0.5))',
+                },
+                '& .card-link': {
+                  color: '#4CAF50',
+                  transform: 'translateX(5px)',
+                },
+                '& .link-icon': {
+                  transform: 'scale(1.2) rotate(45deg)',
+                  color: '#4CAF50',
+                },
+              },
+              '&:after': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(225deg, rgba(60, 152, 44, 0.05) 0%, rgba(60, 152, 44, 0) 100%)',
+                opacity: 0,
+                transition: 'opacity 0.4s ease',
+              },
+              '&:hover:after': {
+                opacity: 1,
+              },
+              '&:before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '5px',
+                background: 'linear-gradient(90deg, #3c982c, #4CAF50)',
+                transform: 'translateY(-5px)',
+                transition: 'transform 0.4s ease',
+              },
+              '&:hover:before': {
+                transform: 'translateY(0)',
+              }
             }}
           >
-            <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
+            <CardContent sx={{ 
+              flexGrow: 1, 
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+            }}>
               <Image
                 src={project.logo}
                 alt={`${project.title} image`}
                 width={80}
                 height={80}
-                style={{ margin: '0 auto 16px', objectFit: 'contain' }}
+                className="project-logo"
+                style={{ 
+                  margin: '0 auto 16px', 
+                  objectFit: 'contain',
+                  transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                }}
               />
               <Typography
                 variant="h5"
@@ -60,6 +127,7 @@ const Cards = () => {
                   fontFamily: 'Nunito-Bold',
                   color: '#3c982c',
                   textAlign: 'center',
+                  transition: 'color 0.3s ease',
                 }}
               >
                 {project.name}
@@ -67,7 +135,7 @@ const Cards = () => {
 
               <Typography
                 variant="body1"
-                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
                 sx={{
                   fontFamily: 'Nunito-Light',
                   color: 'black',
@@ -83,8 +151,8 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
+              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition card-link dark:text-zinc-200" style={{ transition: 'all 0.3s ease' }}>
+                <LinkIcon className="h-6 w-6 flex-none link-icon" style={{ transition: 'all 0.4s ease' }} />
                 <span className="ml-2">{project.link.label}</span>
               </p>
             </CardActions>
