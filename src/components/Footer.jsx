@@ -46,12 +46,12 @@ export function Footer() {
                 <Link aria-label="Join on Discord" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.gg/hjUhu33uAn'>
                   <FontAwesomeIcon icon={faDiscord} size='xl' />
                 </Link>
-                <Link
-  aria-label="Follow on X"
-  className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition"
-  href="https://twitter.com/aossie_org"
+<Link
+aria-label="Follow on X"
+className="text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition"
+href="https://twitter.com/aossie_org"
 >
-  <FontAwesomeIcon icon={faXTwitter} size="xl" />
+<FontAwesomeIcon icon={faXTwitter} size="xl" />
 </Link>
 
                 <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
