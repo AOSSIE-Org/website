@@ -10,7 +10,9 @@ import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projects from '@/helper/projects';
+import Link from 'next/link';
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -83,10 +85,10 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+              <Link href={project.link.href} target="_blank" rel="noopener noreferrer" className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none scale-110" />
                 <span className="ml-2">{project.link.label}</span>
-              </p>
+              </Link>
             </CardActions>
           </MuiCard>
         </Grid>
