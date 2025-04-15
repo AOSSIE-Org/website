@@ -9,6 +9,11 @@ Th website is a **Next.js** project using **Tailwind** for styling and design.
 
 # **Getting Started**
 
+# **Prerequisites**
+
+- Node.js (version 14 or later)
+- npm (Node package manager)
+  
 To contribute to this repository you will need to:
 - **Fork this repository**
 - **Push changes to a new branch in your fork**
@@ -23,11 +28,20 @@ In order to run the site locally,
 - Open a terminal/command prompt window and change the current directory to the directory of the cloned fork on your system.
 - In the root directory, you can run the following commands:
 
-```
-npm install
-npm run dev
+Here’s an improved version of the README file with the identified issues fixed:
+
+AOSSIE Official Website
+This repository contains the codebase for the official website of AOSSIE (Australian Open Source Software Innovation and Education).
+
+
+Clone the repository:
 ```
 
+git clone https://github.com/AOSSIE-Org/website.git
+cd website
+Install the dependencies:
+npm install
+```
 The website will be active at **http://localhost:3000**.
 
 
