@@ -4,13 +4,13 @@ import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projects from '@/helper/projects';
+import { useState } from 'react';
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -19,47 +19,143 @@ function LinkIcon(props) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
-// Define the Cards component here
+// Enhanced Cards component with beautiful animations
 const Cards = () => {
   const router = useRouter();
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
 
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
 
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
+            className='dark:bg-[#2A2A2A] dark:border-white group perspective-card'
             sx={{
               height: 400,
               borderRadius: 2,
               border: '1px solid',
-              borderColor: '#3c982c',
-              boxShadow: '0px 4px 4px #00000040',
+              borderColor: hoveredIndex === index ? '#4CAF50' : '#3c982c',
+              boxShadow: hoveredIndex === index 
+                ? '0 15px 30px rgba(60, 152, 44, 0.25), 0 8px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(76, 175, 80, 0.15)' 
+                : '0px 4px 4px #00000040',
               backdropFilter: 'blur(4px) brightness(100%)',
               display: 'flex',
               flexDirection: 'column',
+              cursor: 'pointer',
+              transition: 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              transform: hoveredIndex === index 
+                ? 'translateY(-12px) scale(1.03) rotate3d(1, 5, 0, 2deg)' 
+                : 'translateY(0) scale(1) rotate3d(0, 0, 0, 0deg)',
+              position: 'relative',
+              overflow: 'hidden',
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: hoveredIndex === index ? '4px' : '0px',
+                background: 'linear-gradient(90deg, #3c982c, #4CAF50, #8BC34A, #4CAF50, #3c982c)',
+                backgroundSize: '400% 100%',
+                transition: 'all 0.4s ease-out',
+                animation: hoveredIndex === index ? 'gradientShift 3s ease infinite' : 'none',
+              },
+              '&::after': hoveredIndex === index ? {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'radial-gradient(circle at center bottom, rgba(76, 175, 80, 0.1) 0%, rgba(255, 255, 255, 0) 70%)',
+                opacity: 0.7,
+                pointerEvents: 'none',
+              } : {},
+              '@keyframes gradientShift': {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+              },
+              '@keyframes floatUp': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-8px)' },
+              },
+              '@keyframes fadeIn': {
+                '0%': { opacity: 0, transform: 'translateY(10px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
             }}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
           >
-            <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-              <Image
-                src={project.logo}
-                alt={`${project.title} image`}
-                width={80}
-                height={80}
-                style={{ margin: '0 auto 16px', objectFit: 'contain' }}
-              />
+            <CardContent 
+              sx={{ 
+                flexGrow: 1, 
+                textAlign: 'center',
+                transition: 'all 0.4s ease',
+                padding: hoveredIndex === index ? '20px 16px 10px' : '16px',
+                position: 'relative',
+                zIndex: 2,
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  marginBottom: '16px',
+                  transition: 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                  transform: hoveredIndex === index ? 'scale(1.12) translateY(-5px)' : 'scale(1)',
+                  animation: hoveredIndex === index ? 'floatUp 3s ease-in-out infinite' : 'none',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '70px',
+                    height: '70px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(60, 152, 44, 0.2) 0%, rgba(255, 255, 255, 0) 70%)',
+                    transform: 'translate(-50%, -50%) scale(1.2)',
+                    opacity: hoveredIndex === index ? 1 : 0,
+                    transition: 'opacity 0.5s ease',
+                  }}
+                />
+                <Image
+                  src={project.logo}
+                  alt={`${project.title} image`}
+                  width={80}
+                  height={80}
+                  style={{ 
+                    margin: '0 auto', 
+                    objectFit: 'contain',
+                    transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    filter: hoveredIndex === index ? 'drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2))' : 'none',
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
+                />
+              </div>
               <Typography
                 variant="h5"
                 className="mt-6 font-mono text-green-600 dark:text-yellow-400"
                 sx={{
                   fontFamily: 'Nunito-Bold',
-                  color: '#3c982c',
+                  color: hoveredIndex === index ? '#4CAF50' : '#3c982c',
                   textAlign: 'center',
+                  transition: 'all 0.3s ease-in-out',
+                  textShadow: hoveredIndex === index ? '0 1px 2px rgba(0,0,0,0.1)' : 'none',
+                  animation: hoveredIndex === index ? 'fadeIn 0.4s ease' : 'none',
                 }}
               >
                 {project.name}
@@ -67,32 +163,104 @@ const Cards = () => {
 
               <Typography
                 variant="body1"
-                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
                 sx={{
                   fontFamily: 'Nunito-Light',
-                  color: 'black',
+                  color: hoveredIndex === index ? 'rgba(0,0,0,0.75)' : 'black',
                   mt: 2,
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   display: '-webkit-box',
                   WebkitBoxOrient: 'vertical',
                   WebkitLineClamp: 4,
+                  transition: 'all 0.4s ease',
+                  opacity: hoveredIndex === index ? 0.9 : 0.8,
                 }}
               >
                 {project.description}
               </Typography>
             </CardContent>
-            <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+            <CardActions 
+              sx={{ 
+                justifyContent: 'center',
+                transition: 'all 0.4s ease',
+                padding: hoveredIndex === index ? '16px' : '8px',
+                position: 'relative',
+                zIndex: 2,
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  padding: '8px 16px',
+                  borderRadius: '20px',
+                  transition: 'all 0.3s ease',
+                  background: hoveredIndex === index ? 'rgba(60, 152, 44, 0.08)' : 'transparent',
+                }}
+              >
+                <p className={`
+                  relative z-10 flex text-md font-semibold font-mono 
+                  transition-all duration-500 ease-out
+                  ${hoveredIndex === index ? 'text-[#00843D] dark:text-yellow-400' : 'text-zinc-600 dark:text-zinc-200'}
+                `}>
+                  <LinkIcon className={`
+                    h-6 w-6 flex-none 
+                    transition-all duration-500
+                    ${hoveredIndex === index ? 'scale-125 rotate-12' : 'scale-110'}
+                  `} />
+                  <span className={`
+                    ml-2 transition-all duration-500
+                    ${hoveredIndex === index ? 'font-bold tracking-wide' : ''}
+                  `}>
+                    {project.link.label}
+                  </span>
+                </p>
+              </div>
             </CardActions>
+            
+            {/* Animated corner accent */}
+            {hoveredIndex === index && (
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  right: 0,
+                  width: '40px',
+                  height: '40px',
+                  overflow: 'hidden',
+                  animation: 'fadeIn 0.5s ease',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: '40px',
+                    height: '40px',
+                    bottom: '-20px',
+                    right: '-20px',
+                    background: 'linear-gradient(135deg, transparent 50%, rgba(60, 152, 44, 0.3) 50%)',
+                    transform: 'rotate(0deg)',
+                    animation: 'rotateCorner 3s ease-in-out infinite',
+                  }}
+                />
+              </div>
+            )}
+            
+            {/* Add style for perspective effect */}
+            <style jsx global>{`
+              .perspective-card {
+                perspective: 1000px;
+              }
+              @keyframes rotateCorner {
+                0%, 100% { transform: rotate(0deg); }
+                50% { transform: rotate(15deg); }
+              }
+            `}</style>
           </MuiCard>
         </Grid>
-      ))
-      }
-    </Grid >
+      ))}
+    </Grid>
   );
 };
 
@@ -113,7 +281,6 @@ const ProjectSection = () => {
         style={{ backgroundImage: "url('/logo.png')" }}
         aria-label="Logo"
       ></div>
-
     </div>
   );
 };
