@@ -5,6 +5,8 @@ import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
+
+
 import { Container } from '@/components/Container'
 
 function CloseIcon(props) {
@@ -118,14 +120,23 @@ function MobileNavigation(props) {
                 Navigation
               </h2>
             </div>
-            <nav className="mt-6">
-              <ul className="-my-2 font-mono font-black divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/ideas">Ideas</MobileNavItem>
-                <MobileNavItem href="/apply">Apply</MobileNavItem>
-              </ul>
-            </nav>
+            <nav
+  className="mt-6"
+  style={{
+    position: 'sticky',
+    top: 0,
+    zIndex: 1000,
+    backgroundColor: 'inherit' // Adjust if needed
+  }}
+>
+  <ul className="-my-2 font-mono font-black divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+    <MobileNavItem href="/about">About</MobileNavItem>
+    <MobileNavItem href="/projects">Projects</MobileNavItem>
+    <MobileNavItem href="/ideas">Ideas</MobileNavItem>
+    <MobileNavItem href="/apply">Apply</MobileNavItem>
+  </ul>
+</nav>
+
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
