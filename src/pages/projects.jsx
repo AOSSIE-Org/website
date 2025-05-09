@@ -83,10 +83,28 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+              <Button 
+                component="a" 
+                href={project.link.href}
+                target={project.name === 'OpenChat' ? '_self' : '_blank'}
+                rel={project.name === 'OpenChat' ? '' : 'noopener noreferrer'}
+                className="font-mono font-semibold dark:text-yellow-400"
+                sx={{ 
+                  textTransform: 'none',
+                  color: '#3c982c',
+                  backgroundColor: 'rgba(60, 152, 44, 0.08)',
+                  borderRadius: '20px',
+                  padding: '8px 16px',
+                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                  '&:hover': {
+                    backgroundColor: 'rgba(60, 152, 44, 0.15)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  }
+                }}
+                startIcon={<LinkIcon className="h-5 w-5 flex-none" />}
+              >
+                {project.link.label}
+              </Button>
             </CardActions>
           </MuiCard>
         </Grid>
