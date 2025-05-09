@@ -25,7 +25,7 @@ const projects = [
     description:
       'This application uses Agora Web API as backend application. It allows for elections to be held by using multiple algorithms such as Oklahoma, RangeVoting, RankedPairs, Satisfaction Approval Voting.',
     link: {
-      href: 'https://gitlab.com/aossie/agora-android',
+      href: 'https://github.com/AOSSIE-Org/Agora-Android',
       label: 'Agora-Android',
     },
     logo: AgoraLogo,
