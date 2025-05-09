@@ -6,8 +6,6 @@ import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
 import MonumentoLogo from '@/images/monumento.png'
 
-
-
 // data
 const projects = [
   {
@@ -34,7 +32,10 @@ const projects = [
     name: 'Djed',
     description:
       'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
-    link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
+    link: {
+      href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard',
+      label: 'Djed',
+    },
     logo: Djed,
   },
   {
@@ -55,7 +56,10 @@ const projects = [
     name: 'OpenChat',
     description:
       'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
-    link: { href: '#', label: 'OpenChat' },
+    link: {
+      href: 'https://github.com/AOSSIE-Org/OpenPeerChat-react-native.git',
+      label: 'OpenChat',
+    },
     logo: DefaultLogo,
   },
   {
@@ -75,7 +79,7 @@ const projects = [
   {
     name: 'Social Street Smart',
     description:
-      'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
+      'With the advent of Internet, the problems faced by the people have also grown. These include abusive languages.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',
@@ -83,6 +87,5 @@ const projects = [
     logo: SSSLogo,
   },
 ]
-
 
 export default projects
