@@ -110,6 +110,17 @@ export default function Ideas({ articles }) {
           is your go-to destination for finding your next big project and
           kickstart your open-source journey.
         </p>
+        <div className="flex flex-wrap gap-4 justify-center my-8">
+          <Link href="/ideas/2024">
+            <button className="rounded-lg bg-zinc-800 px-6 py-2 text-white dark:bg-white dark:text-black font-mono font-semibold">2024 Ideas</button>
+          </Link>
+          <Link href="/ideas/2023">
+            <button className="rounded-lg bg-zinc-800 px-6 py-2 text-white dark:bg-white dark:text-black font-mono font-semibold">2023 Ideas</button>
+          </Link>
+          <Link href="/ideas/2022">
+            <button className="rounded-lg bg-zinc-800 px-6 py-2 text-white dark:bg-white dark:text-black font-mono font-semibold">2022 Ideas</button>
+          </Link>
+        </div>
         <Container.Inner>
           <div className="mt-10 flex justify-center sm:mt-20">
             <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
