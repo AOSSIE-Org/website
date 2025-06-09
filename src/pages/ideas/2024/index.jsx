@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
-import { getAllIdeas } from '@/helper/getAllIdeas';
+import { getAllIdeas } from '@/helper/getAllIdeas2024';
 import Grid from '@mui/material/Grid';
 import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
