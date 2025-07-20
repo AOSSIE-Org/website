@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
-import { getAllIdeas } from '@/helper/getAllIdeas';
+import { getAllIdeas } from '@/helper/getAllIdeas2024';
 import Grid from '@mui/material/Grid';
 import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-function Article({ article }) {
+function Article({ article }) { 
     return (
         <Grid item xs={12} sm={6} md={4}>
             <MuiCard
@@ -73,7 +73,7 @@ function Article({ article }) {
     );
 }
 
-export default function Ideas({ articles }) {
+export default function Ideas({ articles }){
     return (
         <>
             <Head>
