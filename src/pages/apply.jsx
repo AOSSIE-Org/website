@@ -6,7 +6,8 @@ import { Container } from '@/components/Container'
 import { TimelineElement } from '@/components/TimelineElement'
 import GSoC from '@/images/logo.svg'
 
-export default function About() {
+// Renamed component to Apply for clarity
+export default function Apply() {
   return (
     <>
       <Head>
@@ -50,45 +51,37 @@ export default function About() {
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .line-left, .line-right {
-      display:none
-    }
-  }
-
-  /* Further small screen adjustments for very small devices */
-  @media (max-width: 480px) {
-    .line-left, .line-right {
-      display:none
+      display: none;
     }
   }
 `}</style>
-
-
       </Head>
 
       <Container.Outer className="mt-20 mb-28 ">
         <div className='overflow-x-hidden'>
           <div className="mt-5 mx-4 md:mx-16">
-            <h5 className='font-bold text-2xl text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7'> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain<span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.</h5>
-            <p className='text-zinc-600 mt-4  dark:text-zinc-400 text-lg font-mono leading-7'>
+            <h1 className='font-bold text-2xl text-zinc-600 dark:text-zinc-400 font-mono leading-7'>
+              Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain
+              <span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.
+            </h1>
+            <p className='text-zinc-600 mt-4 dark:text-zinc-400 text-lg font-mono leading-7'>
               Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
             </p>
           </div>
-
-
 
           <div className='w-full mt-8 hidden sm:block'>
             <div className='relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8'>
               <div className='line-right'></div>
               <div className='relative'>
-                <Image src="/ele1.svg" alt="Join us on Discord" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele1.svg" alt="Join us on Discord" width={170} height={170} />
                 <p className='font-bold p-3 m-auto dark:text-white'>Join us on Discord</p>
               </div>
               <div className='relative'>
-                <Image src="/ele2.svg" alt="Start Contributing" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele2.svg" alt="Start Contributing" width={170} height={170} />
                 <p className='font-bold p-3 m-auto dark:text-white'>Start Contributing</p>
               </div>
               <div className='relative'>
-                <Image src="/ele3.svg" alt="Choose an idea" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele3.svg" alt="Choose an idea" width={170} height={170} />
                 <p className='font-bold p-3 m-auto dark:text-white'>Choose an idea</p>
               </div>
             </div>
@@ -96,16 +89,15 @@ export default function About() {
             <div className='relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8'>
               <div className='line-left'></div>
               <div className='relative'>
-                <Image src="/ele4.svg" alt="Discuss with mentor" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele4.svg" alt="Discuss with mentor" width={170} height={170} />
                 <p className='font-bold p-3 m-auto dark:text-white'>Discuss with mentor</p>
               </div>
               <div className='relative'>
-                <Image src="/ele5.svg" alt="Submit final application" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele5.svg" alt="Submit final application" width={170} height={170} />
                 <p className='font-bold p-3 m-auto dark:text-white'>Submit final application</p>
               </div>
             </div>
           </div>
-
 
           <Container.Inner className='mt-4 mx-4 md:m-16'>
             <ol className="relative border-l-2 border-gray-200 dark:border-gray-700">
@@ -149,10 +141,9 @@ export default function About() {
                 </Link>
               </div>
             </div>
-
           </Container.Inner>
         </div>
-      </Container.Outer>
-    </>
-  );
-}
+              </Container.Outer>
+            </>
+          )
+      }
