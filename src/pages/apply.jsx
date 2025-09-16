@@ -69,6 +69,7 @@ export default function Apply() {
             </p>
           </div>
 
+          {/* Improved timeline visual flow and clarity */}
           <div className='w-full mt-8 hidden sm:block'>
             <div className='relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8'>
               <div className='line-right'></div>
@@ -101,6 +102,7 @@ export default function Apply() {
 
           <Container.Inner className='mt-4 mx-4 md:m-16'>
             <ol className="relative border-l-2 border-gray-200 dark:border-gray-700">
+              {/* Step-by-step guide for GSoC application process */}
               <TimelineElement
                 title="Join us on Discord"
                 description="Join the AOSSIE community on Discord and connect with other developers, mentors, and organizers. Our Discord server is a great place to ask questions, share ideas, and get support throughout the Google Summer of Code application process. From proposal writing tips to coding advice, our community is here to help you succeed. Don't go through the process alone, join us on Discord now!"
@@ -131,6 +133,7 @@ export default function Apply() {
               />
             </ol>
 
+            {/* Program announcement section with GSoC logo and link */}
             <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
               <Image src={GSoC} alt='gsoc' width={500} height={350} className="mx-auto" />
               <div className="mt-10 flex justify-center gap-6 flex-col sm:flex-row">
@@ -143,7 +146,7 @@ export default function Apply() {
             </div>
           </Container.Inner>
         </div>
-              </Container.Outer>
-            </>
-          )
-      }
+      </Container.Outer>
+    </>
+  )
+}
