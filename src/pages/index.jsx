@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
   faDiscord,
@@ -84,7 +84,8 @@ export default function Home() {
                   className=" text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                   href="https://twitter.com/aossie_org"
                 >
-                  <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                  <FontAwesomeIcon icon={faSquareXTwitter} size="2xl" />
+                  {/* <FontAwesomeIcon icon={faTwitter} size="2xl" /> */}
                 </Link>
               </div>
             </div>
