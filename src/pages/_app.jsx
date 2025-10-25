@@ -28,7 +28,7 @@ export default function App({ Component, pageProps, router }) {
         </div>
         <div className="relative">
           <Header />
-          <main>
+          <main className='overflow-x-hidden'>
             <Component previousPathname={previousPathname} {...pageProps} />
           </main>
           <Footer />
