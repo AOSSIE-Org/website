@@ -4,12 +4,13 @@ import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects';
-
-
+import projects from '@/helper/projects'
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -18,10 +19,15 @@ function LinkIcon(props) {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
+// Define the Cards component here
 const Cards = () => {
+  const router = useRouter();
+
+
+
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
@@ -84,8 +90,9 @@ const Cards = () => {
             </CardActions>
           </MuiCard>
         </Grid>
-      ))}
-    </Grid>
+      ))
+      }
+    </Grid >
   );
 };
 
@@ -96,7 +103,7 @@ const ProjectSection = () => {
         className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
         role="img"
         aria-label="GSOC Logo"
-      />
+      ></div>
 
       <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
         PROJECTS
@@ -105,9 +112,9 @@ const ProjectSection = () => {
       <div
         className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
         style={{ backgroundImage: "url('/logo.png')" }}
-        role="img"
         aria-label="Logo"
-      />
+      ></div>
+
     </div>
   );
 };
