@@ -9,6 +9,7 @@ import { Banner } from '@/components/Banner';
 import Image from 'next/image';
 import projects from '@/helper/projects';
 
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
