@@ -4,13 +4,10 @@ import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projects from '@/helper/projects';
 
 function LinkIcon(props) {
   return (
@@ -20,14 +17,12 @@ function LinkIcon(props) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 const Cards = () => {
-  const router = useRouter();
-
   return (
-    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center', width: '100%', margin: 0 }}>
+    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
@@ -88,31 +83,41 @@ const Cards = () => {
             </CardActions>
           </MuiCard>
         </Grid>
-      ))
-      }
-    </Grid >
+      ))}
+    </Grid>
   );
 };
 
 const ProjectSection = () => {
   return (
-    <div className="ideas-text flex items-center justify-center mb-8 relative max-w-full overflow-hidden px-4">
+    <div className="ideas-text flex items-center justify-center mb-8 relative">
       <div
-        className="hidden lg:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-0"
-        alt="GSOC Logo"
-      ></div>
+        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
+        role="img"
+        aria-label="GSOC Logo"
+      />
 
-      <h1 className="font-mono text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 text-center px-4">
+      <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
         PROJECTS
       </h1>
 
       <div
-        className="hidden lg:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-0"
+        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
         style={{ backgroundImage: "url('/logo.png')" }}
+        role="img"
         aria-label="Logo"
-      ></div>
+      />
     </div>
   );
+};
+
+const styles = {
+  bannerWrapper: {
+    width: '100vw',
+    marginLeft: 'calc(-50vw + 50%)',
+    position: 'relative',
+    overflow: 'hidden',
+  },
 };
 
 export default function Projects() {
@@ -122,10 +127,10 @@ export default function Projects() {
         <title>PROJECTS</title>
         <meta name="description" content="PROJECT List for GSOC" />
       </Head>
-      <Container className="mt-20 mb-28">
-        <Container.Inner>
+      <Container className="mt-20 mb-28" sx={{ overflowX: 'hidden' }}>
+        <Container.Inner sx={{ overflowX: 'hidden', maxWidth: '100%' }}>
           <ProjectSection />
-          <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8 px-4">
+          <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
             Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
             featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
           </p>
@@ -133,9 +138,11 @@ export default function Projects() {
         </Container.Inner>
       </Container>
 
-      <Container.Outer className="mt-28">
-        <Banner />
-      </Container.Outer>
+      <div style={styles.bannerWrapper}>
+        <Container.Outer className="mt-28">
+          <Banner />
+        </Container.Outer>
+      </div>
     </>
   );
 }
