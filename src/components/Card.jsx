@@ -16,8 +16,11 @@ function ChevronRightIcon(props) {
 export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
-    >
+  className={clsx(
+    className,
+    'group relative flex flex-col items-start transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:bg-zinc-50 dark:hover:bg-zinc-800'
+  )}
+>
       {children}
     </Component>
   )
