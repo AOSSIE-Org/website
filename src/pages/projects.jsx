@@ -85,7 +85,7 @@ const Cards = () => {
             <CardActions sx={{ justifyContent: 'center' }}>
               <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
+               <span className="ml-2 flex items-center"> <span>{project.link.label}</span> <a href={project.link.href} target="_blank" rel="noopener noreferrer" className="ml-2 text-gray-500 hover:text-gray-700" aria-label={Open ${project.link.label} on GitHub} title={Open ${project.link.label} on GitHub} > <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M12 .5C5.73.5.75 5.48.75 11.74c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.53 0-.26-.01-1.12-.02-2.03-3.08.67-3.73-1.49-3.73-1.49-.5-1.26-1.22-1.6-1.22-1.6-.99-.68.08-.67.08-.67 1.09.08 1.66 1.12 1.66 1.12.98 1.67 2.57 1.19 3.19.91.1-.71.38-1.19.69-1.46-2.46-.28-5.05-1.23-5.05-5.47 0-1.21.43-2.2 1.12-2.98-.11-.28-.49-1.4.11-2.92 0 0 .91-.29 2.98 1.14a10.3 10.3 0 012.71-.37c.92.01 1.85.12 2.71.37 2.07-1.43 2.98-1.14 2.98-1.14.6 1.52.22 2.64.11 2.92.7.78 1.12 1.77 1.12 2.98 0 4.25-2.6 5.19-5.08 5.46.39.34.74 1.02.74 2.06 0 1.49-.01 2.69-.01 3.05 0 .29.2.64.76.53A11.26 11.26 0 0023.25 11.74C23.25 5.48 18.27.5 12 .5z" /> </svg> </a> </span>
               </p>
             </CardActions>
           </MuiCard>
