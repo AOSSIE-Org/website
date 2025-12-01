@@ -4,13 +4,28 @@ import Image from "next/image";
 export function CardEffect({ heading, content, logo, href }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const handleToggle = () => setIsFlipped((prev) => !prev);
+
+  const wrapperProps = href
+    ? { href }
+    : {
+        role: "button",
+        tabIndex: 0,
+        onKeyDown: (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleToggle();
+          }
+        },
+      };
+
   const Wrapper = href ? "a" : "div";
 
   return (
     <Wrapper
-      href={href}
+      {...wrapperProps}
       className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
+      onClick={handleToggle}
     >
       <div
         className={`
@@ -22,7 +37,7 @@ export function CardEffect({ heading, content, logo, href }) {
           motion-safe:group-hover:-translate-y-2 motion-safe:group-hover:shadow-2xl
         `}
       >
-        {/* FRONT SIDE (logo + title) */}
+        
         <div
           className={`
             absolute inset-0 flex flex-col justify-center items-center
@@ -45,7 +60,7 @@ export function CardEffect({ heading, content, logo, href }) {
           </h2>
         </div>
 
-        {/* BACK SIDE (content) */}
+        
         <div
           className={`
             absolute inset-0 flex flex-col justify-center items-center
