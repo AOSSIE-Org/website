@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { TimelineElement } from '@/components/TimelineElement'
 import GSoC from '@/images/logo.svg'
 
-export default function Apply() {
+export default function About() {
   return (
     <>
       <Head>
@@ -14,46 +13,38 @@ export default function Apply() {
         <meta name="description" content="How to apply for GSOC" />
 
         <style>{`
-  /* Timeline step styles */
-  .timeline-step {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .timeline-horizontal {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem 2rem;
-    position: relative;
-    min-height: 180px; /* minimum height to accommodate images (120px) + text + spacing */
-    z-index: 1;
-  }
-
-  /* Timeline dot - connection indicator */
-  .timeline-dot {
-    width: 12px; /* sized to be prominent but not overwhelming */
-    height: 12px;
+  /* Line for elements on the left */
+  .line-left {
+    position: absolute;
+    top: 42%;
+    width: 40%;
+    height: 2px;
     background-color: black;
-    border: 4px solid white;
-    border-radius: 50%;
-    z-index: 2;
-    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+    transform: translateX(-20%);
   }
 
-  .dark .timeline-dot {
+  /* Line for elements on the right */
+  .line-right {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 55%;
+    height: 2px;
+    background-color: black;
+  }
+
+  /* Dark Mode - change the line color to white */
+  .dark .line-left {
     background-color: white;
-    border-color: rgb(24, 24, 27);
   }
 
-  /* Mobile: hide horizontal elements, use vertical stacked UI */
+  .dark .line-right {
+    background-color: white;
+  }
+
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    .timeline-horizontal-line,
-    .timeline-horizontal {
+    .line-left, .line-right {
       display: none;
     }
   }
@@ -65,72 +56,40 @@ export default function Apply() {
       <Container.Outer className="mt-20 mb-28 ">
         <div className='overflow-x-hidden'>
           <div className="mt-5 mx-4 md:mx-16">
-            <h5 className='font-bold text-2xl text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7'> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain<span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.</h5>
-            <p className='text-zinc-600 mt-4  dark:text-zinc-400 text-lg font-mono leading-7'>
+            <h5 className="font-bold text-2xl text-zinc-600 dark:text-zinc-400 font-mono leading-7"> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain <span className="text-[#3C982C] dark:text-yellow-400">real-world experience</span> through Google Summer of Code.</h5>
+            <p className="text-zinc-600 mt-4 dark:text-zinc-400 text-lg font-mono leading-7">
               Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
             </p>
           </div>
 
 
 
-          <div className='w-full mt-8 block'>
-            {/* Desktop timeline: horizontal connected line with evenly spaced steps */}
-            <div className='hidden md:block relative px-4 md:px-16 py-8'>
-              <div className='absolute inset-x-[5%] top-1/2 -translate-y-1/2 h-[3px] bg-black dark:bg-white' aria-hidden="true"></div>
-              <div className='timeline-horizontal'>
-                <div className='timeline-step'>
-                  <div className='timeline-dot' aria-hidden="true"></div>
-                  <Image src="/ele1.svg" alt="Join us on Discord" width={120} height={120} quality={100} />
-                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Join us on Discord</p>
-                </div>
-                <div className='timeline-step'>
-                  <div className='timeline-dot' aria-hidden="true"></div>
-                  <Image src="/ele2.svg" alt="Start Contributing" width={120} height={120} quality={100} />
-                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Start Contributing</p>
-                </div>
-                <div className='timeline-step'>
-                  <div className='timeline-dot' aria-hidden="true"></div>
-                  <Image src="/ele3.svg" alt="Choose an idea" width={120} height={120} quality={100} />
-                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Choose an idea</p>
-                </div>
-                <div className='timeline-step'>
-                  <div className='timeline-dot' aria-hidden="true"></div>
-                  <Image src="/ele4.svg" alt="Discuss with mentor" width={120} height={120} quality={100} />
-                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Discuss with mentor</p>
-                </div>
-                <div className='timeline-step'>
-                  <div className='timeline-dot' aria-hidden="true"></div>
-                  <Image src="/ele5.svg" alt="Submit final application" width={120} height={120} quality={100} />
-                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Submit final application</p>
-                </div>
+          <div className="w-full mt-8 hidden sm:block">
+            <div className="relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8">
+              <div className="line-right"></div>
+              <div className="relative">
+                <Image src="/ele1.svg" alt="Join us on Discord" width={170} height={170} /> {/* Adjust width and height */}
+                <p className="font-bold p-3 m-auto dark:text-white">Join us on Discord</p>
+              </div>
+              <div className="relative">
+                <Image src="/ele2.svg" alt="Start Contributing" width={170} height={170} /> {/* Adjust width and height */}
+                <p className="font-bold p-3 m-auto dark:text-white">Start Contributing</p>
+              </div>
+              <div className="relative">
+                <Image src="/ele3.svg" alt="Choose an idea" width={170} height={170} /> {/* Adjust width and height */}
+                <p className="font-bold p-3 m-auto dark:text-white">Choose an idea</p>
               </div>
             </div>
 
-            {/* Mobile timeline - vertical stacked layout */}
-            <div className='md:hidden mt-4 px-4 space-y-6'>
-              <div className='flex flex-col items-center'>
-                <Image src="/ele1.svg" alt="Join us on Discord" width={100} height={100} quality={100} />
-                <p className='font-bold p-2 text-center text-sm dark:text-white'>Join us on Discord</p>
+            <div className="relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8">
+              <div className="line-left"></div>
+              <div className="relative">
+                <Image src="/ele4.svg" alt="Discuss with mentor" width={170} height={170} /> {/* Adjust width and height */}
+                <p className="font-bold p-3 m-auto dark:text-white">Discuss with mentor</p>
               </div>
-              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
-              <div className='flex flex-col items-center'>
-                <Image src="/ele2.svg" alt="Start Contributing" width={100} height={100} quality={100} />
-                <p className='font-bold p-2 text-center text-sm dark:text-white'>Start Contributing</p>
-              </div>
-              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
-              <div className='flex flex-col items-center'>
-                <Image src="/ele3.svg" alt="Choose an idea" width={100} height={100} quality={100} />
-                <p className='font-bold p-2 text-center text-sm dark:text-white'>Choose an idea</p>
-              </div>
-              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
-              <div className='flex flex-col items-center'>
-                <Image src="/ele4.svg" alt="Discuss with mentor" width={100} height={100} quality={100} />
-                <p className='font-bold p-2 text-center text-sm dark:text-white'>Discuss with mentor</p>
-              </div>
-              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
-              <div className='flex flex-col items-center'>
-                <Image src="/ele5.svg" alt="Submit final application" width={100} height={100} quality={100} />
-                <p className='font-bold p-2 text-center text-sm dark:text-white'>Submit final application</p>
+              <div className="relative">
+                <Image src="/ele5.svg" alt="Submit final application" width={170} height={170} /> {/* Adjust width and height */}
+                <p className="font-bold p-3 m-auto dark:text-white">Submit final application</p>
               </div>
             </div>
           </div>
@@ -169,13 +128,13 @@ export default function Apply() {
             </ol>
 
             <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
-              <Image src={GSoC} alt='gsoc' width={500} height={350} className="mx-auto" />
+              <Image src={GSoC} alt="gsoc" width={500} height={350} className="mx-auto" />
               <div className="mt-10 flex justify-center gap-6 flex-col sm:flex-row">
-                <Link className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+                <a className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener noreferrer">
                   <span className="font-mono font-semibold text-center">
                     View GSoC Program Announcements
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
 
