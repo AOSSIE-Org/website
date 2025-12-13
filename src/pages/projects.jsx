@@ -44,6 +44,13 @@ const Cards = () => {
               backdropFilter: 'blur(4px) brightness(100%)',
               display: 'flex',
               flexDirection: 'column',
+              transform: 'translateY(0)',
+              willChange: 'transform, box-shadow',
+              transition: 'transform 200ms ease, box-shadow 200ms ease',
+              '&:hover': {
+                transform: 'translateY(-4px)',
+                boxShadow: '0px 12px 24px rgba(0,0,0,0.18)'
+              }
             }}
           >
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
