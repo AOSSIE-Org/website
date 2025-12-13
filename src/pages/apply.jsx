@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { TimelineElement } from '@/components/TimelineElement'
@@ -14,10 +13,6 @@ export default function About() {
         <meta name="description" content="How to apply for GSOC" />
 
         <style>{`
-  .relative {
-    position: relative;
-  }
-
   /* Line for elements on the left */
   .line-left {
     position: absolute;
@@ -50,14 +45,7 @@ export default function About() {
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .line-left, .line-right {
-      display:none
-    }
-  }
-
-  /* Further small screen adjustments for very small devices */
-  @media (max-width: 480px) {
-    .line-left, .line-right {
-      display:none
+      display: none;
     }
   }
 `}</style>
@@ -68,40 +56,40 @@ export default function About() {
       <Container.Outer className="mt-20 mb-28 ">
         <div className='overflow-x-hidden'>
           <div className="mt-5 mx-4 md:mx-16">
-            <h5 className='font-bold text-2xl text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7'> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain<span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.</h5>
-            <p className='text-zinc-600 mt-4  dark:text-zinc-400 text-lg font-mono leading-7'>
+            <h5 className="font-bold text-2xl text-zinc-600 dark:text-zinc-400 font-mono leading-7"> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain <span className="text-[#3C982C] dark:text-yellow-400">real-world experience</span> through Google Summer of Code.</h5>
+            <p className="text-zinc-600 mt-4 dark:text-zinc-400 text-lg font-mono leading-7">
               Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
             </p>
           </div>
 
 
 
-          <div className='w-full mt-8 hidden sm:block'>
-            <div className='relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8'>
-              <div className='line-right'></div>
-              <div className='relative'>
+          <div className="w-full mt-8 hidden sm:block">
+            <div className="relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8">
+              <div className="line-right"></div>
+              <div className="relative">
                 <Image src="/ele1.svg" alt="Join us on Discord" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Join us on Discord</p>
+                <p className="font-bold p-3 m-auto dark:text-white">Join us on Discord</p>
               </div>
-              <div className='relative'>
+              <div className="relative">
                 <Image src="/ele2.svg" alt="Start Contributing" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Start Contributing</p>
+                <p className="font-bold p-3 m-auto dark:text-white">Start Contributing</p>
               </div>
-              <div className='relative'>
+              <div className="relative">
                 <Image src="/ele3.svg" alt="Choose an idea" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Choose an idea</p>
+                <p className="font-bold p-3 m-auto dark:text-white">Choose an idea</p>
               </div>
             </div>
 
-            <div className='relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8'>
-              <div className='line-left'></div>
-              <div className='relative'>
+            <div className="relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8">
+              <div className="line-left"></div>
+              <div className="relative">
                 <Image src="/ele4.svg" alt="Discuss with mentor" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Discuss with mentor</p>
+                <p className="font-bold p-3 m-auto dark:text-white">Discuss with mentor</p>
               </div>
-              <div className='relative'>
+              <div className="relative">
                 <Image src="/ele5.svg" alt="Submit final application" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Submit final application</p>
+                <p className="font-bold p-3 m-auto dark:text-white">Submit final application</p>
               </div>
             </div>
           </div>
@@ -140,13 +128,13 @@ export default function About() {
             </ol>
 
             <div className="mt-20 relative block rounded-3xl dark:bg-white/70 bg-zinc-400/20 p-8 pb-16 shadow-xl">
-              <Image src={GSoC} alt='gsoc' width={500} height={350} className="mx-auto" />
+              <Image src={GSoC} alt="gsoc" width={500} height={350} className="mx-auto" />
               <div className="mt-10 flex justify-center gap-6 flex-col sm:flex-row">
-                <Link className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/">
+                <a className="order-1 group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-zinc-800 px-8 py-3 text-black dark:text-white focus:outline-none" href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener noreferrer">
                   <span className="font-mono font-semibold text-center">
                     View GSoC Program Announcements
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
 
