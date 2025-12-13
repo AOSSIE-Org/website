@@ -91,14 +91,15 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <Link
-                href={project.link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition hover:text-[#00843D] dark:hover:text-yellow-400 dark:text-zinc-200"
-              >
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
+              <Link href={project.link.href} legacyBehavior>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative z-10 mt-6 inline-flex items-center px-2 py-1 text-md font-semibold font-mono text-zinc-600 transition hover:text-[#00843D] dark:hover:text-yellow-400 dark:text-zinc-200"
+                >
+                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                  <span className="ml-2">{project.link.label}</span>
+                </a>
               </Link>
             </CardActions>
           </MuiCard>
