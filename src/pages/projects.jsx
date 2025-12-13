@@ -9,6 +9,11 @@ import { Banner } from '@/components/Banner';
 import Image from 'next/image';
 import projects from '@/helper/projects';
 
+/**
+ * LinkIcon component renders an SVG icon for external links.
+ * @param {Object} props - Component props passed to the SVG element
+ * @returns {JSX.Element} SVG link icon element
+ */
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -20,14 +25,18 @@ function LinkIcon(props) {
   )
 }
 
-// Define the Cards component here
+/**
+ * Cards component displays a grid of project cards with hover effects.
+ * Each card shows project information including logo, name, description, and link.
+ * @returns {JSX.Element} Grid container with project cards
+ */
 const Cards = () => {
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
+            className="dark:bg-[#2A2A2A] dark:border-white"
             sx={{
               height: 400,
               borderRadius: 2,
@@ -68,7 +77,7 @@ const Cards = () => {
 
               <Typography
                 variant="body1"
-                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
                 sx={{
                   fontFamily: 'Nunito-Light',
                   color: 'black',
@@ -111,10 +120,14 @@ const Cards = () => {
         </Grid>
       ))
       }
-    </Grid >
+    </Grid>
   );
 };
 
+/**
+ * ProjectSection component renders the header section with title and decorative logos.
+ * @returns {JSX.Element} Header section with "PROJECTS" title and logo elements
+ */
 const ProjectSection = () => {
   return (
     <div className="ideas-text flex items-center justify-center mb-8 relative">
@@ -132,11 +145,14 @@ const ProjectSection = () => {
         style={{ backgroundImage: "url('/logo.png')" }}
         aria-label="Logo"
       ></div>
-
     </div>
   );
 };
 
+/**
+ * Inline styles for banner wrapper to create full-width layout.
+ * @type {Object}
+ */
 const styles = {
   bannerWrapper: {
     width: '100vw',
@@ -146,6 +162,11 @@ const styles = {
   },
 };
 
+/**
+ * Projects page component displays all GSOC projects with descriptions and links.
+ * Includes project cards with hover effects, banner, and responsive layout.
+ * @returns {JSX.Element} Complete projects page with head metadata
+ */
 export default function Projects() {
   return (
     <>
