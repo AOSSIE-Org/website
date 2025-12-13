@@ -20,6 +20,15 @@ import Journey from '@/components/Journey'
 
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
+  const [selectedProject, setSelectedProject] = useState('')
+  const handleProjectSelect = (e) => {
+    const name = e.target.value
+    setSelectedProject(name)
+    const proj = projects.find((p) => p.name === name)
+    if (proj?.link?.href) {
+      window.open(proj.link.href, '_blank', 'noopener,noreferrer')
+    }
+  }
 
   useEffect(() => {
     setRandomProjects(projects.sort(() => 0.5 - Math.random()).slice(0, 3))
@@ -118,7 +127,24 @@ export default function Home() {
           {/* Green Band with Counts */}
           <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
             <div className="mb-4 sm:mb-0">
-              <h6 className="text-xl">Active Projects</h6>
+              <div className="flex items-center justify-center gap-3">
+                <h6 className="text-xl">Active Projects</h6>
+                <select
+                  aria-label="Select a project"
+                  value={selectedProject}
+                  onChange={handleProjectSelect}
+                  className="rounded border border-white bg-transparent text-white px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-white dark:text-black dark:border-black dark:focus:ring-black"
+                >
+                  <option value="" disabled>
+                    All Projects
+                  </option>
+                  {projects.map((p) => (
+                    <option key={p.name} value={p.name}>
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <p className="font-semibold text-2xl">34+</p>
               <div className="mt-3">
                 <Button
