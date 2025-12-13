@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import Logo1 from '@/images/logo1.png'
 import { useState, useEffect } from 'react'
 
 import { Container } from '@/components/Container'
@@ -40,11 +41,12 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
             <div className="flex-1 self-center">
               <Image
-                src="./logo1.png"
+                src={Logo1}
                 width={320}
                 height={300}
                 className="mx-auto scale-110 m-4"
                 alt="AOSSIE Logo"
+                unoptimized
               />
             </div>
             <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">

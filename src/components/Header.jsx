@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Logo1 from '@/images/logo1.png'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
@@ -230,7 +231,7 @@ function Home({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image src='/logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
+      <Image src={Logo1} width={100} height={100} className='scale-125' alt='AOSSIE Logo' unoptimized />
     </Link>
   )
 }
