@@ -190,6 +190,27 @@ export default function About() {
         <p className="text-green-600 dark:text-yellow-400 text-lg font-mono leading-7 font-bold">----- Number of Completed Projects Year Wise -----</p>
       </section>
 
+      <section style={styles.section}>
+        <div className="text-center">
+          <h2 className="font-mono text-4xl md:text-5xl font-extrabold tracking-tighter text-[#00843D] dark:text-yellow-400">
+            AOSSIE 10 Years
+          </h2>
+          <p className="mt-2 font-mono text-lg text-zinc-600 dark:text-zinc-400">
+            2015025 · Decade of Innovation & Education
+          </p>
+          <div className="mt-6">
+            <a
+              href="mailto:aossie.oss@gmail.com?subject=AOSSIE%2010%20Years%20T-Shirt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-lg bg-[#00843D] px-6 py-3 font-mono font-semibold text-white transition hover:scale-[1.02] hover:shadow-md dark:bg-yellow-400 dark:text-black"
+            >
+              Get the Anniversary T-Shirt
+            </a>
+          </div>
+        </div>
+      </section>
+
       <div style={styles.bannerWrapper}>
         <Container.Outer className="mt-28">
           <Banner />
