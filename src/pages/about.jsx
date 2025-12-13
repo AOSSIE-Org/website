@@ -9,6 +9,7 @@ import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
+
 export default function About() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
