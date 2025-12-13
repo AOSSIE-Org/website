@@ -6,13 +6,13 @@ export function CardEffect({ heading, content, logo, href = '#' }) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00843D] dark:focus-visible:ring-yellow-400 rounded-3xl"
+            className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00843D] dark:focus-visible:ring-yellow-400 rounded-3xl hover:ring-2 hover:ring-[#FED41E] dark:hover:ring-yellow-400 hover:ring-offset-2"
         >
             {/* <span className="absolute inset-0 border-2 rounded-lg border-dashed border-black dark:border-zinc-300"></span> */}
 
             {/* <div className="relative flex h-full transform items-end border-4 rounded-lg border-black dark:border-zinc-300 bg-transparent dark:bg-transparent transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"> */}
             {/* <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800/40 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8 transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#9ca3af] dark:group-hover:shadow-[8px_8px_0_0_#e5e7eb]"> */}
-            <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 hover:shadow-2xl">
+            <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 hover:shadow-2xl group-hover:border-[#FED41E] dark:group-hover:border-yellow-400">
                 <div className="px-8 pb-4 self-center transition-opacity group-hover:absolute group-hover:opacity-0">
                     <Image
                         src={logo}

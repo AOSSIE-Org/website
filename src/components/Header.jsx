@@ -162,20 +162,28 @@ function ProjectsDropdown() {
   const isActive = router.pathname === '/projects'
   return (
     <Popover className="relative">
-      <Popover.Button
-        className={clsx(
-          'relative flex items-center px-4 py-2 transition',
-          isActive
-            ? 'text-[#00843D] dark:text-yellow-400'
-            : 'hover:text-[#00843D] dark:hover:text-yellow-400'
-        )}
-      >
-        <span>Projects</span>
-        <ChevronDownIcon className="ml-1 h-auto w-2 stroke-current transition ui-open:rotate-180" />
-        {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
-        )}
-      </Popover.Button>
+      <div className="flex items-center">
+        <Link
+          href="/projects"
+          className={clsx(
+            'relative block pl-4 pr-2 py-2 transition',
+            isActive
+              ? 'text-[#00843D] dark:text-yellow-400'
+              : 'hover:text-[#00843D] dark:hover:text-yellow-400'
+          )}
+        >
+          Projects
+          {isActive && (
+            <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
+          )}
+        </Link>
+        <Popover.Button
+          aria-label="Toggle projects menu"
+          className="ml-0.5 inline-flex items-center p-1 transition hover:text-[#00843D] dark:hover:text-yellow-400"
+        >
+          <ChevronDownIcon className="h-auto w-2 stroke-current transition ui-open:rotate-180" />
+        </Popover.Button>
+      </div>
       <Transition
         enter="transition duration-150 ease-out"
         enterFrom="opacity-0 translate-y-1"
@@ -192,13 +200,13 @@ function ProjectsDropdown() {
                   href={p.link?.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                  className="group flex items-center justify-between px-3 py-2 text-sm text-zinc-700 hover:bg-[#FED41E] hover:text-black dark:text-zinc-200 dark:hover:bg-yellow-400 dark:hover:text-black"
                 >
                   <span className="mr-2 break-words">{p.name}</span>
                   <svg
                     viewBox="0 0 24 24"
                     aria-hidden="true"
-                    className="h-3 w-3 text-zinc-500 dark:text-zinc-400"
+                    className="h-3 w-3"
                   >
                     <path
                       d="M14 3h7v7h-2V6.41l-7.29 7.3-1.42-1.42L17.59 5H14V3zM5 5h7v2H7v10h10v-5h2v7H5V5z"
