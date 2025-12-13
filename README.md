@@ -12,7 +12,7 @@ Th website is a **Next.js** project using **Tailwind** for styling and design.
 To contribute to this repository you will need to:
 - **Fork this repository**
 - **Push changes to a new branch in your fork**
-- **Create a pull request from that branch to the master branch of this repository**
+- **Create a pull request from that branch to the main branch of this repository**
 
 Forking only needs to be done once, after which you can push changes to your fork.
 
@@ -37,7 +37,7 @@ You can contribute by:
 
 * Raising any issues you find
 * Fixing issues by opening Pull Requests
-* Improving website
+* Improving the website
 * Talking about AOSSIE
 
 
