@@ -36,6 +36,7 @@ const Cards = () => {
             rel="noopener noreferrer"
             className="group block"
           >
+            
             <MuiCard
               className="dark:bg-[#2A2A2A] dark:border-white transition-transform duration-300 group-hover:scale-[1.02] hover:shadow-lg hover:ring-2 hover:ring-[#FED41E] dark:hover:ring-yellow-400 hover:ring-offset-2 hover:border-[#FED41E] dark:hover:border-yellow-400"
               sx={{
