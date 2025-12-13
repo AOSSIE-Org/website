@@ -103,4 +103,9 @@ If you want to get in touch with us first before contributing, you can use:
 
 # **License**
 
-[**MIT License**](https://choosealicense.com/licenses/mit/)
+This project is licensed under the **MIT License**, a permissive license that allows commercial and private use, modification, distribution, and sublicensing, provided that copyright and license notices are included in all copies.
+
+- Full license text (OSI): https://opensource.org/licenses/MIT
+- Choose a License reference: https://choosealicense.com/licenses/mit/
+
+By contributing to this repository, you agree that your contributions are licensed under the MIT License.
