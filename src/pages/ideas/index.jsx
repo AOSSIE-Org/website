@@ -14,7 +14,7 @@ function Article({ article }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <MuiCard
-        className="dark:bg-[#2A2A2A] dark:border-white"
+        className="dark:bg-[#2A2A2A] dark:border-white transition-colors transition-transform hover:bg-zinc-100 dark:hover:bg-zinc-700"
         sx={{
           height: 350,
           borderRadius: 2,
@@ -24,7 +24,11 @@ function Article({ article }) {
           backdropFilter: 'blur(4px) brightness(100%)',
           display: 'flex',
           flexDirection: 'column',
-          transition: 'background-color 0.3s ease',
+          transition: 'background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease',
+          '&:hover': {
+            transform: 'scale(1.03)',
+            boxShadow: '0px 8px 16px #00000040',
+          },
 
         }}
       >
