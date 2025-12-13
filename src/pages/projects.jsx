@@ -4,13 +4,11 @@ import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projects from '@/helper/projects';
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -24,10 +22,6 @@ function LinkIcon(props) {
 
 // Define the Cards component here
 const Cards = () => {
-  const router = useRouter();
-
-
-
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
@@ -43,6 +37,13 @@ const Cards = () => {
               backdropFilter: 'blur(4px) brightness(100%)',
               display: 'flex',
               flexDirection: 'column',
+              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              '&:hover': {
+                transform: 'translateY(-12px) scale(1.02)',
+                boxShadow: '0px 20px 40px rgba(60, 152, 44, 0.3), 0px 0px 0px 3px rgba(60, 152, 44, 0.4)',
+                borderColor: '#00843D',
+                borderWidth: '2px',
+              },
             }}
           >
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
@@ -83,10 +84,28 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+              {project.link?.href && project.link.href !== '#' ? (
+                <a
+                  href={project.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${project.name} repository`}
+                  title={project.link.label}
+                  className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 hover:text-[#00843D] dark:text-zinc-200 dark:hover:text-yellow-400 transition-colors duration-300"
+                >
+                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                  <span className="ml-2">{project.link.label}</span>
+                </a>
+              ) : (
+                <span
+                  aria-disabled="true"
+                  title="Link unavailable"
+                  className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-400 dark:text-zinc-500 cursor-not-allowed"
+                >
+                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                  <span className="ml-2">{project.link?.label}</span>
+                </span>
+              )}
             </CardActions>
           </MuiCard>
         </Grid>
@@ -101,7 +120,7 @@ const ProjectSection = () => {
     <div className="ideas-text flex items-center justify-center mb-8 relative">
       <div
         className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
-        alt="GSOC Logo"
+        aria-label="GSOC Logo"
       ></div>
 
       <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
