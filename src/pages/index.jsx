@@ -14,6 +14,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
+import Button from '@/components/Button'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
 
@@ -186,30 +187,7 @@ export default function Home() {
             </Container.Inner>
           </div>
           <div className="mt-12 text-center">
-            <Link
-              className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
-              href="/projects"
-            >
-              <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
-                <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
-              <span className="font-mono font-semibold transition-all group-hover:mr-6">
-                View All Projects
-              </span>
-            </Link>
+            <Button href="/projects">View All Projects</Button>
           </div>
         </div>
       </Container>
