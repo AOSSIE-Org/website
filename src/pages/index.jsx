@@ -17,6 +17,7 @@ import Button from '@/components/Button'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
 
+
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
   const [selectedProject, setSelectedProject] = useState('')
