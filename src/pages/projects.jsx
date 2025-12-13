@@ -39,7 +39,7 @@ const Cards = () => {
             <MuiCard
               className="dark:bg-[#2A2A2A] dark:border-white transition-transform duration-300 group-hover:scale-[1.02] hover:shadow-lg hover:ring-2 hover:ring-[#3c982c] hover:ring-offset-2"
               sx={{
-                height: 400,
+                minHeight: 460,
                 borderRadius: 8,
                 border: '1px solid',
                 borderColor: '#3c982c',
@@ -71,16 +71,10 @@ const Cards = () => {
 
                 <Typography
                   variant="body1"
-                  className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                  className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mt-2 whitespace-normal"
                   sx={{
                     fontFamily: 'Nunito-Light',
                     color: 'black',
-                    mt: 2,
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    display: '-webkit-box',
-                    WebkitBoxOrient: 'vertical',
-                    WebkitLineClamp: 4,
                   }}
                 >
                   {project.description}
