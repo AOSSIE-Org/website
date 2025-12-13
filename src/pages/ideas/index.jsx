@@ -12,7 +12,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Article({ article }) {
   return (
-    <Grid item xs={12} sm={6} md={4}>
+    <Grid item xs={12} sm={6} md={4}> 
       <MuiCard
         className="dark:bg-[#2A2A2A] dark:border-white transition-colors transition-transform hover:bg-zinc-100 dark:hover:bg-zinc-700"
         sx={{
