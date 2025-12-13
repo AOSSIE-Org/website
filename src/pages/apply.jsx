@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 import { TimelineElement } from '@/components/TimelineElement'
 import GSoC from '@/images/logo.svg'
 
-export default function About() {
+export default function Apply() {
   return (
     <>
       <Head>
@@ -14,50 +14,47 @@ export default function About() {
         <meta name="description" content="How to apply for GSOC" />
 
         <style>{`
-  .relative {
+  /* Timeline step styles */
+  .timeline-step {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  /* Line for elements on the left */
-  .line-left {
-    position: absolute;
-    top: 42%;
-    width: 40%;
-    height: 2px;
+  .timeline-horizontal {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 2rem;
+    position: relative;
+    min-height: 180px; /* minimum height to accommodate images (120px) + text + spacing */
+    z-index: 1;
+  }
+
+  /* Timeline dot - connection indicator */
+  .timeline-dot {
+    width: 12px; /* sized to be prominent but not overwhelming */
+    height: 12px;
     background-color: black;
-    transform: translateX(-20%);
+    border: 4px solid white;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
   }
 
-  /* Line for elements on the right */
-  .line-right {
-    position: absolute;
-    top: 42%;
-    left: 50%;
-    width: 55%;
-    height: 2px;
-    background-color: black;
-  }
-
-  /* Dark Mode - change the line color to white */
-  .dark .line-left {
+  .dark .timeline-dot {
     background-color: white;
+    border-color: rgb(24, 24, 27);
   }
 
-  .dark .line-right {
-    background-color: white;
-  }
-
-  /* Responsive adjustments */
+  /* Mobile: hide horizontal elements, use vertical stacked UI */
   @media (max-width: 768px) {
-    .line-left, .line-right {
-      display:none
-    }
-  }
-
-  /* Further small screen adjustments for very small devices */
-  @media (max-width: 480px) {
-    .line-left, .line-right {
-      display:none
+    .timeline-horizontal-line,
+    .timeline-horizontal {
+      display: none;
     }
   }
 `}</style>
@@ -76,32 +73,64 @@ export default function About() {
 
 
 
-          <div className='w-full mt-8 hidden sm:block'>
-            <div className='relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8'>
-              <div className='line-right'></div>
-              <div className='relative'>
-                <Image src="/ele1.svg" alt="Join us on Discord" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Join us on Discord</p>
-              </div>
-              <div className='relative'>
-                <Image src="/ele2.svg" alt="Start Contributing" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Start Contributing</p>
-              </div>
-              <div className='relative'>
-                <Image src="/ele3.svg" alt="Choose an idea" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Choose an idea</p>
+          <div className='w-full mt-8 block'>
+            {/* Desktop timeline: horizontal connected line with evenly spaced steps */}
+            <div className='hidden md:block relative px-4 md:px-16 py-8'>
+              <div className='absolute inset-x-[5%] top-1/2 -translate-y-1/2 h-[3px] bg-black dark:bg-white' aria-hidden="true"></div>
+              <div className='timeline-horizontal'>
+                <div className='timeline-step'>
+                  <div className='timeline-dot' aria-hidden="true"></div>
+                  <Image src="/ele1.svg" alt="Join us on Discord" width={120} height={120} quality={100} />
+                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Join us on Discord</p>
+                </div>
+                <div className='timeline-step'>
+                  <div className='timeline-dot' aria-hidden="true"></div>
+                  <Image src="/ele2.svg" alt="Start Contributing" width={120} height={120} quality={100} />
+                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Start Contributing</p>
+                </div>
+                <div className='timeline-step'>
+                  <div className='timeline-dot' aria-hidden="true"></div>
+                  <Image src="/ele3.svg" alt="Choose an idea" width={120} height={120} quality={100} />
+                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Choose an idea</p>
+                </div>
+                <div className='timeline-step'>
+                  <div className='timeline-dot' aria-hidden="true"></div>
+                  <Image src="/ele4.svg" alt="Discuss with mentor" width={120} height={120} quality={100} />
+                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Discuss with mentor</p>
+                </div>
+                <div className='timeline-step'>
+                  <div className='timeline-dot' aria-hidden="true"></div>
+                  <Image src="/ele5.svg" alt="Submit final application" width={120} height={120} quality={100} />
+                  <p className='font-bold p-2 text-center text-xs md:text-sm dark:text-white mt-2'>Submit final application</p>
+                </div>
               </div>
             </div>
 
-            <div className='relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8'>
-              <div className='line-left'></div>
-              <div className='relative'>
-                <Image src="/ele4.svg" alt="Discuss with mentor" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Discuss with mentor</p>
+            {/* Mobile timeline - vertical stacked layout */}
+            <div className='md:hidden mt-4 px-4 space-y-6'>
+              <div className='flex flex-col items-center'>
+                <Image src="/ele1.svg" alt="Join us on Discord" width={100} height={100} quality={100} />
+                <p className='font-bold p-2 text-center text-sm dark:text-white'>Join us on Discord</p>
               </div>
-              <div className='relative'>
-                <Image src="/ele5.svg" alt="Submit final application" width={170} height={170} /> {/* Adjust width and height */}
-                <p className='font-bold p-3 m-auto dark:text-white'>Submit final application</p>
+              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
+              <div className='flex flex-col items-center'>
+                <Image src="/ele2.svg" alt="Start Contributing" width={100} height={100} quality={100} />
+                <p className='font-bold p-2 text-center text-sm dark:text-white'>Start Contributing</p>
+              </div>
+              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
+              <div className='flex flex-col items-center'>
+                <Image src="/ele3.svg" alt="Choose an idea" width={100} height={100} quality={100} />
+                <p className='font-bold p-2 text-center text-sm dark:text-white'>Choose an idea</p>
+              </div>
+              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
+              <div className='flex flex-col items-center'>
+                <Image src="/ele4.svg" alt="Discuss with mentor" width={100} height={100} quality={100} />
+                <p className='font-bold p-2 text-center text-sm dark:text-white'>Discuss with mentor</p>
+              </div>
+              <div className='h-8 w-1 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 mx-auto'></div>
+              <div className='flex flex-col items-center'>
+                <Image src="/ele5.svg" alt="Submit final application" width={100} height={100} quality={100} />
+                <p className='font-bold p-2 text-center text-sm dark:text-white'>Submit final application</p>
               </div>
             </div>
           </div>
