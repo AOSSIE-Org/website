@@ -120,6 +120,16 @@ export default function Home() {
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
               <p className="font-semibold text-2xl">34+</p>
+              <div className="mt-3">
+                <Button
+                  href="#active-projects"
+                  variant="light"
+                  ariaLabel="Scroll to Active Projects"
+                  className="transition-transform duration-300 hover:scale-105 active:scale-95"
+                >
+                  View Active Projects
+                </Button>
+              </div>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Total Contributors</h6>
@@ -135,7 +145,7 @@ export default function Home() {
       </Container.Outer>
 
 
-      <Container className="mt-24 md:mt-28">
+      <Container id="active-projects" className="mt-24 md:mt-28 scroll-mt-24">
         <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10 ">
             <div className="flex text-center items-center justify-center">
@@ -180,6 +190,7 @@ export default function Home() {
                       heading={project.name}
                       logo={project.logo}
                       content={project.description}
+                      href={project.link?.href}
                     />
                   </span>
                 ))}

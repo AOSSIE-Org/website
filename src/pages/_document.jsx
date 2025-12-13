@@ -37,7 +37,7 @@ const modeScript = `
 
 export default function Document() {
   return (
-    <Html className="h-full antialiased" lang="en">
+    <Html className="h-full antialiased scroll-smooth" lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
