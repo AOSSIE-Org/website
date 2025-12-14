@@ -34,13 +34,13 @@ export default function Home() {
         <div className="relative">
 
           {/* Background Image */}
-          <div className=" hidden  absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
+          <div className=" hidden  absolute md:block z-0 bg-[url('/images/background.png')] dark:bg-[url('/images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
 
           {/* Main Content */}
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
             <div className="flex-1 self-center">
               <Image
-                src="./logo1.png"
+                src="/logo1.png"
                 width={320}
                 height={300}
                 className="mx-auto scale-110 m-4"
