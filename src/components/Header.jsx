@@ -6,6 +6,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import projects from '@/helper/projects'
 
 function CloseIcon(props) {
   return (
@@ -141,7 +142,7 @@ function NavItem({ href, children }) {
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative block px-4 py-2 transition',
           isActive
             ? 'text-[#00843D] dark:text-yellow-400'
             : 'hover:text-[#00843D] dark:hover:text-yellow-400'
@@ -156,12 +157,78 @@ function NavItem({ href, children }) {
   )
 }
 
+function ProjectsDropdown() {
+  const router = useRouter()
+  const isActive = router.pathname === '/projects'
+  return (
+    <Popover className="relative">
+      <div className="flex items-center">
+        <Link
+          href="/projects"
+          className={clsx(
+            'relative block pl-4 pr-2 py-2 transition',
+            isActive
+              ? 'text-[#00843D] dark:text-yellow-400'
+              : 'hover:text-[#00843D] dark:hover:text-yellow-400'
+          )}
+        >
+          Projects
+          {isActive && (
+            <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#00843D]/0 via-[#00843D]/40 to-aus-[#00843D]/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0" />
+          )}
+        </Link>
+        <Popover.Button
+          aria-label="Toggle projects menu"
+          className="ml-0.5 inline-flex items-center p-1 transition hover:text-[#00843D] dark:hover:text-yellow-400"
+        >
+          <ChevronDownIcon className="h-auto w-2 stroke-current transition ui-open:rotate-180" />
+        </Popover.Button>
+      </div>
+      <Transition
+        enter="transition duration-150 ease-out"
+        enterFrom="opacity-0 translate-y-1"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition duration-100 ease-in"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 translate-y-1"
+      >
+        <Popover.Panel className="absolute left-0 top-full z-50 mt-2 w-[40rem] sm:w-[48rem] rounded-2xl bg-white/95 p-3 shadow-2xl ring-1 ring-zinc-900/5 dark:bg-zinc-900/95 dark:ring-zinc-800">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+            {projects.map((p) => (
+              <li key={p.name}>
+                <a
+                  href={p.link?.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between px-3 py-2 text-sm text-zinc-700 hover:bg-[#FED41E] hover:text-black dark:text-zinc-200 dark:hover:bg-yellow-400 dark:hover:text-black"
+                >
+                  <span className="mr-2 break-words">{p.name}</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    className="h-3 w-3"
+                  >
+                    <path
+                      d="M14 3h7v7h-2V6.41l-7.29 7.3-1.42-1.42L17.59 5H14V3zM5 5h7v2H7v10h10v-5h2v7H5V5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
+  )
+}
+
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex gap-4 font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
+        <ProjectsDropdown />
         <NavItem href="/ideas">Ideas</NavItem>
         <NavItem href="/apply">Apply</NavItem>
       </ul>

@@ -10,15 +10,25 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
+import Button from '@/components/Button'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
 
+
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
+  const [selectedProject, setSelectedProject] = useState('')
+  const handleProjectSelect = (e) => {
+    const name = e.target.value
+    setSelectedProject(name)
+    const proj = projects.find((p) => p.name === name)
+    if (proj?.link?.href) {
+      window.open(proj.link.href, '_blank', 'noopener,noreferrer')
+    }
+  }
 
   useEffect(() => {
     setRandomProjects(projects.sort(() => 0.5 - Math.random()).slice(0, 3))
@@ -88,11 +98,19 @@ export default function Home() {
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
                   <Link
-                    aria-label="Follow on Twitter"
+                    aria-label="Follow on X"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      width="28"
+                      height="28"
+                      className="fill-current"
+                    >
+                      <path d="M18.244 3H21L13.323 12.725 21.429 21H15.928L10.833 15.43 5.112 21H3L11.15 11.837 3.286 3H8.934L13.66 8.12 18.244 3Z"></path>
+                    </svg>
                   </Link>
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
@@ -117,8 +135,35 @@ export default function Home() {
           {/* Green Band with Counts */}
           <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
             <div className="mb-4 sm:mb-0">
-              <h6 className="text-xl">Active Projects</h6>
+              <div className="flex items-center justify-center gap-3">
+                <h6 className="text-xl">Active Projects</h6>
+                <select
+                  aria-label="Select a project"
+                  value={selectedProject}
+                  onChange={handleProjectSelect}
+                  className="rounded border border-white bg-transparent text-white px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-white dark:text-black dark:border-black dark:focus:ring-black"
+                >
+                  <option value="" disabled>
+                    All Projects
+                  </option>
+                  {projects.map((p) => (
+                    <option key={p.name} value={p.name}>
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <p className="font-semibold text-2xl">34+</p>
+              <div className="mt-3">
+                <Button
+                  href="#active-projects"
+                  variant="light"
+                  ariaLabel="Scroll to Active Projects"
+                  className="transition-transform duration-300 hover:scale-105 active:scale-95"
+                >
+                  View Active Projects
+                </Button>
+              </div>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Total Contributors</h6>
@@ -134,7 +179,7 @@ export default function Home() {
       </Container.Outer>
 
 
-      <Container className="mt-24 md:mt-28">
+      <Container id="active-projects" className="mt-24 md:mt-28 scroll-mt-24">
         <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10 ">
             <div className="flex text-center items-center justify-center">
@@ -179,6 +224,7 @@ export default function Home() {
                       heading={project.name}
                       logo={project.logo}
                       content={project.description}
+                      href={project.link?.href}
                     />
                   </span>
                 ))}
@@ -186,30 +232,7 @@ export default function Home() {
             </Container.Inner>
           </div>
           <div className="mt-12 text-center">
-            <Link
-              className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
-              href="/projects"
-            >
-              <span className="absolute right-0 flex-shrink-0 translate-x-full rounded-full border border-current bg-white p-1 text-black transition-transform group-hover:-translate-x-4">
-                <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
-              <span className="font-mono font-semibold transition-all group-hover:mr-6">
-                View All Projects
-              </span>
-            </Link>
+            <Button href="/projects">View All Projects</Button>
           </div>
         </div>
       </Container>

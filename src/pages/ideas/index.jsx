@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import CTAButton from '@/components/Button';
 import { Container } from '@/components/Container';
 import { getAllIdeas } from '@/helper/getAllIdeas';
 import Grid from '@mui/material/Grid';
@@ -39,7 +40,7 @@ function Article({ article }) {
 
           <Typography
             variant="body1"
-            className="text-zinc-600 text-base dark:text-zinc-400 text-lg font-mono leading-6 text-center"
+            className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-6 text-center"
             sx={{
               fontFamily: 'Nunito-Light',
               color: 'black',
@@ -119,14 +120,7 @@ export default function Ideas({ articles }) {
             </Grid>
           </div>
           <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2024"
-            >
-              <span className="text-center font-mono font-semibold">
-                View 2024 Idea List
-              </span>
-            </Link>
+            <CTAButton href="/ideas/2024">View 2024 Idea List</CTAButton>
           </div>
         </Container.Inner>
       </Container>

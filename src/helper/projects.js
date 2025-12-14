@@ -13,7 +13,7 @@ const projects = [
   {
     name: 'Agora Blockchain',
     description:
-      'There isn’t just one voting algorithm, there’s hundreds. Therefore, we developed Agora to allow for democratic elections using any algorithm.',
+      'Agora enables democratic elections using a wide range of voting algorithms.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Agora-Blockchain',
       label: 'Agora',
@@ -23,7 +23,7 @@ const projects = [
   {
     name: 'Agora Vote Android',
     description:
-      'This application uses Agora Web API as backend application. It allows for elections to be held by using multiple algorithms such as Oklahoma, RangeVoting, RankedPairs, Satisfaction Approval Voting.',
+      'Android app using Agora Web API to run elections with multiple voting algorithms.',
     link: {
       href: 'https://gitlab.com/aossie/agora-android',
       label: 'Agora-Android',
@@ -33,49 +33,49 @@ const projects = [
   {
     name: 'Djed',
     description:
-      'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
+      'Djed is a formally verified, crypto-backed algorithmic stablecoin protocol.',
     link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
     logo: Djed,
   },
   {
     name: 'Pictopy',
     description:
-      'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
+      'PictoPy is a privacy-focused desktop app that simplifies gallery management with smart tagging for objects, faces, and scenes.',
     link: { href: 'https://github.com/AOSSIE-Org/PictoPy', label: 'PictoPy' },
     logo: PictoPy,
   },
   {
     name: 'EduAid',
     description:
-      'An online tool that can generate short quizzes on input educational content can be of great use to teachers and students alike as it can help retain important information, frame questions and quickly revise large chunks of content.',
+      'EduAid generates short quizzes from educational content to help teachers and students review and retain key concepts.',
     link: { href: 'https://github.com/AOSSIE-Org/EduAid', label: 'EduAid' },
     logo: DefaultLogo,
   },
   {
     name: 'OpenChat',
     description:
-      'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
+      'A decentralized platform for secure, private messaging and file sharing backed by blockchain.',
     link: { href: '#', label: 'OpenChat' },
     logo: DefaultLogo,
   },
   {
     name: 'Resonate',
     description:
-      'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
+      'An open-source social voice platform to provide a credible Clubhouse-style alternative focused on community growth.',
     link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
     logo: ResonateLogo,
   },
   {
     name: 'Monumento',
     description:
-      'Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform.',
+      'Monumento integrates AR with social features to discover landmarks, check in, and connect with others.',
     link: { href: 'https://github.com/AOSSIE-Org/Monumento', label: 'Monumento' },
     logo: MonumentoLogo,
   },
   {
     name: 'Social Street Smart',
     description:
-      'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
+      'Social Street Smart detects and helps address abusive language online to promote safer interactions.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',
