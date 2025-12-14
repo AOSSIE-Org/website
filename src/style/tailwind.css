@@ -4,3 +4,12 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer utilities {
+  .center-screen {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+  }
+}
