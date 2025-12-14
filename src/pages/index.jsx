@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import Logo1 from '@/images/logo1.png'
 import { useState, useEffect } from 'react'
 
 import { Container } from '@/components/Container'
@@ -40,11 +41,12 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
             <div className="flex-1 self-center">
               <Image
-                src="./logo1.png"
+                src={Logo1}
                 width={320}
                 height={300}
                 className="mx-auto scale-110 m-4"
                 alt="AOSSIE Logo"
+                unoptimized
               />
             </div>
             <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
@@ -61,36 +63,36 @@ export default function Home() {
                 <div className="mt-6 ml-4 flex gap-6">
                   <Link
                     aria-label="Contact by Mail"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="mailto:aossie.oss@gmail.com"
+                    className="text-zinc-500 transition hover:text-[#00843D] hover:opacity-90 dark:text-zinc-400 dark:hover:text-yellow-300 dark:hover:brightness-110"
+                    href="mailto:aossie.oss@gmail.com" target="_blank" rel="noopener noreferrer"
                   >
                     <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                   </Link>
                   <Link
                     aria-label="Follow on GitLab"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://gitlab.com/aossie"
+                    className="text-zinc-500 transition hover:text-[#00843D] hover:opacity-90 dark:text-zinc-400 dark:hover:text-yellow-300 dark:hover:brightness-110"
+                    href="https://gitlab.com/aossie" target="_blank" rel="noopener noreferrer"
                   >
                     <FontAwesomeIcon icon={faGitlab} size="2xl" />
                   </Link>
                   <Link
                     aria-label="Follow on GitHub"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://github.com/AOSSIE-Org"
+                    className="text-zinc-500 transition hover:text-[#00843D] hover:opacity-90 dark:text-zinc-400 dark:hover:text-yellow-300 dark:hover:brightness-110"
+                    href="https://github.com/AOSSIE-Org" target="_blank" rel="noopener noreferrer"
                   >
                     <FontAwesomeIcon icon={faGithub} size="2xl" />
                   </Link>
                   <Link
                     aria-label="Join on Discord"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://discord.gg/hjUhu33uAn"
+                    className="text-zinc-500 transition hover:text-[#00843D] hover:opacity-90 dark:text-zinc-400 dark:hover:text-yellow-300 dark:hover:brightness-110"
+                    href="https://discord.gg/hjUhu33uAn" target="_blank" rel="noopener noreferrer"
                   >
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
                   <Link
                     aria-label="Follow on Twitter"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://twitter.com/aossie_org"
+                    className="text-zinc-500 transition hover:text-[#00843D] hover:opacity-90 dark:text-zinc-400 dark:hover:text-yellow-300 dark:hover:brightness-110"
+                    href="https://twitter.com/aossie_org" target="_blank" rel="noopener noreferrer"
                   >
                     <FontAwesomeIcon icon={faTwitter} size="2xl" />
                   </Link>

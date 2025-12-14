@@ -13,7 +13,7 @@ const projects = [
   {
     name: 'Agora Blockchain',
     description:
-      'There isn’t just one voting algorithm, there’s hundreds. Therefore, we developed Agora to allow for democratic elections using any algorithm.',
+      'A blockchain-based voting framework supporting multiple election algorithms for democratic processes.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Agora-Blockchain',
       label: 'Agora',
@@ -23,7 +23,7 @@ const projects = [
   {
     name: 'Agora Vote Android',
     description:
-      'This application uses Agora Web API as backend application. It allows for elections to be held by using multiple algorithms such as Oklahoma, RangeVoting, RankedPairs, Satisfaction Approval Voting.',
+      'Android app for creating and participating in elections via the Agora Web API, supporting methods like Oklahoma, Range Voting, Ranked Pairs, and Satisfaction Approval Voting.',
     link: {
       href: 'https://gitlab.com/aossie/agora-android',
       label: 'Agora-Android',
@@ -33,49 +33,49 @@ const projects = [
   {
     name: 'Djed',
     description:
-      'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
+      'Formally verified, crypto‑backed algorithmic stablecoin protocol.',
     link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
     logo: Djed,
   },
   {
     name: 'Pictopy',
     description:
-      'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
+      'Privacy‑focused desktop photo manager with smart tagging for objects, faces, and scenes.',
     link: { href: 'https://github.com/AOSSIE-Org/PictoPy', label: 'PictoPy' },
     logo: PictoPy,
   },
   {
     name: 'EduAid',
     description:
-      'An online tool that can generate short quizzes on input educational content can be of great use to teachers and students alike as it can help retain important information, frame questions and quickly revise large chunks of content.',
+      'Generates short quizzes from educational content to help teachers and students retain key information and review quickly.',
     link: { href: 'https://github.com/AOSSIE-Org/EduAid', label: 'EduAid' },
     logo: DefaultLogo,
   },
   {
     name: 'OpenChat',
     description:
-      'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
-    link: { href: '#', label: 'OpenChat' },
+      'Decentralized platform for secure, private messaging and file sharing built on blockchain.',
+    link: { href: 'https://github.com/AOSSIE-Org/OpenPeerChat-flutter', label: 'OpenChat' },
     logo: DefaultLogo,
   },
   {
     name: 'Resonate',
     description:
-      'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
+      'Open‑source social voice platform—an alternative to Clubhouse—focused on community, credibility, and growth.',
     link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
     logo: ResonateLogo,
   },
   {
     name: 'Monumento',
     description:
-      'Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform.',
+      'AR‑integrated social app to check in at landmarks, explore sites, and connect with people.',
     link: { href: 'https://github.com/AOSSIE-Org/Monumento', label: 'Monumento' },
     logo: MonumentoLogo,
   },
   {
     name: 'Social Street Smart',
     description:
-      'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
+      'Browser tooling and ML models to detect abusive language, misinformation, click‑bait, and malicious sites.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',
