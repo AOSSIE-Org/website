@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Grid from '@mui/material/Grid';
 import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -83,10 +84,10 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+              <Link href={project.link.href} target="_blank" rel="noopener noreferrer" className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition hover:text-[#00843D] dark:hover:text-yellow-400 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none scale-110" />
                 <span className="ml-2">{project.link.label}</span>
-              </p>
+              </Link>
             </CardActions>
           </MuiCard>
         </Grid>

@@ -179,6 +179,7 @@ export default function Home() {
                       heading={project.name}
                       logo={project.logo}
                       content={project.description}
+                      href={project.link.href}
                     />
                   </span>
                 ))}
