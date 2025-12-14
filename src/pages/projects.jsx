@@ -95,7 +95,7 @@ const Cards = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative z-10 mt-6 inline-flex items-center px-2 py-1 text-md font-semibold font-mono text-zinc-600 transition hover:text-[#00843D] dark:hover:text-yellow-400 dark:text-zinc-200"
+                  className="group relative z-10 mt-6 inline-flex items-center px-2 py-1 text-md font-semibold font-mono text-zinc-600 transition hover:text-[#00843D] hover:opacity-90 dark:hover:text-yellow-300 dark:hover:brightness-110 dark:text-zinc-200"
                 >
                   <LinkIcon className="h-6 w-6 flex-none scale-110" />
                   <span className="ml-2">{project.link.label}</span>

@@ -145,7 +145,7 @@ function NavItem({ href, children }) {
           'relative block px-3 py-2 transition',
           isActive
             ? 'text-[#00843D] dark:text-yellow-400'
-            : 'hover:text-[#00843D] dark:hover:text-yellow-400'
+            : 'hover:text-[#00843D] hover:opacity-90 dark:hover:text-yellow-300 dark:hover:brightness-110'
         )}
       >
         {children}
