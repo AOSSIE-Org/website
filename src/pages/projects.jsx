@@ -10,7 +10,9 @@ import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projects from '@/helper/projects';
+import Link from 'next/link';
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -22,77 +24,100 @@ function LinkIcon(props) {
   )
 }
 
-// Define the Cards component here
 const Cards = () => {
   const router = useRouter();
 
-
-
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
-      {projects.map((project, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index}>
-          <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
-            sx={{
-              height: 400,
-              borderRadius: 2,
-              border: '1px solid',
-              borderColor: '#3c982c',
-              boxShadow: '0px 4px 4px #00000040',
-              backdropFilter: 'blur(4px) brightness(100%)',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-              <Image
-                src={project.logo}
-                alt={`${project.title} image`}
-                width={80}
-                height={80}
-                style={{ margin: '0 auto 16px', objectFit: 'contain' }}
-              />
-              <Typography
-                variant="h5"
-                className="mt-6 font-mono text-green-600 dark:text-yellow-400"
-                sx={{
-                  fontFamily: 'Nunito-Bold',
-                  color: '#3c982c',
-                  textAlign: 'center',
-                }}
-              >
-                {project.name}
-              </Typography>
+      {projects.map((project, index) => {
+        // FIX 1: Changed .url to .href to fix navigation
+        const projectUrl = (project.link && project.link.href) ? project.link.href : '#';
+        const linkLabel = (project.link && project.link.label) ? project.link.label : 'View';
+        
+        // FIX 2: Check if link is external (not just a placeholder '#')
+        const isExternal = projectUrl !== '#';
 
-              <Typography
-                variant="body1"
-                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
-                sx={{
-                  fontFamily: 'Nunito-Light',
-                  color: 'black',
-                  mt: 2,
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  display: '-webkit-box',
-                  WebkitBoxOrient: 'vertical',
-                  WebkitLineClamp: 4,
-                }}
+        return (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Link href={projectUrl} passHref legacyBehavior>
+              <a 
+                // FIX 2: Only open in new tab if it is a real external link
+                target={isExternal ? "_blank" : "_self"} 
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
               >
-                {project.description}
-              </Typography>
-            </CardContent>
-            <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            </CardActions>
-          </MuiCard>
-        </Grid>
-      ))
-      }
-    </Grid >
+                <MuiCard
+                  className='dark:bg-[#2A2A2A] dark:border-white group'
+                  sx={{
+                    height: 400,
+                    borderRadius: 2,
+                    border: '1px solid',
+                    borderColor: '#3c982c',
+                    boxShadow: '0px 4px 4px #00000040',
+                    backdropFilter: 'blur(4px) brightness(100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.3s ease-in-out',
+                    cursor: 'pointer',
+                    ':hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                      borderColor: '#facc15',
+                      // FIX 3: Removed backgroundColor to fix the Dark Mode flashing issue
+                    }
+                  }}
+                >
+                  <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
+                    <Image
+                      src={project.logo}
+                      // FIX 4: Changed .title to .name for correct Alt Text
+                      alt={`${project.name} image`}
+                      width={80}
+                      height={80}
+                      style={{ margin: '0 auto 16px', objectFit: 'contain' }}
+                    />
+                    <Typography
+                      variant="h5"
+                      className="mt-6 font-mono text-green-600 dark:text-yellow-400"
+                      sx={{
+                        fontFamily: 'Nunito-Bold',
+                        color: '#3c982c',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {project.name}
+                    </Typography>
+
+                    <Typography
+                      variant="body1"
+                      className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                      sx={{
+                        fontFamily: 'Nunito-Light',
+                        color: 'black',
+                        mt: 2,
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: 4,
+                      }}
+                    >
+                      {project.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{ justifyContent: 'center' }}>
+                    <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition-colors group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                      <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                      <span className="ml-2">{linkLabel}</span>
+                    </p>
+                  </CardActions>
+                </MuiCard>
+              </a>
+            </Link>
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 };
 
