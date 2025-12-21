@@ -62,36 +62,39 @@ export default function Home() {
                   <Link
                     aria-label="Contact by Mail"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="mailto:aossie.oss@gmail.com"
-                  >
+                    href="mailto:aossie.oss@gmail.com">
                     <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                   </Link>
                   <Link
-                    aria-label="Follow on GitLab"
+                    aria-label="Follow on GitLab (opens in new tab)"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://gitlab.com/aossie"
-                  >
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGitlab} size="2xl" />
                   </Link>
                   <Link
-                    aria-label="Follow on GitHub"
+                    aria-label="Follow on GitHub (opens in new tab)"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://github.com/AOSSIE-Org"
-                  >
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithub} size="2xl" />
                   </Link>
                   <Link
-                    aria-label="Join on Discord"
+                    aria-label="Join on Discord (opens in new tab)"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://discord.gg/hjUhu33uAn"
-                  >
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
                   <Link
-                    aria-label="Follow on Twitter"
+                    aria-label="Follow on Twitter (opens in new tab)"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
-                  >
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faTwitter} size="2xl" />
                   </Link>
                 </div>
