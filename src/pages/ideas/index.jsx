@@ -24,8 +24,11 @@ function Article({ article }) {
           backdropFilter: 'blur(4px) brightness(100%)',
           display: 'flex',
           flexDirection: 'column',
-          transition: 'background-color 0.3s ease',
-
+          transition: 'transform 200ms ease-out, box-shadow 200ms ease-out',
+          '&:hover': {
+            transform: 'translateY(-4px) scale(1.02)',
+            boxShadow: '0 12px 24px rgba(0,0,0,0.18)',
+          },
         }}
       >
         <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
