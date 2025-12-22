@@ -24,10 +24,6 @@ function LinkIcon(props) {
 
 // Define the Cards component here
 const Cards = () => {
-  const router = useRouter();
-
-
-
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
@@ -56,18 +52,14 @@ const Cards = () => {
               <Typography
                 variant="h5"
                 className="mt-6 font-mono text-green-600 dark:text-yellow-400"
-                sx={{
-                  fontFamily: 'Nunito-Bold',
-                  color: '#3c982c',
-                  textAlign: 'center',
-                }}
+                sx={{ fontFamily: 'Nunito-Bold', color: '#3c982c', textAlign: 'center' }}
               >
                 {project.name}
               </Typography>
 
               <Typography
                 variant="body1"
-                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center"
                 sx={{
                   fontFamily: 'Nunito-Light',
                   color: 'black',
@@ -82,19 +74,25 @@ const Cards = () => {
                 {project.description}
               </Typography>
             </CardContent>
+
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+              <a
+                href={project.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 dark:text-zinc-200 hover:text-[#00843D] dark:hover:text-yellow-400"
+              >
                 <LinkIcon className="h-6 w-6 flex-none scale-110" />
                 <span className="ml-2">{project.link.label}</span>
-              </p>
+              </a>
             </CardActions>
           </MuiCard>
         </Grid>
-      ))
-      }
-    </Grid >
+      ))}
+    </Grid>
   );
 };
+
 
 const ProjectSection = () => {
   return (
