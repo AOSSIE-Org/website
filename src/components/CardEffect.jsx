@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function CardEffect({heading, content, logo}) {
     return (
-        <a className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer transform transition duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl">
+        <a className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer transform transition duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg">
             {/* <span className="absolute inset-0 border-2 rounded-lg border-dashed border-black dark:border-zinc-300"></span> */}
 
             {/* <div className="relative flex h-full transform items-end border-4 rounded-lg border-black dark:border-zinc-300 bg-transparent dark:bg-transparent transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"> */}
