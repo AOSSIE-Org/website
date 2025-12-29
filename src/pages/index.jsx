@@ -172,7 +172,7 @@ export default function Home() {
           </div>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
             <Container.Inner>
-              <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
                 {randomProjects.map((project) => (
                   <span key={project.name}>
                     <CardEffect
