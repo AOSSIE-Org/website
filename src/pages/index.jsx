@@ -10,8 +10,9 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
+import { SiX } from 'react-icons/si'
+
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
@@ -88,11 +89,12 @@ export default function Home() {
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
                   <Link
-                    aria-label="Follow on Twitter"
+                    aria-label="Follow on X"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                    <SiX size={32} />
+
                   </Link>
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
