@@ -24,7 +24,7 @@ In order to run the site locally,
 - In the root directory, you can run the following commands:
 
 ```
-npm install
+npm i
 npm run dev
 ```
 
