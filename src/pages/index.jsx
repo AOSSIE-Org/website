@@ -84,7 +84,7 @@ export default function Home() {
                   <Link
                     aria-label="Join on Discord"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://discord.gg/hjUhu33uAn"
+                    href="https://discord.gg/xnmAPS7zqB"
                   >
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
