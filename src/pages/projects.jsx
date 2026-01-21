@@ -43,6 +43,11 @@ const Cards = () => {
               backdropFilter: 'blur(4px) brightness(100%)',
               display: 'flex',
               flexDirection: 'column',
+              transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+              '&:hover': {
+                transform: 'translateY(-5px)',
+                boxShadow: '0px 10px 20px rgba(0,0,0,0.2)',
+              },
             }}
           >
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
@@ -83,12 +88,15 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#32a852] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <a href={project.link.href} target="_blank" rel="noopener noreferrer" className="hover:text-[#32a852] dark:hover:text-yellow-400 inline-flex items-center">
-                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                  <span className="ml-2">{project.link.label}</span>
-                </a>
-              </p>
+              <a
+                href={project.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-10 mt-6 flex items-center text-md font-semibold font-mono text-zinc-600 dark:text-zinc-200 hover:text-[#00843D] dark:hover:text-yellow-400 transition-colors"
+              >
+                <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                <span className="ml-2">{project.link.label}</span>
+              </a>
             </CardActions>
           </MuiCard>
         </Grid>
@@ -122,8 +130,7 @@ const ProjectSection = () => {
 
 const styles = {
   bannerWrapper: {
-    width: '100vw',
-    marginLeft: 'calc(-50vw + 50%)',
+    width: '100%',
     position: 'relative',
     overflow: 'hidden',
   },
