@@ -17,6 +17,15 @@ import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
 
+/**
+ * Home page component
+ *
+ * Renders the main landing (hero) section of the AOSSIE website.
+ * Includes organization branding, introductory content, and
+ * social media links. Updated to reflect Twitter rebranding by
+ * displaying the X icon in the social links section.
+ */
+
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
 
@@ -94,6 +103,7 @@ export default function Home() {
                   >
                     <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                   </Link>
+                </div>
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
                   <Link href="/about" className="group relative inline-block text-lg">
