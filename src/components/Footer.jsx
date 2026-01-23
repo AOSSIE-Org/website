@@ -16,6 +16,14 @@ function NavLink({ href, children }) {
   )
 }
 
+/**
+ * Footer component
+ *
+ * Displays footer navigation links and social media icons.
+ * Updated to reflect Twitter rebranding by replacing the Twitter icon
+ * with the X icon while preserving existing links and accessibility.
+ */
+
 export function Footer() {
   return (
     <footer className="mt-16">
