@@ -1,0 +1,17 @@
+name: ✨ Enhancement
+description: Suggest an improvement to an existing feature
+title: "[Enhancement]: "
+labels: ["enhancement"]
+
+body:
+  - type: textarea
+    attributes:
+      label: What should be improved?
+      description: Describe the enhancement you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Why is this useful?
+      description: Explain the benefit.
