@@ -1,0 +1,17 @@
+name: 📚 Documentation
+description: Improvements or fixes to documentation
+title: "[Docs]: "
+labels: ["documentation"]
+
+body:
+  - type: textarea
+    attributes:
+      label: Documentation issue
+      description: What is missing, unclear, or wrong?
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Affected page or section
+      placeholder: Link or file path
