@@ -13,6 +13,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
+import BrandingBackground from '@/components/BrandingBackground'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
@@ -31,11 +32,10 @@ export default function Home() {
       </Head>
 
       <Container.Outer className="mt-9 relative">
-        <div className="relative">
-
+        <div className="relative overflow-hidden">
+          <BrandingBackground />
           {/* Background Image */}
-          <div className=" hidden  absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
-
+          <div className="hidden absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
           {/* Main Content */}
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
             <div className="flex-1 self-center">
@@ -49,10 +49,10 @@ export default function Home() {
             </div>
             <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
               <div className="max-w-xl ml-12">
-                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
+                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-primary md:text-primary-accent dark:text-primary-accent md:dark:text-secondary-dark sm:text-6xl md:text-5xl lg:text-6xl">
                   We Innovate <br /> We Educate
                 </h1>
-                <p className="mt-8 font-mono text-xl leading-7 text-zinc-600 dark:text-[rgb(161 161 170/var(--tw-text-opacity))]  md:dark:text-[#FED41E]">
+                <p className="mt-8 font-mono text-xl leading-7 text-secondary-dark dark:text-secondary md:dark:text-primary-accent">
                   We are an Australian not-for-profit umbrella organization for
                   open-source projects. We believe the open-source philosophy
                   provides a resource-efficient channel to transfer knowledge and
@@ -115,16 +115,16 @@ export default function Home() {
           </div>
 
           {/* Green Band with Counts */}
-          <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
-            <div className="mb-4 sm:mb-0">
+          <div className="hidden bg-primary-dark relative dark:text-secondary-dark sm:grid grid-cols-1 md:grid-cols-3 gap-6 p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-primary-accent z-20">
+            <div className="flex flex-col items-center justify-center">
               <h6 className="text-xl">Active Projects</h6>
               <p className="font-semibold text-2xl">34+</p>
             </div>
-            <div className="mb-4 sm:mb-0">
+            <div className="flex flex-col items-center justify-center">
               <h6 className="text-xl">Total Contributors</h6>
               <p className="font-semibold text-2xl">500+</p>
             </div>
-            <div className="mb-4 sm:mb-0">
+            <div className="flex flex-col items-center justify-center">
               <h6 className="text-xl">Community Count</h6>
               <p className="font-semibold text-2xl">2000+</p>
             </div>
@@ -138,7 +138,7 @@ export default function Home() {
         <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10 ">
             <div className="flex text-center items-center justify-center">
-              <div className=" relative top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
+              <div className=" relative top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-primary p-2 dark:bg-primary-accent md:flex">
                 <svg
                   aria-hidden="true"
                   role="img"
@@ -156,18 +156,18 @@ export default function Home() {
                 </svg>
               </div>
               <div className="col-span-8 mt-3 self-center lg:col-start-2">
-                <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
+                <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-secondary-dark dark:text-white">
                   projects
                 </h1>
               </div>
             </div>
 
-            <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 text-center ">
+            <p className=" font-mono text-lg text-secondary-dark dark:text-secondary text-center ">
               Our Projects, where we showcase our tech wizardry and
               code-slinging skills!! <br></br> Be a part of our community and
-              contribute to meaningful projects that are <span className="text-[#3C982C] dark:text-yellow-400">making a difference</span>.
+              contribute to meaningful projects that are <span className="text-primary-dark dark:text-primary-accent">making a difference</span>.
               Explore our selection of projects and find the perfect opportunity
-              to showcase your skills and <span className="text-[#3C982C] dark:text-yellow-400">make an impact</span>.
+              to showcase your skills and <span className="text-primary-dark dark:text-primary-accent">make an impact</span>.
             </p>
           </div>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">

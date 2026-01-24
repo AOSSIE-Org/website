@@ -20,9 +20,9 @@ export function Pattern({
     <svg aria-hidden="true" width={width} height={height} {...props}>
       <defs>
         <symbol id={`${id}-0`} width={size} height={size}>
-          <rect className="fill-green-200 dark:fill-yellow-200" width={size} height={size} />
+          <rect className="fill-primary/20 dark:fill-primary-accent/20" width={size} height={size} />
           <circle
-            className="fill-[#00843D]  dark:fill-yellow-400"
+            className="fill-primary dark:fill-primary-accent"
             cx={size / 2}
             cy={size / 2}
             r={size * (13 / 40)}
@@ -30,13 +30,13 @@ export function Pattern({
         </symbol>
         <symbol id={`${id}-1`} width={size} height={size}>
           <circle
-            className="fill-green-400 dark:fill-yellow-300 animate-pulse"
+            className="fill-primary dark:fill-primary-accent animate-pulse"
             cx={size / 2}
             cy={size / 2}
             r={size / 2}
           />
           <rect
-            className="fill-[#00843D] dark:fill-yellow-400"
+            className="fill-primary dark:fill-primary-accent"
             width={size / 2}
             height={size / 2}
             x={size / 4}

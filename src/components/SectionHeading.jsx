@@ -9,7 +9,7 @@ export function SectionHeading({ number, children, className, ...props }) {
       )}
       {...props}
     >
-      {number && (
+      {number !== null && number !== undefined && (
         <span className="font-mono text-lg font-black text-primary-accent dark:text-yellow-400 drop-shadow" aria-hidden="true">
           {number}
         </span>
