@@ -4,15 +4,17 @@ export function SectionHeading({ number, children, className, ...props }) {
   return (
     <h2
       className={clsx(
-        className,
-        'inline-flex items-center rounded-full py-1 px-4 text-[#00843D] dark:text-yellow-400 ring-1 ring-inset ring-[#00843D] dark:ring-yellow-400'
+        'text-3xl md:text-4xl font-extrabold tracking-tight text-primary dark:text-yellow-400 flex items-center gap-3 mb-8 animate-fade-in',
+        className
       )}
       {...props}
     >
-      <span className="font-mono text-base font-semibold" aria-hidden="true">
-      </span>
-      {/* <span className="ml-3 h-3.5 w-px bg-blue-600/20 dark:bg-white" /> */}
-      <span className="ml-3 text-base font-semibold font-mono tracking-tighter">
+      {number !== null && number !== undefined && (
+        <span className="font-mono text-lg font-black text-primary-accent dark:text-yellow-400 drop-shadow" aria-hidden="true">
+          {number}
+        </span>
+      )}
+      <span className="ml-3 text-xl md:text-2xl font-semibold font-mono tracking-tighter">
         {children}
       </span>
     </h2>
