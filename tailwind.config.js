@@ -23,6 +23,42 @@ module.exports = {
       scale: {
         180: '1.8',
       },
+      colors: {
+        primary: {
+          DEFAULT: '#00843D',
+          dark: '#3C982C',
+          accent: '#FED41E',
+        },
+        secondary: {
+          DEFAULT: '#F5F5F5',
+          dark: '#23272F',
+        },
+        brand: {
+          green: '#00843D',
+          yellow: '#FED41E',
+        },
+      },
+      boxShadow: {
+        'soft': '0 2px 8px 0 rgba(0,0,0,0.06)',
+        'md-soft': '0 4px 16px 0 rgba(0,0,0,0.10)',
+        'xl-soft': '0 8px 32px 0 rgba(0,0,0,0.12)',
+      },
+      borderRadius: {
+        'xl': '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+      },
+      transitionProperty: {
+        'spacing': 'margin, padding',
+      },
+      transitionDuration: {
+        '400': '400ms',
+        '600': '600ms',
+      },
+      transitionTimingFunction: {
+        'in-expo': 'cubic-bezier(0.95,0.05,0.795,0.035)',
+        'out-expo': 'cubic-bezier(0.19,1,0.22,1)',
+      },
     },
     typography: (theme) => ({
       invert: {
