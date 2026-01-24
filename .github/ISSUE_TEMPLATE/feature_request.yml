@@ -1,0 +1,17 @@
+name: 🚀 Feature Request
+description: Propose a brand new feature
+title: "[Feature]: "
+labels: ["feature request"]
+
+body:
+  - type: textarea
+    attributes:
+      label: Feature description
+      description: What problem does this feature solve?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Alternatives considered
+      description: Any alternative solutions?
