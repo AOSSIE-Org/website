@@ -110,7 +110,7 @@ const ProjectSection = () => {
     <div className="ideas-text relative mb-8 flex items-center justify-center">
       <div
         className="absolute left-10 m-2 hidden h-[75px] w-[75px] bg-[url('/logo.png')] bg-cover bg-center dark:bg-[url('/logo.png')] md:block"
-        alt="GSOC Logo"
+        aria-hidden="true"
       ></div>
 
       <h1 className="text-center font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
