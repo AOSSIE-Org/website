@@ -1,15 +1,15 @@
-import Head from 'next/head';
-import Grid from '@mui/material/Grid';
-import MuiCard from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Container } from '@/components/Container';
-import { Banner } from '@/components/Banner';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import Head from 'next/head'
+import Grid from '@mui/material/Grid'
+import MuiCard from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { Container } from '@/components/Container'
+import { Banner } from '@/components/Banner'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
 import projects from '@/helper/projects'
 function LinkIcon(props) {
   return (
@@ -24,16 +24,18 @@ function LinkIcon(props) {
 
 // Define the Cards component here
 const Cards = () => {
-  const router = useRouter();
-
-
+  const router = useRouter()
 
   return (
-    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
+    <Grid
+      container
+      spacing={4}
+      sx={{ paddingTop: '40px', justifyContent: 'center' }}
+    >
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
+            className="dark:border-white dark:bg-[#2A2A2A]"
             sx={{
               height: 400,
               borderRadius: 2,
@@ -67,7 +69,7 @@ const Cards = () => {
 
               <Typography
                 variant="body1"
-                className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
+                className="text-center  font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400"
                 sx={{
                   fontFamily: 'Nunito-Light',
                   color: 'black',
@@ -83,40 +85,46 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+              <p className="text-md relative z-10 mt-6 flex font-mono font-semibold text-zinc-600 transition group-hover:text-[#00843D] dark:text-zinc-200 dark:group-hover:text-yellow-400">
                 <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
+                <span className="ml-2">
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.link.label}
+                  </a>
+                </span>
               </p>
             </CardActions>
           </MuiCard>
         </Grid>
-      ))
-      }
-    </Grid >
-  );
-};
+      ))}
+    </Grid>
+  )
+}
 
 const ProjectSection = () => {
   return (
-    <div className="ideas-text flex items-center justify-center mb-8 relative">
+    <div className="ideas-text relative mb-8 flex items-center justify-center">
       <div
-        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
+        className="absolute left-10 m-2 hidden h-[75px] w-[75px] bg-[url('/logo.png')] bg-cover bg-center dark:bg-[url('/logo.png')] md:block"
         alt="GSOC Logo"
       ></div>
 
-      <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
+      <h1 className="text-center font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
         PROJECTS
       </h1>
 
       <div
-        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
+        className="absolute right-10 m-2 hidden h-[75px] w-[75px] bg-cover bg-center md:block"
         style={{ backgroundImage: "url('/logo.png')" }}
         aria-label="Logo"
       ></div>
-
     </div>
-  );
-};
+  )
+}
 
 const styles = {
   bannerWrapper: {
@@ -125,7 +133,7 @@ const styles = {
     position: 'relative',
     overflow: 'hidden',
   },
-};
+}
 
 export default function Projects() {
   return (
@@ -137,9 +145,12 @@ export default function Projects() {
       <Container className="mt-20 mb-28">
         <Container.Inner>
           <ProjectSection />
-          <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
-            Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
-            featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
+          <p className="mb-8 text-center font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
+            Our Projects, where we showcase our tech wizardry and code-slinging
+            skills! Our portfolio is a treasure trove of open-source gems,
+            featuring projects in a variety of languages and areas. Take a peek
+            and see how we&apos;re making a difference with our technical
+            spells.
           </p>
           <Cards />
         </Container.Inner>
@@ -151,5 +162,5 @@ export default function Projects() {
         </Container.Outer>
       </div>
     </>
-  );
+  )
 }
