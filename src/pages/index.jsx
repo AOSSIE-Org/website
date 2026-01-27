@@ -35,7 +35,7 @@ export default function Home() {
           {/* Background Image */}
           <div
             className=" absolute  right-0 top-[-230px] z-0 mb-20 hidden h-[600px] w-full bg-[url('../images/background.png')] bg-cover bg-center dark:bg-[url('../images/background-dark.png')]
- md:block md:h-[800px] lg:h-[650]"
+ md:block md:h-[800px] lg:h-[800px]"
           ></div>
 
           {/* Main Content */}
