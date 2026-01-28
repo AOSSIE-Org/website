@@ -10,7 +10,7 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
@@ -30,12 +30,13 @@ export default function Home() {
         <meta name="description" content="AOSSIE Website" />
       </Head>
 
-      <Container.Outer className="mt-9 relative">
-        <div className="relative">
+      <Container.Outer className="relative mt-9">
+      <div className="relative">
 
           {/* Background Image */}
-          <div className=" hidden  absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
-
+          <div
+            className=" absolute  right-0 top-[-230px] z-0 mb-20 hidden h-[600px] w-full bg-[url('../images/background.png')] bg-cover bg-center dark:bg-[url('../images/background-dark.png')]
+ md:block md:h-[800px] lg:h-[800px]"></div>
           {/* Main Content */}
           <div className="flex flex-col sm:flex-row relative z-10 mb-8">
             <div className="flex-1 self-center">
@@ -87,13 +88,14 @@ export default function Home() {
                   >
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
-                  <Link
-                    aria-label="Follow on Twitter"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://twitter.com/aossie_org"
+                  <Link 
+                   aria-label="Follow on X" 
+                   className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                   href="https://x.com/aossie_org" 
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                  <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                   </Link>
+
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
                   <Link href="/about" className="group relative inline-block text-lg">
@@ -115,8 +117,7 @@ export default function Home() {
           </div>
 
           {/* Green Band with Counts */}
-          <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
-            <div className="mb-4 sm:mb-0">
+  <div className="relative z-20 hidden flex-col justify-between border border-white bg-[#3C982C] p-4 px-4 text-center text-white dark:bg-yellow-400 dark:text-black sm:flex sm:p-8 sm:px-16 md:flex-row">            <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
               <p className="font-semibold text-2xl">34+</p>
             </div>
