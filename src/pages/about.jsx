@@ -153,15 +153,15 @@ export default function About() {
           <span className="text-green-600 dark:text-yellow-400 text-lg font-mono leading-7 font-bold">make an impact</span>.
         </p>
         <div style={styles.stats}>
-          <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
+          <div className="text-green-600 dark:text-zinc-400 font-mono leading-7 font-bold">
             <h2 style={styles.statNumber}>34+</h2>
             <p style={styles.statLabel}>Active Projects</p>
           </div>
-          <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
+          <div className="text-green-600 dark:text-zinc-400 font-mono leading-7 font-bold">
             <h2 style={styles.statNumber}>500+</h2>
             <p style={styles.statLabel}>Total Contributors</p>
           </div>
-          <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
+          <div className="text-green-600 dark:text-zinc-400 font-mono leading-7 font-bold">
             <h2 style={styles.statNumber}>3800+</h2>
             <p style={styles.statLabel}>Community Count</p>
           </div>
@@ -179,11 +179,11 @@ export default function About() {
           }}
         >
           <div className='m-3 w-[60px] h-[60px]  bg-cover bg-[url("/contribution.png")] dark:bg-[url("/contribution-dark.png")]'></div>
-          <h1 className="font-mono text-2xl md:text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
+<h1 className="font-mono text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400">
             GSOC CONTRIBUTION
           </h1>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7">Australian Umbrella Org for Open-Source Projects</p>
+        <p className="text-zinc-600 dark:text-zinc-400 font-mono leading-7">Australian Umbrella Org for Open-Source Projects</p>
         <div style={{ width: '100%', height: '400px', marginBottom: '20px' }}>
           <Line data={data} options={options} />
         </div>
