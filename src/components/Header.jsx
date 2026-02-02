@@ -1,7 +1,9 @@
+'use client'
+
 import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -122,8 +124,11 @@ function MobileNavigation(props) {
               <ul className="-my-2 font-mono font-black divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="/products">Products</MobileNavItem>
                 <MobileNavItem href="/ideas">Ideas</MobileNavItem>
                 <MobileNavItem href="/apply">Apply</MobileNavItem>
+                <MobileNavItem href="https://github.com/AOSSIE-Org">GitHub</MobileNavItem>
+                <MobileNavItem href="https://discord.gg/hjUhu33uAn">Discord</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -132,9 +137,8 @@ function MobileNavigation(props) {
     </Popover>
   )
 }
-
 function NavItem({ href, children }) {
-  let isActive = useRouter().pathname === href
+  let isActive = usePathname() === href
 
   return (
     <li>
@@ -162,8 +166,10 @@ function DesktopNavigation(props) {
       <ul className="flex font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
+        <NavItem href="/products">Products</NavItem>
         <NavItem href="/ideas">Ideas</NavItem>
         <NavItem href="/apply">Apply</NavItem>
+        <NavItem href="https://github.com/AOSSIE-Org">GitHub</NavItem>
       </ul>
     </nav>
   )
@@ -236,7 +242,7 @@ function Home({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  let isHomePage = usePathname() === '/'
 
   let headerRef = useRef()
   let avatarRef = useRef()

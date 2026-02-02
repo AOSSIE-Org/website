@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+'use client'
+
+import { useRouter } from 'next/navigation'
 
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
@@ -20,10 +21,6 @@ export function IdeaLayout({
 
   return (
     <>
-      <Head>
-        <title>{`${meta.title}`}</title>
-        <meta name="description" content={meta.description} />
-      </Head>
       <Container className="mt-16 mb-20">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">

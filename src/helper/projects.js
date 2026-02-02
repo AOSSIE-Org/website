@@ -19,6 +19,7 @@ const projects = [
       label: 'Agora',
     },
     logo: AgoraLogo,
+    status: 'ongoing',
   },
   {
     name: 'Agora Vote Android',
@@ -29,6 +30,7 @@ const projects = [
       label: 'Agora-Android',
     },
     logo: AgoraLogo,
+    status: 'production',
   },
   {
     name: 'Djed',
@@ -36,6 +38,7 @@ const projects = [
       'Djed is a Formally Verified Crypto-Backed Algorithmic Stablecoin Protocol.',
     link: { href: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard', label: 'Djed' },
     logo: Djed,
+    status: 'ongoing',
   },
   {
     name: 'Pictopy',
@@ -43,6 +46,7 @@ const projects = [
       'PictoPy is a modern desktop app designed to transform the handling of digital photos. It facilitates efficient gallery management with a robust focus on privacy, offering smart tagging capabilities for photos based on objects, faces, or scenes.',
     link: { href: 'https://github.com/AOSSIE-Org/PictoPy', label: 'PictoPy' },
     logo: PictoPy,
+    status: 'production',
   },
   {
     name: 'EduAid',
@@ -50,6 +54,7 @@ const projects = [
       'An online tool that can generate short quizzes on input educational content can be of great use to teachers and students alike as it can help retain important information, frame questions and quickly revise large chunks of content.',
     link: { href: 'https://github.com/AOSSIE-Org/EduAid', label: 'EduAid' },
     logo: DefaultLogo,
+    status: 'ongoing',
   },
   {
     name: 'OpenChat',
@@ -57,6 +62,7 @@ const projects = [
       'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
     link: { href: '#', label: 'OpenChat' },
     logo: DefaultLogo,
+    status: 'ongoing',
   },
   {
     name: 'Resonate',
@@ -64,6 +70,7 @@ const projects = [
       'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
     link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
     logo: ResonateLogo,
+    status: 'ongoing',
   },
   {
     name: 'Monumento',
@@ -71,6 +78,7 @@ const projects = [
       'Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform.',
     link: { href: 'https://github.com/AOSSIE-Org/Monumento', label: 'Monumento' },
     logo: MonumentoLogo,
+    status: 'ongoing',
   },
   {
     name: 'Social Street Smart',
@@ -81,6 +89,7 @@ const projects = [
       label: 'Social-Street-Smart',
     },
     logo: SSSLogo,
+    status: 'ongoing',
   },
 ]
 
