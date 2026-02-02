@@ -65,7 +65,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight lg:-translate-y-[30px]"
+                  className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight relative lg:-top-[30px]"
                 >
                   We Innovate <br /> We Educate
                 </motion.h1>
@@ -131,7 +131,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="mt-12 mx-4 md:mx-0 md:mt-8 text-left lg:translate-y-[50px]"
+                  className="mt-12 mx-4 md:mx-0 md:mt-8 text-left relative lg:top-[20px]"
                 >
                   <Link href="/about" target="_blank" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
