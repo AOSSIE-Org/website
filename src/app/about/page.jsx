@@ -14,19 +14,42 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
 export default function About() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [stats, setStats] = useState({
+    years: 8,
+    projects: 80,
+    contributors: 70,
+    graphData: { 
+      labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'], 
+      data: [4, 8, 12, 9, 9, 11, 8, 6, 18] 
+    }
+  });
 
-  // Detect dark mode preference on page load
+  // Detect dark mode preference on page load and fetch stats
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
+
+    const fetchStats = async () => {
+      try {
+        const res = await fetch('/api/stats');
+        const data = await res.json();
+        if (!data.error) {
+          setStats(data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+      }
+    };
+
+    fetchStats();
   }, []);
 
   const data = {
-    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'], // Include '0' on the x-axis
+    labels: stats.graphData.labels, // Include '0' on the x-axis
     datasets: [
       {
-        label: 'Number of Completed Projects',
-        data: [4, 8, 12, 9, 9, 11, 8, 6, 18], // Start data points from '2017', leave '0' as null
+        label: 'Number of Repositories',
+        data: stats.graphData.data, // Start data points from '2017', leave '0' as null
         fill: false,
         borderColor: '#32a852',
         tension: 0.4,
@@ -103,7 +126,7 @@ export default function About() {
   
  return (
     <>
-      <Container className="mt-16 sm:mt-32">
+      <Container className="mt-4 sm:mt-8">
         <div style={styles.container}>
           <div style={styles.section}>
             <h1 style={styles.title} className='font-mono font-black'>ABOUT US</h1>
@@ -131,7 +154,7 @@ export default function About() {
                   width: '200px',
                 }}
               >
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>8</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.years}</div>
                 <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}> years completed</div>
               </div>
               <div
@@ -144,7 +167,7 @@ export default function About() {
                   width: '200px',
                 }}
               >
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>80+</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.projects}</div>
                 <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}>projects completed</div>
               </div>
               <div
@@ -157,7 +180,7 @@ export default function About() {
                   width: '200px',
                 }}
               >
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>70+</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.contributors}+</div>
                 <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}>contributors</div>
               </div>
             </div>
