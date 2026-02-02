@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'PictoPy',
@@ -6,7 +6,7 @@ export const meta = {
     'PictoPy is a privacy focused desktop app designed to transform the handling of digital photos',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Duration: 350 hrs
 

@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'Social Street Smart: Medium',
@@ -6,7 +6,7 @@ export const meta = {
     'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Duration: 175 hrs
 

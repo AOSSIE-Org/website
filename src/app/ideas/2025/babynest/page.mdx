@@ -1,11 +1,11 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'BabyNest',
   description: 'An AI-Powered Open-Source Pregnancy Care Assistant designed to help expecting parents stay informed, organized, and stress-free by tracking essential medical appointments and tests.'
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Type: Large
 

@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'Monumento',
@@ -6,7 +6,7 @@ export const meta = {
     'An AR-integrated social app that transforms how you connect with the world\'s most iconic landmarks',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Type: Large
 

@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'Pictopy',
@@ -6,7 +6,7 @@ export const meta = {
     'Reworking the frontend and enhancing the backend of Pictopy for better performance and ease of contribution.',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Type: Large
 

@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'EduAid',
@@ -6,7 +6,7 @@ export const meta = {
     'EduAid is an AI-driven tool designed to enhance online learning by generating quizzes from educational content, helping students improve retention and engagement.',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Type: Medium
 

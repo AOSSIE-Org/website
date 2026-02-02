@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'Aossie Scholar',
@@ -6,7 +6,7 @@ export const meta = {
     'AOSSIE Scholar is a Chrome extension that calculates performance-based metrics for researchers from Google Scholar profiles ...',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Duration: 350 hrs
 

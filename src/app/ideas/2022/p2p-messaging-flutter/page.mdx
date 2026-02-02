@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'P2P Messaging- Flutter',
@@ -6,7 +6,7 @@ export const meta = {
     'Chat application for Android and IOS in flutter/dart which sends messages Using Bluetooth & wifi-direct ...',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Duration: 350 hrs
 

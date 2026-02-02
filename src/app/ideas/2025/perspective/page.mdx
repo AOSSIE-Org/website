@@ -1,11 +1,11 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'Perspective',
   description: 'An GenAI-Powered Open-Source Opposing Perspective companion which breaks the confirmation bias and today\'s news echo chamber where any wrong perspective can spread like fire.'
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Type: Large
 

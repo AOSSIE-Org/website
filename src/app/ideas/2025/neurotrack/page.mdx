@@ -1,4 +1,4 @@
-import { IdeaLayout } from '@/components/IdeaLayout'
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
 
 export const meta = {
   title: 'Neurotrack',
@@ -6,7 +6,7 @@ export const meta = {
     'An AI-powered platform for detecting, assessing, and managing neurodevelopmental conditions like Autism and ADHD in schools and therapy centers.',
 }
 
-export default (props) => <IdeaLayout meta={meta} {...props} />
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
 
 ### Project Type: Medium
 
