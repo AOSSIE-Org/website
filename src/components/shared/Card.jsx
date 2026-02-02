@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 function ChevronRightIcon(props) {
   return (
@@ -14,12 +17,18 @@ function ChevronRightIcon(props) {
   )
 }
 export function Card({ as: Component = 'div', className, children }) {
+  const MotionComponent = motion(Component)
   return (
-    <Component
+    <MotionComponent
       className={clsx(className, 'group relative flex flex-col items-start')}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.02 }}
     >
       {children}
-    </Component>
+    </MotionComponent>
   )
 }
 

@@ -8,12 +8,20 @@ import CardActions from '@mui/material/CardActions'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { motion } from 'framer-motion'
 
 export function IdeaCard({ article, year }) {
+  const MotionMuiCard = motion(MuiCard)
   return (
-    <Grid item xs={12} sm={6} md={4}>
-      <MuiCard
+    <Grid item xs={12} sm={6} md={4} component={motion.div} 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+    >
+      <MotionMuiCard
         className="dark:bg-[#2A2A2A] dark:border-white"
+        whileHover={{ y: -5, boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}
         sx={{
           height: 350,
           borderRadius: 2,
@@ -56,7 +64,9 @@ export function IdeaCard({ article, year }) {
         <CardActions sx={{ justifyContent: 'center' }}>
           <Link href={`/ideas/${year}/${article.slug}`} passHref legacyBehavior>
              <Button
-                component="a" 
+                component={motion.a}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 sx={{
                     color: '#3c982c',
                     textTransform: 'none',
@@ -67,7 +77,7 @@ export function IdeaCard({ article, year }) {
             </Button>
           </Link>
         </CardActions>
-      </MuiCard>
+      </MotionMuiCard>
     </Grid>
   )
 }

@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import { Container } from '@/components/shared/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,7 +21,13 @@ function NavLink({ href, children }) {
 
 export function Footer() {
   return (
-    <footer className="mt-32">
+    <motion.footer
+      className="mt-32"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <Container.Outer>
         <div className="border-t border-zinc-100 pb-12 pt-16 dark:border-zinc-700/40">
           <Container.Inner>
@@ -78,6 +87,6 @@ export function Footer() {
           </Container.Inner>
         </div>
       </Container.Outer>
-    </footer>
+    </motion.footer>
   )
 }

@@ -1,8 +1,16 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export function CardEffect({heading, content, logo}) {
     return (
-        <a className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer [perspective:1000px]">
+        <motion.a 
+            initial={{ opacity: 0, rotateY: -90 }} 
+            whileInView={{ opacity: 1, rotateY: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer [perspective:1000px]">
              <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 {/* Front Face */}
                 <div className="absolute inset-0 h-full w-full shadow-xl flex flex-col items-center justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800 [backface-visibility:hidden]">
@@ -27,6 +35,6 @@ export function CardEffect({heading, content, logo}) {
                     </div>
                 </div>
             </div>
-        </a>
+        </motion.a>
     )
 }

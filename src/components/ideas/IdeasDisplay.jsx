@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { IdeasList } from '@/components/ideas/IdeasList'
 
 export function IdeasDisplay({ ideasData }) {
@@ -13,23 +14,34 @@ export function IdeasDisplay({ ideasData }) {
 
   return (
     <div className="space-y-20">
-      {displayedData.map(({ year, articles }) => (
-        <div key={year} className="relative">
+      {displayedData.map(({ year, articles }, index) => (
+        <motion.div 
+          key={year} 
+          className="relative"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+        >
           <h2 className="text-3xl font-extrabold font-mono text-zinc-900 dark:text-zinc-100 mb-10 text-left border-l-4 pl-4 border-[#32a852] dark:border-yellow-400">
             {year} Ideas
           </h2>
           <IdeasList articles={articles} year={year} />
-        </div>
+        </motion.div>
       ))}
       
       {hasMore && (
         <div className="flex justify-center mt-12">
-          <button
+          <motion.button
             onClick={() => setShowAll(true)}
-            className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black font-mono font-semibold transition-transform hover:scale-105"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black font-mono font-semibold transition-transform"
           >
             Show All Ideas
-          </button>
+          </motion.button>
         </div>
       )}
     </div>

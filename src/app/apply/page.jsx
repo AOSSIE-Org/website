@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/shared/Container'
 import { TimelineElement } from '@/components/about/TimelineElement'
+import { ApplyHeader } from '@/components/apply/ApplyHeader'
 import GSoC from '@/images/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGitlab } from '@fortawesome/free-brands-svg-icons'
@@ -16,66 +17,7 @@ export const metadata = {
 export default function Apply() {
   return (
     <>
-      <Container.Outer className="mt-20 mb-28 ">
-        <div className='overflow-x-hidden'>
-          <div className="mt-5 mx-4 md:mx-16 text-center md:text-left">
-            <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6'> 
-              Your Journey to <span className="text-[#00843D] dark:text-yellow-400">Open Source</span>
-            </h5>
-            <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-8 max-w-4xl'>
-              Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
-            </p>
-          </div>
-
-          {/* New Horizontal Timeline Steps */}
-          <div className="hidden md:flex justify-between items-start mt-20 mb-20 relative mx-4 md:mx-16">
-            {/* Connecting Line */}
-            <div className="absolute top-8 left-0 w-full h-1 bg-zinc-200 dark:bg-zinc-700 -z-10 mt-1"></div>
-            
-            {/* Step 1 */}
-            <div className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone">
-              <div className="w-20 h-20 rounded-full bg-[#00843D] dark:bg-yellow-400 flex items-center justify-center text-white dark:text-black mb-6 shadow-lg transform transition hover:scale-110 duration-300">
-                <FontAwesomeIcon icon={faDiscord} className="w-10 h-10" />
-              </div>
-              <p className="font-bold font-mono text-center text-lg dark:text-zinc-200">Join Discord</p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone">
-              <div className="w-20 h-20 rounded-full bg-[#00843D] dark:bg-yellow-400 flex items-center justify-center text-white dark:text-black mb-6 shadow-lg transform transition hover:scale-110 duration-300">
-                 <FontAwesomeIcon icon={faGitlab} className="w-10 h-10" />
-              </div>
-              <p className="font-bold font-mono text-center text-lg dark:text-zinc-200">Start Contributing</p>
-            </div>
-            
-            {/* Step 3 */}
-            <div className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone">
-              <div className="w-20 h-20 rounded-full bg-[#00843D] dark:bg-yellow-400 flex items-center justify-center text-white dark:text-black mb-6 shadow-lg transform transition hover:scale-110 duration-300">
-                 <FontAwesomeIcon icon={faLightbulb} className="w-10 h-10" />
-              </div>
-              <p className="font-bold font-mono text-center text-lg dark:text-zinc-200">Choose Idea</p>
-            </div>
-
-             {/* Step 4 */}
-            <div className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone">
-              <div className="w-20 h-20 rounded-full bg-[#00843D] dark:bg-yellow-400 flex items-center justify-center text-white dark:text-black mb-6 shadow-lg transform transition hover:scale-110 duration-300">
-                 <FontAwesomeIcon icon={faComments} className="w-10 h-10" />
-              </div>
-              <p className="font-bold font-mono text-center text-lg dark:text-zinc-200">Discuss</p>
-            </div>
-
-             {/* Step 5 */}
-            <div className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone">
-              <div className="w-20 h-20 rounded-full bg-[#00843D] dark:bg-yellow-400 flex items-center justify-center text-white dark:text-black mb-6 shadow-lg transform transition hover:scale-110 duration-300">
-                 <FontAwesomeIcon icon={faPaperPlane} className="w-10 h-10" />
-              </div>
-              <p className="font-bold font-mono text-center text-lg dark:text-zinc-200">Submit App</p>
-            </div>
-          </div>
-
-
-
-          <Container.Inner className='mt-4 mx-4 md:m-16'>
+      <ApplyHeader>
             <ol className="relative border-l-2 border-gray-200 dark:border-gray-700">
               <TimelineElement
                 title="Join us on Discord"
@@ -108,9 +50,7 @@ export default function Apply() {
                 link="https://summerofcode.withgoogle.com/"
               />
             </ol>
-          </Container.Inner>
-        </div>
-      </Container.Outer>
+      </ApplyHeader>
     </>
   )
 }

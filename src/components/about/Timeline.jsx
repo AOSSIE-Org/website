@@ -1,11 +1,20 @@
+'use client'
+
 import { TimelineElement } from './TimelineElement'
+import { motion } from 'framer-motion'
 
 export function Timeline() {
   return (
     <div className="py-12" id="timeline">
-        <h2 className="text-3xl font-bold font-mono text-center mb-12 text-zinc-900 dark:text-zinc-100">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold font-mono text-center mb-12 text-zinc-900 dark:text-zinc-100"
+        >
             Our <span className="text-[#00843D] dark:text-yellow-400">Journey</span>
-        </h2>
+        </motion.h2>
         <div className="max-w-3xl mx-auto px-4">
             <ol className="relative border-l border-zinc-200 dark:border-zinc-700">
                 <TimelineElement

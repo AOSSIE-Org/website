@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 import { Container } from '@/components/shared/Container'
 
@@ -346,12 +347,15 @@ export function Header() {
 
   return (
     <>
-      <header
+      <motion.header
         className="pointer-events-none relative z-50 flex flex-col"
         style={{
           height: 'var(--header-height)',
           marginBottom: 'var(--header-mb)',
         }}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <div
           ref={avatarRef}
@@ -386,7 +390,7 @@ export function Header() {
             </div>
           </Container>
         </div>
-      </header>
+      </motion.header>
       {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}
     </>
   )

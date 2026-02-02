@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 import { Container } from '@/components/shared/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -43,7 +44,12 @@ export default function Home() {
 
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row relative z-10 mb-16 gap-12 items-center">
-            <div className="flex-1 w-full flex justify-center lg:justify-end lg:pr-12">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="flex-1 w-full flex justify-center lg:justify-end lg:pr-12"
+            >
               <Image
                 src="./logo1.png"
                 width={380}
@@ -52,19 +58,34 @@ export default function Home() {
                 alt="AOSSIE Logo"
                 priority
               />
-            </div>
+            </motion.div>
             <div className="flex-1 w-full lg:pl-4">
               <div className="max-w-2xl">
-                <h1 className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight lg:-translate-y-[30px]">
+                <motion.h1 
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight lg:-translate-y-[30px]"
+                >
                   We Innovate <br /> We Educate
-                </h1>
-                <p className="mt-8 font-mono text-xl leading-8 text-zinc-600 dark:text-zinc-300 md:dark:text-[#FED41E]/90 bg-white/50 md:bg-transparent dark:bg-zinc-900/50 md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-xl p-4 md:p-0">
+                </motion.h1>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="mt-8 font-mono text-xl leading-8 text-zinc-600 dark:text-zinc-300 md:dark:text-[#FED41E]/90 bg-white/50 md:bg-transparent dark:bg-zinc-900/50 md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-xl p-4 md:p-0"
+                >
                   We are an Australian not-for-profit umbrella organization for
                   open-source projects. We believe the open-source philosophy
                   provides a resource-efficient channel to transfer knowledge and
                   achieve innovation and education.
-                </p>
-                <div className="mt-8 flex gap-8">
+                </motion.p>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="mt-8 flex gap-8"
+                >
                   <Link
                     aria-label="Contact by Mail"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
@@ -100,8 +121,13 @@ export default function Home() {
                   >
                     <FontAwesomeIcon icon={faTwitter} size="2xl" />
                   </Link>
-                </div>
-                <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left lg:translate-y-[50px]">
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="mt-12 mx-4 md:mx-0 md:mt-8 text-left lg:translate-y-[50px]"
+                >
                   <Link href="/about" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
@@ -115,7 +141,7 @@ export default function Home() {
                       data-rounded="rounded-lg"
                     ></span>
                   </Link>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

@@ -14,6 +14,8 @@ import Image from 'next/image';
 import projects from '@/helper/projects'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { motion } from 'framer-motion'
+
 
 function LinkIcon(props) {
   return (
@@ -31,9 +33,14 @@ const Cards = ({ projectList }) => {
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projectList.map((project, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index}>
+        <Grid item xs={12} sm={6} md={4} key={index} component={motion.div} 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
           <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
+            className='dark:bg-[#2A2A2A] dark:border-white transition-transform hover:scale-[1.02] duration-300'
             sx={{
               height: 400,
               borderRadius: 2,
@@ -106,7 +113,12 @@ const Cards = ({ projectList }) => {
 
 const ProjectSection = () => {
   return (
-    <div className="ideas-text flex items-center justify-center mb-8 relative">
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="ideas-text flex items-center justify-center mb-8 relative"
+    >
       <div
         className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
         alt="GSOC Logo"
@@ -122,7 +134,7 @@ const ProjectSection = () => {
         aria-label="Logo"
       ></div>
 
-    </div>
+    </motion.div>
   );
 };
 
@@ -144,22 +156,39 @@ export default function Projects() {
       <Container className="mt-20 mb-28">
         <Container.Inner>
           <ProjectSection />
-          <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8"
+          >
             Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
             featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
-          </p>
+          </motion.p>
 
           <div className="mb-20">
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center">
+            <motion.h2 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center"
+            >
               Ongoing Projects
-            </h2>
+            </motion.h2>
             <Cards projectList={ongoingProjects} />
           </div>
 
           <div>
-             <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center pt-8 border-t border-zinc-200 dark:border-zinc-700">
+             <motion.h2 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center pt-8 border-t border-zinc-200 dark:border-zinc-700"
+            >
               Production Ready Projects
-            </h2>
+            </motion.h2>
             <Cards projectList={productionReadyProjects} />
           </div>
 

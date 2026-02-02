@@ -1,11 +1,21 @@
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export function CardProject({ project }) {
   return (
-    <div className="group relative flex flex-col items-center p-6 bg-white dark:bg-zinc-800/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-zinc-200 dark:border-zinc-700 hover:border-[#00843D] dark:hover:border-yellow-400">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      className="group relative flex flex-col items-center p-6 bg-white dark:bg-zinc-800/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-zinc-200 dark:border-zinc-700 hover:border-[#00843D] dark:hover:border-yellow-400"
+    >
       <div className="relative w-24 h-24 mb-4">
         <Image
           src={project.logo}
@@ -28,6 +38,6 @@ export function CardProject({ project }) {
         <FontAwesomeIcon icon={faGithub} />
         View Project
       </Link>
-    </div>
+    </motion.div>
   );
 }

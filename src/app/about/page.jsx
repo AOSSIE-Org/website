@@ -9,6 +9,7 @@ import { Team } from '@/components/about/Team';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
+import { motion } from 'framer-motion';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
@@ -129,22 +130,60 @@ export default function About() {
       <Container className="mt-4 sm:mt-8">
         <div style={styles.container}>
           <div style={styles.section}>
-            <h1 style={styles.title} className='font-mono font-black'>ABOUT US</h1>
-            <p style={styles.paragraph} className='text-zinc-600 dark:text-zinc-400 font-mono'>
+            <motion.h1 
+              style={styles.title} 
+              className='font-mono font-black'
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              ABOUT US
+            </motion.h1>
+            <motion.p 
+              style={styles.paragraph} 
+              className='text-zinc-600 dark:text-zinc-400 font-mono'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <span style={styles.highlight}>AOSSIE</span> (Australian Open
               Source Software Innovation and Education) is a not-for-profit
               umbrella organization for open-source projects. We believe the
               open-source philosophy provides a resource-efficient channel to
               transfer knowledge and achieve innovation and education.
-            </p>
+            </motion.p>
           </div>
           <div style={styles.section}>
-            <div style={{ height: '400px', width: '100%' }}>
+            <motion.div 
+              style={{ height: '400px', width: '100%' }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
               <Line data={data} options={options} />
-            </div>
+            </motion.div>
             
-            <div style={styles.stats}>
-              <div
+            <motion.div 
+              style={styles.stats}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+            >
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 }
+                }}
                 style={{
                   textAlign: 'center',
                   padding: '20px',
@@ -152,12 +191,18 @@ export default function About() {
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                   backgroundColor: isDarkMode ? '#1e1e1e' : '#fff',
                   width: '200px',
+                  cursor: 'pointer'
                 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.years}</div>
                 <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}> years completed</div>
-              </div>
-              <div
+              </motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 }
+                }}
                 style={{
                   textAlign: 'center',
                   padding: '20px',
@@ -165,12 +210,18 @@ export default function About() {
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                   backgroundColor: isDarkMode ? '#1e1e1e' : '#fff',
                   width: '200px',
+                  cursor: 'pointer'
                 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.projects}</div>
                 <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}>projects completed</div>
-              </div>
-              <div
+              </motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 }
+                }}
                 style={{
                   textAlign: 'center',
                   padding: '20px',
@@ -178,28 +229,37 @@ export default function About() {
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                   backgroundColor: isDarkMode ? '#1e1e1e' : '#fff',
                   width: '200px',
+                  cursor: 'pointer'
                 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.contributors}+</div>
                 <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}>contributors</div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
 
-        <div className="mt-20">
+        <motion.div 
+          className="mt-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
             <Timeline />
-        </div>
+        </motion.div>
         
-        <div className="mt-24 mb-24">
+        <motion.div 
+          className="mt-24 mb-24"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
            <Team />
-        </div>
-
+        </motion.div>
       </Container>
-      
-      <Container.Outer className="mt-16">
-         <Banner />
-      </Container.Outer>
     </>
   );
 }
