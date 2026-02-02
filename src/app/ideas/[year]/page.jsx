@@ -1,6 +1,6 @@
 import { getIdeas } from '@/lib/ideas'
-import { IdeasList } from '@/components/IdeasList'
-import { Container } from '@/components/Container'
+import { IdeasList } from '@/components/ideas/IdeasList'
+import { Container } from '@/components/shared/Container'
 
 export async function generateMetadata({ params }) {
   return {

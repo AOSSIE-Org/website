@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Container } from '@/components/Container'
-import { TimelineElement } from '@/components/TimelineElement'
+import { Container } from '@/components/shared/Container'
+import { TimelineElement } from '@/components/about/TimelineElement'
 import GSoC from '@/images/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGitlab } from '@fortawesome/free-brands-svg-icons'

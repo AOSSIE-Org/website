@@ -1,5 +1,5 @@
-import { Container } from '@/components/Container'
-import { CardProduct } from '@/components/CardProduct'
+import { Container } from '@/components/shared/Container'
+import { CardProduct } from '@/components/products/CardProduct'
 import products from '@/helper/products'
 
 export const metadata = {

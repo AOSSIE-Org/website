@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
+import { Container } from '@/components/shared/Container'
 
 function CloseIcon(props) {
   return (

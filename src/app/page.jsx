@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
-import { Container } from '@/components/Container'
+import { Container } from '@/components/shared/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -13,10 +13,10 @@ import {
   faGitlab,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
-import { CardEffect } from '@/components/CardEffect'
-import { Banner } from '@/components/Banner'
-import { Stats } from '@/components/Stats'
-import { CardProject } from '@/components/CardProject'
+import { CardEffect } from '@/components/home/CardEffect'
+import { Banner } from '@/components/shared/Banner'
+import { Stats } from '@/components/home/Stats'
+import { CardProject } from '@/components/home/CardProject'
 import projects from '@/helper/projects'
 
 export default function Home() {

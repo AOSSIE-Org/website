@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Container } from '@/components/Container';
-import { Banner } from '@/components/Banner';
-import { Timeline } from '@/components/Timeline';
-import { Team } from '@/components/Team';
+import { Container } from '@/components/shared/Container';
+import { Banner } from '@/components/shared/Banner';
+import { Timeline } from '@/components/about/Timeline';
+import { Team } from '@/components/about/Team';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';

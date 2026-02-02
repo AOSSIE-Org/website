@@ -1,7 +1,9 @@
 import { getIdeas } from '@/lib/ideas'
-import { IdeasList } from '@/components/IdeasList'
-import { Container } from '@/components/Container'
+import { IdeasDisplay } from '@/components/ideas/IdeasDisplay'
+import { Container } from '@/components/shared/Container'
 import Link from 'next/link'
+import path from 'path'
+import fs from 'fs'
 
 export const metadata = {
   title: 'Idea List',
@@ -9,8 +11,25 @@ export const metadata = {
 }
 
 export default async function IdeasPage() {
-  const articles = await getIdeas('2025')
+  const ideasDir = path.join(process.cwd(), 'src/app/ideas')
   
+  // Get all year directories
+  const years = fs.readdirSync(ideasDir)
+    .filter(file => /^\d{4}$/.test(file) && fs.statSync(path.join(ideasDir, file)).isDirectory())
+    // Sort descending (2025, 2024, ...)
+    .sort((a, b) => b.localeCompare(a))
+
+  // Fetch ideas for all years
+  const ideasQueries = years.map(async (year) => {
+    const articles = await getIdeas(year)
+    return { year, articles }
+  })
+  
+  const ideasData = await Promise.all(ideasQueries)
+  
+  // Filter out years that might be empty
+  const validIdeasData = ideasData.filter(data => data.articles.length > 0)
+
   return (
     <>
       <Container className="mt-20 mb-28">
@@ -43,8 +62,8 @@ export default async function IdeasPage() {
           kickstart your open-source journey.
         </p>
         <Container.Inner>
-          <div className="mt-10 flex justify-center sm:mt-20">
-             <IdeasList articles={articles} year="2025" />
+          <div className="mt-10 sm:mt-20">
+             <IdeasDisplay ideasData={validIdeasData} />
           </div>
 
           <div className="mt-20 py-12 bg-zinc-50 dark:bg-zinc-800/20 rounded-2xl text-center">
@@ -62,17 +81,6 @@ export default async function IdeasPage() {
                 Submit Your Idea
               </Link>
             </div>
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2024"
-            >
-              <span className="text-center font-mono font-semibold">
-                View 2024 Idea List
-              </span>
-            </Link>
           </div>
         </Container.Inner>
       </Container>

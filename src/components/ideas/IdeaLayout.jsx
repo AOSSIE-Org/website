@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation'
 
-import { Container } from '@/components/Container'
-import { Prose } from '@/components/Prose'
+import { Container } from '@/components/shared/Container'
+import { Prose } from '@/components/shared/Prose'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 

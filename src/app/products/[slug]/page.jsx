@@ -7,9 +7,9 @@ import { faDownload, faUsers, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import remarkGfm from 'remark-gfm';
 
-import { Container } from '@/components/Container';
-import { Prose } from '@/components/Prose';
-import { FeedbackForm } from '@/components/FeedbackForm';
+import { Container } from '@/components/shared/Container';
+import { Prose } from '@/components/shared/Prose';
+import { FeedbackForm } from '@/components/products/FeedbackForm';
 import products from '@/helper/products';
 
 export async function generateStaticParams() {

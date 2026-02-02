@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ContainerPattern } from '@/components/ContainerPattern';
-import { Pattern } from '@/components/Pattern';
+import { ContainerPattern } from '@/components/shared/ContainerPattern';
+import { Pattern } from '@/components/shared/Pattern';
 
 export function Banner() {
   return (

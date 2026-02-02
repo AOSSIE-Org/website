@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Container } from '@/components/Container'
+import { Container } from '@/components/shared/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'

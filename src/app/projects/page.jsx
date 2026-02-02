@@ -8,8 +8,8 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Container } from '@/components/Container';
-import { Banner } from '@/components/Banner';
+import { Container } from '@/components/shared/Container';
+import { Banner } from '@/components/shared/Banner';
 import Image from 'next/image';
 import projects from '@/helper/projects'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

@@ -1,7 +1,7 @@
 import '@/style/tailwind.css'
 import 'focus-visible'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/shared/Header'
+import { Footer } from '@/components/shared/Footer'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
