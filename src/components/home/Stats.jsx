@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
+import { Container } from '@/components/shared/Container';
 
 function Counter({ end, duration, label }) {
   const [count, setCount] = useState(0);
@@ -55,14 +56,16 @@ function Counter({ end, duration, label }) {
 
 export function Stats() {
   return (
-    <div className="py-16 bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl my-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 text-center">
-          <Counter end={10} duration={2000} label="Years of Innovation" />
-          <Counter end={20} duration={2000} label="Projects" />
-          <Counter end={100} duration={2000} label="Contributors" />
+    <Container.Outer className="my-20">
+      <div className="py-16 bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 text-center">
+            <Counter end={10} duration={2000} label="Years of Innovation" />
+            <Counter end={20} duration={2000} label="Projects" />
+            <Counter end={100} duration={2000} label="Contributors" />
+          </div>
         </div>
       </div>
-    </div>
+    </Container.Outer>
   );
 }

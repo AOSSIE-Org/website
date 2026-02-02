@@ -48,14 +48,14 @@ export default function Home() {
                 src="./logo1.png"
                 width={380}
                 height={350}
-                className="scale-110 drop-shadow-xl"
+                className="scale-110 drop-shadow-xl lg:-translate-x-[60px] lg:-translate-y-[100px]"
                 alt="AOSSIE Logo"
                 priority
               />
             </div>
             <div className="flex-1 w-full lg:pl-4">
               <div className="max-w-2xl">
-                <h1 className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight">
+                <h1 className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight lg:-translate-y-[30px]">
                   We Innovate <br /> We Educate
                 </h1>
                 <p className="mt-8 font-mono text-xl leading-8 text-zinc-600 dark:text-zinc-300 md:dark:text-[#FED41E]/90 bg-white/50 md:bg-transparent dark:bg-zinc-900/50 md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-xl p-4 md:p-0">
@@ -101,7 +101,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faTwitter} size="2xl" />
                   </Link>
                 </div>
-                <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
+                <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left lg:translate-y-[50px]">
                   <Link href="/about" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
