@@ -60,12 +60,12 @@ export default function Home() {
               />
             </motion.div>
             <div className="flex-1 w-full lg:pl-4">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl mx-auto lg:mx-0">
                 <motion.h1 
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight relative lg:-top-[30px]"
+                  className="font-mono text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black leading-tight relative lg:-top-[30px] text-center lg:text-left"
                 >
                   We Innovate <br /> We Educate
                 </motion.h1>
@@ -73,7 +73,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="mt-8 font-mono text-xl leading-8 text-zinc-600 dark:text-zinc-300 md:dark:text-[#FED41E]/90 bg-white/50 md:bg-transparent dark:bg-zinc-900/50 md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-xl p-4 md:p-0"
+                  className="mt-8 font-mono text-xl leading-8 text-zinc-600 dark:text-zinc-300 md:dark:text-[#FED41E]/90 bg-white/50 md:bg-transparent dark:bg-zinc-900/50 md:dark:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-xl p-4 md:p-0 text-center lg:text-left"
                 >
                   We are an Australian not-for-profit umbrella organization for
                   open-source projects. We believe the open-source philosophy
@@ -84,7 +84,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="mt-8 flex gap-8"
+                  className="mt-8 flex gap-8 justify-center lg:justify-start"
                 >
                   <Link
                     target="_blank"
@@ -131,7 +131,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="mt-12 mx-4 md:mx-0 md:mt-8 text-left relative lg:top-[20px]"
+                  className="mt-12 mx-4 md:mx-0 md:mt-8 text-center lg:text-left relative lg:top-[20px]"
                 >
                   <Link href="/about" target="_blank" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
@@ -212,17 +212,17 @@ export default function Home() {
               to showcase your skills and <span className="text-[#3C982C] dark:text-yellow-400">make an impact</span>.
             </p>
           </div>
-          <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
+          <div className="mt-10">
             <Container.Inner>
-              <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
                 {randomProjects.map((project) => (
-                  <span key={project.name}>
+                  <div key={project.name} className="w-full max-w-[18rem] sm:max-w-none">
                     <CardEffect
                       heading={project.name}
                       logo={project.logo}
                       content={project.description}
                     />
-                  </span>
+                  </div>
                 ))}
               </div>
             </Container.Inner>

@@ -32,7 +32,7 @@ export function CardProduct({ product }) {
         {product.description}
       </p>
       
-      <div className="flex gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
          <motion.a
           href={product.downloadLink}
           target="_blank"

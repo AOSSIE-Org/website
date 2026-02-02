@@ -14,7 +14,6 @@ import { motion } from 'framer-motion';
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
 export default function About() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [stats, setStats] = useState({
     years: 8,
     projects: 80,
@@ -27,9 +26,6 @@ export default function About() {
 
   // Detect dark mode preference on page load and fetch stats
   useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(prefersDark);
-
     const fetchStats = async () => {
       try {
         const res = await fetch('/api/stats');
@@ -90,49 +86,13 @@ export default function About() {
     },
   };
 
-  const styles = {
-    container: {
-      fontFamily: 'Arial, sans-serif',
-      padding: '20px',
-      textAlign: 'center',
-      maxWidth: '1000px',
-      margin: '0 auto',
-    },
-    section: {
-      margin: '30px 0',
-    },
-    title: {
-      fontSize: '2.5rem',
-      color: '#32a852',
-    },
-    paragraph: {
-      fontSize: '1rem',
-      lineHeight: '1.6',
-      textAlign: 'center',
-      marginTop: '20px', // More space below ABOUT
-      marginBottom: '40px', // Increased spacing
-    },
-    highlight: {
-      color: '#32a852',
-      fontWeight: 'bold',
-    },
-    stats: {
-      display: 'flex',
-      justifyContent: 'space-around',
-      flexWrap: 'wrap',
-      gap: '20px',
-      marginTop: '30px', // More space between stats and paragraph
-    },
-  };
-  
  return (
     <>
-      <Container className="mt-4 sm:mt-8">
-        <div style={styles.container}>
-          <div style={styles.section}>
+      <Container className="mt-4 sm:mt-16 mb-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="my-8">
             <motion.h1 
-              style={styles.title} 
-              className='font-mono font-black'
+              className="text-4xl md:text-5xl font-mono font-black text-[#32a852]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -140,22 +100,22 @@ export default function About() {
               ABOUT US
             </motion.h1>
             <motion.p 
-              style={styles.paragraph} 
-              className='text-zinc-600 dark:text-zinc-400 font-mono'
+              className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 font-mono mt-5 mb-10 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span style={styles.highlight}>AOSSIE</span> (Australian Open
+              <span className="text-[#32a852] font-bold">AOSSIE</span> (Australian Open
               Source Software Innovation and Education) is a not-for-profit
               umbrella organization for open-source projects. We believe the
               open-source philosophy provides a resource-efficient channel to
               transfer knowledge and achieve innovation and education.
             </motion.p>
           </div>
-          <div style={styles.section}>
+
+          <div className="my-8 space-y-12">
             <motion.div 
-              style={{ height: '400px', width: '100%' }}
+              className="w-full h-[300px] md:h-[400px]"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -165,7 +125,7 @@ export default function About() {
             </motion.div>
             
             <motion.div 
-              style={styles.stats}
+              className="flex flex-wrap justify-around gap-6 mt-8"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
@@ -179,63 +139,24 @@ export default function About() {
                 }
               }}
             >
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 }
-                }}
-                style={{
-                  textAlign: 'center',
-                  padding: '20px',
-                  borderRadius: '10px',
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                  backgroundColor: isDarkMode ? '#1e1e1e' : '#fff',
-                  width: '200px',
-                  cursor: 'pointer'
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.years}</div>
-                <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}> years completed</div>
-              </motion.div>
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 }
-                }}
-                style={{
-                  textAlign: 'center',
-                  padding: '20px',
-                  borderRadius: '10px',
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                  backgroundColor: isDarkMode ? '#1e1e1e' : '#fff',
-                  width: '200px',
-                  cursor: 'pointer'
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.projects}</div>
-                <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}>projects completed</div>
-              </motion.div>
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 }
-                }}
-                style={{
-                  textAlign: 'center',
-                  padding: '20px',
-                  borderRadius: '10px',
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                  backgroundColor: isDarkMode ? '#1e1e1e' : '#fff',
-                  width: '200px',
-                  cursor: 'pointer'
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#32a852' }}>{stats.contributors}+</div>
-                <div style={{ fontSize: '1.2rem', color: isDarkMode ? '#ccc' : '#555' }}>contributors</div>
-              </motion.div>
+             {/* Stats Cards */}
+             {[
+               { value: stats.years, label: 'years completed' },
+               { value: stats.projects, label: 'projects completed' },
+               { value: `${stats.contributors}+`, label: 'contributors' }
+             ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 }
+                  }}
+                  className="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow-lg w-full sm:w-48 lg:w-56 cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="text-4xl font-bold text-[#32a852]">{item.value}</div>
+                  <div className="text-lg text-zinc-600 dark:text-zinc-400 mt-1">{item.label}</div>
+                </motion.div>
+             ))}
             </motion.div>
           </div>
         </div>
