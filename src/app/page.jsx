@@ -87,6 +87,7 @@ export default function Home() {
                   className="mt-8 flex gap-8"
                 >
                   <Link
+                    target="_blank"
                     aria-label="Contact by Mail"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="mailto:aossie.oss@gmail.com"
@@ -94,6 +95,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                   </Link>
                   <Link
+                    target="_blank"
                     aria-label="Follow on GitLab"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://gitlab.com/aossie"
@@ -101,6 +103,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faGitlab} size="2xl" />
                   </Link>
                   <Link
+                    target="_blank"
                     aria-label="Follow on GitHub"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://github.com/AOSSIE-Org"
@@ -108,6 +111,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faGithub} size="2xl" />
                   </Link>
                   <Link
+                    target="_blank"
                     aria-label="Join on Discord"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://discord.gg/hjUhu33uAn"
@@ -115,6 +119,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
                   <Link
+                    target="_blank"
                     aria-label="Follow on Twitter"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
@@ -128,7 +133,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.8 }}
                   className="mt-12 mx-4 md:mx-0 md:mt-8 text-left lg:translate-y-[50px]"
                 >
-                  <Link href="/about" className="group relative inline-block text-lg">
+                  <Link href="/about" target="_blank" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
                       <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
@@ -224,6 +229,7 @@ export default function Home() {
           </div>
           <div className="mt-12 text-center">
             <Link
+              target="_blank"
               className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[#00843D] px-8 py-3 text-white focus:outline-none active:bg-[#00843D] dark:bg-yellow-400 dark:text-zinc-900"
               href="/projects"
             >

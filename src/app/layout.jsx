@@ -54,6 +54,7 @@ export default function RootLayout({ children }) {
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.xml`}
         />
         <link
+          target="_blank"
           rel="alternate"
           type="application/feed+json"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}

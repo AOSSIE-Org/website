@@ -130,7 +130,12 @@ export default function ProductPage({ params }) {
                 Installation & Setup
             </h2>
             <Prose className="font-mono">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown 
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                        a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" />
+                    }}
+                >
                     {product.setupGuide}
                 </ReactMarkdown>
             </Prose>
