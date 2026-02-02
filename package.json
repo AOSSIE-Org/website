@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "disable-telemetry": "npx next telemetry disable"
   },
   "author": "AOSSIE",
   "license": "ISC",
