@@ -143,7 +143,7 @@ export default function About() {
       </Head>
 
       <section style={styles.section}>
-        <h1 style={{ marginBottom: '20px' }} className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
+        <h1 style={{ marginBottom: '20px' }} className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 md:text-5xl lg:text-6xl">
           ABOUT
         </h1>
         <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7">
@@ -179,7 +179,7 @@ export default function About() {
           }}
         >
           <div className='m-3 w-[60px] h-[60px]  bg-cover bg-[url("/contribution.png")] dark:bg-[url("/contribution-dark.png")]'></div>
-          <h1 className="font-mono text-2xl md:text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
+          <h1 className="font-mono text-2xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl lg:text-6xl">
             GSOC CONTRIBUTION
           </h1>
         </div>
