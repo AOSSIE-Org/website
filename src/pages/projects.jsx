@@ -32,19 +32,26 @@ const Cards = () => {
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
-          <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
-            sx={{
-              height: 400,
-              borderRadius: 2,
-              border: '1px solid',
-              borderColor: '#3c982c',
-              boxShadow: '0px 4px 4px #00000040',
-              backdropFilter: 'blur(4px) brightness(100%)',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
+        <MuiCard
+  className='dark:bg-[#2A2A2A] dark:border-white'
+  sx={{
+    height: 400,
+    borderRadius: 2,
+    border: '1px solid',
+    borderColor: '#3c982c',
+    boxShadow: '0px 4px 4px #00000040',
+    backdropFilter: 'blur(4px) brightness(100%)',
+    display: 'flex',
+    flexDirection: 'column',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
+    '&:hover': {
+      transform: 'translateY(-6px)',
+      boxShadow: '1px 2px 1px 1px rgba(255,255,0,255)',
+    },
+  }}
+>
+
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <Image
                 src={project.logo}
