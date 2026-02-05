@@ -59,13 +59,13 @@ export default function Home() {
                   achieve innovation and education.
                 </p>
                 <div className="mt-6 ml-4 flex gap-6">
-                  <Link
-                    aria-label="Contact by Mail"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="mailto:aossie.oss@gmail.com"
-                  >
-                    <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-                  </Link>
+                  <a
+                     aria-label="Contact by Mail"
+                     href="mailto:aossie.oss@gmail.com"
+                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                      >
+                      <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+                  </a>
                   <Link
                     aria-label="Follow on GitLab"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
