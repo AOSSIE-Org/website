@@ -118,16 +118,6 @@ export default function Ideas({ articles, currentYear }) {
               ))}
             </Grid>
           </div>
-          <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2024"
-            >
-              <span className="text-center font-mono font-semibold">
-                View 2024 Idea List
-              </span>
-            </Link>
-          </div>
         </Container.Inner>
       </Container>
     </>
