@@ -4,7 +4,7 @@ import CardContact from '@/components/CardContact'
 
 export default function ContactSection() {
     return (
-        <Container className="mt-16 sm:mt-20">
+        <Container className="mt-16 sm:mt-20 font-mono">
 
             <div className="mb-10 max-w-4xl">
                 <SectionHeading>Get in Touch</SectionHeading>
