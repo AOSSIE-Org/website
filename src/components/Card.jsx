@@ -16,12 +16,17 @@ function ChevronRightIcon(props) {
 export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={clsx(
+        className,
+        'group relative flex flex-col items-start rounded-2xl border border-zinc-200/60 bg-white p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:shadow-zinc-900/60'
+      )}
     >
       {children}
     </Component>
   )
 }
+
+
 
 Card.Link = function CardLink({ children, ...props }) {
   return (
@@ -56,10 +61,10 @@ Card.Cta = function CardCta({ children, href}) {
     <Link href={href}>
       <div
       aria-hidden="true"
-      className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
+className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400 transition-colors group-hover:text-[#006b32]"
       >
         {children}
-        <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+<ChevronRightIcon className="ml-1 h-4 w-4 stroke-current transition-transform duration-300 group-hover:translate-x-1" />
       </div>
   </Link>
     
