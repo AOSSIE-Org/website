@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
-import { getAllIdeas } from '@/helper/getAllIdeas';
+import { fetchIdeasFromGitHub, getCurrentYear } from '@/helper/fetchGitHubIdeas';
 import Grid from '@mui/material/Grid';
 import MuiCard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-function Article({ article }) {
+function Article({ article, currentYear }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <MuiCard
@@ -56,7 +56,7 @@ function Article({ article }) {
         </CardContent>
 
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Link href={`/ideas/2025/${article.slug}`} passHref>
+          <Link href={`/ideas/${currentYear}/${article.slug}`} passHref>
             <Button
               sx={{
                 color: '#3c982c',
@@ -74,7 +74,7 @@ function Article({ article }) {
 }
 
 
-export default function Ideas({ articles }) {
+export default function Ideas({ articles, currentYear }) {
   return (
     <>
       <Head>
@@ -103,7 +103,7 @@ export default function Ideas({ articles }) {
         <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
           Explore the world of open-source possibilities with AOSSIE&apos;s{' '}
           <b>Idea List</b>. As part of{' '}
-          <b>Google Summer of Code 2025</b>, we offer
+          <b>Google Summer of Code {currentYear}</b>, we offer
           a unique opportunity for developers to explore new ideas, a wide
           variety of projects for developers to choose from and contribute to.
           From developing new features to fixing critical bugs, our idea list
@@ -114,19 +114,9 @@ export default function Ideas({ articles }) {
           <div className="mt-10 flex justify-center sm:mt-20">
             <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
               {articles.map((article) => (
-                <Article key={article.slug} article={article} />
+                <Article key={article.slug} article={article} currentYear={currentYear} />
               ))}
             </Grid>
-          </div>
-          <div className="mt-16 text-center">
-            <Link
-              className="group order-2 mx-auto items-center overflow-hidden rounded-lg bg-zinc-800 px-8 py-3 text-white focus:outline-none dark:bg-white dark:text-black"
-              href="/ideas/2024"
-            >
-              <span className="text-center font-mono font-semibold">
-                View 2024 Idea List
-              </span>
-            </Link>
           </div>
         </Container.Inner>
       </Container>
@@ -135,9 +125,13 @@ export default function Ideas({ articles }) {
 }
 
 export async function getStaticProps() {
+  const currentYear = getCurrentYear();
+  const articles = await fetchIdeasFromGitHub(currentYear);
+
   return {
     props: {
-      articles: (await getAllIdeas()).map(({ component, ...meta }) => meta),
+      articles,
+      currentYear,
     },
   };
 }
