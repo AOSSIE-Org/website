@@ -5,7 +5,7 @@ import CardContact from '@/components/CardContact'
 export default function ContactForm() {
     return (
         <Container className="mt-16 sm:mt-20">
-            {/* 1. Header with improved typography hierarchy */}
+            
             <SectionHeading
                 eyebrow="Contact"
                 title="Contact AOSSIE"
@@ -18,7 +18,6 @@ export default function ContactForm() {
                 </span>
             </SectionHeading>
 
-            {/* 2. Optimized 3-column grid for 5 cards */}
             <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <CardContact
                     href="https://github.com/aossie"
@@ -57,7 +56,6 @@ export default function ContactForm() {
                 />
             </div>
 
-            {/* 3. Bottom Info Section */}
             <section className="mt-24">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
                     {[
