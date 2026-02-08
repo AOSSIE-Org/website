@@ -43,8 +43,15 @@ const iconMap = {
     ),
 }
 
+const DefaultIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+    <text x="12" y="16" textAnchor="middle" fontSize="12" fill="currentColor">?</text>
+  </svg>
+);
+
 export default function CardContact({ href, title, description, type,target }) {
-    const Icon = iconMap[type]
+    const Icon = iconMap[type] || DefaultIcon;
 
     return (
         <Link

@@ -6,10 +6,7 @@ export default function ContactForm() {
     return (
         <Container className="mt-16 sm:mt-20">
             
-            <SectionHeading
-                eyebrow="Contact"
-                title="Contact AOSSIE"
-            >
+            <SectionHeading>
                 <span className="block text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
                     AOSSIE is an Australian not-for-profit organization supporting innovation through open-source software.
                 </span>
