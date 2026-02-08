@@ -2,18 +2,22 @@ import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
 import CardContact from '@/components/CardContact'
 
-export default function ContactForm() {
+export default function ContactSection() {
     return (
         <Container className="mt-16 sm:mt-20">
-            
-            <SectionHeading>
-                <span className="block text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
-                    AOSSIE is an Australian not-for-profit organization supporting innovation through open-source software.
-                </span>
-                <span className="block text-base text-zinc-600 dark:text-zinc-400">
+
+            <div className="mb-10 max-w-4xl">
+                <SectionHeading>Get in Touch</SectionHeading>
+
+                <h2 className="mt-6 text-2xl font-normal leading-relaxed tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
+                    AOSSIE is an Australian not-for-profit organization supporting innovation through <span className="text-zinc-500 dark:text-zinc-400">open-source software.</span>
+                </h2>
+
+                <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
                     Connect with us below.
-                </span>
-            </SectionHeading>
+                </p>
+            </div>
+
 
             <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <CardContact
@@ -39,7 +43,6 @@ export default function ContactForm() {
                 />
                 <CardContact
                     href="mailto:contact@aossie.org"
-                    target="_blank"
                     title="Email"
                     description="Contact the core team directly."
                     type="mail"

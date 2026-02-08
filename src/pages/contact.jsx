@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import ContactForm from '@/components/ContactForm'
+import ContactSection from '@/components/ContactSection'
 
 export default function Contact() {
   return (
@@ -9,7 +9,7 @@ export default function Contact() {
         <meta name="description" content="Get in touch with AOSSIE" />
       </Head>
 
-      <ContactForm />
+      <ContactSection />
     </>
   )
 }
