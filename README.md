@@ -1,4 +1,3 @@
-
 # **AOSSIE's Website**
 
 This repository contains the assets required to build the **AOSSIE's website**. We're glad that you want to contribute!
