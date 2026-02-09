@@ -54,7 +54,7 @@ const projects = [
   {
     name: 'OpenChat',
     description:
-      'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
+      'A decentralised platform for secure and private messaging and file sharing built on top of blockchain',
     link: { href: '#', label: 'OpenChat' },
     logo: DefaultLogo,
   },
@@ -75,7 +75,7 @@ const projects = [
   {
     name: 'Social Street Smart',
     description:
-      'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
+      'With the advent of the Internet, the problems faced by the people have also grown. These include abusive languages.',
     link: {
       href: 'https://github.com/AOSSIE-Org/Social-Street-Smart',
       label: 'Social-Street-Smart',

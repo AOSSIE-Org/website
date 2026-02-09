@@ -47,8 +47,8 @@ const Cards = () => {
           >
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <Image
-                src={project.logo}
-                alt={`${project.title} image`}
+                src={project.logo }
+                alt={`${project.name} image`}
                 width={80}
                 height={80}
                 style={{ margin: '0 auto 16px', objectFit: 'contain' }}
