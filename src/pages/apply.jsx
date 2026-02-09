@@ -113,7 +113,7 @@ export default function About() {
                 title="Join us on Discord"
                 description="Join the AOSSIE community on Discord and connect with other developers, mentors, and organizers. Our Discord server is a great place to ask questions, share ideas, and get support throughout the Google Summer of Code application process. From proposal writing tips to coding advice, our community is here to help you succeed. Don't go through the process alone, join us on Discord now!"
                 button="Join Discord"
-                link="https://discord.gg/hjUhu33uAn"
+                link="https://discord.gg/xnmAPS7zqB"
               />
               <TimelineElement
                 title="Start Contributing"
