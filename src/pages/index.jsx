@@ -16,9 +16,23 @@ import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
+import SkeletonCard from '@/components/skeletonCard'
 
 export default function Home() {
-  const [randomProjects, setRandomProjects] = useState(projects)
+  const [randomProjects, setRandomProjects] = useState([])
+const [loading, setLoading] = useState(true)
+useEffect(() => {
+  const shuffled = [...projects].sort(() => 0.5 - Math.random()).slice(0, 3)
+  setRandomProjects(shuffled)
+}, [])
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false)
+  }, 800)
+
+  return () => clearTimeout(timer)
+}, [])
 
   useEffect(() => {
     setRandomProjects(projects.sort(() => 0.5 - Math.random()).slice(0, 3))
@@ -171,19 +185,28 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
-            <Container.Inner>
-              <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-                {randomProjects.map((project) => (
-                  <span key={project.name}>
-                    <CardEffect
-                      heading={project.name}
-                      logo={project.logo}
-                      content={project.description}
-                    />
-                  </span>
-                ))}
-              </div>
-            </Container.Inner>
+<Container.Inner>
+  <div
+    className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    aria-busy={loading}
+    aria-live="polite"
+  >
+    {loading
+      ? Array.from({ length: 3 }).map((_, i) => (
+          <SkeletonCard key={i} />
+        ))
+      : randomProjects.map((project) => (
+          <span key={project.name}>
+            <CardEffect
+              heading={project.name}
+              logo={project.logo}
+              content={project.description}
+            />
+          </span>
+        ))}
+  </div>
+</Container.Inner>
+
           </div>
           <div className="mt-12 text-center">
             <Link
