@@ -1,3 +1,4 @@
+import { orgStats } from '@/config/orgStats'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -10,7 +11,7 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
@@ -59,13 +60,13 @@ export default function Home() {
                   achieve innovation and education.
                 </p>
                 <div className="mt-6 ml-4 flex gap-6">
-                  <Link
-                    aria-label="Contact by Mail"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="mailto:aossie.oss@gmail.com"
-                  >
-                    <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-                  </Link>
+                  <a
+                     aria-label="Contact by Mail"
+                     href="mailto:aossie.oss@gmail.com"
+                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                      >
+                      <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+                  </a>
                   <Link
                     aria-label="Follow on GitLab"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
@@ -92,7 +93,7 @@ export default function Home() {
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                    <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                   </Link>
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
@@ -118,15 +119,21 @@ export default function Home() {
           <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
-              <p className="font-semibold text-2xl">34+</p>
+              <p className="font-semibold text-2xl">
+                {orgStats.activeProjects}+
+              </p>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Total Contributors</h6>
-              <p className="font-semibold text-2xl">500+</p>
+              <p className="font-semibold text-2xl">
+                {orgStats.totalContributors}+
+              </p>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Community Count</h6>
-              <p className="font-semibold text-2xl">2000+</p>
+              <p className="font-semibold text-2xl">
+                {orgStats.communityCount}+
+              </p>
             </div>
           </div>
 
