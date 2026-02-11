@@ -1,25 +1,70 @@
 import Image from 'next/image'
 
-export function CardEffect({heading, content, logo}) {
+export function CardEffect({ heading, content, logo }) {
     return (
-        <a className="group relative block h-[22rem] max-lg:w-72 max-xl:w-60 w-72 cursor-pointer">
-            {/* <span className="absolute inset-0 border-2 rounded-lg border-dashed border-black dark:border-zinc-300"></span> */}
+        <a
+            className="
+        group relative block h-[22rem] w-72 cursor-pointer
+        transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
+        hover:-translate-y-2
+      "
+        >
+            {/* Soft glow */}
+            <div
+                aria-hidden="true"
+                className="
+          absolute inset-0 rounded-3xl
+          bg-gradient-to-br from-emerald-200/40 via-transparent to-emerald-300/40
+          opacity-0 blur-2xl
+          transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+          group-hover:opacity-100
+        "
+            />
 
-            {/* <div className="relative flex h-full transform items-end border-4 rounded-lg border-black dark:border-zinc-300 bg-transparent dark:bg-transparent transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"> */}
-            {/* <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800/40 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8 transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#9ca3af] dark:group-hover:shadow-[8px_8px_0_0_#e5e7eb]"> */}
-            <div className="relative shadow-xl flex h-full justify-center rounded-3xl border-2 border-gray-400 dark:border-gray-200 bg-white dark:bg-gray-800 md:p-8 p-8 px-16 lg:py-8 lg:px-0 xl:p-8">
-                <div className="px-8 pb-4 self-center transition-opacity group-hover:absolute group-hover:opacity-0">
+            {/* Card */}
+            <div
+                className="
+          relative z-10 flex h-full flex-col items-center justify-center
+          rounded-3xl border border-zinc-200 dark:border-zinc-700
+          bg-white/95 dark:bg-zinc-900/90 backdrop-blur
+          shadow-md
+          transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+          group-hover:shadow-2xl
+        "
+            >
+                {/* Front (logo + title) */}
+                <div
+                    className="
+            px-8 text-center
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+            group-hover:opacity-0 group-hover:-translate-y-6
+          "
+                >
                     <Image
-                        src= {logo}
-                        width={150}
+                        src={logo}
+                        width={140}
+                        height={140}
                         unoptimized
-                        className='mx-auto'
-                        alt='Project Logo'
+                        className="mx-auto"
+                        alt="Project Logo"
                     />
-                    <h2 className="ml-0 leading-9 text-4xl text-center flex font-extrabold justify-center font-mono text-[#00843D] dark:text-yellow-400">{heading}</h2>
+                    <h2 className="mt-3 text-3xl font-extrabold font-mono text-[#00843D] dark:text-yellow-400">
+                        {heading}
+                    </h2>
                 </div>
-                <div className="absolute self-center pr-6 lg:scale-90 lg:pb-0 lg:pl-3 lg:pr-0 xl:pl-0 md:p-0 md:scale-95 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 dark:text-zinc-300">
-                    <p className="mt-4 font-mono sm:w-100 w-52">{content}</p>
+
+                {/* Back (description) */}
+                <div
+                    className="
+            absolute px-8 text-center opacity-0 translate-y-6
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+            group-hover:opacity-100 group-hover:translate-y-0
+            dark:text-zinc-300
+          "
+                >
+                    <p className="font-mono text-sm leading-relaxed">
+                        {content}
+                    </p>
                 </div>
             </div>
         </a>
