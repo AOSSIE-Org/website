@@ -5,6 +5,7 @@ import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import { orgStats } from '@/config/orgStats'
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
@@ -154,15 +155,21 @@ export default function About() {
         </p>
         <div style={styles.stats}>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>34+</h2>
+            <h2 style={styles.statNumber}>
+              {orgStats.activeProjects}+
+            </h2>
             <p style={styles.statLabel}>Active Projects</p>
           </div>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>500+</h2>
+            <h2 style={styles.statNumber}>
+              {orgStats.totalContributors}+
+           </h2>
             <p style={styles.statLabel}>Total Contributors</p>
           </div>
           <div className="text-green-600 dark:text-zinc-400 text-lg font-mono leading-7 font-bold">
-            <h2 style={styles.statNumber}>3800+</h2>
+            <h2 style={styles.statNumber}>
+              {orgStats.communityCount}+
+            </h2>
             <p style={styles.statLabel}>Community Count</p>
           </div>
         </div>
