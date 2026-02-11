@@ -10,12 +10,13 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
+  faXTwitter
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
 import projects from '@/helper/projects'
 import Journey from '@/components/Journey'
+
 
 export default function Home() {
   const [randomProjects, setRandomProjects] = useState(projects)
@@ -92,7 +93,7 @@ export default function Home() {
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                    <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                   </Link>
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">

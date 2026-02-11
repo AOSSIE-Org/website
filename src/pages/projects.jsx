@@ -83,9 +83,11 @@ const Cards = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#00843D] dark:group-hover:text-yellow-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none scale-110" />
-                <span className="ml-2">{project.link.label}</span>
+              <p className="relative z-10 mt-6 flex text-md font-semibold font-mono text-zinc-600 transition group-hover:text-[#32a852] dark:group-hover:text-yellow-400 dark:text-zinc-200">
+                <a href={project.link.href} target="_blank" rel="noopener noreferrer" className="hover:text-[#32a852] dark:hover:text-yellow-400 inline-flex items-center">
+                  <LinkIcon className="h-6 w-6 flex-none scale-110" />
+                  <span className="ml-2">{project.link.label}</span>
+                </a>
               </p>
             </CardActions>
           </MuiCard>
