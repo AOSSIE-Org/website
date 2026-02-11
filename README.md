@@ -1,5 +1,5 @@
 # **AOSSIE's Website**
-
+AOSSIE Website is an open-sourcce project to showcase AOSSIE ORG initiatives.This repository uses Tailwind css nd react for the frontend.
 This repository contains the assets required to build the **AOSSIE's website**. We're glad that you want to contribute!
 
 Contributions to the project are very much welcomed! Please reach out with ideas for new content or issues with existing content!
