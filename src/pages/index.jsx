@@ -10,7 +10,7 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
@@ -30,33 +30,32 @@ export default function Home() {
         <meta name="description" content="AOSSIE Website" />
       </Head>
 
-      <Container.Outer className="mt-9 relative">
+      <Container.Outer className="relative mt-9">
         <div className="relative">
-
           {/* Background Image */}
-          <div className=" hidden  absolute md:block z-0 bg-[url('../images/background.png')] dark:bg-[url('../images/background-dark.png')] right-0 top-[-230px] w-full h-[-webkit-fill-available] bg-cover bg-center mb-20"></div>
+          <div className=" absolute  right-0 top-[-230px] z-0 mb-20 hidden h-[-webkit-fill-available] w-full bg-[url('../images/background.png')] bg-cover bg-center dark:bg-[url('../images/background-dark.png')] md:block"></div>
 
           {/* Main Content */}
-          <div className="flex flex-col sm:flex-row relative z-10 mb-8">
+          <div className="relative z-10 mb-8 flex flex-col sm:flex-row">
             <div className="flex-1 self-center">
               <Image
                 src="./logo1.png"
                 width={320}
                 height={300}
-                className="mx-auto scale-110 m-4"
+                className="m-4 mx-auto scale-110"
                 alt="AOSSIE Logo"
               />
             </div>
-            <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
-              <div className="max-w-xl ml-12">
-                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
+            <div className="mt-10 flex-1 pt-8 sm:ml-10 lg:ml-0 lg:mt-0">
+              <div className="ml-12 max-w-xl">
+                <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] dark:text-[#FED41E] sm:text-6xl md:text-5xl md:text-[#FED41E] md:dark:text-black lg:text-6xl">
                   We Innovate <br /> We Educate
                 </h1>
-                <p className="mt-8 font-mono text-xl leading-7 text-zinc-600 dark:text-[rgb(161 161 170/var(--tw-text-opacity))]  md:dark:text-[#FED41E]">
+                <p className="dark:text-[rgb(161 161 170/var(--tw-text-opacity))] mt-8 font-mono text-xl leading-7 text-zinc-600  md:dark:text-[#FED41E]">
                   We are an Australian not-for-profit umbrella organization for
                   open-source projects. We believe the open-source philosophy
-                  provides a resource-efficient channel to transfer knowledge and
-                  achieve innovation and education.
+                  provides a resource-efficient channel to transfer knowledge
+                  and achieve innovation and education.
                 </p>
                 <div className="mt-6 ml-4 flex gap-6">
                   <Link
@@ -92,11 +91,17 @@ export default function Home() {
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://twitter.com/aossie_org"
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                    <FontAwesomeIcon
+                          icon={faXTwitter}
+                      size="2xl"
+                    />
                   </Link>
                 </div>
-                <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
-                  <Link href="/about" className="group relative inline-block text-lg">
+                <div className="mx-4 mt-12 text-left md:mx-0 md:mt-8 ">
+                  <Link
+                    href="/about"
+                    className="group relative inline-block text-lg"
+                  >
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
                       <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
@@ -115,29 +120,27 @@ export default function Home() {
           </div>
 
           {/* Green Band with Counts */}
-          <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
+          <div className="relative z-20 hidden flex-col justify-between border border-white bg-[#3C982C] p-4 px-4 text-center text-white dark:bg-yellow-400 dark:text-black sm:flex sm:p-8 sm:px-16 md:flex-row">
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
-              <p className="font-semibold text-2xl">34+</p>
+              <p className="text-2xl font-semibold">34+</p>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Total Contributors</h6>
-              <p className="font-semibold text-2xl">500+</p>
+              <p className="text-2xl font-semibold">500+</p>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Community Count</h6>
-              <p className="font-semibold text-2xl">2000+</p>
+              <p className="text-2xl font-semibold">2000+</p>
             </div>
           </div>
-
         </div>
       </Container.Outer>
-
 
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10 ">
-            <div className="flex text-center items-center justify-center">
+            <div className="flex items-center justify-center text-center">
               <div className=" relative top-2 hidden h-12 w-12 translate-x-px transform items-center justify-center rounded-full bg-[#00843D] p-2 dark:bg-yellow-400 md:flex">
                 <svg
                   aria-hidden="true"
@@ -156,18 +159,25 @@ export default function Home() {
                 </svg>
               </div>
               <div className="col-span-8 mt-3 self-center lg:col-start-2">
-                <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
+                <h1 className="pl-3 font-mono text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
                   projects
                 </h1>
               </div>
             </div>
 
-            <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 text-center ">
+            <p className=" text-center font-mono text-lg text-zinc-600 dark:text-zinc-400 ">
               Our Projects, where we showcase our tech wizardry and
               code-slinging skills!! <br></br> Be a part of our community and
-              contribute to meaningful projects that are <span className="text-[#3C982C] dark:text-yellow-400">making a difference</span>.
-              Explore our selection of projects and find the perfect opportunity
-              to showcase your skills and <span className="text-[#3C982C] dark:text-yellow-400">make an impact</span>.
+              contribute to meaningful projects that are{' '}
+              <span className="text-[#3C982C] dark:text-yellow-400">
+                making a difference
+              </span>
+              . Explore our selection of projects and find the perfect
+              opportunity to showcase your skills and{' '}
+              <span className="text-[#3C982C] dark:text-yellow-400">
+                make an impact
+              </span>
+              .
             </p>
           </div>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-evenly sm:gap-0">
@@ -213,7 +223,6 @@ export default function Home() {
           </div>
         </div>
       </Container>
-
 
       <Container.Outer className="mt-28">
         <Banner />
