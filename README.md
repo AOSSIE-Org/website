@@ -42,7 +42,7 @@ You can contribute by:
 
 If you want to get in touch with us first before contributing, you can use:
 
-* [AOSSIE Discord Channel](https://discord.gg/hjUhu33uAn)
+* [AOSSIE Discord Channel](https://discord.gg/xnmAPS7zqB)
 
 
 # **License**
