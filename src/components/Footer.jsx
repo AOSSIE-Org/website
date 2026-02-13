@@ -18,7 +18,7 @@ function NavLink({ href, children }) {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="mt-16">
       <Container.Outer>

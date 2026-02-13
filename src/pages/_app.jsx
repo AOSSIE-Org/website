@@ -1,10 +1,14 @@
 import { useEffect, useRef } from 'react'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { Header } from '@/components/Header'
 
 import '@/style/tailwind.css'
 import 'focus-visible'
 import { Footer } from '@/components/Footer'
+
+config.autoAddCss = false
 
 function usePrevious(value) {
   let ref = useRef()
@@ -31,7 +35,7 @@ export default function App({ Component, pageProps, router }) {
           <main>
             <Component previousPathname={previousPathname} {...pageProps} />
           </main>
-          <Footer />
+          {router.pathname !== '/404' && <Footer />}
         </div>
     </>
   )
