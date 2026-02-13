@@ -10,7 +10,6 @@ import {
   faDiscord,
   faGithub,
   faGitlab,
-  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/CardEffect'
 import { Banner } from '@/components/Banner'
@@ -87,13 +86,11 @@ export default function Home() {
                   >
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
                   </Link>
-                  <Link
-                    aria-label="Follow on Twitter"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://twitter.com/aossie_org"
-                  >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
-                  </Link>
+                 <Link aria-label="Follow on X" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </Link>
                 </div>
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
                   <Link href="/about" className="group relative inline-block text-lg">
