@@ -101,10 +101,9 @@ export default function Home() {
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
                       <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
-                      <span className="relative font-mono text-xl font-black tracking-tighter">
-                        Learn More About Us
-                      </span>
-                    </span>
+                      <span className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-transform duration-200 ease-linear will-change-transform group-hover:-translate-x-2 group-hover:-translate-y-2 dark:bg-yellow-400" data-rounded="rounded-lg"> 
+</span>
+</span>
                     <span
                       className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
                       data-rounded="rounded-lg"
