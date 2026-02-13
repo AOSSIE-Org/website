@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faGitlab, faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 function NavLink({ href, children }) {
   return (
@@ -20,7 +20,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="mt-16">
+    <footer className="mt-16 bg-zinc-200 dark:bg-zinc-900">
       <Container.Outer>
         <div className="pt-10 pb-10">
           <Container.Inner>
@@ -49,6 +49,9 @@ export function Footer() {
                 </Link>
                 <Link aria-label="Follow on Twitter" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
                   <FontAwesomeIcon icon={faTwitter} size='xl' />
+                </Link>
+                <Link aria-label="Follow on Facebook" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.facebook.com/aossie'>
+                  <FontAwesomeIcon icon={faFacebook} size='xl' />
                 </Link>
               </div>
             </div>

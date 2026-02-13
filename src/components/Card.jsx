@@ -51,18 +51,15 @@ Card.Description = function CardDescription({ children }) {
   )
 }
 
-Card.Cta = function CardCta({ children, href}) {
+Card.Cta = function CardCta({ children, href }) {
   return (
-    <Link href={href}>
-      <div
-      aria-hidden="true"
+    <Link
+      href={href}
       className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
-      >
-        {children}
-        <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
-      </div>
-  </Link>
-    
+    >
+      {children}
+      <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+    </Link>
   )
 }
 
