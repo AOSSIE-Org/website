@@ -14,7 +14,7 @@ function Article({ article, currentYear }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <MuiCard
-        className="dark:bg-[#2A2A2A] dark:border-white"
+        className="dark:bg-[#2A2A2A] dark:border-white shadow-md hover:shadow-xl hover:-translate-y-2 transform transition duration-300"
         sx={{
           height: 350,
           borderRadius: 2,
