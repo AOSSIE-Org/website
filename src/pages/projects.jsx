@@ -101,7 +101,8 @@ const ProjectSection = () => {
     <div className="ideas-text flex items-center justify-center mb-8 relative">
       <div
         className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
-        alt="GSOC Logo"
+        role="img"
+        aria-label="GSOC Logo"
       ></div>
 
       <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
@@ -134,8 +135,8 @@ export default function Projects() {
         <title>PROJECTS</title>
         <meta name="description" content="PROJECT List for GSOC" />
       </Head>
-      <Container className="mt-20 mb-28">
-        <Container.Inner>
+      <Container className="mt-20 mb-28" sx={{ overflowX: 'hidden' }}>
+        <Container.Inner sx={{ overflowX: 'hidden', maxWidth: '100%' }}>
           <ProjectSection />
           <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
             Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
