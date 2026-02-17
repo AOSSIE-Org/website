@@ -68,8 +68,17 @@ export default function About() {
       <Container.Outer className="mt-20 mb-28 ">
         <div className='overflow-x-hidden'>
           <div className="mt-5 mx-4 md:mx-16">
-            <h5 className='font-bold text-2xl text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7'> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain<span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.</h5>
-            <p className='text-zinc-600 mt-4  dark:text-zinc-400 text-lg font-mono leading-7'>
+            <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl 
+               text-yellow-400 mb-12 leading-tight">
+            Start Your Open-Source Journey
+            </h1>
+            <h2 className="mt-4 font-mono font-medium
+               text-lg sm:text-xl md:text-2xl
+               text-zinc-600 dark:text-zinc-400
+               leading-relaxed">
+            Learn how to apply for an <span className="text-yellow-400 font-bold">opportunity</span> to work on open-source projects and gain <span className="text-yellow-400 font-bold">real-world experience</span> through Google Summer of Code.
+            </h2>
+            <p className='mt-6 text-zinc-600 mt-4  dark:text-zinc-400 text-lg font-mono leading-7'>
               Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
             </p>
           </div>
