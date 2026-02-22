@@ -131,7 +131,6 @@ export default function IdeaPage() {
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeRaw, rehypeSanitize]}
                     components={{
-                      // Custom styling for headings
                       h1: ({ node, ...props }) => (
                         <h1
                           className="text-3xl font-bold text-zinc-800 dark:text-zinc-100 mt-10 mb-4"
@@ -156,14 +155,12 @@ export default function IdeaPage() {
                           {...props}
                         />
                       ),
-                      // Custom styling for paragraphs
                       p: ({ node, ...props }) => (
                         <p
                           className="text-base leading-7 text-zinc-600 dark:text-zinc-400 mb-5"
                           {...props}
                         />
                       ),
-                      // Custom styling for lists
                       ul: ({ node, ...props }) => (
                         <ul
                           className="list-disc list-outside ml-6 text-zinc-600 dark:text-zinc-400 mb-4 space-y-2"
@@ -182,7 +179,6 @@ export default function IdeaPage() {
                           {...props}
                         />
                       ),
-                      // Custom styling for links
                       a: ({ node, ...props }) => (
                         <a
                           className="text-green-600 dark:text-yellow-400 hover:underline"
@@ -191,7 +187,6 @@ export default function IdeaPage() {
                           {...props}
                         />
                       ),
-                      // Custom styling for code blocks
                       code: ({ node, inline, ...props }) =>
                         inline ? (
                           <code
@@ -204,14 +199,12 @@ export default function IdeaPage() {
                             {...props}
                           />
                         ),
-                      // Custom styling for blockquotes
                       blockquote: ({ node, ...props }) => (
                         <blockquote
                           className="border-l-4 border-green-600 dark:border-yellow-400 pl-6 py-2 italic text-zinc-600 dark:text-zinc-400 my-6 bg-zinc-50 dark:bg-zinc-900/30"
                           {...props}
                         />
                       ),
-                      // Custom styling for tables
                       table: ({ node, ...props }) => (
                         <div className="overflow-x-auto my-4">
                           <table
@@ -238,7 +231,6 @@ export default function IdeaPage() {
                           {...props}
                         />
                       ),
-                      // Custom styling for horizontal rules
                       hr: ({ node, ...props }) => (
                         <hr
                           className="my-6 border-zinc-300 dark:border-zinc-700"

@@ -11,9 +11,6 @@ import { Banner } from '@/components/Banner';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import projects from '@/helper/projects'
-import { useState, useEffect } from 'react';
-import { Skeleton } from '@/components/Skeletons';
-import { SkeletonText } from '@/components/Skeletons';
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -25,52 +22,11 @@ function LinkIcon(props) {
   )
 }
 
-function ProjectCardSkeleton() {
-  return (
-    <MuiCard
-      className='dark:bg-[#2A2A2A] dark:border-white'
-      sx={{
-        height: 400,
-        borderRadius: 2,
-        border: '1px solid',
-        borderColor: '#3c982c',
-        boxShadow: '0px 4px 4px #00000040',
-        backdropFilter: 'blur(4px) brightness(100%)',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-        <Skeleton width={80} height={80} className="mx-auto mb-4" />
-        <Skeleton height="2rem" width="60%" className="mx-auto mb-2" />
-        <SkeletonText lines={4} className="mt-4" />
-      </CardContent>
-      <CardActions sx={{ justifyContent: 'center' }}>
-        <Skeleton height="1.5rem" width="5rem" />
-      </CardActions>
-    </MuiCard>
-  )
-}
-
-function ProjectCardsSkeleton() {
-  return (
-    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
-      {Array.from({ length: 9 }).map((_, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index}>
-          <ProjectCardSkeleton />
-        </Grid>
-      ))}
-    </Grid>
-  )
-}
-
 // Define the Cards component here
-const Cards = ({ isLoading }) => {
+const Cards = () => {
   const router = useRouter();
 
-  if (isLoading) {
-    return <ProjectCardsSkeleton />;
-  }
+
 
   return (
     <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
@@ -140,17 +96,7 @@ const Cards = ({ isLoading }) => {
   );
 };
 
-const ProjectSection = ({ isLoading }) => {
-  if (isLoading) {
-    return (
-      <div className="ideas-text flex items-center justify-center mb-8 relative">
-        <Skeleton width={75} height={75} variant="rectangular" className="hidden md:block absolute left-10" />
-        <Skeleton height="3.75rem" width="12rem" />
-        <Skeleton width={75} height={75} variant="rectangular" className="hidden md:block absolute right-10" />
-      </div>
-    );
-  }
-
+const ProjectSection = () => {
   return (
     <div className="ideas-text flex items-center justify-center mb-8 relative">
       <div
@@ -182,15 +128,6 @@ const styles = {
 };
 
 export default function Projects() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <>
       <Head>
@@ -199,16 +136,12 @@ export default function Projects() {
       </Head>
       <Container className="mt-20 mb-28">
         <Container.Inner>
-          <ProjectSection isLoading={isLoading} />
-          {isLoading ? (
-            <Skeleton height="3rem" width="80%" className="mx-auto mb-8" />
-          ) : (
-            <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
-              Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
-              featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
-            </p>
-          )}
-          <Cards isLoading={isLoading} />
+          <ProjectSection />
+          <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
+            Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
+            featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
+          </p>
+          <Cards />
         </Container.Inner>
       </Container>
 

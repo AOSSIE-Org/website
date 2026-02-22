@@ -12,44 +12,6 @@ import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Skeleton, SkeletonText } from '@/components/Skeletons';
 
-function ArticleSkeleton() {
-  return (
-    <Grid item xs={12} sm={6} md={4}>
-      <MuiCard
-        className="dark:bg-[#2A2A2A] dark:border-white"
-        sx={{
-          height: 350,
-          borderRadius: 2,
-          border: '1px solid',
-          borderColor: '#3c982c',
-          boxShadow: '0px 4px 4px #00000040',
-          backdropFilter: 'blur(4px) brightness(100%)',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-          <Skeleton height="2rem" width="70%" className="mx-auto mb-4" />
-          <SkeletonText lines={4} />
-        </CardContent>
-        <CardActions sx={{ justifyContent: 'center' }}>
-          <Skeleton height="2rem" width="6rem" />
-        </CardActions>
-      </MuiCard>
-    </Grid>
-  );
-}
-
-function IdeasGridSkeleton() {
-  return (
-    <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
-      {Array.from({ length: 6 }).map((_, index) => (
-        <ArticleSkeleton key={index} />
-      ))}
-    </Grid>
-  );
-}
-
 function Article({ article }) {
     return (
         <Grid item xs={12} sm={6} md={4}>
@@ -100,7 +62,7 @@ function Article({ article }) {
                         <Button
                             sx={{
                                 color: '#3c982c',
-                                textTransform: 'none', // Prevent uppercase
+                                textTransform: 'none',
                             }}
                             className="font-Nunito-Bold text-green-600 dark:text-yellow-400 text-lg leading-7 text-center"
                         >
@@ -111,6 +73,44 @@ function Article({ article }) {
             </MuiCard>
         </Grid>
     );
+}
+
+function ArticleSkeleton() {
+  return (
+    <Grid item xs={12} sm={6} md={4}>
+      <MuiCard
+        className="dark:bg-[#2A2A2A] dark:border-white"
+        sx={{
+          height: 350,
+          borderRadius: 2,
+          border: '1px solid',
+          borderColor: '#3c982c',
+          boxShadow: '0px 4px 4px #00000040',
+          backdropFilter: 'blur(4px) brightness(100%)',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
+          <Skeleton height="2rem" width="70%" className="mx-auto mb-4" />
+          <SkeletonText lines={4} />
+        </CardContent>
+        <CardActions sx={{ justifyContent: 'center' }}>
+          <Skeleton height="2rem" width="6rem" />
+        </CardActions>
+      </MuiCard>
+    </Grid>
+  );
+}
+
+function IdeasGridSkeleton() {
+  return (
+    <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+      {Array.from({ length: 6 }).map((_, index) => (
+        <ArticleSkeleton key={index} />
+      ))}
+    </Grid>
+  );
 }
 
 export default function Ideas() {
