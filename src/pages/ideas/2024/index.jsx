@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { Container } from '@/components/Container';
 import { getAllIdeas } from '@/helper/getAllIdeas';
 import Grid from '@mui/material/Grid';
@@ -9,6 +10,45 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Skeleton, SkeletonText } from '@/components/Skeletons';
+
+function ArticleSkeleton() {
+  return (
+    <Grid item xs={12} sm={6} md={4}>
+      <MuiCard
+        className="dark:bg-[#2A2A2A] dark:border-white"
+        sx={{
+          height: 350,
+          borderRadius: 2,
+          border: '1px solid',
+          borderColor: '#3c982c',
+          boxShadow: '0px 4px 4px #00000040',
+          backdropFilter: 'blur(4px) brightness(100%)',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
+          <Skeleton height="2rem" width="70%" className="mx-auto mb-4" />
+          <SkeletonText lines={4} />
+        </CardContent>
+        <CardActions sx={{ justifyContent: 'center' }}>
+          <Skeleton height="2rem" width="6rem" />
+        </CardActions>
+      </MuiCard>
+    </Grid>
+  );
+}
+
+function IdeasGridSkeleton() {
+  return (
+    <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+      {Array.from({ length: 6 }).map((_, index) => (
+        <ArticleSkeleton key={index} />
+      ))}
+    </Grid>
+  );
+}
 
 function Article({ article }) {
     return (
@@ -73,7 +113,27 @@ function Article({ article }) {
     );
 }
 
-export default function Ideas({ articles }) {
+export default function Ideas() {
+    const [articles, setArticles] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
+            try {
+                const ideas = await getAllIdeas();
+                const mappedIdeas = ideas.map(({ component, ...meta }) => meta);
+                setArticles(mappedIdeas);
+            } catch (error) {
+                console.error('Error fetching ideas:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <>
             <Head>
@@ -83,40 +143,42 @@ export default function Ideas({ articles }) {
 
             <Container className="mt-20 mb-28">
                 <div className="flex justify-center items-center w-full">
-                    <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
-                        AOSSIE&apos;s{' '}
-                        <b>Idea List</b> for{' '}
-                        <b>Google Summer of Code 2024</b>
-                    </p>
+                    {isLoading ? (
+                        <Skeleton height="2rem" width="20rem" />
+                    ) : (
+                        <p className="font-mono text-lg leading-7 text-zinc-600 dark:text-zinc-400">
+                            AOSSIE&apos;s{' '}
+                            <b>Idea List</b> for{' '}
+                            <b>Google Summer of Code 2024</b>
+                        </p>
+                    )}
                 </div>
 
                 <Container.Inner>
                     <div className="mt-10 sm:mt-20 flex justify-center">
-                        <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
-                            {articles.map((article) => (
-                                <Article key={article.slug} article={article} />
-                            ))}
-                        </Grid>
+                        {isLoading ? (
+                            <IdeasGridSkeleton />
+                        ) : (
+                            <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+                                {articles.map((article) => (
+                                    <Article key={article.slug} article={article} />
+                                ))}
+                            </Grid>
+                        )}
                     </div>
 
-                    <div className="text-center mt-16">
-                        <Link
-                            href="/ideas"
-                            className="mx-auto group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 text-white focus:outline-none dark:text-black"
-                        >
-                            <span className="font-mono font-semibold">Go Back</span>
-                        </Link>
-                    </div>
+                    {!isLoading && (
+                        <div className="text-center mt-16">
+                            <Link
+                                href="/ideas"
+                                className="mx-auto group rounded-lg items-center overflow-hidden bg-zinc-800 dark:bg-white px-8 py-3 text-white focus:outline-none dark:text-black"
+                            >
+                                <span className="font-mono font-semibold">Go Back</span>
+                            </Link>
+                        </div>
+                    )}
                 </Container.Inner>
             </Container>
         </>
     );
-}
-
-export async function getStaticProps() {
-    return {
-        props: {
-            articles: (await getAllIdeas()).map(({ component, ...meta }) => meta),
-        },
-    };
 }

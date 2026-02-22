@@ -1,12 +1,45 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 import { Container } from '@/components/Container'
 import { TimelineElement } from '@/components/TimelineElement'
 import GSoC from '@/images/logo.svg'
+import { Skeleton, SkeletonText } from '@/components/Skeletons'
+
+function TimelineSkeleton() {
+  const items = [
+    { title: 'Join us on Discord', description: '' },
+    { title: 'Start Contributing', description: '' },
+    { title: 'Write a Draft Application', description: '' },
+    { title: 'Discuss with Mentors', description: '' },
+    { title: 'Submit Final Application', description: '' },
+  ];
+
+  return (
+    <ol className="relative border-l-2 border-gray-200 dark:border-gray-700">
+      {items.map((_, index) => (
+        <li key={index} className="mb-10 ml-6">
+          <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-4 ring-white dark:ring-gray-900 dark:bg-blue-900">
+          </span>
+          <Skeleton height="1.5rem" width="60%" className="mb-2" />
+          <SkeletonText lines={2} />
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 export default function About() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <Head>
@@ -65,7 +98,23 @@ export default function About() {
 
       </Head>
 
-      <Container.Outer className="mt-20 mb-28 ">
+      {isLoading ? (
+        <Container.Outer className="mt-20 mb-28 ">
+          <div className='overflow-x-hidden'>
+            <div className="mt-5 mx-4 md:mx-16">
+              <Skeleton height="3rem" width="80%" className="mb-4" />
+              <SkeletonText lines={3} />
+            </div>
+            <div className='w-full mt-8 hidden sm:block'>
+              <Skeleton height="200px" width="100%" />
+            </div>
+            <Container.Inner className='mt-4 mx-4 md:m-16'>
+              <TimelineSkeleton />
+            </Container.Inner>
+          </div>
+        </Container.Outer>
+      ) : (
+        <Container.Outer className="mt-20 mb-28 ">
         <div className='overflow-x-hidden'>
           <div className="mt-5 mx-4 md:mx-16">
             <h5 className='font-bold text-2xl text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7'> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain<span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.</h5>
@@ -153,6 +202,7 @@ export default function About() {
           </Container.Inner>
         </div>
       </Container.Outer>
+      )}
     </>
   );
 }

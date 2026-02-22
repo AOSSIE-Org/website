@@ -6,16 +6,52 @@ import { Banner } from '@/components/Banner';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
+import { Skeleton, SkeletonText } from '@/components/Skeletons';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
+function AboutSkeleton() {
+  return (
+    <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+      <section style={{ margin: '30px 0' }}>
+        <Skeleton height="3.75rem" width="12rem" className="mx-auto mb-8" />
+        <SkeletonText lines={3} />
+        <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '20px', marginTop: '30px' }}>
+          {[
+            { label: 'Active Projects', value: '34+' },
+            { label: 'Total Contributors', value: '500+' },
+            { label: 'Community Count', value: '3800+' }
+          ].map((stat, i) => (
+            <div key={i} style={{ textAlign: 'center', fontWeight: 'bold' }}>
+              <Skeleton height="2rem" width="4rem" className="mx-auto mb-2" />
+              <Skeleton height="1rem" width="6rem" className="mx-auto" />
+            </div>
+          ))}
+        </div>
+      </section>
+      <section style={{ margin: '30px 0' }}>
+        <Skeleton height="2.5rem" width="14rem" className="mx-auto mb-8" />
+        <Skeleton height="1.25rem" width="20rem" className="mx-auto mb-8" />
+        <Skeleton height="400px" width="100%" className="mb-8" />
+      </section>
+    </div>
+  );
+}
+
 export default function About() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Detect dark mode preference on page load
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
   }, []);
 
   const data = {
@@ -134,6 +170,23 @@ export default function About() {
       marginBottom: '20px', // Gap below Australian Umbrella Org
     },
   };
+
+  if (isLoading) {
+    return (
+      <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+        <Head>
+          <title>About Us - Projects and Contributions</title>
+          <meta name="description" content="Learn about our projects, contributions, and impact in the open-source community." />
+        </Head>
+        <AboutSkeleton />
+        <div style={styles.bannerWrapper}>
+          <Container.Outer className="mt-28">
+            <Banner />
+          </Container.Outer>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={styles.container}>

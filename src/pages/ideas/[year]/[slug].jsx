@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm-4';
 import rehypeRaw from 'rehype-raw';
@@ -7,10 +8,58 @@ import rehypeSanitize from 'rehype-sanitize';
 import { Container } from '@/components/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { fetchIdeaContent, fetchIdeasFromGitHub, getCurrentYear } from '@/helper/fetchGitHubIdeas';
+import { fetchIdeaContent, getCurrentYear } from '@/helper/fetchGitHubIdeas';
+import { Skeleton, SkeletonText } from '@/components/Skeletons';
 
-export default function IdeaPage({ idea }) {
+function IdeaContentSkeleton() {
+  return (
+    <div className="xl:relative">
+      <div className="mx-auto max-w-2xl">
+        <button
+          type="button"
+          className="group mt-10 mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800"
+        >
+          <Skeleton variant="circular" width="1.5rem" height="1.5rem" />
+        </button>
+        <Skeleton height="3rem" width="80%" className="mb-4" />
+        <Skeleton height="1.25rem" width="100%" className="mb-2" />
+        <Skeleton height="1.25rem" width="90%" className="mb-8" />
+        
+        <div className="space-y-4">
+          <SkeletonText lines={4} />
+          <SkeletonText lines={3} />
+          <Skeleton height="200px" width="100%" />
+          <SkeletonText lines={4} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function IdeaPage() {
   const router = useRouter();
+  const { year, slug } = router.query;
+  const [idea, setIdea] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!year || !slug) return;
+
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const data = await fetchIdeaContent(slug, year);
+        setIdea(data);
+      } catch (error) {
+        console.error('Error fetching idea:', error);
+        setIdea(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [year, slug]);
 
   if (router.isFallback) {
     return (
@@ -19,6 +68,19 @@ export default function IdeaPage({ idea }) {
           <p className="text-lg text-zinc-600 dark:text-zinc-400">Loading...</p>
         </div>
       </Container>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <>
+        <Head>
+          <title>Loading... - Idea Details</title>
+        </Head>
+        <Container className="mt-16 mb-20">
+          <IdeaContentSkeleton />
+        </Container>
+      </>
     );
   }
 
@@ -199,47 +261,4 @@ export default function IdeaPage({ idea }) {
       </Container>
     </>
   );
-}
-
-export async function getStaticPaths() {
-  // For static export, we need to generate all paths at build time
-  const currentYear = getCurrentYear();
-  const ideas = await fetchIdeasFromGitHub(currentYear);
-
-  const paths = ideas.map((idea) => ({
-    params: {
-      year: currentYear.toString(),
-      slug: idea.slug,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const { year, slug } = params;
-
-  try {
-    const idea = await fetchIdeaContent(slug, year);
-
-    if (!idea) {
-      return {
-        notFound: true,
-      };
-    }
-
-    return {
-      props: {
-        idea,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching idea:', error);
-    return {
-      notFound: true,
-    };
-  }
 }
