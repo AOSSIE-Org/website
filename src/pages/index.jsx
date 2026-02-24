@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { orgStats } from '../config/orgStats'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
@@ -126,15 +127,15 @@ export default function Home() {
           <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
-              <p className="font-semibold text-2xl">34+</p>
+              <p className="font-semibold text-2xl">{orgStats.activeProjects}+</p>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Total Contributors</h6>
-              <p className="font-semibold text-2xl">500+</p>
+              <p className="font-semibold text-2xl">{orgStats.totalContributors}+</p>
             </div>
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Community Count</h6>
-              <p className="font-semibold text-2xl">2000+</p>
+              <p className="font-semibold text-2xl">{orgStats.communityCount}+</p>
             </div>
           </div>
 
