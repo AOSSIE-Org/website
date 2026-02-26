@@ -51,6 +51,7 @@ const Cards = () => {
                 alt={`${project.title} image`}
                 width={80}
                 height={80}
+                className='w-20 h-20'
                 style={{ margin: '0 auto 16px', objectFit: 'contain' }}
               />
               <Typography

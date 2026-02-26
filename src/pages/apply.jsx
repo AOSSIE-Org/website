@@ -80,15 +80,15 @@ export default function About() {
             <div className='relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8'>
               <div className='line-right'></div>
               <div className='relative'>
-                <Image src="/ele1.svg" alt="Join us on Discord" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele1.svg" className='w-auto h-auto' alt="Join us on Discord" width={170} height={170} /> {/* Adjust width and height */}
                 <p className='font-bold p-3 m-auto dark:text-white'>Join us on Discord</p>
               </div>
               <div className='relative'>
-                <Image src="/ele2.svg" alt="Start Contributing" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele2.svg" className='w-auto h-auto' alt="Start Contributing" width={170} height={170} /> {/* Adjust width and height */}
                 <p className='font-bold p-3 m-auto dark:text-white'>Start Contributing</p>
               </div>
               <div className='relative'>
-                <Image src="/ele3.svg" alt="Choose an idea" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele3.svg" className='w-auto h-auto' alt="Choose an idea" width={170} height={170} /> {/* Adjust width and height */}
                 <p className='font-bold p-3 m-auto dark:text-white'>Choose an idea</p>
               </div>
             </div>
@@ -96,11 +96,11 @@ export default function About() {
             <div className='relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8'>
               <div className='line-left'></div>
               <div className='relative'>
-                <Image src="/ele4.svg" alt="Discuss with mentor" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele4.svg" className='w-auto h-auto' alt="Discuss with mentor" width={170} height={170} /> {/* Adjust width and height */}
                 <p className='font-bold p-3 m-auto dark:text-white'>Discuss with mentor</p>
               </div>
               <div className='relative'>
-                <Image src="/ele5.svg" alt="Submit final application" width={170} height={170} /> {/* Adjust width and height */}
+                <Image src="/ele5.svg" className='w-auto h-auto' alt="Submit final application" width={170} height={170} /> {/* Adjust width and height */}
                 <p className='font-bold p-3 m-auto dark:text-white'>Submit final application</p>
               </div>
             </div>
