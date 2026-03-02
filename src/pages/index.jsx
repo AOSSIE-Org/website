@@ -44,7 +44,7 @@ export default function Home() {
                 src="./logo1.png"
                 width={320}
                 height={300}
-                className="mx-auto scale-110 m-4"
+                className="mx-auto scale-110 m-4 h-auto w-auto"
                 alt="AOSSIE Logo"
               />
             </div>

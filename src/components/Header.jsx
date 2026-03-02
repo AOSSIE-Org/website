@@ -230,7 +230,7 @@ function Home({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image src='/logo1.png' width={100} height={100} className='scale-125' alt='Aossie Logo' />
+      <Image src="/logo1.png" width={100} height={100} className="scale-125 h-auto w-auto" alt="AOSSIE Logo" />
     </Link>
   )
 }
@@ -362,11 +362,9 @@ export function Header() {
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                {!isHomePage && (
-                  <HomeContainer>
-                    <Home />
-                  </HomeContainer>
-                )}
+                <HomeContainer>
+                  <Home />
+                </HomeContainer>
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
