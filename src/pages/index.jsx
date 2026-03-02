@@ -113,7 +113,7 @@ export default function Home() {
                       </span>
                     </span>
                     <span
-                      className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
+                      className="pointer-events-none absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-transform duration-200 ease-linear group-hover:translate-x-2 group-hover:translate-y-2 dark:bg-yellow-400"
                       data-rounded="rounded-lg"
                     ></span>
                   </Link>
