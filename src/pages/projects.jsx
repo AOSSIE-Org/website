@@ -10,7 +10,7 @@ import { Container } from '@/components/Container';
 import { Banner } from '@/components/Banner';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projects from '@/helper/projects';
 
 function LinkIcon(props) {
   return (
@@ -20,18 +20,28 @@ function LinkIcon(props) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 const Cards = () => {
   const router = useRouter();
 
   return (
-    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
+    <Grid
+      container
+      spacing={4}
+      sx={{
+        paddingTop: '40px',
+        justifyContent: 'center',
+        width: '100%',
+        maxWidth: '100%',
+        overflowX: 'hidden',
+      }}
+    >
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white'
+            className="dark:bg-[#2A2A2A] dark:border-white"
             sx={{
               height: 400,
               borderRadius: 2,
@@ -97,12 +107,10 @@ const Cards = () => {
 
 const ProjectSection = () => {
   return (
-    <div className="ideas-text flex items-center justify-center mb-8 relative">
-
-      {/* LEFT LOGO — ACCESSIBLE IMAGE */}
+    <div className="ideas-text flex items-center justify-center mb-8 relative ">
       <Image
         src="/logo.png"
-        alt="AOSSIE logo — turquoise circular pattern representing the AOSSIE open-source organization"
+        alt="AOSSIE logo left"
         width={75}
         height={75}
         className="hidden md:block m-2 absolute left-10 object-cover"
@@ -112,42 +120,43 @@ const ProjectSection = () => {
         PROJECTS
       </h1>
 
-      {/* RIGHT LOGO — ACCESSIBLE IMAGE */}
       <Image
         src="/logo.png"
-        alt="AOSSIE logo — turquoise circular pattern representing the AOSSIE open-source organization"
+        alt="AOSSIE logo right"
         width={75}
         height={75}
         className="hidden md:block m-2 absolute right-10 object-cover"
       />
-
     </div>
   );
 };
 
 const styles = {
   bannerWrapper: {
-    width: '100vw',
-    marginLeft: 'calc(-50vw + 50%)',
+    width: '100%',
+    maxWidth: '100%',
     position: 'relative',
-    overflow: 'hidden',
+    overflowX: 'hidden',
   },
 };
 
 export default function Projects() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <title>PROJECTS</title>
         <meta name="description" content="PROJECT List for GSOC" />
       </Head>
+
       <Container className="mt-20 mb-28">
         <Container.Inner>
           <ProjectSection />
+
           <p className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8">
             Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
             featuring projects in a variety of languages and areas. Take a peek and see how we're making a difference with our technical spells.
           </p>
+
           <Cards />
         </Container.Inner>
       </Container>
@@ -157,6 +166,6 @@ export default function Projects() {
           <Banner />
         </Container.Outer>
       </div>
-    </>
+    </div>
   );
 }

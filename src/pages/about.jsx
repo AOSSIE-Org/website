@@ -62,11 +62,12 @@ export default function About() {
     },
     section: { margin: '30px 0' },
     bannerWrapper: {
-      width: '100vw',
-      marginLeft: 'calc(-50vw + 50%)',
-      position: 'relative',
-      overflow: 'hidden',
-    },
+  width: '100%',
+  maxWidth: '100%',
+  marginLeft: 0,
+  position: 'relative',
+  overflow: 'hidden',
+},
   };
 
   return (

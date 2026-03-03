@@ -73,7 +73,7 @@ export default function About() {
           </div>
 
           <div className='w-full mt-8 hidden sm:block'>
-            <div className='relative flex space-x-10 justify-end mt-4 md:mt-8 md:p-8'>
+            <div className='relative flex flex-wrap space-x-10 justify-end mt-4 md:mt-8 md:p-8 overflow-hidden'>
               <div className='line-right'></div>
 
               <div className='relative'>
@@ -107,7 +107,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className='relative flex space-x-10 justify-start mt-4 md:mt-8 md:p-8'>
+            <div className='relative flex flex-wrap space-x-10 justify-start mt-4 md:mt-8 md:p-8 overflow-hidden'>
               <div className='line-left'></div>
 
               <div className='relative'>

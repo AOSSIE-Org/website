@@ -108,18 +108,33 @@ export default function Home() {
 
                 <div className="mt-12 mx-4 md:mx-0 md:mt-8 text-left ">
                   <Link href="/about" className="group relative inline-block text-lg">
-                    <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
-                      <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
-                      <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
-                      <span className="relative font-mono text-xl font-black tracking-tighter">
-                        Learn More About Us
-                      </span>
-                    </span>
-                    <span
-                      className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D] transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
-                      data-rounded="rounded-lg"
-                    ></span>
-                  </Link>
+  <span className="relative z-10 block rounded-lg border-2 border-gray-900 px-5 py-3
+                   transition-colors duration-300 ease-in-out
+                   group-hover:text-white dark:group-hover:text-black">
+
+    {/* Base white layer */}
+    <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3 pointer-events-none"></span>
+
+    {/* FLICKER-FREE fade animation */}
+    <span
+      className="absolute inset-0 rounded-lg bg-[#00843D] dark:bg-yellow-400 
+                 opacity-0 transition-opacity duration-300 ease-out
+                 group-hover:opacity-100 pointer-events-none"
+    ></span>
+
+    {/* Text */}
+    <span className="relative font-mono text-xl font-black tracking-tighter">
+      Learn More About Us
+    </span>
+  </span>
+
+  {/* Shadow block */}
+  <span
+    className="absolute bottom-0 right-0 mb-3 mr-2 h-14 w-full rounded-lg bg-[#00843D]
+               transition-all duration-200 ease-linear group-hover:m-0 dark:bg-yellow-400"
+    data-rounded="rounded-lg"
+  ></span>
+</Link>
                 </div>
               </div>
             </div>
