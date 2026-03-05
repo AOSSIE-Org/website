@@ -12,20 +12,24 @@ export async function GET() {
 
     // Fetch GitHub Data
     // Note: Unauthenticated requests are limited to 60 per hour per IP.
-    const org = 'AOSSIE-Org';
+    const orgs = ['AOSSIE-Org'];
     const headers = {
       'Accept': 'application/vnd.github.v3+json',
       // Add 'Authorization': `token ${process.env.GITHUB_TOKEN}` if you have one
     };
 
     // 1. Fetch Repositories
-    const reposRes = await fetch(`https://api.github.com/orgs/${org}/repos?per_page=100&type=public`, { headers, next: { revalidate: 3600 } });
-    
-    if (!reposRes.ok) {
-      throw new Error(`GitHub API Error: ${reposRes.statusText}`);
-    }
+    const reposPromises = orgs.map(async (org) => {
+      const res = await fetch(`https://api.github.com/orgs/${org}/repos?per_page=100&type=public`, { headers, next: { revalidate: 3600 } });
+      if (!res.ok) {
+        console.error(`Failed to fetch repos for ${org}: ${res.statusText}`);
+        return [];
+      }
+      return res.json();
+    });
 
-    const repos = await reposRes.json();
+    const reposArrays = await Promise.all(reposPromises);
+    const repos = reposArrays.flat();
 
     // 2. Process for Graph (Repos per year)
     // The user wants "Number of repos in (green) over the past years".

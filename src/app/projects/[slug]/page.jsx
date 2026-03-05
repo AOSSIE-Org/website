@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const product = products.find((p) => p.slug === params.slug);
   if (!product) {
     return {
-      title: 'Product Not Found',
+      title: 'Project Not Found',
     };
   }
   return {
@@ -40,7 +40,7 @@ export default function ProductPage({ params }) {
   if (!product) {
     return (
         <Container className="mt-32">
-            <h1>Product not found</h1>
+            <h1>Project not found</h1>
         </Container>
     )
   }

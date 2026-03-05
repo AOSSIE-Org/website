@@ -11,7 +11,9 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/shared/Container';
 import { Banner } from '@/components/shared/Banner';
 import Image from 'next/image';
-import projects from '@/helper/projects'
+import projectsList from '@/helper/projects'
+import readyToDownloadProducts from '@/helper/products'
+import { CardProduct } from '@/components/products/CardProduct'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
@@ -148,8 +150,13 @@ const styles = {
 };
 
 export default function Projects() {
-  const ongoingProjects = projects.filter((project) => project.status === 'ongoing');
-  const productionReadyProjects = projects.filter((project) => project.status === 'production');
+  // Filter out projects that are already in readyToDownloadProducts
+  const filteredProjects = projectsList.filter(project => 
+    !readyToDownloadProducts.some(product => product.name.toLowerCase() === project.name.toLowerCase())
+  );
+  
+  const ongoingProjects = filteredProjects.filter((project) => project.status === 'ongoing');
+  const productionReadyProjects = filteredProjects.filter((project) => project.status === 'production');
 
   return (
     <>
@@ -165,18 +172,33 @@ export default function Projects() {
             Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
             featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
           </motion.p>
-
+          
           <div className="mb-20">
-            <motion.h2 
+             <motion.h2 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center"
             >
-              Ongoing Projects
+              Ready to Download
             </motion.h2>
-            <Cards projectList={ongoingProjects} />
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
+            {readyToDownloadProducts.map((product) => (
+              <CardProduct key={product.slug} product={product} />
+            ))}
+          </div>
+
+            <motion.h2 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center pt-8 border-t border-zinc-200 dark:border-zinc-700"
+            >
+              Production Ready Projects
+            </motion.h2>
+            <Cards projectList={productionReadyProjects} />
           </div>
 
           <div>
@@ -187,9 +209,9 @@ export default function Projects() {
               transition={{ duration: 0.5 }}
               className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center pt-8 border-t border-zinc-200 dark:border-zinc-700"
             >
-              Production Ready Projects
+              Ongoing Projects
             </motion.h2>
-            <Cards projectList={productionReadyProjects} />
+            <Cards projectList={ongoingProjects} />
           </div>
 
         </Container.Inner>

@@ -45,7 +45,7 @@ export function CardProduct({ product }) {
           Download
         </motion.a>
         <Link
-          href={`/products/${product.slug}`}
+          href={`/projects/${product.slug}`}
           legacyBehavior
         >
             <motion.a 

@@ -64,7 +64,7 @@ export function ApplyHeader({ children }) {
                                 hidden: { opacity: 0, y: 20 },
                                 visible: { opacity: 1, y: 0 }
                             }}
-                            className="flex flex-col items-center bg-[#fafafa] dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone"
+                            className="flex flex-col items-center bg-white dark:bg-zinc-900 px-2 lg:px-4 z-10 box-decoration-clone"
                         >
                             <motion.div 
                                 whileHover={{ scale: 1.1, rotate: 10 }}

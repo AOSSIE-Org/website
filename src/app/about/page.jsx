@@ -42,11 +42,11 @@ export default function About() {
   }, []);
 
   const data = {
-    labels: stats.graphData.labels, // Include '0' on the x-axis
+    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'], // Include '0' on the x-axis
     datasets: [
       {
-        label: 'Number of Repositories',
-        data: stats.graphData.data, // Start data points from '2017', leave '0' as null
+        label: 'Number of Completed Projects',
+        data: [4, 8, 12, 9, 9, 11, 8, 6, 18, 22], // Start data points from '2017', leave '0' as null
         fill: false,
         borderColor: '#32a852',
         tension: 0.4,
