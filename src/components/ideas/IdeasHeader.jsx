@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Container } from '@/components/shared/Container'
 import Link from 'next/link'
 
-export function IdeasHeader({ validIdeasData, children }) {
+export function IdeasHeader({ validIdeasData, currentYear = 2025, children }) {
     return (
         <Container className="mt-20 mb-28">
             <motion.div 
@@ -38,7 +38,7 @@ export function IdeasHeader({ validIdeasData, children }) {
             >
               Explore the world of open-source possibilities with AOSSIE&apos;s{' '}
               <b>Idea List</b>. As part of{' '}
-              <b>Google Summer of Code 2025</b>, we offer
+              <b>Google Summer of Code {currentYear}</b>, we offer
               a unique opportunity for developers to explore new ideas, a wide
               variety of projects for developers to choose from and contribute to.
               From developing new features to fixing critical bugs, our idea list
