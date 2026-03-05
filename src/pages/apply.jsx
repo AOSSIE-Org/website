@@ -66,8 +66,18 @@ export default function About() {
       <Container.Outer className="mt-20 mb-28 ">
         <div className='overflow-x-hidden'>
           <div className="mt-5 mx-4 md:mx-16">
-            <h5 className='font-bold text-2xl text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7'> Learn how to apply for an <span className="text-[#3C982C] dark:text-yellow-400">opportunity</span> to work on open-source projects and gain<span className="text-[#3C982C] dark:text-yellow-400"> real-world experience</span> through Google Summer of Code.</h5>
-            <p className='text-zinc-600 mt-4  dark:text-zinc-400 text-lg font-mono leading-7'>
+            <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white leading-tight">
+  Application Timeline
+</h1>
+
+<h2 className="mt-4 text-xl md:text-2xl font-semibold text-zinc-600 dark:text-zinc-400">
+  Learn how to apply for an 
+  <span className="text-[#3C982C] dark:text-yellow-400"> opportunity </span>
+  to work on open-source projects and gain
+  <span className="text-[#3C982C] dark:text-yellow-400"> real-world experience </span>
+  through Google Summer of Code.
+</h2>
+            <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl">
               Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
             </p>
           </div>
@@ -83,7 +93,7 @@ export default function About() {
                   width={170} 
                   height={170} 
                 />
-                <p className='font-bold p-3 m-auto dark:text-white'>Join us on Discord</p>
+                <h3 className="font-semibold p-3 text-center dark:text-white">Join us on Discord</h3>
               </div>
 
               <div className='relative'>
@@ -93,7 +103,7 @@ export default function About() {
                   width={170} 
                   height={170} 
                 />
-                <p className='font-bold p-3 m-auto dark:text-white'>Start Contributing</p>
+                <h3 className="font-semibold p-3 text-center dark:text-white">Start Contributing</h3>
               </div>
 
               <div className='relative'>
@@ -103,7 +113,7 @@ export default function About() {
                   width={170} 
                   height={170} 
                 />
-                <p className='font-bold p-3 m-auto dark:text-white'>Choose an idea</p>
+                <h3 className="font-semibold p-3 text-center dark:text-white">Choose an idea</h3>
               </div>
             </div>
 
@@ -117,7 +127,7 @@ export default function About() {
                   width={170} 
                   height={170} 
                 />
-                <p className='font-bold p-3 m-auto dark:text-white'>Discuss with mentor</p>
+                <h3 className="font-semibold p-3 text-center dark:text-white">Discuss with mentor</h3>
               </div>
 
               <div className='relative'>
@@ -127,7 +137,7 @@ export default function About() {
                   width={170} 
                   height={170} 
                 />
-                <p className='font-bold p-3 m-auto dark:text-white'>Submit final application</p>
+                <h3 className="font-semibold p-3 text-center dark:text-white">Submit final application</h3>
               </div>
             </div>
           </div>
