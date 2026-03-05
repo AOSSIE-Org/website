@@ -13,6 +13,7 @@ import {
   faGithub,
   faGitlab,
   faTwitter,
+  faYoutube
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/home/CardEffect'
 import { Banner } from '@/components/shared/Banner'
@@ -126,6 +127,14 @@ export default function Home() {
                   >
                     <FontAwesomeIcon icon={faTwitter} size="2xl" />
                   </Link>
+                  <Link
+                    aria-label="Subscribe on YouTube"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="https://www.youtube.com/@AOSSIE-Org"
+                  >
+                    <FontAwesomeIcon icon={faYoutube} size="2xl" />
+                  </Link>
+                
                 </motion.div>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
