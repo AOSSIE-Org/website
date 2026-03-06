@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import Skeleton from "./Skeleton"
+import { useState, useEffect } from "react"
 
 function ChevronRightIcon(props) {
   return (
@@ -14,11 +16,29 @@ function ChevronRightIcon(props) {
   )
 }
 export function Card({ as: Component = 'div', className, children }) {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
-      {children}
+      {loading ? (
+        <div className="w-full space-y-3">
+          <Skeleton className="h-40 w-full rounded-lg" />
+          <Skeleton className="h-4 w-3/4 rounded" />
+          <Skeleton className="h-4 w-1/2 rounded" />
+        </div>
+      ) : (
+        children
+      )}
     </Component>
   )
 }
