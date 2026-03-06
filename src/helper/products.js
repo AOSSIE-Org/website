@@ -21,7 +21,6 @@ const products = [
 
 You are now ready to organize your photos!
 `,
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
     feedbacks: [
       { user: 'John Doe', comment: 'Amazing tool for organizing my gallery!', rating: 5 },
       { user: 'Jane Smith', comment: 'Works well, but could use more features.', rating: 4 }
@@ -43,7 +42,6 @@ You are now ready to organize your photos!
 3. **Install APK**: Open the APK file and tap Install.
 4. **Connect**: Launch the app and connect to an Agora server instance.
 `,
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
     feedbacks: [
       { user: 'Voter123', comment: 'Secure and easy to use.', rating: 5 }
     ]
@@ -66,7 +64,6 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
 2. Run \`npm install\`.
 3. Run \`npm start\`.
 `,
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     feedbacks: []
   }
 ]

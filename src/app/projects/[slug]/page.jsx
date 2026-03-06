@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUsers, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import remarkGfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm-4';
 
 import { Container } from '@/components/shared/Container';
 import { Prose } from '@/components/shared/Prose';
