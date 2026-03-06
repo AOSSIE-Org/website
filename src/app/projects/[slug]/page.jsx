@@ -10,16 +10,18 @@ import remarkGfm from 'remark-gfm-4';
 import { Container } from '@/components/shared/Container';
 import { Prose } from '@/components/shared/Prose';
 import { FeedbackForm } from '@/components/products/FeedbackForm';
-import products from '@/helper/products';
+import projects from '@/helper/projects';
 
 export async function generateStaticParams() {
-  return products.map((product) => ({
+  return projects
+    .filter((p) => p.slug)
+    .map((product) => ({
     slug: product.slug,
   }));
 }
 
 export async function generateMetadata({ params }) {
-  const product = products.find((p) => p.slug === params.slug);
+  const product = projects.find((p) => p.slug === params.slug);
   if (!product) {
     return {
       title: 'Project Not Found',
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }) {
 export default function ProductPage({ params }) {
   // Unwrapping params for Next.js 15+ if needed, but in 14 it's usually direct.
   // We'll treat it as synchronous access since it's an object in generateStaticParams context usually
-  const product = products.find((p) => p.slug === params.slug);
+  const product = projects.find((p) => p.slug === params.slug);
 
   if (!product) {
     return (

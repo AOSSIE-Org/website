@@ -11,8 +11,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Container } from '@/components/shared/Container';
 import { Banner } from '@/components/shared/Banner';
 import Image from 'next/image';
-import projectsList from '@/helper/projects'
-import readyToDownloadProducts from '@/helper/products'
+import projects from '@/helper/projects'
 import { CardProduct } from '@/components/products/CardProduct'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -33,7 +32,7 @@ function LinkIcon(props) {
 // Define the Cards component here
 const Cards = ({ projectList }) => {
   return (
-    <Grid container spacing={4} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
+    <Grid container spacing={{ xs: 2, md: 4 }} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
       {projectList.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index} component={motion.div} 
           initial={{ opacity: 0, y: 20 }}
@@ -142,21 +141,16 @@ const ProjectSection = () => {
 
 const styles = {
   bannerWrapper: {
-    width: '100vw',
-    marginLeft: 'calc(-50vw + 50%)',
+    width: '100%',
     position: 'relative',
     overflow: 'hidden',
   },
 };
 
 export default function Projects() {
-  // Filter out projects that are already in readyToDownloadProducts
-  const filteredProjects = projectsList.filter(project => 
-    !readyToDownloadProducts.some(product => product.name.toLowerCase() === project.name.toLowerCase())
-  );
-  
-  const ongoingProjects = filteredProjects.filter((project) => project.status === 'ongoing');
-  const productionReadyProjects = filteredProjects.filter((project) => project.status === 'production');
+  const readyToDownload = projects.filter(p => p.category === 'Ready to download');
+  const productionReady = projects.filter(p => p.category === 'Production ready');
+  const ongoing = projects.filter(p => p.category === 'Ongoing');
 
   return (
     <>
@@ -184,7 +178,7 @@ export default function Projects() {
               Ready to Download
             </motion.h2>
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
-            {readyToDownloadProducts.map((product) => (
+            {readyToDownload.map((product) => (
               <CardProduct key={product.slug} product={product} />
             ))}
           </div>
@@ -198,7 +192,11 @@ export default function Projects() {
             >
               Production Ready Projects
             </motion.h2>
-            <Cards projectList={productionReadyProjects} />
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
+            {productionReady.map((product) => (
+              <CardProduct key={product.slug} product={product} />
+            ))}
+          </div>
           </div>
 
           <div>
@@ -211,7 +209,7 @@ export default function Projects() {
             >
               Ongoing Projects
             </motion.h2>
-            <Cards projectList={ongoingProjects} />
+            <Cards projectList={ongoing} />
           </div>
 
         </Container.Inner>
