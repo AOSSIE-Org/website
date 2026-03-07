@@ -13,10 +13,16 @@ function ChevronRightIcon(props) {
     </svg>
   )
 }
+
 export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={clsx(
+        className,
+        'group relative flex flex-col items-start',
+        'transition-all duration-300 ease-out',
+        'hover:-translate-y-3 hover:scale-105 hover:shadow-2xl'
+      )}
     >
       {children}
     </Component>
@@ -26,7 +32,7 @@ export function Card({ as: Component = 'div', className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/80 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-100 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/80 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -51,18 +57,17 @@ Card.Description = function CardDescription({ children }) {
   )
 }
 
-Card.Cta = function CardCta({ children, href}) {
+Card.Cta = function CardCta({ children, href }) {
   return (
     <Link href={href}>
       <div
-      aria-hidden="true"
-      className="relative font-mono z-10 mt-4 flex items-center text-sm font-semibold text-[#00843D] dark:text-yellow-400"
+        aria-hidden="true"
+        className="relative z-10 mt-4 flex items-center text-sm font-semibold font-mono text-[#00843D] dark:text-yellow-400"
       >
         {children}
         <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
       </div>
-  </Link>
-    
+    </Link>
   )
 }
 
@@ -83,10 +88,7 @@ Card.Eyebrow = function CardEyebrow({
       {...props}
     >
       {decorate && (
-        <span
-          className="absolute inset-y-0 left-0 flex items-center"
-          aria-hidden="true"
-        >
+        <span className="absolute inset-y-0 left-0 flex items-center">
           <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
         </span>
       )}
