@@ -49,8 +49,8 @@ export default function Home() {
                 alt="AOSSIE main open source circular logo with gradient colors"
               />
             </div>
-            <div className="mt-10 flex-1 sm:ml-10 lg:ml-0 lg:mt-0 pt-8">
-              <div className="max-w-xl ml-12">
+            <div className="mt-10 flex-1 sm:ml-6 md:ml-8 lg:ml-0 lg:mt-0 pt-8">
+              <div className="max-w-xl ml-4 sm:ml-6 md:ml-8 lg:ml-12">
                 <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#00843d] md:text-[#FED41E] dark:text-[#FED41E] md:dark:text-black sm:text-6xl md:text-5xl lg:text-6xl">
                   We Innovate <br /> We Educate
                 </h1>
@@ -61,7 +61,7 @@ export default function Home() {
                   achieve innovation and education.
                 </p>
 
-                <div className="mt-6 ml-4 flex gap-6">
+                <div className="mt-6 flex gap-6">
                   <Link
                     aria-label="Send an email to AOSSIE"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
@@ -126,7 +126,7 @@ export default function Home() {
           </div>
 
           {/* Green Band with Metrics */}
-          <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-8 px-4 sm:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
+          <div className="hidden bg-[#3C982C] relative dark:text-black sm:flex flex-col md:flex-row justify-between p-4 sm:p-6 md:p-8 px-4 sm:px-6 md:px-12 lg:px-16 text-center border border-white text-white dark:bg-yellow-400 z-20">
             <div className="mb-4 sm:mb-0">
               <h6 className="text-xl">Active Projects</h6>
               <p className="font-semibold text-2xl">34+</p>
