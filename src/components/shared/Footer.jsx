@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Container } from '@/components/shared/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faGitlab, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
 function NavLink({ href, children }) {
   return (
@@ -69,7 +69,7 @@ export function Footer() {
                     <FontAwesomeIcon icon={faDiscord} size='xl' />
                   </Link>
                   <Link aria-label="Follow on Twitter" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://twitter.com/aossie_org'>
-                    <FontAwesomeIcon icon={faTwitter} size='xl' />
+                    <FontAwesomeIcon icon={faXTwitter} size='xl' />
                   </Link>
                 </div>
               </div>
