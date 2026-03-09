@@ -107,9 +107,8 @@ export default function About() {
             >
               <span className="text-[#32a852] font-bold">AOSSIE</span> (Australian Open
               Source Software Innovation and Education) is a not-for-profit
-              umbrella organization for open-source projects. We believe the
-              open-source philosophy provides a resource-efficient channel to
-              transfer knowledge and achieve innovation and education.
+              organization dedicated to project-based innovation-focused and 
+              research-intensive education. Our projects are free and open-source.
             </motion.p>
           </div>
 
