@@ -2,6 +2,7 @@
 
 import clsx from "clsx"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function TimelineElement({ title, description, button, time, link, classCondition }) {
     return (
@@ -20,6 +21,13 @@ export function TimelineElement({ title, description, button, time, link, classC
             <h3 className="flex font-mono tracking-tighter items-center mb-1 text-xl font-bold text-gray-900 dark:text-white ml-2">{title}</h3>
             <time className="block mb-2 font-mono text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{time}</time>
             <p className="mb-4 font-mono tracking-tight text-base font-normal text-gray-500 dark:text-gray-400 ml-2">{description}</p>
+            <Link 
+                    href={link}
+                    target={link.startsWith('http') ? '_blank' : '_self'}
+                    className="inline-flex items-center px-4 py-2 ml-2 text-sm font-medium font-mono text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-[#00843D] focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-[#00843D] dark:bg-zinc-800 dark:text-gray-300 dark:border-zinc-700 dark:hover:text-white dark:hover:bg-zinc-700 transition-colors"
+                >
+                    {button}
+                </Link>
         </motion.li>
     )
 }
