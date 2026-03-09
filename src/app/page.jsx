@@ -12,7 +12,8 @@ import {
   faDiscord,
   faGithub,
   faXTwitter,
-  faYoutube
+  faYoutube,
+  faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/home/CardEffect'
 import { Banner } from '@/components/shared/Banner'
@@ -109,6 +110,14 @@ export default function Home() {
                     href="https://discord.gg/hjUhu33uAn"
                   >
                     <FontAwesomeIcon icon={faDiscord} size="2xl" />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    aria-label="Follow on LinkedIn"
+                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
+                    href="https://www.linkedin.com/company/aossie/"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} size="2xl" />
                   </Link>
                   <Link
                     target="_blank"
