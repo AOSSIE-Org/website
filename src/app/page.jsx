@@ -11,7 +11,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
   faDiscord,
   faGithub,
-  faGitlab,
   faTwitter,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons'
@@ -94,14 +93,6 @@ export default function Home() {
                     href="mailto:aossie.oss@gmail.com"
                   >
                     <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-                  </Link>
-                  <Link
-                    target="_blank"
-                    aria-label="Follow on GitLab"
-                    className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://gitlab.com/aossie"
-                  >
-                    <FontAwesomeIcon icon={faGitlab} size="2xl" />
                   </Link>
                   <Link
                     target="_blank"
