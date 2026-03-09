@@ -79,10 +79,12 @@ export function Footer() {
               <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
                 &copy; 2016-{new Date().getFullYear()} AOSSIE. All rights reserved.
               </p>
+              {/*
               <div className="flex gap-4 text-sm font-mono text-zinc-500 dark:text-zinc-400">
                   <span>Code of Conduct</span>
                   <span>Privacy Policy</span>
               </div>
+              */}
             </div>
           </Container.Inner>
         </div>
