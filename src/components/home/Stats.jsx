@@ -70,9 +70,9 @@ export function Stats() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 text-center">
-            <Counter end={10} duration={2000} label="Years of Innovation" />
-            <Counter end={20} duration={2000} label="Projects" />
-            <Counter end={100} duration={2000} label="Contributors" />
+            <Counter end={10} duration={2000} label="Years" />
+            <Counter end={200} duration={2000} label="Repos" />
+            <Counter end={7500} duration={2000} label="Community Members" />
           </div>
         </div>
       </motion.div>

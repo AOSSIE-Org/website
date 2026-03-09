@@ -37,7 +37,7 @@ export function Footer() {
               <div className="md:col-span-2">
                 <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">AOSSIE</h3> 
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 font-mono max-w-md leading-relaxed">
-                  AOSSIE is a not-for-profit organization dedicated to project-based innovation-focused and research-intensive education. Our projects are free and open-source.
+                  AOSSIE is a not-for-profit organization dedicated to project-based innovation-focused and research-intensive education.
                 </p>
               </div>
 

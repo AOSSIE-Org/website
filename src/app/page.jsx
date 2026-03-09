@@ -155,28 +155,7 @@ export default function Home() {
         
         <Stats />
 
-        {/* Featured Projects Section */}
-        <Container className="mt-24 md:mt-28">
-           <div className="space-y-10 mb-12">
-            <div className="flex text-center items-center justify-center">
-              <div className="col-span-8 mt-3 self-center lg:col-start-2">
-                <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
-                  Featured Projects
-                </h1>
-              </div>
-            </div>
-             <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 text-center ">
-              Check out some of our production-ready projects.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-            {featuredProjects.map((project, index) => (
-              <CardProject key={index} project={project} />
-            ))}
-          </div>
-        </Container>
-
-        {/* More Projects Section */}
+        {/* Projects Section */}
         <Container className="mt-24 mb-20">
           <div className="space-y-10 ">
             <div className="flex text-center items-center justify-center">
@@ -199,17 +178,16 @@ export default function Home() {
               </div>
               <div className="col-span-8 mt-3 self-center lg:col-start-2">
                 <h1 className="font-mono pl-3 text-5xl font-black capitalize tracking-tighter text-zinc-800 dark:text-white">
-                  Explore More
+                  Our Projects
                 </h1>
               </div>
             </div>
 
             <p className=" font-mono text-lg text-zinc-600 dark:text-zinc-400 text-center ">
-              Our Projects, where we showcase our tech wizardry and
-              code-slinging skills!! <br></br> Be a part of our community and
-              contribute to meaningful projects that are <span className="text-[#3C982C] dark:text-yellow-400">making a difference</span>.
-              Explore our selection of projects and find the perfect opportunity
-              to showcase your skills and <span className="text-[#3C982C] dark:text-yellow-400">make an impact</span>.
+              Our Projects span a wide range of themes, such as: 
+              open money; decentralized economic and financial stability; 
+              trust; education; sustainability; communication; governance and management; 
+              and user-empowering sunny tools.
             </p>
           </div>
           <div className="mt-10">

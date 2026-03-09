@@ -32,9 +32,6 @@ export function Team() {
           <h2 className="text-3xl font-extrabold font-mono text-zinc-900 dark:text-zinc-100">
             Our <span className="text-[#00843D] dark:text-yellow-400">Team</span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-zinc-500 dark:text-zinc-400 font-mono">
-            The people who make AOSSIE possible.
-          </p>
         </motion.div>
         <div className="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center">
              {/* Since I don't have real images/names, I will make a generic "Contributors" card style */}
@@ -46,7 +43,10 @@ export function Team() {
                className="col-span-1 sm:col-span-2 lg:col-span-4 text-center"
               >
                 <p className="text-lg text-zinc-600 dark:text-zinc-300 font-mono mb-8">
-                    AOSSIE is run by a dedicated group of volunteers, mentors, and administrators who are passionate about open source.
+                    AOSSIE is autonomously run by a dedicated and diverse group of volunteers, 
+                    comprising admins, mentors, students, contributors, maintainers, 
+                    triageurs, evangelists and ambassadors. We are passionate about making the 
+                    world a better place through open source software.
                 </p>
              </motion.div>
         </div>

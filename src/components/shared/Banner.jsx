@@ -47,15 +47,15 @@ export function Banner() {
             }}
           >
             <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="font-mono text-5xl font-black tracking-tighter text-white dark:text-black sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
-              Launch into AOSSIE&apos;s open-source world through GSoC!
+              Participate in Google's <br /> Summer of Code!
             </motion.h2>
             <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mt-4 text-lg tracking-tighter text-white dark:text-black font-medium font-mono">
-              Learn how to apply for an opportunity to work on open-source projects and gain real-world experience through Google Summer of Code.
+              Be mentored by AOSSIE, one of the oldest, largest and most experienced GSoC orgs.
             </motion.p>
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mt-5">
               <Link href="/apply" legacyBehavior>
                 <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
-                  Apply to GSoC with AOSSIE
+                  Apply for a GSoC spot with AOSSIE
                 </motion.a>
               </Link>
             </motion.div>

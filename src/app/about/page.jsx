@@ -135,6 +135,7 @@ export default function About() {
                { value: stats.years, label: 'years' },
                { value: stats.projects, label: 'projects' },
                { value: 203, label: 'repos' },
+               { value: '88', label: 'mentors' },
                { value: `${stats.contributors}+`, label: 'contributors' },
                { value: '7500+', label: 'community members' }
              ].map((item, index) => (

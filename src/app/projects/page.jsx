@@ -156,17 +156,6 @@ export default function Projects() {
     <>
       <Container className="mt-20 mb-28">
         <Container.Inner>
-          <ProjectSection />
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-7 text-center mb-8"
-          >
-            Our Projects, where we showcase our tech wizardry and code-slinging skills! Our portfolio is a treasure trove of open-source gems,
-            featuring projects in a variety of languages and areas. Take a peek and see how we&apos;re making a difference with our technical spells.
-          </motion.p>
-          
           <div className="mb-20">
              <motion.h2 
               initial={{ opacity: 0, x: -20 }}
