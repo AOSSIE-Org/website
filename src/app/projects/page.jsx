@@ -157,7 +157,7 @@ export default function Projects() {
       <Container className="mt-20 mb-28">
         <Container.Inner>
           <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
-            {projects.map((product) => (
+            {projects.sort(() => 0.5 - Math.random()).map((product) => (
               <CardProduct key={product.slug} product={product} />
             ))}
           </div>

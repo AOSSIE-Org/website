@@ -26,7 +26,8 @@ export default function Home() {
 
   useEffect(() => {
     // Select specific projects as featured
-    const featuredNames = ['Agora Blockchain', 'Djed', 'PictoPy'];
+    //const featuredNames = ['Agora Blockchain', 'Djed', 'PictoPy'];
+    const featuredNames = [];
     const featured = projects.filter(p => featuredNames.includes(p.name));
     setFeaturedProjects(featured);
 
