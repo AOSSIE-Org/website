@@ -15,12 +15,12 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
 export default function About() {
   const [stats, setStats] = useState({
-    years: 8,
-    projects: 80,
-    contributors: 70,
+    years: 10,
+    projects: 203,
+    contributors: 7600,
     graphData: { 
       labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'], 
-      data: [4, 8, 12, 9, 9, 11, 8, 6, 18] 
+      data: [4, 8, 12, 9, 9, 11, 8, 6, 18, 22] 
     }
   });
 
@@ -140,9 +140,9 @@ export default function About() {
             >
              {/* Stats Cards */}
              {[
-               { value: stats.years, label: 'years completed' },
-               { value: stats.projects, label: 'projects completed' },
-               { value: `${stats.contributors}+`, label: 'contributors' }
+               { value: stats.years, label: 'years' },
+               { value: stats.projects, label: 'repos' },
+               { value: `${stats.contributors}+`, label: 'community members' }
              ].map((item, index) => (
                 <motion.div
                   key={index}
