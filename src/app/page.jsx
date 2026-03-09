@@ -11,7 +11,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
   faDiscord,
   faGithub,
-  faTwitter,
+  faXTwitter,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons'
 import { CardEffect } from '@/components/home/CardEffect'
@@ -112,11 +112,11 @@ export default function Home() {
                   </Link>
                   <Link
                     target="_blank"
-                    aria-label="Follow on Twitter"
+                    aria-label="Follow on X (Twitter)"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
-                    href="https://twitter.com/aossie_org"
+                    href="https://x.com/aossie_org"
                   >
-                    <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                    <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                   </Link>
                   <Link
                     aria-label="Subscribe on YouTube"
