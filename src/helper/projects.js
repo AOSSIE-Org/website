@@ -6,11 +6,7 @@ import ResonateLogo from '@/images/Resonate.png'
 import PictoPy from '@/images/Pictopy.png'
 import MonumentoLogo from '@/images/monumento.png'
 
-
-
-// data
 const projects = [
-  // Ready to download
   {
     slug: 'pictopy',
     name: 'PictoPy',
@@ -21,20 +17,7 @@ const projects = [
     category: 'Ready to download',
     downloadLink: 'https://github.com/AOSSIE-Org/PictoPy/releases',
     githubLink: 'https://github.com/AOSSIE-Org/PictoPy',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for PictoPy
-
-1. **Download the Installer**: Go to the releases page and download the appropriate installer for your operating system.
-2. **Run the Installer**: Double-click the downloaded file and follow the on-screen instructions.
-3. **Launch the App**: Open PictoPy from your applications folder.
-4. **Grant Permissions**: Allow access to your photo directories when prompted.
-
-You are now ready to organize your photos!
-`,
-    feedbacks: [
-      { user: 'John Doe', comment: 'Amazing tool for organizing my gallery!', rating: 5 },
-      { user: 'Jane Smith', comment: 'Works well, but could use more features.', rating: 4 }
-    ]
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'agora-vote-android',
@@ -49,20 +32,8 @@ You are now ready to organize your photos!
     category: 'Ready to download',
     downloadLink: 'https://gitlab.com/aossie/agora-android/-/releases',
     githubLink: 'https://gitlab.com/aossie/agora-android',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Agora Vote Android
-
-1. **Download APK**: Get the latest APK from the releases page.
-2. **Enable Unknown Sources**: Go to Settings > Security and enable installation from unknown sources if required.
-3. **Install APK**: Open the APK file and tap Install.
-4. **Connect**: Launch the app and connect to an Agora server instance.
-`,
-    feedbacks: [
-      { user: 'Voter123', comment: 'Secure and easy to use.', rating: 5 }
-    ]
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
-
-  // Production ready
   {
     slug: 'djed',
     name: 'Djed',
@@ -73,20 +44,8 @@ You are now ready to organize your photos!
     category: 'Production ready',
     downloadLink: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard',
     githubLink: 'https://github.com/AOSSIE-Org/Djed-Solidity-WebDashboard',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Djed
-
-Djed runs as a web dashboard. You can deploy it locally or access the hosted version.
-
-## Local Deployment
-1. Clone the repository.
-2. Run \`npm install\`.
-3. Run \`npm start\`.
-`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
-
-  // Production ready (from GitHub)
   {
     slug: 'devr-ai',
     name: 'Devr.AI',
@@ -97,9 +56,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Devr.AI',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Devr.AI\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/Devr.AI.git\`\n2. Install dependencies: \`pip install -r requirements.txt\`\n3. Configure environment variables as described in the README.\n4. Run the application: \`python main.py\`\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'rein',
@@ -111,9 +68,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Rein',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Rein\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/Rein.git\`\n2. Follow the platform-specific build instructions in the README.\n3. Connect both devices to the same LAN.\n4. Launch Rein on both devices and pair them.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'open-verifiable-llm',
@@ -125,9 +80,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/OpenVerifiableLLM',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for OpenVerifiableLLM\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/OpenVerifiableLLM.git\`\n2. Install dependencies: \`pip install -r requirements.txt\`\n3. Download model weights as specified in the README.\n4. Run the verification pipeline: \`python run.py\`\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'libred',
@@ -140,9 +93,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     category: 'Ready to download',
     downloadLink: 'https://github.com/AOSSIE-Org/LibrEd/releases',
     githubLink: 'https://github.com/AOSSIE-Org/LibrEd',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for LibrEd\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/LibrEd.git\`\n2. Install dependencies: \`pip install -r requirements.txt\`\n3. Configure your learning preferences in the settings file.\n4. Start the assistant: \`python app.py\`\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'websift',
@@ -154,9 +105,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/WebSift',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for WebSift\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/WebSift.git\`\n2. Install dependencies as described in the README.\n3. Provide the target URL or HTML content.\n4. Run the conversion pipeline to generate MML-ready output.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'inpact-ai',
@@ -168,9 +117,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/InPactAI',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for InPactAI\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/InPactAI.git\`\n2. Install dependencies: \`npm install\` or \`pip install -r requirements.txt\`\n3. Set up API keys and environment variables as described in the README.\n4. Launch the platform: \`npm start\` or \`python app.py\`\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'babynest',
@@ -182,9 +129,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/BabyNest',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for BabyNest\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/BabyNest.git\`\n2. Install dependencies as described in the README.\n3. Configure the database and environment variables.\n4. Run the application and create your first baby profile.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'smartnotes',
@@ -196,9 +141,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/SmartNotes',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for SmartNotes\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/SmartNotes.git\`\n2. Install dependencies as described in the README.\n3. Configure the AI model and storage backend.\n4. Launch the application and start creating smart notes.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'orgexplorer',
@@ -210,9 +153,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/OrgExplorer',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for OrgExplorer\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/OrgExplorer.git\`\n2. Install dependencies: \`npm install\`\n3. Set your GitHub API token in the environment variables.\n4. Start the dashboard: \`npm start\`\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'ell-ena',
@@ -224,9 +165,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Ell-ena',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Ell-ena\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/Ell-ena.git\`\n2. Install dependencies as described in the README.\n3. Configure AI model API keys and project settings.\n4. Launch Ell-ena and start managing tasks via chat.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'zplit',
@@ -238,9 +177,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Zplit',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Zplit\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/Zplit.git\`\n2. Install Flutter dependencies: \`flutter pub get\`\n3. Run the app on an emulator or device: \`flutter run\`\n4. Create a group and start splitting expenses.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'docpilot',
@@ -252,9 +189,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/DocPilot',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for DocPilot\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/DocPilot.git\`\n2. Install dependencies as described in the README.\n3. Configure the AI model and database connections.\n4. Start the server and access the dashboard in your browser.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'perspective',
@@ -266,9 +201,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Perspective',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Perspective\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/Perspective.git\`\n2. Install dependencies as described in the README.\n3. Configure API keys for the analysis engine.\n4. Run the application and start exploring perspectives.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'neurotrack',
@@ -280,9 +213,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/NeuroTrack',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for NeuroTrack\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/NeuroTrack.git\`\n2. Install dependencies as described in the README.\n3. Connect your tracking hardware or use sample data.\n4. Launch the application and begin tracking.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'codingagent',
@@ -294,9 +225,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/CodingAgent',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for CodingAgent\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/CodingAgent.git\`\n2. Install dependencies as described in the README.\n3. Configure your AI model API keys.\n4. Run the agent and start coding with AI assistance.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'starcross',
@@ -308,9 +237,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/starcross',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Starcross\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/starcross.git\`\n2. Install dependencies as described in the README.\n3. Configure location services for accurate star mapping.\n4. Launch the app and start exploring the night sky.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'carbon-footprint',
@@ -322,9 +249,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/CarbonFootprint',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for CarbonFootprint\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/CarbonFootprint.git\`\n2. Install dependencies: \`npm install\`\n3. Build the extension: \`npm run build\`\n4. Load the unpacked extension in your browser's developer mode.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'mind-the-word',
@@ -336,9 +261,7 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/MindTheWord',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for MindTheWord\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/MindTheWord.git\`\n2. Install dependencies: \`npm install\`\n3. Build the extension: \`npm run build\`\n4. Load the extension in Chrome/Firefox developer mode and configure your target language.\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
     slug: 'aossie-scholar',
@@ -350,12 +273,8 @@ Djed runs as a web dashboard. You can deploy it locally or access the hosted ver
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Aossie-Scholar',
-    discordLink: 'https://discord.com/invite/6mHZkbJ',
-    setupGuide: `# Setup Guide for Aossie Scholar\n\n1. Clone the repository: \`git clone https://github.com/AOSSIE-Org/Aossie-Scholar.git\`\n2. Install dependencies: \`npm install\`\n3. Configure API keys for academic databases.\n4. Start the application: \`npm start\`\n`,
-    feedbacks: []
+    discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
-
-  // Ongoing
   {
     name: 'Agora Blockchain',
     description:
