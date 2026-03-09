@@ -37,7 +37,7 @@ export function Footer() {
               <div className="md:col-span-2">
                 <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">AOSSIE</h3> 
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 font-mono max-w-md leading-relaxed">
-                  Australian Open Source Software Innovation and Education (AOSSIE) is a not-for-profit umbrella organization dedicated to open-source innovation. We believe in the power of code to educate and innovate.
+                  AOSSIE is a not-for-profit organization dedicated to project-based innovation-focused and research-intensive education. Our projects are free and open-source.
                 </p>
               </div>
 
@@ -76,10 +76,12 @@ export function Footer() {
               <p className="text-sm text-zinc-400 dark:text-zinc-500 font-mono">
                 &copy; 2016-{new Date().getFullYear()} AOSSIE. All rights reserved.
               </p>
+              {/*
               <div className="flex gap-4 text-sm font-mono text-zinc-500 dark:text-zinc-400">
                   <span>Code of Conduct</span>
                   <span>Privacy Policy</span>
               </div>
+              */}
             </div>
           </Container.Inner>
         </div>
