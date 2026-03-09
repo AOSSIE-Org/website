@@ -141,8 +141,10 @@ export default function About() {
              {/* Stats Cards */}
              {[
                { value: stats.years, label: 'years' },
-               { value: stats.projects, label: 'repos' },
-               { value: `${stats.contributors}+`, label: 'community members' }
+               { value: stats.projects, label: 'projects' },
+               { value: 203, label: 'repos' },
+               { value: `${stats.contributors}+`, label: 'contributors' },
+               { value: '7500+', label: 'community members' }
              ].map((item, index) => (
                 <motion.div
                   key={index}
