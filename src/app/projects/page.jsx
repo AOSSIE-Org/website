@@ -156,6 +156,13 @@ export default function Projects() {
     <>
       <Container className="mt-20 mb-28">
         <Container.Inner>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
+            {projects.map((product) => (
+              <CardProduct key={product.slug} product={product} />
+            ))}
+          </div>
+
+          {/* 
           <div className="mb-20">
              <motion.h2 
               initial={{ opacity: 0, x: -20 }}
@@ -170,36 +177,9 @@ export default function Projects() {
             {readyToDownload.map((product) => (
               <CardProduct key={product.slug} product={product} />
             ))}
+            </div>
           </div>
-
-            <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center pt-8 border-t border-zinc-200 dark:border-zinc-700"
-            >
-              Production Ready Projects
-            </motion.h2>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
-            {productionReady.map((product) => (
-              <CardProduct key={product.slug} product={product} />
-            ))}
-          </div>
-          </div>
-
-          <div>
-             <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mb-8 text-center pt-8 border-t border-zinc-200 dark:border-zinc-700"
-            >
-              Ongoing Projects
-            </motion.h2>
-            <Cards projectList={ongoing} />
-          </div>
+          */}
 
         </Container.Inner>
       </Container>

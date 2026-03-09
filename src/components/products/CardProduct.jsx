@@ -9,6 +9,9 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export function CardProduct({ product }) {
   return (
+    <Link
+          href={`/projects/${product.slug}`}
+    >
     <motion.div 
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -32,47 +35,7 @@ export function CardProduct({ product }) {
       <p className="text-zinc-600 dark:text-zinc-400 text-center font-mono text-sm mb-6 flex-grow">
         {product.description}
       </p>
-      
-      <div className="flex flex-wrap justify-center gap-4">
-        {product.category === 'Ready to download' ? (
-          <motion.a
-            href={product.downloadLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-700 text-[#00843D] dark:text-yellow-400 font-mono text-sm font-semibold hover:bg-[#00843D] hover:text-white dark:hover:bg-yellow-400 dark:hover:text-black transition-colors"
-          >
-            <FontAwesomeIcon icon={faDownload} />
-            Download
-          </motion.a>
-        ) : (
-          <motion.a
-            href={product.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-700 text-[#00843D] dark:text-yellow-400 font-mono text-sm font-semibold hover:bg-[#00843D] hover:text-white dark:hover:bg-yellow-400 dark:hover:text-black transition-colors"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-            Github
-          </motion.a>
-        )}
-        <Link
-          href={`/projects/${product.slug}`}
-          legacyBehavior
-        >
-            <motion.a 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-700 text-[#00843D] dark:text-yellow-400 font-mono text-sm font-semibold hover:bg-[#00843D] hover:text-white dark:hover:bg-yellow-400 dark:hover:text-black transition-colors"
-            >
-                <FontAwesomeIcon icon={faBook} />
-                Guide
-            </motion.a>
-        </Link>
-      </div>
     </motion.div>
+    </Link>
   );
 }
