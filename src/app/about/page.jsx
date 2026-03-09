@@ -91,14 +91,6 @@ export default function About() {
       <Container className="mt-4 sm:mt-16 mb-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="my-8">
-            <motion.h1 
-              className="text-4xl md:text-5xl font-mono font-black text-[#32a852]"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              ABOUT US
-            </motion.h1>
             <motion.p 
               className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 font-mono mt-5 mb-10 text-center"
               initial={{ opacity: 0 }}
