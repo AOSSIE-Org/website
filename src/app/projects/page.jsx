@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link';
 import Grid from '@mui/material/Grid';
 import MuiCard from '@mui/material/Card';
@@ -15,7 +16,7 @@ import projects from '@/helper/projects'
 import { CardProduct } from '@/components/products/CardProduct'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 
 function LinkIcon(props) {
@@ -29,7 +30,32 @@ function LinkIcon(props) {
   )
 }
 
-// Define the Cards component here
+// Organisation tab definitions
+const ORG_TABS = [
+  {
+    id: 'aossie',
+    label: 'AOSSIE Projects',
+    shortLabel: 'AOSSIE',
+    filter: (p) =>
+      !p.githubLink ||
+      p.githubLink.includes('github.com/AOSSIE-Org') ||
+      p.githubLink.includes('gitlab.com/aossie'),
+  },
+  {
+    id: 'stabilitynexus',
+    label: 'StabilityNexus Projects',
+    shortLabel: 'StabilityNexus',
+    filter: (p) => p.githubLink && p.githubLink.includes('github.com/StabilityNexus'),
+  },
+  {
+    id: 'djedalliance',
+    label: 'DjedAlliance Projects',
+    shortLabel: 'DjedAlliance',
+    filter: (p) => p.githubLink && p.githubLink.includes('github.com/DjedAlliance'),
+  },
+]
+
+// Cards grid
 const Cards = ({ projectList }) => {
   return (
     <Grid container spacing={{ xs: 2, md: 4 }} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
@@ -51,23 +77,28 @@ const Cards = ({ projectList }) => {
               backdropFilter: 'blur(4px) brightness(100%)',
               display: 'flex',
               flexDirection: 'column',
+              justifyContent: 'space-between',
+
             }}
           >
-            <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-              <Image
-                src={project.logo}
-                alt={`${project.title} image`}
-                width={80}
-                height={80}
-                style={{ margin: '0 auto 16px', objectFit: 'contain' }}
-              />
+            <CardContent sx={{ textAlign: 'center', pt: 4 }}>
+              {project.logo && (
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src={project.logo}
+                    alt={project.name}
+                    width={60}
+                    height={60}
+                    className="object-contain"
+                  />
+                </div>
+              )}
               <Typography
-                variant="h5"
-                className="mt-6 font-mono text-green-600 dark:text-yellow-400"
-                sx={{
-                  fontFamily: 'Nunito-Bold',
-                  color: '#3c982c',
-                  textAlign: 'center',
+                variant="h6"
+                className="font-mono font-bold text-zinc-800 dark:text-zinc-100 mb-2"
+                sx={{ 
+                  fontFamily: 'Nunito', 
+                  mb: 1 
                 }}
               >
                 {project.name}
@@ -76,16 +107,10 @@ const Cards = ({ projectList }) => {
               <Typography
                 variant="body1"
                 className="text-zinc-600  dark:text-zinc-400 text-lg font-mono leading-7 text-center"
-                sx={{
-                  fontFamily: 'Nunito-Light',
-                  color: 'black',
-                  mt: 2,
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  display: '-webkit-box',
-                  WebkitBoxOrient: 'vertical',
-                  WebkitLineClamp: 4,
-                }}
+                sx={{ fontFamily: 'Nunito-Light',
+                   color: 'black',
+                    fontSize: '0.85rem' 
+                  }}
               >
                 {project.description}
               </Typography>
@@ -112,6 +137,8 @@ const Cards = ({ projectList }) => {
   );
 };
 
+//Page header
+
 const ProjectSection = () => {
   return (
     <motion.div 
@@ -120,47 +147,113 @@ const ProjectSection = () => {
       transition={{ duration: 0.8 }}
       className="ideas-text flex items-center justify-center mb-8 relative"
     >
-      <div
-        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
-        alt="GSOC Logo"
-      ></div>
 
       <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
         PROJECTS
       </h1>
 
-      <div
-        className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
-        style={{ backgroundImage: "url('/logo.png')" }}
-        aria-label="Logo"
-      ></div>
-
     </motion.div>
   );
 };
 
-const styles = {
-  bannerWrapper: {
-    width: '100%',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-};
+// Org switcher tabs
+const OrgTabs = ({ activeTab, onTabChange }) => {
+  return (
+    <div className="flex justify-center">
+      <div className="flex text-center justify-center items-center flex-col sm:flex-row flex-wrap gap-2 rounded-xl border border-zinc-200 bg-zinc-100 p-1.5 dark:border-zinc-700 dark:bg-zinc-800/60">
+        {ORG_TABS.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => onTabChange(tab.id)}
+            className={`
+              relative rounded-lg px-4 py-2 font-mono text-sm font-semibold transition-all duration-200
+              ${
+                activeTab === tab.id
+                  ? 'bg-[#00843D] text-white shadow-md dark:bg-yellow-400 dark:text-zinc-900'
+                  : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'
+              }
+            `}
+          >
+            <span className="hidden sm:inline">{tab.label}</span>
+            <span className="sm:hidden">{tab.shortLabel}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// Main page component
 
 export default function Projects() {
-  const readyToDownload = projects.filter(p => p.category === 'Ready to download');
-  const productionReady = projects.filter(p => p.category === 'Production ready');
-  const ongoing = projects.filter(p => p.category === 'Ongoing');
+  const [activeOrg, setActiveOrg] = useState('aossie')
+  const[sortOrder, setSortOrder] = useState('a-z') // Added sort state
+  const currentTab = ORG_TABS.find((t) => t.id === activeOrg)
+    
+// Sort Logic added 
+  const filteredProjects = projects
+    .filter(currentTab.filter)
+    .slice()
+    .sort((a, b) => {
+      if (sortOrder === 'a-z') return a.name.localeCompare(b.name);
+      if (sortOrder === 'z-a') return b.name.localeCompare(a.name);
+      if (sortOrder === 'length-asc') return a.name.length - b.name.length;
+      if (sortOrder === 'length-desc') return b.name.length - a.name.length;
+      return 0; // default order
+    })
+
 
   return (
     <>
       <Container className="mt-20 mb-28">
         <Container.Inner>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3 mb-16">
-            {projects.sort(() => 0.5 - Math.random()).map((product) => (
-              <CardProduct key={product.slug} product={product} />
-            ))}
-          </div>
+            <ProjectSection />
+                          
+            {/* Added a layout to align Tabs and Sorting Dropdown perfectly */}
+            <div className="flex flex-col justify-between items-center mb-8 gap-6">
+              <div className="w-full md:w-1/4 hidden md:block"></div> {/* Spacer for perfect alignment */}
+              
+              <div className="w-full md:w-auto flex justify-center">
+                <OrgTabs activeTab={activeOrg} onTabChange={setActiveOrg} />
+              </div>
+
+              <div className="w-full flex justify-center">
+                <div className="flex items-center gap-2">
+                  <label htmlFor="sort-select" className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 font-mono">
+                    Sort By:
+                  </label>
+                  <select
+                    id="sort-select"
+                    value={sortOrder}
+                    onChange={(e) => setSortOrder(e.target.value)}
+                    className="rounded-lg border border-zinc-200 bg-zinc-100 px-3 py-2 text-sm font-mono font-semibold text-zinc-600 outline-none transition-all duration-200 focus:border-[#00843D] dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:focus:border-yellow-400 cursor-pointer"
+                  >
+                    <option value="a-z">Name (A-Z)</option>
+                    <option value="z-a">Name (Z-A)</option>
+                    <option value="length-asc">Name Length (Asc)</option>
+                    <option value="length-desc">Name Length (Desc)</option>
+                    <option value="default">Default</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${activeOrg}-${sortOrder}`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3 }}
+              >
+              <div className="mb-16 grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
+                {filteredProjects.map((product) => (
+                  <CardProduct key={product.slug || product.name} product={product} />
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
           {/* 
           <div className="mb-20">
@@ -183,12 +276,6 @@ export default function Projects() {
 
         </Container.Inner>
       </Container>
-
-      <div style={styles.bannerWrapper}>
-        <Container.Outer className="mt-28">
-          <Banner />
-        </Container.Outer>
-      </div>
     </>
   );
 }
