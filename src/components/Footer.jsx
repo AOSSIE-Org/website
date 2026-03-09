@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faGitlab, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 function NavLink({ href, children }) {
   return (
@@ -37,9 +37,6 @@ export function Footer() {
               <div className="flex gap-6">
                 <Link aria-label="Contact by Mail" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
                   <FontAwesomeIcon icon={faEnvelope} size='xl' />
-                </Link>
-                <Link aria-label="Follow on GitLab" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://gitlab.com/aossie'>
-                  <FontAwesomeIcon icon={faGitlab} size='xl' />
                 </Link>
                 <Link aria-label="Follow on GitHub" className=' text-zinc-400 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org'>
                   <FontAwesomeIcon icon={faGithub} size='xl' />

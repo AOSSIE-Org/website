@@ -3,13 +3,13 @@
 import { Container } from '@/components/shared/Container'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDiscord, faGitlab } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub} from '@fortawesome/free-brands-svg-icons'
 import { faLightbulb, faComments, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 export function ApplyHeader({ children }) {
     const steps = [
         { icon: faDiscord, label: "Join Discord" },
-        { icon: faGitlab, label: "Start Contributing" },
+        { icon: faGithub, label: "Start Contributing" },
         { icon: faLightbulb, label: "Choose Idea" },
         { icon: faComments, label: "Discuss" },
         { icon: faPaperPlane, label: "Submit App" },
