@@ -1,0 +1,58 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'LessCloud',
+  description: 'Making our Projects Cloud-Free'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Towards Sunny Projects: Making our Projects Cloud-Free
+
+## Background and Motivation
+
+Computers are universal machines and software are instructions that make these machines operate as we want. In the context of software, freedom is being able to make the computers operate as we want; and open-source code allows us to see what the software will do to our computers.
+
+Decades ago, the free and open-source software movement was a reaction to the business model of corporations that restricted these freedoms to know exactly what the software will do and to change the software and execute the software on our machines.
+
+The movement was successful, but the corporations switched their business model to software-as-a-service. Under this new model, it doesn't matter if the software is free and open-source, if its execution depends on their servers, on the data on their servers, on APIs for services that can only run on their servers, on the "cloud". 
+
+We are trapped by free credits and by frameworks that make it conveniently easy to develop software that depends on their infra-structure.
+
+AOSSIE has fallen into this trap. As a result, many of our projects depend on cloud infrastructure and services that, as a not-for-profit that focuses on code production and not on revenue generation, we can't even afford. Once we were relying on free credits and then suddenly we were faced with a huge unexpected bill and had to shut down one of our projects.
+
+Furthermore, the digital activities of users of cloud-dependent software is under constant surveillance by the companies offering the "cloud" infra-structure and services. And our digital infrastructure becomes fragile, with global outages when any of these cloud monopolies becomes unavailable.
+
+This idea aims to make our projects more local, more "grounded", less "cloudy", more "sunny".
+
+## Overview of Tasks
+
+For each project that relies on cloud servers, services, APIs, the following tasks may be feasible:
+
+* Instead of storing user data in backend servers, we may store user data locally in IndexedDB or LocalStorage and give users the ability to backup data to disk and restore data from disk.
+
+* In the case of mobile apps, we can store data in the mobile storage itself.
+  
+* In the case of Next.JS frontends, we can use client-side only and avoid server-side rendering, to generate static pages that can be deployed in github pages and that do not need to be deployed on Vercel's servers.
+
+* Frontends could be ported from Next.js to Svelte, which is a framework philosophically more aligned with the principles expressed above.
+
+* When a server is being used for communication between users, we could consider replacing those servers by decentralized communication networks, such as NOSTR, Waku, ...
+
+
+Candidates are expected to refine these tasks in their GSoC proposals.
+
+## Requirements
+
+* Your proposal should describe clearly which projects you are going to tackle and how, in detail, you are going to make them cloud-free.
+
+
+## Mentors
+
+* Since this idea involves contributing to multiple projects, you will interact with multiple mentors and the exact mentors will depend on the projects for which you decide to contribute. Look for Mentors with @Mentor and @Contributor-X role in our discord, where X is the name of the project.
+* GitHub: @Zahnentferner ; Discord: @b.wp
+
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in https://discord.com/channels/1022871757289422898/1458860263561494570.

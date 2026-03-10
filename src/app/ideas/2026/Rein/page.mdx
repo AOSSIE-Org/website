@@ -1,0 +1,146 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'Rein',
+  description: 'Improving Cross-Platform Remote Input Reliability'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+
+# Improving Cross-Platform Remote Input Reliability
+
+## Background and Motivation
+
+[Rein](https://github.com/AOSSIE-Org/Rein) is a **cross-platform, LAN-based remote input controller**. It allows touchscreen devices to act as a trackpad and keyboard for a desktop system through a locally served web interface.
+
+While the core functionality is already implemented, several areas require improvement to ensure consistent behavior across operating systems, display protocols, and input methods.
+
+---
+
+## Pre-Evaluation Task
+
+It is mandatory to create PoCs for the following issues, as described in them:
+
+* https://github.com/AOSSIE-Org/Rein/issues/130
+* https://github.com/AOSSIE-Org/Rein/issues/208
+
+Add the PoC links to your proposal so they can be tested and evaluated.
+
+Check all open issues labeled **GSoC 2026**. Your proposal should primarily revolve around them. However, only include what you genuinely believe you can deliver. Do not rely on AI to judge your capabilities.
+
+## Overview of Tasks During GSoC period
+
+* **Evaluate and Replace NutJS with Better Options** *(Highest Priority)*
+
+  * Resolve cursor position desynchronization on Wayland (e.g., KDE).
+  * Investigate virtual input devices or alternative input injection methods.
+  * Ensure native OS handling of cursor movement, scrolling, and gestures.
+  * Ensure the cursor position is either correctly synced or reliably indicated.
+
+<!-- Already done
+* **Improve keyboard input handling**
+
+  * Ensure consistent multi-character input (e.g., glide typing, voice input).
+
+* **Complete and normalize key mappings**
+
+  * Modifier keys, navigation keys, function keys, and media keys.
+-->
+
+* **Ensure cross-platform compatibility**
+
+  * Test across operating systems and display protocols.
+  * Automate creation of distributables for all supported platforms
+    (Linux must be distributed as a Flatpak).
+  * Document platform-specific limitations and behavior.
+
+<!-- Already done
+* **Authentication**
+
+  * Use an authentication token passed via URL (link and QR code).
+
+  * Persist tokens on the server after successful connection.
+
+  * Expire tokens after a defined period of inactivity.
+-->
+
+* **Low Latency Audio & Screen mirror**
+
+  * Explore possibility of screen mirroring on the trackpad region, i.e. cursor movement should be possible over the mirror itself.
+
+* **Improve UI/UX**
+
+  * Make the interface more intuitive and easier to use.
+
+* **Propose Significant Improvements (Beyond LLM-Generated Suggestions)**
+
+  * Identify areas where unnecessary complexity can be reduced.
+  * Suggest simpler, more maintainable implementations where applicable.
+  * Highlight sections that would benefit from using well-suited libraries instead of custom logic.
+
+
+<!-- Added complexity might not be worth it, will reconsider this in future
+* **Improve LAN accessibility**
+
+  * Enable stable LAN access without relying on changing IP addresses, which currently requires re-scanning.
+  * This'll help when system input fails and the app is configured to auto-start.
+-->
+
+Candidates are expected to refine these tasks in their GSoC proposals and discuss their approaches with peers instead of directly raising PRs.
+
+---
+
+## Requirements
+
+### Technical Skills
+
+* Familiarity with the current stack:
+  **TypeScript**, **Node.js**, **WebSockets**, **TanStack**, **Nut.js**
+* Understanding of input injection and virtual input devices.
+* Experience with **cross-platform packaging of Node.js applications**.
+* Ability to test across different operating systems and environments
+  (using VMs), including **Linux, macOS, Windows**, and potentially others.
+
+### Proposal Expectations
+
+* Shows strong understanding of current limitations and the **end-to-end solution flow**.
+* Defines decision points and trade-offs, ideally with **diagrams**.
+* Evaluates alternative libraries or approaches for better reliability and compatibility.
+* Provides timeline utilizing the full GSoC period.
+* Outlines future scope and long-term direction.
+* Preferably include link to a video (e.g., on YouTube or any public platform) showcasing the app, its features, overall vision, and a brief explanation of its internal workings.
+
+### General Abilities
+
+* Ability to take ownership and work autonomously.
+* Evaluate technical decisions and the existing stack against alternatives.
+* Maintain cross-platform behavior and compatibility.
+* Record demos or tutorials when appropriate.
+* Produce clear documentation, including diagrams and architecture overviews.
+* Help grow the user base through community and social channels.
+
+---
+
+## Resources
+
+* Project repository:
+  https://github.com/AOSSIE-Org/Rein
+* Project wiki & specification:
+  https://github.com/AOSSIE-Org/Rein/wiki
+* Contribution guidelines:
+  https://github.com/AOSSIE-Org/Rein/wiki/contribute
+
+---
+
+## Mentors
+
+* GitHub: @imxade
+  Discord: @Rituraj
+
+---
+
+## Communication Channel
+
+Join our Discord server ([https://discord.gg/xnmAPS7zqB](https://discord.gg/xnmAPS7zqB)) and discuss this idea in
+**AOSSIE-Discord → Projects → Rein**.

@@ -1,0 +1,60 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'SmartNotes',
+  description: 'A decentralized voting platform enabling fair and transparent elections.'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Smart Notes
+
+## Background and Motivation
+
+**Project Size: Large**
+
+Smart Notes is an open-source, privacy-focused desktop app for personal knowledge management. It uses AI-powered semantic search and RAG (Retrieval-Augmented Generation) to help users organize, connect, and explore their notes all running locally on the user's machine.
+
+Most knowledge tools today push everything to the cloud, which raises concerns about privacy, vendor lock-in, and offline access. Smart Notes takes a different approach: the app combines a markdown-based editor with local vector databases and on-device language models. Notes are automatically chunked, embedded, and indexed, enabling semantic search and automatic linking between related ideas without requiring manual tagging.
+
+Users can ask questions about their own notes and get context-aware answers from their knowledge base. The system surfaces relevant content based on meaning rather than just keywords, helping reduce information overload. Everything runs offline by default, though external APIs can optionally be plugged in.
+
+The core idea is that AI tools for thought should run locally. Smart Notes is built for users who want the benefits of AI-assisted knowledge management without giving up control over their data.
+
+## Overview of Tasks
+
+1. **Core Editor and Semantic Search Infrastructure**: Build the markdown editor with support for rich formatting, code blocks, tables, and embedded media. Set up the vector database and embedding pipeline so notes get automatically chunked and indexed. Implement semantic search that actually works well hybrid retrieval mixing keyword and vector similarity would be ideal.
+
+2. **Local RAG Pipeline and AI Features**: Get a working RAG setup running entirely on-device. Users should be able to ask questions about their notes and get useful answers with citations. Support multiple LLM backends (Ollama, llama.cpp, or external APIs as opt-in). Add writing assistance features like summarization, grammar fixes, and smart completions.
+
+3. **Smart Context and Auto-Linking**: Build a sidebar that shows related notes as users write. Implement automatic bi-directional link suggestions and a knowledge graph view so users can visually explore connections in their notes. The system should help surface relevant context without requiring manual tagging.
+
+4. **Import/Export and Cross-Platform Polish**: Handle imports from Obsidian, Notion, Roam, and plain markdown folders. Export to PDF, HTML, etc. Make sure the app runs smoothly on Windows, macOS, and Linux. Optimize for larger note collections and consider optional peer-to-peer sync for multi-device usage.
+
+5. **Testing, Documentation, and Community**: Set up proper testing and CI/CD. Write docs that are actually helpful. Create tutorials and demo content. Help grow the user base and support contributors.
+
+Candidates should expand on these in their proposals with specific implementation details.
+
+## Requirements
+
+- Any AI models must run locally on user machines no mandatory cloud calls.
+- The app should work offline by default. Cloud/API stuff is opt-in only.
+- Keep it responsive even with large note collections.
+- Feel free to propose additional features, subject to mentor approval.
+
+## Resources
+
+- Electron: https://www.electronjs.org/docs
+- Transformers.js: https://huggingface.co/docs/transformers.js
+- Ollama: https://ollama.com/
+- TipTap: https://tiptap.dev/
+- RAG Best Practices: https://www.pinecone.io/learn/retrieval-augmented-generation/
+  
+## Mentors
+
+- Look for mentors with the `@Contributor-SmartNotes` role in AOSSIE's Discord
+- GitHub: @SharkyBytes; Discord: @sharkybytes_
+
+## Communication Channel
+
+Join our Discord server (https://discord.gg/xnmAPS7zqB) and discuss this idea in the appropriate project channel.

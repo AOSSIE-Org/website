@@ -1,0 +1,87 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'PictoPy',
+  description: 'PictoPy'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# PictoPy
+
+## Background and Motivation
+
+**Project Size: Large**
+
+[PictoPy](https://github.com/AOSSIE-Org/PictoPy) is an open-source, privacy-focused desktop application designed for intelligent photo management using AI-powered face recognition and object detection. Unlike cloud-based solutions , PictoPy processes all data locally, ensuring complete user control while still providing advanced features like face clustering, AI tagging, and smart album management.
+
+Over the past year, the PictoPy project has undergone significant architectural and usability-focused improvements. The 2025 GSoC proposal aimed to transform PictoPy from a prototype into an end-user-ready application by strengthening all major components including backend AI pipelines, frontend UI/UX, database design, and cross-platform packaging. Major focus areas included implementing face collections (named face clusters), optimizing face embedding and clustering performance, upgrading object detection models, enabling GPU-accelerated inference across platforms, redesigning the user interface for modern usability standards, and preparing the application for distribution through major app stores.
+
+These efforts collectively established a strong technical foundation for PictoPy:
+
+- A scalable and efficient backend with improved database schemas
+
+- Faster and more accurate AI inference pipelines using modern ONNX-based models
+
+- A redesigned, intuitive frontend interface
+
+- Automated cross-platform builds and deployment workflows
+
+With these core systems in place, PictoPy is positioned to evolve from a feature-rich prototype into a mature, production-grade open-source photo management solution.
+
+## Overview of Tasks
+
+1. **AI-Assisted Photo Organization and Metadata Portability**: This task focuses on enhancing PictoPy with AI-assisted photo organization based on events while ensuring long-term metadata portability through EXIF-based storage. By combining intelligent face-based search, similarity-driven clustering, and software-agnostic metadata management. Detailed description can be found here: [Task Document](https://docs.google.com/document/d/1DVw2hH_RUIa9ieTDB7YmlFK5jrCGgcKEXCyz5n1I3U8/edit?usp=sharing)
+
+2. **Smart Daily Memory Highlights and Notification System**: This feature introduces daily, Instagram-story style memory highlights automatically curated from the user’s photo library using AI-driven selection and prioritization. The system will surface meaningful moments such as family photos, past events, or visually significant images in an engaging story-like format. A Tauri-based notification system will alert users when a new daily memory is ready to view, ensuring consistent engagement with their photo collection.
+
+3. **Python Codebase Migration to Static Type Checking with MyPy**: This task focuses on improving PictoPy’s backend reliability and maintainability by migrating the Python codebase to use MyPy for static type checking. Type annotations will be added across core modules, APIs, and AI pipelines to catch bugs early and improve code clarity. The MyPy workflow will be integrated into CI to enforce type safety on future contributions, leading to a more robust and scalable codebase.
+
+4. **Application Size Optimization Through Modular AI Model Management**: This task focuses on reducing PictoPy’s final application size by making large AI model downloads optional and on-demand rather than bundled by default. Users will be able to select only the models they require based on their hardware and feature usage. Additional optimizations such as removing unwanted python and Tauri packages will aid in this task.
+
+5. **CI Build Optimization Using Cached Tauri Artifacts and CDN Distribution**: This task focuses on optimizing the [PR build workflow](https://github.com/AOSSIE-Org/PictoPy/blob/main/.github/workflows/pr-check-build.yml) by eliminating repeated compilation of Tauri dependencies across platforms. Precompiled Tauri artifacts will be stored in a CDN and reused during CI runs, with recompilation triggered only when Cargo configuration or dependency files change. The CDN will be automatically updated whenever relevant builds are regenerated to ensure consistency and reliability. This will significantly speed up the CI workflow by atleast 300%.
+
+6. **Biweekly Release Management and Codebase Health Maintenance**: This task involves actively contributing to PictoPy’s biweekly release cycle by coordinating feature integration, testing, and versioning. It also focuses on maintaining a clean and reliable codebase through removal of obsolete code, configuring Dependabot for automated dependency updates, and ensuring setup guides remain accurate and error-free. Additionally, tests and documentation will be continuously updated to reflect the latest changes and preserve long-term project stability.
+
+7. **Project Maintenance, Contributor Support, and Community Engagement**: This task focuses on strengthening PictoPy’s open-source ecosystem through active project maintenance and community involvement. It includes reviewing issues and pull requests from contributors, providing constructive feedback, and assisting the mentor in maintaining code quality and project direction. Additionally, the contributor will co-conduct weekly project meetings to ensure organized progress, transparency, and sustained community engagement.
+
+8. **Evaluation and Integration of Features from PictoPy V2**: [PictoPy V2](https://github.com/imxade/PictoPyV2/wiki) was an independent branch of the project that experimented with some other features in 2024. This task involves systematically reviewing its feature set and selectively porting ideas that are compatible with the current Tauri + FastAPI architecture and the project's privacy-first philosophy. Candidates are expected to audit V2's approach, identify non-overlapping or superior solutions, and propose concrete integration work where applicable.
+
+   - **Video Support**: Extend PictoPy to handle video files alongside images. AI models (object detection, face recognition) will run on 1 out of every *X* frames (configurable frame-sampling rate) to generate classification and tagging metadata for the video without processing every frame, keeping inference cost low.
+
+9. (Optional) Explore Support for Mobile Devices with Tauri.
+
+Candidates are expected to refine these tasks in their GSoC proposals.
+
+## Requirements
+
+- The GSoC applicant must draft a well-formatted proposal on Google Docs. The format will be shared by the organisation at the start of the application period.
+
+- The proposal must contain proper diagrams to help us understand how you are going to achieve the above tasks. These diagrams should be made in either Excalidraw or Draw.io.
+
+- Apart from the tasks mentioned above, you can propose your own fixes and features. But these are subject to mentor approval.
+
+- Any AI model you propose to use should be able to run on a user's machine; it should not be hosted on any platform. After all, this is the entire goal of the PictoPy project.
+
+- Our main aim this year is to actively grow PictoPy’s user base through targeted outreach, promotion, and community engagement initiatives. It includes creating demo content, tutorials, blog posts, and social media showcases to highlight PictoPy’s features and real-world use cases. Continuous user feedback collection will guide future improvements and retention.
+
+## Resources
+
+- Proposal for the year 2025: [Link](https://docs.google.com/document/d/1F0HhIUfv1OJQ_D1lViH0wzECE_ueWQtdz8jDvBwu0Vw/edit?usp=sharing)
+- Project Repository: https://github.com/AOSSIE-Org/PictoPy
+- Project Documentation: https://aossie-org.github.io/PictoPy/
+- Tauri: https://tauri.app/
+- FastAPI: https://fastapi.tiangolo.com/
+
+
+## Mentors
+
+- Look for mentors with the `@Contributor-PictoPy` role in AOSSIE's Discord
+- GitHub: @rahulharpal1603; Discord: @rahulharpal
+- GitHub: @Pranav0-0Aggarwal; Discord: @.pranav0_0
+- GitHub: @Zahnentferner ; Discord: @b.wp
+- GitHub: @imxade; Discord: @Rituraj
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in AOSSIE-Discord/Projects/PictoPy.

@@ -1,0 +1,52 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'Order-Book Auction-Based Exchange',
+  description: 'Order-Book Auction-Based Exchange'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Order-Book Auction-Based Exchange
+
+## Background and Motivation
+In GSoC 2025, we have built an auction platform (Hammer) and an auction-based liquidity pool exchange (Maelstrom). 
+
+Auctions are a key mechanism for proper price discovery and thus are essential for stability in highly volatile cryptocurrency markets.
+
+In GSoC 2026, we would like to continue our research and development in the area of auctions and we suggest building a 
+variation of Maelstrom that is based on order books instead of liquidity pools.
+
+## Overview of Tasks
+
+In a traditional order-book exchange, orders are matched at a fixed limit price. In this project, instead of static pricing, the exchange will use a **dynamically varying price mechanism inspired by reverse Dutch auctions**, similar to the approach used in Maelstrom.
+
+The primary challenge is to **design efficient on-chain data structures and matching logic** that can handle dynamic pricing, order storage, and execution without relying on any centralized or off-chain backend.
+
+Key tasks include modeling the pricing function, storing and updating orders efficiently, and ensuring fair and gas-efficient matching under EVM constraints.
+
+Candidates are expected to refine above tasks in their GSoC proposals.
+
+## Requirements
+- Research and design solutions for a fully **on-chain order-book exchange** on the EVM, without relying on off-chain matching engines or external servers.
+- Design and implement a **modular EVM-based smart contract architecture** supporting limit/market orders, order matching, cancellation, and settlement for ERC-20 trading pairs.
+- Build a **functional frontend** to demonstrate core exchange features, including buy/sell order placement, order-book visualization, trade history, price charts, and wallet integration.
+
+
+
+## Resources
+- [Hammer Auction House Contracts](https://github.com/StabilityNexus/HammerAuctionHouse-Solidity)
+- [Hammer Auction House WebUI](https://github.com/StabilityNexus/HammerAuctionHouse-WebUI)
+- [Maelstrom Contracts](https://github.com/StabilityNexus/Maelstrom-Solidity)
+- [Maelstrom WebUI](https://github.com/StabilityNexus/Maelstrom-WebUI)
+
+
+## Mentors
+
+- Look for mentors with the roles `@Hammer` and `@Maelstrom` in the Discord of the Stability Nexus
+- Github: @Zahnentferner; Discord: @b.wp
+- Github: @kaneki003; Discord: @kaneki003
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in (https://discord.com/channels/995968619034984528/1458849723296256050).

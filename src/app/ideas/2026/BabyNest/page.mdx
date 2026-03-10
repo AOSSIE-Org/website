@@ -1,0 +1,106 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'BabyNest',
+  description: 'A Reliable Baby Care Tracker + Reusable Mobile AI Library'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# BabyNest 2026: A Reliable Baby Care Tracker + Reusable Mobile AI Library
+
+## Background and Motivation
+
+[BabyNest](https://github.com/AOSSIE-Org/BabyNest) is a React Native pregnancy and infant care tracking application with a Flask backend, SQLite database, and an AI chat assistant.
+
+The project already has a solid foundation — health tracking screens, appointment management, a custom agent system, and the beginnings of an on-device LLM integration using llama.rn. However, the app has drifted from its original purpose. The core promise of BabyNest — helping parents stay on top of critical medical appointments and health milestones — is incomplete, while a lot of energy has gone into AI features that are unreliable by nature.
+
+The key insight driving this GSoC proposal is simple:
+
+> **Medical scheduling must be deterministic and trustworthy. AI is not.**
+
+Every country has a well-defined postnatal and prenatal care schedule — vaccination timelines, checkup windows, screening tests — backed by public health authorities (WHO, CDC, NHS, and national equivalents). These schedules are exact. They do not benefit from being AI-generated or AI-interpreted. A missed vaccination reminder caused by a hallucinating language model is worse than no reminder at all.
+
+BabyNest should become the app that parents can genuinely rely on for this. AI can remain as a helpful, optional chat companion — but it must not be the backbone of medical scheduling.
+
+At the same time, the on-device AI work done in BabyNest — integrating llama.rn, managing model lifecycles, building a context cache — is genuinely interesting infrastructure. Rather than letting it remain half-finished inside one app, GSoC 2026 is an opportunity to extract it into a standalone, reusable open-source library that any React Native project could use.
+
+This gives us two clear, complementary tracks:
+
+- **Track A** — Finish BabyNest as a reliable, trustworthy healthcare tracker.
+- **Track B** — Extract the mobile AI scaffolding into a generic, reusable library.
+
+---
+
+## Overview of Tasks
+
+### Track A — BabyNest as a Reliable Healthcare Tracker
+
+* **Build a deterministic medical schedule engine.**
+The app currently has no automatic, evidence-based schedule. On profile creation, BabyNest should auto-generate a complete week-by-week care timeline based on verified public health guidelines. This includes prenatal checkups, postnatal visits, vaccination milestones, and screening tests. Schedules should vary by country — the user's country is already collected at onboarding — with a sensible global fallback based on WHO recommendations. This logic must be entirely rule-based and must work correctly even when the AI is turned off.
+
+* **Build a reliable local notification system from scratch.**
+The app currently has zero notification code, despite the README promising appointment and vaccination reminders. This is a full 0→1 build: scheduling local reminders for upcoming appointments and tasks, handling overdue items, surviving device restarts, and correctly handling timezone changes. Core medical reminders must fire reliably regardless of whether the AI model is loaded.
+
+* **Cleanly separate AI from medical core.**
+AI chat is a useful companion feature, but it must not control or interfere with scheduling. Every core feature — viewing the schedule, logging health data, seeing reminders — must work fully without the AI model being loaded. Introduce a clear "Safe Mode" where the app functions as a pure tracker with no AI dependency.
+
+* **Fix the documentation and add tests.**
+The README currently lists LangChain as a dependency — it is not used anywhere in the codebase. The architecture diagram is outdated. No frontend tests exist, and backend test coverage is minimal. This task covers correcting all documentation, writing meaningful unit and integration tests for the schedule engine, notification logic, and backend routes, and setting up a CI pipeline.
+
+* **Production and deployment.**
+Important - Release the app on Play Store and App Store for distribution.
+
+---
+
+### Track B — Reusable Mobile AI Library (New Open-Source Library)
+
+The on-device AI scaffolding built inside BabyNest — llama.rn model lifecycle management, a response cache, a context management system, and a RAG-style retrieval layer — is more broadly useful than one app. Currently it is tightly coupled to BabyNest's domain and cannot be reused elsewhere.
+
+The goal of Track B is to extract and generalize this infrastructure into a standalone React Native library.
+
+* **Extract and generalize the model management layer.**
+Package the llama.rn integration (model download, loading, unloading, memory checks) into a clean, reusable API that any React Native app can drop in without writing boilerplate.
+
+* **Generalize the context cache and response cache.**
+The current caching system in BabyNest is hardcoded to pregnancy health data. Make it domain-agnostic and configurable — any app should be able to define what context to cache and how to invalidate it.
+
+* **Abstract the retrieval layer.**
+The ChromaDB + guidelines vector store approach should become a pluggable connector. The library should allow developers to bring their own data source and retrieval strategy.
+
+* **Provide a clean developer API with documentation and examples.**
+The library should be easy to adopt. This means a clear public API, a getting-started guide, and at least one example app (BabyNest itself can serve as the reference implementation).
+
+* **Publish as an open-source package.**
+The library should be published so other projects can use it. BabyNest becomes one demonstration app among many potential consumers.
+
+Candidates are expected to refine both tracks in their proposals — including the scope boundary between the two tracks, the API design of the library, the country coverage plan for the schedule engine, and a realistic week-by-week timeline.
+
+---
+
+## Requirements
+
+* React Native (JavaScript/TypeScript)
+* Python and Flask
+* SQLite
+* Interest in on-device / mobile AI
+* Familiarity with mobile notification systems is a plus
+
+## Resources
+
+* Repository: https://github.com/AOSSIE-Org/BabyNest
+* llama.rn: https://github.com/mybigday/llama.rn
+* notifee (recommended notification library): https://notifee.app/react-native/docs/overview
+* WHO Antenatal Care Guidelines: https://www.who.int/publications/i/item/9789241549912
+* CDC Immunization Schedule: https://www.cdc.gov/vaccines/
+* ChromaDB: https://docs.trychroma.com/
+
+## Mentors
+
+* GitHub: @bhavik-mangla ; Discord: @bhav_x
+* GitHub: @Zahnentferner ; Discord: @b.wp
+* Look for mentors with the role `@BabyNest` in our Discord servers
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in the `#babynest` channel.

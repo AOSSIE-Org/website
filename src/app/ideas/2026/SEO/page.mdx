@@ -1,0 +1,55 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'SEO',
+  description: 'Search Engine Optimization, Social Sharing and Marketing'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Search Engine Optimization, Social Sharing and Marketing
+
+
+## Background and Motivation
+
+Most of our projects need improved marketing and SEO (Search Engine Optimization), 
+so that they are more easily discoverable by users and so that users are more likely to want to use our projects. In the past years, we have often focused more on the pure engineering side of our projects and neglected features that would facilitate project discovery and viral marketing.
+
+To be clear, this is not a pure marketing idea (which would not be eligible for GSoC). It is a coding idea to develop marketing-related features into our projects.
+
+
+## Overview of Tasks
+
+Here is a non-exhaustive list of tasks related to this idea:
+
+* Many of our projects need better open-graph metadata to be displayed nicely when shared in Twitter, Discord, Telegram, LinkedIn, ...
+
+* All our projects need to be shareable more easily, so that they can be discovered by users more easily. We should add discrete, but visible "Share" buttons in their frontends. Clicking on the share buttons should open a modal allowing the user to choose a social media platform and then redirect the user to the chosen social media platform, preferably with a pre-filled message already written. The pre-filled message should tag our accounts.
+
+* Ensure metadata, indexing and content signals align with SEO best practices.
+
+* Our interfaces could actively ask users, in a non-annoying way, to leave a good review in review sites (e.g. producthunt) and app stores or to share the project in social media.
+
+* Our interfaces could refer back to the AOSSIE home-page or YouTube channel, where users could then discover other AOSSIE projects.
+
+
+
+## Requirements
+
+* Make a clear executable strategy that involves improving as many of our projects as possible in ways that would make them more discoverable, and make users more likely to want to use them.
+
+
+## Resources
+
+* Social Share Button: https://github.com/AOSSIE-Org/SocialShareButton
+
+
+## Mentors
+
+* Since this idea involves contributing to multiple projects, you will interact with multiple mentors and the exact mentors will depend on the projects for which you decide to contribute. Look for mentors with `@Mentor` and `@Contributor-X` role in AOSSIE's discord and `X` role in the discord of the Stability Nexus, where X is the name of the project.
+* GitHub: @Zahnentferner ; Discord: @b.wp
+
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in https://discord.com/channels/1022871757289422898/1458870711702786068.

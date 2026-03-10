@@ -1,0 +1,59 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: '  Djed',
+  description: 'Djed Stablecoin Protocol on EVM'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Djed Stablecoin Protocol on EVM
+
+Our Djed stablecoin initiative spans multiple Solidity implementations and supporting services. Two protocol variants exist today:
+
+* **Djed Osiris** – implemented with ETH backing and ERC-20 backing. The ETH-backed deployment is live on Ethereum Classic at https://etc.djed.one, with its frontend in the main branch of [Djed-Solidity-WebDashboard](https://github.com/DjedAlliance/Djed-Solidity-WebDashboard). The ERC-20 backed Solidity contracts also exist and are paired with a deployment/frontend tool (not ready for production) at [Djed-Solidity-ERC20BaseCoin-WebUI](https://github.com/DjedAlliance/Djed-Solidity-ERC20BaseCoin-WebUI).
+* **Djed Shu** – implemented with ETH backing (contracts are ready, frontend lives in the `feat/shu-frontend` branch of the WebDashboard repo) but never launched.
+
+To support these deployments, we run several auxiliary projects:
+
+* **OrbOracle** (contracts + EVM frontend) to provision price oracles for ERC-20 collateral tokens.
+* **StablePay** (widget + merchant demos + dashboard + landing page) to enable payments with Djed; currently only works with Djed Osiris.
+
+The roadmap introduces two streamlined protocol versions:
+
+* **Djed Tefnut** – simplifies Djed Shu by removing min/max reserve ratios, removing `sellBothCoins`, and removing the linear decay of the treasury fee.
+* **Djed Isis** – simplifies Djed Osiris using the same changes as Tefnut.
+
+## Proposed GSoC Tasks
+
+1. Implement Djed Tefnut Solidity contracts backed by ETH, starting from the existing Djed Shu codebase.
+2. Update the Djed Shu frontend to support the new Tefnut contracts, exposing all required flows.
+3. Deploy Tefnut to a public testnet and validate end-to-end functionality with the updated frontend.
+4. Extend StablePay so it can interact with Tefnut-based stablecoins.
+5. Implement Djed Isis contracts with ERC-20 collateral, reusing the Djed Osiris ERC-20 backed implementation as a baseline.
+6. Adapt the ERC-20 frontend (https://github.com/DjedAlliance/Djed-Solidity-ERC20BaseCoin-WebUI) so that users can deploy and manage Djed Isis stablecoins.
+
+## Resources
+
+* [General Djed overview](/stablecoins/djed-overview)
+* [Whiteboard animation](https://www.youtube.com/watch?v=XAalC8F6-SU&t=1s)
+* [First technical talk](https://www.youtube.com/watch?v=zG-rxMCDIa0&t=8367s)
+* [Academic paper](https://eprint.iacr.org/2021/1069)
+* [Djed-Solidity (ETH-backed implementations)](https://github.com/DjedAlliance/Djed-Solidity)
+* [Djed-Solidity-ERC20BaseCoin](https://github.com/DjedAlliance/Djed-Solidity-ERC20BaseCoin)
+* [Djed-Solidity-WebDashboard](https://github.com/DjedAlliance/Djed-Solidity-WebDashboard)
+* [OrbOracle Solidity contracts](https://github.com/StabilityNexus/OrbOracle-Solidity)
+* [OrbOracle EVM frontend](https://github.com/StabilityNexus/OrbOracle-EVM-Frontend)
+* StablePay apps: [Core Widget](https://github.com/DjedAlliance/StablePay), [Merchant Website Demo](https://github.com/DjedAlliance/StablePay-MerchantWebsiteDemo), [Merchant Dashboard](https://github.com/DjedAlliance/StablePay-MerchantDashboard), [Landing Page](https://github.com/DjedAlliance/StablePay-LandingPage)
+
+
+## Mentors
+
+* Look for mentors with the @Djed role in the Discord server of the Stability Nexus.
+* GitHub: @Zahnentferner ; Discord: @b.wp
+* GitHub: @DengreSarthak ; Discord: @sarthak_09385
+* GitHub: @yogesh0509; Discord: @yogesh0509
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in development.

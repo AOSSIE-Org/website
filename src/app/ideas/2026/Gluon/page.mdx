@@ -1,0 +1,51 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'Gluon',
+  description: 'Multi-Oracle Price Feed Selection'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Gluon Reactors: Multi-Oracle Price Feed Selection
+
+The Create Reactor flow currently locks users into Pyth as the sole oracle provider. While Pyth delivers reliable data, limiting Gluon to a single source restricts resilience and the ability to leverage in-house infrastructure such as OrbOracle or widely used alternatives like Chainlink. This project unlocks configurability so that each Reactor (and the `StableCoin.sol` backing it) can choose whichever oracle best suits its market.
+
+## Motivation and Background
+
+* In Orb, all price feeds are registered via the Factory contract, and an Explorer already surfaces contract addresses and metadata.
+* Inside `StableCoin.sol` we currently store `pythOracleParam` (contract address) and `priceIdParam` (feed identifier). These must evolve into a generalized structure that can route reads to Pyth, Chainlink, or OrbOracle.
+* Yogesh’s adapters for Djed demonstrated how a unified interface can proxy multiple providers (Milkomeda, Chainlink, HebeSwap). Their approach is a useful reference, although it incurs additional internal calls, so gas/complexity trade-offs must be evaluated.
+
+Because Gluon spans Solidity contracts plus the Reactor creation web UI, the selected design must consider both on-chain and front-end ergonomics. Before coding, contributors should sync in the Stability Nexus dev channel to align on the architecture.
+
+## Proposed GSoC Tasks
+
+1. **Contract abstraction** – Define an oracle interface/struct that can encapsulate provider type, feed identifiers, and scaling. Refactor `StableCoin.sol` (and other Reactor contracts) to depend on that abstraction rather than Pyth-only storage.
+2. **Provider adapters** – Implement adapters for Pyth, Chainlink, and OrbOracle. Reuse ideas from the Djed adapter work where possible while minimizing redundant calls and ensuring consistent validation (staleness, confidence intervals, heartbeats).
+3. **Factory + configuration flow** – Update the Reactor Factory so deployments accept the new oracle configuration, enforce whitelists, and store metadata needed by downstream governance or monitoring.
+4. **Frontend enhancements** – Extend the Reactor Creation Page to let creators search/select feeds from Orb Explorer, paste Chainlink addresses, or pick Pyth IDs. The UI should surface provider-specific warnings (e.g., confidence bounds) and highlight gas trade-offs.
+5. **Testing + documentation** – Deliver simulations/tests that cover provider switching, fallback scenarios, and misconfiguration. Document the oracle-selection UX, contract interfaces, and recommended practices for integrating future providers.
+
+## Resources
+
+* [Gluon-EVM](https://github.com/StabilityNexus/Gluon-EVM) – core contracts and Reactor Factory
+* [Gluon-EVM-WebUI](https://github.com/StabilityNexus/Gluon-EVM-WebUI) – Reactor creation dashboard
+* [OrbOracle Solidity contracts](https://github.com/StabilityNexus/OrbOracle-Solidity) and [Explorer frontend](https://github.com/StabilityNexus/OrbOracle-EVM-Frontend)
+* [Pyth Network docs](https://docs.pyth.network/)
+* [Chainlink Data Feeds docs](https://docs.chain.link/data-feeds)
+* Djed adapter references (ask Yogesh / see Djed-Solidity repositories) for multi-oracle patterns
+
+
+
+## Mentors
+
+* Look for mentors with the `@Gluon` role in the Discord of the Stability Nexus
+* GitHub: @DengreSarthak ; Discord: @sarthak_09385
+* GitHub: @Zahnentferner ; Discord: @b.wp
+* GitHub: @ldgaetano; Discord: @ldgaetano
+  
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in development.

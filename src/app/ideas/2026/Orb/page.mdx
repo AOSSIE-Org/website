@@ -1,0 +1,46 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'Orb',
+  description: 'Composable Derivative Oracles'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# OrbOracle: Composable Derivative Oracles
+
+OrbOracle already exposes reliable on-chain feeds such as ETH/USD and USD/INR. Today, adding a new pair like ETH/INR or ETH/ETC requires deploying new aggregators or manually relaying values, which is inefficient and error-prone. This idea introduces oracle composition: users specify a recipe that combines existing feeds (multiply, divide, optionally invert) and the protocol mints a new derived feed whose values are computed on-chain.
+
+Example compositions:
+
+* `ETH/INR = (ETH/USD) × (USD/INR)`
+* `ETH/ETC = (ETH/USD) / (ETC/USD)`
+
+The composed oracle should be implemented as a standalone smart contract that reads from two registered base feeds and outputs the multiplication or division of their values. Because composition happens in a new contract (deployed through a dedicated factory), the existing oracle implementations remain untouched, reducing risk while encouraging reuse. Composed feeds inherit the trust assumptions and update cadence of their dependencies, eliminating redundant submissions and ensuring consistent settlement logic across Djed, Gluon, StablePay, and other StabilityNexus products.
+
+## Proposed GSoC Tasks
+
+1. Design and implement a `ComposedOracle` contract that references two existing feeds, reads their values atomically, and outputs deterministic multiply/divide results with configurable scaling, rounding, and staleness checks.
+2. Build a dedicated factory (or extend the Oracle factory) that validates requested compositions, prevents circular dependencies, and deploys new `ComposedOracle` instances with proper ownership and metadata registration.
+3. Enhance monitoring/management tooling (subgraphs, scripts) plus the OrbOracle Explorer UI so operators can configure compositions, visualize dependency graphs, and track derived-feed health.
+4. Write unit/integration/fuzz tests to prove numerical correctness, to guard against overflow/precision loss, and to ensure composed feeds gracefully handle paused/stale upstream feeds.
+5. Document the composition interface and rollout plan so downstream consumers (Djed, StablePay, Gluon, external partners) can discover, subscribe to, and rely on composed feeds without additional integration work.
+
+## Resources
+
+* [OrbOracle Solidity contracts](https://github.com/StabilityNexus/OrbOracle-Solidity)
+* [OrbOracle EVM frontend](https://github.com/StabilityNexus/OrbOracle-EVM-Frontend)
+* [StablePay](https://github.com/DjedAlliance/StablePay) – example consumer of composed feeds
+* [Djed overview](/stablecoins/djed-overview) – showcases how oracle quality impacts collateralized stablecoins
+
+
+## Mentors
+
+* Look for mentors with the `@Orb` role in the Discord of the Stability Nexus
+* GitHub: @Zahnentferner ; Discord: @b.wp
+* GitHub: DengreSarthak ; Discord: @sarthak_09385
+
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in development.

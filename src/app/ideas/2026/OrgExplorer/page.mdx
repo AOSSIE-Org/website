@@ -1,0 +1,54 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'Agora On Chain',
+  description: 'A decentralized voting platform enabling fair and transparent elections.'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Org Explorer
+
+## Background and Motivation
+
+As an organization gets larger, in number of repos and number of contributors, 
+it becomes increasingly harder to keep track of all activities within the organization
+relying only on GitHub's UI. The information shown in a organization's github profile 
+is insufficient and it is impractical to manually inspect every repo to obtain more information
+about the organization's overall activity.
+
+In the past 10 years, AOSSIE has grown significantly and 
+is now experiencing these challenges first-hand.
+
+It would be highly beneficial, for the management and governance of AOSSIE and
+other masively distributed decentralized open organizations
+to have an _Organization Explorer_ web app that would take data from github's API
+and display this data in summarized, condensed, statistical forms.
+
+
+## Overview of Tasks
+
+* Create an _Organization Explorer_ web app with good-looking UI and intuitive UX, 
+to fetch and display information about organizations in GitHub.
+
+Candidates are expected to refine these tasks in their GSoC proposals. 
+Please detail which information you are going to fetch and how you are going to display it.
+Please include figma designs of the proposed UI/UX.
+
+## Requirements
+
+* The web-app should be a lean "sunny" cloud-less application that does not rely 
+on any backend and can be easily run on any browser.
+* Data should be stored locally using local storage and indexedDB.
+* Fetched data should be cached locally, to avoid exceeding GitHub's API limits.
+
+
+## Mentors
+
+* Look for mentors with the `@Admin` role in AOSSIE's discord
+* GitHub: @Zahnentferner ; Discord: @b.wp
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) 
+and discuss this idea in https://discord.com/channels/1022871757289422898/1465651557445144586.

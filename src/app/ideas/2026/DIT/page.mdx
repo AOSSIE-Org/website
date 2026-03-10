@@ -1,0 +1,62 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'DIT',
+  description: 'Decentralized Identity Tokens'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Decentralized Identity Tokens
+
+## Background and Motivation
+
+In GSoC 2025 we created two project that aim to increase trust among people in a decentralized way: 
+TNT (Trust Network Tokens) and VouchMe (OnChain Testimonials). 
+
+In 2026, we would like to give continuation to this direction by creating a new project that allows 
+people to issue their own identity tokens and endorse the identity tokens of others.
+
+In the legacy world, identity documents are issued and endorsed by governments. 
+For example, when you get a passport, the government is endrosing the fact that you, 
+the passport holder, has the characteristics described in the passport that identify you 
+(your photo, your date of birth, your nationality, ...).
+
+With identity tokens, anyone can self-issue a token with any characteristics and anybody 
+can endorse that the holder of the token is indeed the entity that has those charcteristics.
+
+
+## Overview of Tasks
+
+* Implement token smart contract.
+* Implement frontend to interact with the token smart contract to create identity tokens and endorse identity tokens.
+
+Candidates are expected to refine these tasks in their GSoC proposals.
+
+## Requirements
+
+* The identity tokens should be ERC-721 NFTs.
+* There should be an on-chain mapping of each token to its metadata.
+* The metadata should contain fields such as: name, links to profiles in various social media websites (e.g. twitter, linkedin, ...), age, age group, nationality, residence, ...
+* All fields should be optional.
+* A user may have more than one token.
+* There should be information about which identity tokens have endorsed which other identity tokens.
+* The data structures should be efficient to retrieve which identities have endorsed a given identity and which identities have been endorsed by a given identity.
+
+
+## Resources
+
+* [VouchMe](https://github.com/StabilityNexus/VouchMe)
+* [TNT](https://github.com/StabilityNexus/TNT)
+* Also, read articles about decentralized digital identities (a.k.a. DIDs) and self-sovereign identities.
+
+## Mentors
+
+* Look for mentors with the roles @Contributor-StabilityNexus in AOSSIE's Discord and the @TNT and @VouchMe roles in the Discord of teh Stability Nexus.
+* GitHub: @KanishkSogani; Discord: @kanishk11
+* GitHub: @Zahnentferner ; Discord: @b.wp
+
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in https://discord.com/channels/995968619034984528/1461697098767532269.

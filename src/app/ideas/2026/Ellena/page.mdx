@@ -1,0 +1,65 @@
+import { IdeaLayout } from '@/components/ideas/IdeaLayout'
+
+export const meta = {
+  title: 'Ellena',
+  description: 'Ellena'
+}
+
+export default ({ children }) => <IdeaLayout meta={meta}>{children}</IdeaLayout>
+
+# Ell-ena
+
+## Background and Motivation
+
+**Project Size: Large**
+
+[Ell-ena](https://github.com/AOSSIE-Org/Ell-ena) is an AI-powered product manager that automates task management by creating to-do items, tickets, and transcribing meetings while maintaining full work context. 
+
+Today, teams often use separate tools for meetings, task tracking, documentation, and communication. Switching between these tools makes work harder, causes important details to be missed, and slows teams down. Ell-ena aims to reduce this friction by providing a single, chat-based workspace where users can manage their work naturally and efficiently. It is input-agnostic and features a chat interface where users can interact naturally.
+
+## Current State and Technical Foundation
+Ell-ena has moved beyond an initial idea and now exists as a working application with a solid scope which we planned before.
+
+- A cross-platform Flutter application with a mobile-first design and chat-based interface
+- A Supabase backend used for authentication, data storage, realtime updates, and structured data handling
+- Existing support for meeting transcription, task and ticket creation, and basic summarization
+- A flexible interaction model that allows users to give commands through chat and automate actions
+
+While the core features are already in place, the project still depends on external services and lacks full testing, deployment, and deeper integrations.
+
+## Overview of Tasks
+
+#### Web Version - Use Flutter for Web
+We have a mobile app in place currently. Need to deploy a web version considering most clients would also be sitting at their desktops and work with their product requirements, attend meetings and more.
+
+#### GitHub + Issue Tracker Native Intelligence
+Integrate Github to automate issue and PR lifecycle on Github directly. Opening an Engineering labelled issue on Ellena kanban board should directly open a Github issue. Creating a PR for that issue, should move the ticket on the kanban board to "In review" status. Once the PR is merged, the ticket should be moved to "Done" status.
+
+#### In-house Meeting Transcription System
+Replace the current third-party transcription service with an in-house transcription system. The goal is for Ell-ena to handle meeting transcriptions on its own and store them directly in the existing backend so meeting notes and summaries continue to work as expected.
+
+#### Migration to Self-Hosted Language Models
+Replace the currently used external language models with self-hosted open-source models. This task focuses on making sure Ell-ena’s existing features like summaries and task creation continue to work using locally hosted models instead of external services.
+
+#### RAG Context Optimization
+Improve how Ell-ena selects context for summaries and task creation. Instead of passing all tasks and tickets directly in the context, only relevant information should be selected so responses remain accurate and efficient when using self hosted models with smaller context limits.
+
+#### Unit testing and Integration testing
+Add unit and integration tests to the project to make feature development and bug fixing less error-prone. Set up GitHub Actions workflows to run flutter analyze, tests, and build checks for Android and iOS before merging pull requests.
+
+#### App Store Publishing
+Prepare Ell-ena for public release by publishing the mobile application on the avaialable play store. This includes making sure the app meets store requirements and feels like a complete product rather than just for a Ell-ena developers.
+
+
+Candidates are expected to refine these tasks in their GSoC proposals.
+
+
+## Mentors
+
+* Look for mentors with the roles @Mentor and @Contributor-Ellena in AOSSIE's Discord
+* GitHub: @jddeep; Discord: @jddeep
+* GitHub: @SharkyBytes; Discord: sharkybytes_
+
+## Communication Channel
+
+Join our Discord servers (https://discord.gg/xnmAPS7zqB and https://discord.gg/fuuWX4AbJt) and discuss this idea in (https://discord.com/channels/1022871757289422898/1317913663360864346).
