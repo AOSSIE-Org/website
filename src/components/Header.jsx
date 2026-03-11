@@ -364,7 +364,7 @@ export function Header() {
               <div className="flex flex-1">
                   <HomeContainer>
                     <Home />
-                  </HomeContainer>
+                  </HomeContainer>git commit -m "Resolve merge conflicts with main"
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
