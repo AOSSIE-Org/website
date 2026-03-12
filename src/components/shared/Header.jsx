@@ -74,7 +74,13 @@ function MoonIcon(props) {
 function MobileNavItem({ href, children }) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <Popover.Button
+        as={Link}
+        href={href}
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        className="block py-2"
+      >
         {children}
       </Popover.Button>
     </li>
@@ -144,6 +150,8 @@ function NavItem({ href, children }) {
     <li>
       <Link
         href={href}
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
