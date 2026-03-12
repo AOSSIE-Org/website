@@ -277,6 +277,7 @@ const projects = [
     discordLink: 'https://discord.gg/xnmAPS7zqB',
   },
   {
+    slug: 'agora-blockchain',
     name: 'Agora Blockchain',
     description:
       'There isn’t just one voting algorithm, there’s hundreds. Therefore, we developed Agora to allow for democratic elections using any algorithm.',
@@ -286,45 +287,60 @@ const projects = [
     },
     logo: AgoraLogo,
     status: 'ongoing',
-    category: 'Ongoing'
+    category: 'Ongoing',
+    githubLink: 'https://github.com/AOSSIE-Org/Agora-Blockchain', 
+    discordLink: 'https://discord.gg/xnmAPS7zqB', 
   },
   {
+    slug: 'eduaid',
     name: 'EduAid',
     description:
       'An online tool that can generate short quizzes on input educational content can be of great use to teachers and students alike as it can help retain important information, frame questions and quickly revise large chunks of content.',
     link: { href: 'https://github.com/AOSSIE-Org/EduAid', label: 'EduAid' },
     logo: DefaultLogo,
     status: 'ongoing',
-    category: 'Ongoing'
+    category: 'Ongoing',
+    githubLink: 'https://github.com/AOSSIE-Org/EduAid', 
+    discordLink: 'https://discord.gg/xnmAPS7zqB', 
   },
   {
+    slug: 'openchat',
     name: 'OpenChat',
     description:
       'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
     link: { href: '#', label: 'OpenChat' },
     logo: DefaultLogo,
     status: 'ongoing',
-    category: 'Ongoing'
+    category: 'Ongoing',
+    githubLink: '#', 
+    discordLink: 'https://discord.gg/xnmAPS7zqB', 
   },
   {
+    slug: 'resonate',
     name: 'Resonate',
     description:
       'With the rising popularity of social voice platforms such as Clubhouse, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth.  ',
     link: { href: 'https://github.com/AOSSIE-Org/Resonate', label: 'Resonate' },
     logo: ResonateLogo,
     status: 'ongoing',
-    category: 'Ongoing'
+    category: 'Ongoing',
+    githubLink: 'https://github.com/AOSSIE-Org/Resonate', 
+    discordLink: 'https://discord.gg/xnmAPS7zqB', 
   },
   {
+    slug: 'monumento',
     name: 'Monumento',
     description:
       'Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform.',
     link: { href: 'https://github.com/AOSSIE-Org/Monumento', label: 'Monumento' },
     logo: MonumentoLogo,
     status: 'ongoing',
-    category: 'Ongoing'
+    category: 'Ongoing',
+    githubLink: 'https://github.com/AOSSIE-Org/Monumento', 
+    discordLink: 'https://discord.gg/xnmAPS7zqB', 
   },
   {
+    slug: 'social-street-smart',
     name: 'Social Street Smart',
     description:
       'With the adevent of Internet, the problems faced by the people have also grown. These include abusive languages.',
@@ -334,7 +350,9 @@ const projects = [
     },
     logo: SSSLogo,
     status: 'ongoing',
-    category: 'Ongoing'
+    category: 'Ongoing',
+    githubLink: 'https://github.com/AOSSIE-Org/Social-Street-Smart', 
+    discordLink: 'https://discord.gg/xnmAPS7zqB', 
   },
   {
     slug: 'agora-web',
