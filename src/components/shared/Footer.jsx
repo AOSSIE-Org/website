@@ -59,19 +59,19 @@ export function Footer() {
                   <Link aria-label="Contact by Mail" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
                     <FontAwesomeIcon icon={faEnvelope} size='xl' />
                   </Link>
-                  <Link aria-label="Follow on GitHub" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org'>
+                  <Link aria-label="Follow on GitHub" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org' target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithub} size='xl' />
                   </Link>
-                  <Link aria-label="Join on Discord" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.gg/hjUhu33uAn'>
+                  <Link aria-label="Join on Discord" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://discord.gg/hjUhu33uAn' target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faDiscord} size='xl' />
                   </Link>
-                  <Link aria-label="Follow on LinkedIn" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.linkedin.com/company/aossie/'>
+                  <Link aria-label="Follow on LinkedIn" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.linkedin.com/company/aossie/' target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size='xl' />
                   </Link>
-                  <Link aria-label="Follow on X (Twitter)" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://x.com/aossie_org'>
+                  <Link aria-label="Follow on X (Twitter)" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://x.com/aossie_org' target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faXTwitter} size='xl' />
                   </Link>
-                  <Link aria-label="Subscribe on YouTube" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.youtube.com/@AOSSIE-Org'>
+                  <Link aria-label="Subscribe on YouTube" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.youtube.com/@AOSSIE-Org' target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faYoutube} size='xl' />
                   </Link>
                 </div>
