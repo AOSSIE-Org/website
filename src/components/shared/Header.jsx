@@ -127,7 +127,7 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/ideas">Ideas</MobileNavItem>
                 <MobileNavItem href="/apply">Apply</MobileNavItem>
-                <MobileNavItem href="https://github.com/AOSSIE-Org">Github</MobileNavItem>
+                <MobileNavItem href="https://github.com/AOSSIE-Org">GitHub</MobileNavItem>
                 <MobileNavItem href="https://discord.gg/hjUhu33uAn">Discord</MobileNavItem>
               </ul>
             </nav>
@@ -162,9 +162,9 @@ function NavItem({ href, children }) {
 
 function DesktopNavigation(props) {
   return (
-    <nav {...props} className='fixed  '>
+    <nav {...props}>
       <ul className="flex font-mono rounded-full bg-white/90 px-3 text-md font-semibold text-zinc-800 shadow-2xl shadow-black/4 dark:shadow-xl dark:shadow-white/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About </NavItem>
+        <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/ideas">Ideas</NavItem>
         <NavItem href="/apply">Apply</NavItem>
