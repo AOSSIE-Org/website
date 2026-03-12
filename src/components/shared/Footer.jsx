@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Container } from '@/components/shared/Container'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faGithub, faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faXTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 function NavLink({ href, children }) {
   return (
@@ -55,7 +55,7 @@ export function Footer() {
                {/* Social Links */}
               <div>
                 <h3 className="font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100 tracking-wider uppercase mb-4">Connect</h3>
-                <div className="flex gap-6">
+                <div className="flex flex-wrap gap-6">
                   <Link aria-label="Contact by Mail" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
                     <FontAwesomeIcon icon={faEnvelope} size='xl' />
                   </Link>
@@ -70,6 +70,9 @@ export function Footer() {
                   </Link>
                   <Link aria-label="Follow on X (Twitter)" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://x.com/aossie_org'>
                     <FontAwesomeIcon icon={faXTwitter} size='xl' />
+                  </Link>
+                  <Link aria-label="Subscribe on YouTube" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://www.youtube.com/@AOSSIE-Org'>
+                    <FontAwesomeIcon icon={faYoutube} size='xl' />
                   </Link>
                 </div>
               </div>
