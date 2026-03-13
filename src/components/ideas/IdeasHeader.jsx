@@ -68,12 +68,14 @@ export function IdeasHeader({ validIdeasData, currentYear = 2025, children }) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link
-                    href="mailto:aossie.oss@gmail.com"
-                    className="inline-block rounded-md border border-transparent bg-[#00843D] px-8 py-3 text-base font-medium text-white hover:bg-[#006e32] md:py-4 md:px-10 md:text-lg font-mono dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-500 transition-colors"
-                  >
-                    Submit Your Idea
-                  </Link>
+                  <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=aossie.oss@gmail.com&su=New%20Project%20Idea&body=Hello%20AOSSIE%20Team"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block rounded-md border border-transparent bg-[#00843D] px-8 py-3 text-base font-medium text-white hover:bg-[#006e32] md:py-4 md:px-10 md:text-lg font-mono dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-500 transition-colors"
+>
+  Submit Your Idea
+</a>
                 </motion.div>
               </motion.div>
             </Container.Inner>
