@@ -236,6 +236,17 @@ function HomeContainer({ className, ...props }) {
 }
 
 function Home({ large = false, className, ...props }) {
+  const pathname = usePathname()
+
+  function handleClick(e) {
+    if (pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    }
+  }
   return (
     <Link
       href="/"
@@ -378,11 +389,9 @@ export function Header() {
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                {!isHomePage && (
                   <HomeContainer>
                     <Home />
                   </HomeContainer>
-                )}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
