@@ -9,7 +9,6 @@ import remarkGfm from 'remark-gfm-4';
 
 import { Container } from '@/components/shared/Container';
 import { Prose } from '@/components/shared/Prose';
-import { FeedbackForm } from '@/components/products/FeedbackForm';
 import projects from '@/helper/projects';
 
 export async function generateStaticParams() {
@@ -181,7 +180,6 @@ export default function ProductPage({ params }) {
             </div>
          </div>
          
-         <FeedbackForm />
     </Container>
   );
 }
