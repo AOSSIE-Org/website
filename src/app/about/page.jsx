@@ -8,10 +8,10 @@ import { Timeline } from '@/components/about/Timeline';
 import { Team } from '@/components/about/Team';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Filler } from 'chart.js';
 import { motion } from 'framer-motion';
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Filler);
 
 export default function About() {
   const [stats, setStats] = useState({

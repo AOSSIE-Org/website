@@ -1,22 +1,21 @@
 'use client'
 
-import Link from 'next/link';
-import Grid from '@mui/material/Grid';
-import MuiCard from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Container } from '@/components/shared/Container';
-import { Banner } from '@/components/shared/Banner';
-import Image from 'next/image';
+import Link from 'next/link'
+import Grid from '@mui/material/Grid'
+import MuiCard from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { Container } from '@/components/shared/Container'
+import { Banner } from '@/components/shared/Banner'
+import Image from 'next/image'
 import projects from '@/helper/projects'
 import { CardProduct } from '@/components/products/CardProduct'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
-
 
 function LinkIcon(props) {
   return (
@@ -32,16 +31,26 @@ function LinkIcon(props) {
 // Cards grid
 const Cards = ({ projectList }) => {
   return (
-    <Grid container spacing={{ xs: 2, md: 4 }} sx={{ paddingTop: '40px', justifyContent: 'center' }}>
+    <Grid
+      container
+      spacing={{ xs: 2, md: 4 }}
+      sx={{ paddingTop: '40px', justifyContent: 'center' }}
+    >
       {projectList.map((project, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index} component={motion.div} 
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+          key={index}
+          component={motion.div}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           <MuiCard
-            className='dark:bg-[#2A2A2A] dark:border-white transition-transform hover:scale-[1.02] duration-300'
+            className="transition-transform duration-300 hover:scale-[1.02] dark:border-white dark:bg-[#2A2A2A]"
             sx={{
               height: 400,
               borderRadius: 2,
@@ -89,46 +98,58 @@ const Cards = ({ projectList }) => {
                 {project.description}
               </Typography>
             </CardContent>
-            <CardActions sx={{ justifyContent: 'center', flexDirection: 'column', pb: 3 }}>
-              <Link href={project.link.href} className="relative z-10 mt-2 flex items-center text-md font-semibold font-mono text-zinc-600 transition hover:text-[#00843D] dark:hover:text-yellow-400 dark:text-zinc-200">
+            <CardActions
+              sx={{ justifyContent: 'center', flexDirection: 'column', pb: 3 }}
+            >
+              <Link
+                href={project.link.href}
+                className="text-md relative z-10 mt-2 flex items-center font-mono font-semibold text-zinc-600 transition hover:text-[#00843D] dark:text-zinc-200 dark:hover:text-yellow-400"
+              >
                 <LinkIcon className="h-6 w-6 flex-none scale-110" />
                 <span className="ml-2">{project.link.label}</span>
               </Link>
-              <div className="flex gap-6 mt-4">
-                 <Link href={project.link.href} aria-label="GitHub" className="text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white transition">
-                    <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
-                 </Link>
-                 <Link href="https://discord.gg/hjUhu33uAn" aria-label="Discord" className="text-zinc-500 hover:text-[#5865F2] dark:text-zinc-400 dark:hover:text-[#5865F2] transition">
-                     <FontAwesomeIcon icon={faDiscord} className="w-6 h-6" />
-                 </Link>
-                 </div>
+              <div className="mt-4 flex gap-6">
+                <Link
+                  href={project.link.href}
+                  aria-label="GitHub"
+                  className="text-zinc-500 transition hover:text-black dark:text-zinc-400 dark:hover:text-white"
+                >
+                  <FontAwesomeIcon icon={faGithub} className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://discord.gg/hjUhu33uAn"
+                  aria-label="Discord"
+                  className="text-zinc-500 transition hover:text-[#5865F2] dark:text-zinc-400 dark:hover:text-[#5865F2]"
+                >
+                  <FontAwesomeIcon icon={faDiscord} className="h-6 w-6" />
+                </Link>
+              </div>
             </CardActions>
           </MuiCard>
         </Grid>
-      ))
-      }
-    </Grid >
-  );
-};
+      ))}
+    </Grid>
+  )
+}
 
 //Page header
 
 const ProjectSection = () => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
-      className="ideas-text flex items-center justify-center mb-8 relative"
+      className="ideas-text relative mb-8 flex items-center justify-center"
     >
 
-      <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl text-center">
+      <h1 className="text-center font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-6xl md:text-5xl lg:text-6xl">
         PROJECTS
       </h1>
 
     </motion.div>
-  );
-};
+  )
+}
 
 
 // Main page component
@@ -169,9 +190,8 @@ export default function Projects() {
             </div>
           </div>
           */}
-
         </Container.Inner>
       </Container>
     </>
-  );
+  )
 }
