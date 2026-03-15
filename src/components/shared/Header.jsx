@@ -380,11 +380,11 @@ export function Header() {
         />
         <div
           ref={headerRef}
-          className="top-0 z-10 h-16 pt-6"
-          style={{ position: 'var(--header-position)' }}
+          className="top-0 z-10 h-16"
+          style={{ position: 'var(--header-position, sticky)' }}
         >
           <Container
-            className="top-[var(--header-top,theme(spacing.6))] w-full"
+            className="top-[var(--header-top,0px)] w-full"
             style={{ position: 'var(--header-inner-position)' }}
           >
             <div className="relative flex gap-4">
