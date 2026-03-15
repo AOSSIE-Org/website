@@ -9,6 +9,16 @@ import CarbonLogo from '@/images/Carbon.png'
 import ScholarLogo from '@/images/scholar.png'
 import StabilityNexusLogo from '@/images/StabilityNexus.png'
 import DjedAllianceLogo from '@/images/DjedAlliance.png'
+import DevrAILogo from '@/images/DevrAILogo.png'
+import EllenaLogo from '@/images/EllenaLogo.svg'
+import LibrEdLogo from '@/images/LibrEdLogo.png'
+import MindTheWordLogo from '@/images/MindTheWordLogo.png'
+import NeuroTrackLogo from '@/images/NeuroTrackLogo.svg'
+import OpenChatLogo from '@/images/OpenChatLogo.svg'
+import OrgExplorerLogo from '@/images/OrgExplorerLogo.svg'
+import ReinLogo from '@/images/ReinLogo.svg'
+import SkeptikLogo from '@/images/SkeptikLogo.png'
+import StarcrossLogo from '@/images/StarcrossLogo.png'
 
 const projects = [
   {
@@ -56,7 +66,7 @@ const projects = [
     description:
       'An open-source AI-powered platform designed to automate and enhance developer relations. It leverages Generative AI and agentic workflows to streamline community engagement and outreach.',
     link: { href: 'https://github.com/AOSSIE-Org/Devr.AI', label: 'Devr.AI' },
-    logo: DefaultLogo,
+    logo: DevrAILogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Devr.AI',
@@ -68,7 +78,7 @@ const projects = [
     description:
       'A cross-platform LAN-based remote input controller that allows users to control devices over a local network seamlessly.',
     link: { href: 'https://github.com/AOSSIE-Org/Rein', label: 'Rein' },
-    logo: DefaultLogo,
+    logo: ReinLogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Rein',
@@ -92,7 +102,7 @@ const projects = [
     description:
       'A self-learning assistant that helps users learn and study more effectively using AI-powered tools and personalized learning paths.',
     link: { href: 'https://github.com/AOSSIE-Org/LibrEd', label: 'LibrEd' },
-    logo: DefaultLogo,
+    logo: LibrEdLogo,
     status: 'production',
     category: 'Ready to download',
     downloadLink: 'https://github.com/AOSSIE-Org/LibrEd/releases',
@@ -153,7 +163,7 @@ const projects = [
     description:
       'An intuitive dashboard to explore large GitHub organizations, providing insights into repositories, contributors, and activity metrics.',
     link: { href: 'https://github.com/AOSSIE-Org/OrgExplorer', label: 'OrgExplorer' },
-    logo: DefaultLogo,
+    logo: OrgExplorerLogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/OrgExplorer',
@@ -165,7 +175,7 @@ const projects = [
     description:
       'A smart AI product manager that streamlines task, project, and meeting management through a simple chat interface.',
     link: { href: 'https://github.com/AOSSIE-Org/Ell-ena', label: 'Ell-ena' },
-    logo: DefaultLogo,
+    logo: EllenaLogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/Ell-ena',
@@ -213,7 +223,7 @@ const projects = [
     description:
       'A neuroscience-focused tracking application for monitoring and analyzing neural activity and cognitive performance.',
     link: { href: 'https://github.com/AOSSIE-Org/NeuroTrack', label: 'NeuroTrack' },
-    logo: DefaultLogo,
+    logo: NeuroTrackLogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/NeuroTrack',
@@ -237,7 +247,7 @@ const projects = [
     description:
       'An astronomy application that helps users explore and identify celestial objects, constellations, and astronomical events.',
     link: { href: 'https://github.com/AOSSIE-Org/starcross', label: 'Starcross' },
-    logo: DefaultLogo,
+    logo: StarcrossLogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/starcross',
@@ -261,7 +271,7 @@ const projects = [
     description:
       'A browser extension for language learning that randomly translates words on webpages to help users learn new languages while browsing.',
     link: { href: 'https://github.com/AOSSIE-Org/MindTheWord', label: 'MindTheWord' },
-    logo: DefaultLogo,
+    logo: MindTheWordLogo,
     status: 'ongoing',
     category: 'Production ready',
     githubLink: 'https://github.com/AOSSIE-Org/MindTheWord',
@@ -305,7 +315,7 @@ const projects = [
     description:
       'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
     link: { href: '#', label: 'OpenChat' },
-    logo: DefaultLogo,
+    logo: OpenChatLogo,
     status: 'ongoing',
     category: 'Ongoing'
   },
@@ -371,7 +381,7 @@ const projects = [
     description:
       'A decentralised peer-to-peer chat application built with Flutter, enabling secure and private messaging without a central server.',
     link: { href: 'https://github.com/AOSSIE-Org/OpenPeerChat-flutter', label: 'OpenPeerChat-flutter' },
-    logo: DefaultLogo,
+    logo: OpenChatLogo,
     status: 'ongoing',
     category: 'Ongoing',
     githubLink: 'https://github.com/AOSSIE-Org/OpenPeerChat-flutter',
@@ -383,7 +393,7 @@ const projects = [
     description:
       'A React Native implementation of the decentralised peer-to-peer OpenPeerChat platform for secure and private messaging.',
     link: { href: 'https://github.com/AOSSIE-Org/OpenPeerChat-react-native', label: 'OpenPeerChat-react-native' },
-    logo: DefaultLogo,
+    logo: OpenChatLogo,
     status: 'ongoing',
     category: 'Ongoing',
     githubLink: 'https://github.com/AOSSIE-Org/OpenPeerChat-react-native',
@@ -395,7 +405,7 @@ const projects = [
     description:
       'A library and tool for proof compression. Given a proof of a theorem, Skeptik attempts to find a smaller proof of the same theorem.',
     link: { href: 'https://github.com/AOSSIE-Org/Skeptik', label: 'Skeptik' },
-    logo: DefaultLogo,
+    logo: SkeptikLogo,
     status: 'ongoing',
     category: 'Ongoing',
     githubLink: 'https://github.com/AOSSIE-Org/Skeptik',
