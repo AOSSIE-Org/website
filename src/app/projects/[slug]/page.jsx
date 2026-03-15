@@ -13,14 +13,14 @@ import projects from '@/helper/projects';
 
 export async function generateStaticParams() {
   return projects
-    .filter((p) => p.slug)
-    .map((product) => ({
-    slug: product.slug,
-  }));
+    .filter((p) => p?.slug && p.slug !== "undefined")
+    .map((p) => ({
+      slug: p.slug,
+    }));
 }
 
 export async function generateMetadata({ params }) {
-  const product = projects.find((p) => p.slug === params.slug);
+  const product = projects.find((p) => p?.slug === params?.slug);
   if (!product) {
     return {
       title: 'Project Not Found',
