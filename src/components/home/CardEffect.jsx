@@ -15,7 +15,7 @@ export function CardEffect({ heading, content, logo }) {
             whileInView={{ opacity: 1, rotateY: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group relative block h-[22rem] w-full cursor-pointer overflow-hidden [perspective:1000px]"
+            className="group relative block h-[22rem] w-full cursor-pointer [perspective:1000px]"
         >
             <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
