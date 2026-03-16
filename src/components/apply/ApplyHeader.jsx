@@ -1,12 +1,16 @@
 'use client'
 
 import { Container } from '@/components/shared/Container'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub} from '@fortawesome/free-brands-svg-icons'
 import { faLightbulb, faComments, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 export function ApplyHeader({ children }) {
+    const { scrollY } = useScroll();
+    const smoothScroll = useSpring(scrollY, { stiffness: 100, damping: 30, restDelta: 0.001 });
+    const translateX = useTransform(smoothScroll, [0, 800], [0, -30]);
+
     const steps = [
         { icon: faDiscord, label: "Join Discord" },
         { icon: faGithub, label: "Start Contributing" },
@@ -34,6 +38,7 @@ export function ApplyHeader({ children }) {
 
                 {/* New Horizontal Timeline Steps */}
                 <motion.div 
+                    style={{ x: translateX }}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
