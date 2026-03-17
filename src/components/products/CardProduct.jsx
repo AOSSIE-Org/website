@@ -19,8 +19,8 @@ export function CardProduct({ product }) {
       viewport={{ once: true }}
       
       whileHover={{ y: -5 }}
-      transition={{ duration: 0.1, ease: "easeOut" }}
-      className="group relative flex flex-col items-center p-6 bg-white dark:bg-zinc-800/50 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-100 border border-zinc-200 dark:border-zinc-700 hover:border-[#00843D] dark:hover:border-yellow-400 h-full"
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="group relative flex flex-col items-center p-6 bg-white dark:bg-zinc-800/50 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-200 border border-zinc-200 dark:border-zinc-700 hover:border-[#00843D] dark:hover:border-yellow-400 h-full"
     >
       <div className="relative w-24 h-24 mb-4">
         <Image
