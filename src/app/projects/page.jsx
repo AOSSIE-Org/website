@@ -180,6 +180,26 @@ export default function Projects() {
     <>
       <Container className="mt-20 mb-28">
         <Container.Inner>
+           {/* intro text */}
+          <div className="mt-20 mb-12">
+            <motion.div
+              className="pt-5 mb-10 text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h5 className="font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6 text-center">
+                Projects That Create an {' '}
+                <span className="text-[#00843D] dark:text-yellow-400">
+                  Impact
+                </span>
+              </h5>
+              <p className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 font-mono text-center">
+                Free, open-source, and built by a global community of developers, designers, researchers, and innovators.
+              </p>
+            </motion.div>
+          </div>
+
           <div className="mb-16 grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
             {projects
               .slice()

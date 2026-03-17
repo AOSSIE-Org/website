@@ -11,24 +11,11 @@ export function IdeasHeader({ validIdeasData, currentYear = 2025, children }) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="ideas-text flex items-center justify-center mb-8 relative"
+              className="ideas-text flex items-center justify-center pt-5 relative"
             >
-              <div
-                className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center dark:bg-[url('/logo.png')] bg-[url('/logo.png')] absolute left-10"
-                alt="GSOC Logo"
-              ></div>
-
-
-              <h1 className="font-mono text-6xl font-extrabold tracking-tighter text-[#32a852] dark:text-yellow-400 sm:text-5xl md:text-5xl lg:text-6xl text-center">
-                IDEAS
-              </h1>
-
-              <div
-                className="hidden md:block w-[75px] h-[75px] m-2 bg-cover bg-center absolute right-10"
-                style={{ backgroundImage: "url('/logo.png')" }}
-                aria-label="Logo"
-              ></div>
-
+                <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6 text-center'> 
+                  <span className="text-[#00843D] dark:text-yellow-400">Think.</span> Build. Ship.
+                </h5>
             </motion.div>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

@@ -209,13 +209,16 @@ export default function About() {
         <div className="max-w-4xl mx-auto px-4 text-center">
 
           {/* intro text */}
-          <div className="my-8">
+          <div className="mt-20 mb-12">
             <motion.p
-              className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 font-mono mt-5 mb-10 text-center"
+              className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 font-mono pt-5 mb-10 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
+              <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6 text-center'> 
+                    Get to know our <span className="text-[#00843D] dark:text-yellow-400">Community</span>
+                    </h5>
               <span className="text-[#32a852] font-bold">AOSSIE</span> (Australian Open
               Source Software Innovation and Education) is a not-for-profit
               organization dedicated to project-based innovation-focused and
