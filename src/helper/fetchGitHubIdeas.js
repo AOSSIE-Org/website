@@ -122,9 +122,12 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
       headers: {
         'Accept': 'application/vnd.github.v3+json',
       },
-    });
-
+      next: { revalidate: 3600 }, 
+    })
     if (!response.ok) {
+      if (response.status === 404) {
+        return []; // Return empty array silently for 404
+      }
       throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
     }
 

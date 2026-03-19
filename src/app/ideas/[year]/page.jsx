@@ -1,32 +1,41 @@
 import { getIdeas } from '@/lib/ideas'
+import { fetchIdeasFromGitHub, getCurrentYear } from '@/helper/fetchGitHubIdeas'
 import { IdeasList } from '@/components/ideas/IdeasList'
 import { Container } from '@/components/shared/Container'
 
 export async function generateMetadata({ params }) {
+  const { year } = params
   return {
-    title: `Idea List ${params.year}`,
-    description: `Idea List for GSOC ${params.year}`,
+    title: `Idea List ${year}`,
+    description: `Idea List for GSOC ${year}`,
   }
 }
 
 export async function generateStaticParams() {
-   // Define the years we support
-  return [
-    { year: '2022' },
-    { year: '2023' },
-    { year: '2024' },
-    { year: '2025' },
-  ]
+  const currentYear = getCurrentYear()
+  const years = Array.from({ length: currentYear - 2022 + 1 }, (_, i) => (2022 + i).toString())
+  return years.map(year => ({ year }))
 }
 
 export default async function YearIdeasPage({ params }) {
   const { year } = params
-  const articles = await getIdeas(year)
+  const localArticles = await getIdeas(year)
+  const githubArticles = await fetchIdeasFromGitHub(year)
   
-  if (!articles) {
+  // Merge and remove duplicates by slug
+  const allArticles = [...localArticles]
+  githubArticles.forEach(gi => {
+    if (!allArticles.some(li => li.slug.toLowerCase() === gi.slug.toLowerCase())) {
+        allArticles.push(gi)
+    }
+  })
+
+  const articles = allArticles.sort((a, b) => (a.title || '').localeCompare(b.title || ''))
+  
+  if (articles.length === 0) {
       return (
           <Container className="mt-32">
-              <h1 className="text-center text-4xl font-bold">Ideas not found for {year}</h1>
+              <h1 className="text-center text-4xl font-bold font-mono">Ideas not found for {year}</h1>
           </Container>
       )
   }
