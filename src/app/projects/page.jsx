@@ -176,6 +176,10 @@ export default function Projects() {
   )
   const ongoing = projects.filter((p) => p.category === 'Ongoing')
 
+  const sortedProjects = [...projects].sort((a, b) =>
+    (a.name || '').localeCompare(b.name || '', undefined, { sensitivity: 'base' })
+  )
+
   return (
     <>
       <Container className="mt-20 mb-28">
@@ -201,12 +205,9 @@ export default function Projects() {
           </div>
 
           <div className="mb-16 grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
-            {projects
-              .slice()
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .map((product) => (
-                <CardProduct key={product.slug} product={product} />
-              ))}
+            {sortedProjects.map((product) => (
+              <CardProduct key={product.slug} product={product} />
+            ))}
           </div>
 
           {/* 
