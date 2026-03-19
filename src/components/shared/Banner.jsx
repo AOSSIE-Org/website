@@ -54,7 +54,7 @@ export function Banner() {
             </motion.p>
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mt-5">
               <Link href="/apply" legacyBehavior>
-                <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
+                <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="cursor-pointer group relative rounded-lg inline-flex items-center overflow-hidden bg-white dark:bg-black px-8 py-3 text-black dark:text-white focus:outline-none font-mono font-semibold">
                   Apply for a GSoC spot with AOSSIE
                 </motion.a>
               </Link>
