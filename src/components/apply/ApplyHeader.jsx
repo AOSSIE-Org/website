@@ -84,7 +84,7 @@ export function ApplyHeader({ children }) {
                 </motion.div>
 
                 <Container.Inner className='mt-4 mx-4 md:m-16'>
-                    <ol ref={containerRef} className="relative">
+                    <div ref={containerRef} className="relative">
 
                         {/* background track line */}
                         <div className="absolute left-[-1px] top-0 h-full w-[3px] rounded-full bg-zinc-200 dark:bg-zinc-700" />
@@ -113,7 +113,7 @@ export function ApplyHeader({ children }) {
                         </motion.div>
 
                         {children}
-                    </ol>
+                    </div>
                 </Container.Inner>
             </div>
         </Container.Outer>
