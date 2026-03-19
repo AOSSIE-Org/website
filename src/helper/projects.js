@@ -318,7 +318,7 @@ const projects = [
   name: 'OpenChat',
     description:
       'a decentralised platform for secure and private messaging and file sharing built on top of blockchain',
-    link: { href: '#', label: 'OpenChat' },
+    link: { href: '/projects/openchat', label: 'OpenChat' },
     logo: OpenChatLogo,
     status: 'ongoing',
     category: 'Ongoing'
