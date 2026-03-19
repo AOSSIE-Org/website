@@ -26,12 +26,12 @@ export function ApplyHeader({ children }) {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="mt-5 mx-4 md:mx-16 text-center md:text-left"
+                  className="mt-5 mb-12 mx-4 md:mx-16 text-center flex flex-col items-center justify-center"
                 >
-                    <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6'> 
+                    <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6 text-center'> 
                     Your Journey to <span className="text-[#00843D] dark:text-yellow-400">Open Source</span>
                     </h5>
-                    <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-8 max-w-4xl'>
+                    <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-8 max-w-4xl text-center'>
                     Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
                     </p>
                 </motion.div>
