@@ -46,7 +46,7 @@ export function Banner() {
               }
             }}
           >
-            <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="font-mono text-5xl font-black tracking-tighter text-white dark:text-black sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
+            <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="font-mono text-5xl font-black tracking-normal text-white dark:text-black sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
               Participate in Google <br /> Summer of Code!
             </motion.h2>
             <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mt-4 text-lg tracking-tighter text-white dark:text-black font-medium font-mono">
