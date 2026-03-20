@@ -6,14 +6,24 @@ import rehypeRaw from 'rehype-raw';
 import { Container } from '@/components/shared/Container';
 
 export async function generateStaticParams() {
-  const currentYear = getCurrentYear().toString();
+  const currentYear = getCurrentYear();
+  const allParams = [];
 
-  const githubIdeas = await fetchIdeasFromGitHub(currentYear);
+  //  Only check last 2 years (to limit api calls)
+  const yearsToCheck = [currentYear, currentYear - 1];
 
-  return githubIdeas.map(idea => ({
-    year: currentYear,
-    slug: idea.slug,
-  }));
+  for (const year of yearsToCheck) {
+    const githubIdeas = await fetchIdeasFromGitHub(year.toString());
+
+    githubIdeas.forEach((idea) => {
+      allParams.push({
+        year: year.toString(),
+        slug: idea.slug,
+      });
+    });
+  }
+
+  return allParams;
 }
 
 export async function generateMetadata({ params }) {
