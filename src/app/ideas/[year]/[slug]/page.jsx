@@ -1,11 +1,10 @@
-import { fetchIdeaContent, fetchIdeasFromGitHub, getCurrentYear } from '@/helper/fetchGitHubIdeas';
+import { fetchIdeaContent, fetchIdeaSlugsFromGitHub, getCurrentYear } from '@/helper/fetchGitHubIdeas';
 import { IdeaLayout } from '@/components/ideas/IdeaLayout';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm-4';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import { notFound } from 'next/navigation';
-import { getIdeas } from '@/lib/ideas';
 
 //  Generate all static routes
 export async function generateStaticParams() {
@@ -16,21 +15,12 @@ export async function generateStaticParams() {
     for (let year = 2022; year <= currentYear; year++) {
       const yearStr = year.toString();
 
-      // GitHub ideas
-      const githubIdeas = await fetchIdeasFromGitHub(yearStr);
-      githubIdeas.forEach((idea) => {
+      // GitHub idea slugs
+      const githubSlugs = await fetchIdeaSlugsFromGitHub(yearStr);
+      githubSlugs.forEach((slug) => {
         allParams.push({
           year: yearStr,
-          slug: idea.slug,
-        });
-      });
-
-      // Local ideas
-      const localIdeas = await getIdeas(yearStr);
-      localIdeas.forEach((idea) => {
-        allParams.push({
-          year: yearStr,
-          slug: idea.slug,
+          slug: slug,
         });
       });
     }

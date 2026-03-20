@@ -165,6 +165,44 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
 }
 
 /**
+ * Fetch only idea slugs from GitHub for a specific year
+ */
+export async function fetchIdeaSlugsFromGitHub(year = getCurrentYear()) {
+  try {
+    const contentsUrl = `${GITHUB_API_BASE}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${IDEAS_PATH}/${year}`;
+
+    const response = await fetch(contentsUrl, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+      },
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        return [];
+      }
+      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    }
+
+    const files = await response.json();
+
+    // Filter for .md files and return only slugs
+    return files
+      .filter(file =>
+        file.type === 'file' &&
+        file.name.endsWith('.md') &&
+        file.name !== 'index.md' &&
+        file.name !== 'Template.md'
+      )
+      .map(file => file.name.replace(/\.md$/, ''));
+  } catch (error) {
+    console.error(`Error fetching idea slugs from GitHub for ${year}:`, error);
+    return [];
+  }
+}
+
+/**
  * Fetch a single idea file content from GitHub
  */
 export async function fetchIdeaContent(slug, year = getCurrentYear()) {
