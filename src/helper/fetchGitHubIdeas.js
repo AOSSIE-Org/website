@@ -171,8 +171,6 @@ export async function fetchIdeaContent(slug, year = getCurrentYear()) {
   try {
     const fileUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/${IDEAS_PATH}/${year}/${slug}.md`;
 
-    console.log(`Fetching idea content from: ${fileUrl}`);
-
     const response = await fetch(fileUrl);
 
     if (!response.ok) {
@@ -186,8 +184,6 @@ export async function fetchIdeaContent(slug, year = getCurrentYear()) {
       console.error(`Empty content received for ${slug}`);
       return null;
     }
-
-    console.log(`Successfully fetched ${slug}, content length: ${content.length}`);
 
     return {
       slug,
