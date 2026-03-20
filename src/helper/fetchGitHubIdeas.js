@@ -125,10 +125,9 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
       next: { revalidate: 3600 }, 
     })
     if (!response.ok) {
-      if (response.status === 404) {
-        return []; // Return empty array silently for 404
-      }
-      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      const error = new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      error.status = response.status;
+      throw error;
     }
 
     const files = await response.json();
@@ -159,8 +158,11 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
 
     return ideas;
   } catch (error) {
+    if (error.status === 404) {
+      return [];
+    }
     console.error('Error fetching ideas from GitHub:', error);
-    return [];
+    throw error;
   }
 }
 
@@ -179,10 +181,9 @@ export async function fetchIdeaSlugsFromGitHub(year = getCurrentYear()) {
     });
 
     if (!response.ok) {
-      if (response.status === 404) {
-        return [];
-      }
-      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      const error = new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      error.status = response.status;
+      throw error;
     }
 
     const files = await response.json();
@@ -197,8 +198,11 @@ export async function fetchIdeaSlugsFromGitHub(year = getCurrentYear()) {
       )
       .map(file => file.name.replace(/\.md$/, ''));
   } catch (error) {
+    if (error.status === 404) {
+      return [];
+    }
     console.error(`Error fetching idea slugs from GitHub for ${year}:`, error);
-    return [];
+    throw error;
   }
 }
 
