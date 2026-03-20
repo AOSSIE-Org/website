@@ -122,10 +122,12 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
       headers: {
         'Accept': 'application/vnd.github.v3+json',
       },
-    });
-
+      next: { revalidate: 3600 }, 
+    })
     if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      const error = new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      error.status = response.status;
+      throw error;
     }
 
     const files = await response.json();
@@ -156,8 +158,51 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
 
     return ideas;
   } catch (error) {
+    if (error.status === 404) {
+      return [];
+    }
     console.error('Error fetching ideas from GitHub:', error);
-    return [];
+    throw error;
+  }
+}
+
+/**
+ * Fetch only idea slugs from GitHub for a specific year
+ */
+export async function fetchIdeaSlugsFromGitHub(year = getCurrentYear()) {
+  try {
+    const contentsUrl = `${GITHUB_API_BASE}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${IDEAS_PATH}/${year}`;
+
+    const response = await fetch(contentsUrl, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+      },
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      const error = new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+      error.status = response.status;
+      throw error;
+    }
+
+    const files = await response.json();
+
+    // Filter for .md files and return only slugs
+    return files
+      .filter(file =>
+        file.type === 'file' &&
+        file.name.endsWith('.md') &&
+        file.name !== 'index.md' &&
+        file.name !== 'Template.md'
+      )
+      .map(file => file.name.replace(/\.md$/, ''));
+  } catch (error) {
+    if (error.status === 404) {
+      return [];
+    }
+    console.error(`Error fetching idea slugs from GitHub for ${year}:`, error);
+    throw error;
   }
 }
 
@@ -167,8 +212,6 @@ export async function fetchIdeasFromGitHub(year = getCurrentYear()) {
 export async function fetchIdeaContent(slug, year = getCurrentYear()) {
   try {
     const fileUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/${IDEAS_PATH}/${year}/${slug}.md`;
-
-    console.log(`Fetching idea content from: ${fileUrl}`);
 
     const response = await fetch(fileUrl);
 
@@ -183,8 +226,6 @@ export async function fetchIdeaContent(slug, year = getCurrentYear()) {
       console.error(`Empty content received for ${slug}`);
       return null;
     }
-
-    console.log(`Successfully fetched ${slug}, content length: ${content.length}`);
 
     return {
       slug,
