@@ -1,35 +1,35 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
+import { useInView } from 'framer-motion'
 import { Container } from '@/components/shared/Container'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faLightbulb, faComments, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 export function ApplyHeader({ children }) {
-    const { scrollY } = useScroll();
-    const smoothScroll = useSpring(scrollY, { stiffness: 100, damping: 30, restDelta: 0.001 });
-    const translateX = useTransform(smoothScroll, [0, 800], [0, -30]);
-
-    // ref goes on the <ol> directly — same as the PR reference
     const containerRef = useRef(null);
+    const dotRef = useRef(null);
+    const isDotInView = useInView(dotRef, { margin: "0px 0px -50px 0px" });
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start 80%", "end 60%"],
     });
 
-    const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-    const glowY      = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+    // All transforms share the same scrollYProgress source — consolidated to reduce computation
+    const translateX = useTransform(scrollYProgress, [0, 1], [0, -30]);
+    // lineHeight and glowY are identical — reuse the same motion value
+    const lineProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-    const steps = [
+    const steps = useMemo(() => [
         { icon: faDiscord, label: "Join Discord" },
         { icon: faGithub, label: "Start Contributing" },
         { icon: faLightbulb, label: "Choose Idea" },
         { icon: faComments, label: "Discuss" },
         { icon: faPaperPlane, label: "Submit App" },
-    ];
+    ], []);
 
     return (
         <Container.Outer className="mt-20 mb-28">
@@ -84,7 +84,7 @@ export function ApplyHeader({ children }) {
                 </motion.div>
 
                 <Container.Inner className='mt-4 mx-4 md:m-16'>
-                    <div ref={containerRef} className="relative">
+                    <ol ref={containerRef} className="relative">
 
                         {/* background track line */}
                         <div className="absolute left-[-1px] top-0 h-full w-[3px] rounded-full bg-zinc-200 dark:bg-zinc-700" />
@@ -92,28 +92,29 @@ export function ApplyHeader({ children }) {
                         {/* animated yellow fill */}
                         <motion.div
                             className="absolute left-[-1px] top-0 w-[3px] rounded-full origin-top bg-yellow-400"
-                            style={{ height: lineHeight }}
+                            style={{ height: lineProgress }}
                         />
 
                         {/* travelling dot with pulsing rings */}
                         <motion.div
+                            ref={dotRef}
                             className="absolute -left-[7px] w-[15px] h-[15px] rounded-full z-10 bg-yellow-400"
-                            style={{ top: glowY }}
+                            style={{ top: lineProgress }}
                         >
                             <motion.span
-                                animate={{ scale: [1, 2.5, 1], opacity: [0.7, 0, 0.7] }}
-                                transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
+                                animate={isDotInView ? { scale: [1, 2.5, 1], opacity: [0.7, 0, 0.7] } : { scale: 1, opacity: 0 }}
+                                transition={{ duration: 1.6, repeat: isDotInView ? Infinity : 0, ease: "easeOut" }}
                                 className="absolute inset-0 rounded-full bg-yellow-400"
                             />
                             <motion.span
-                                animate={{ scale: [1, 2, 1], opacity: [0.4, 0, 0.4] }}
-                                transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+                                animate={isDotInView ? { scale: [1, 2, 1], opacity: [0.4, 0, 0.4] } : { scale: 1, opacity: 0 }}
+                                transition={{ duration: 1.6, repeat: isDotInView ? Infinity : 0, ease: "easeOut", delay: 0.5 }}
                                 className="absolute inset-0 rounded-full bg-yellow-300"
                             />
                         </motion.div>
 
                         {children}
-                    </div>
+                    </ol>
                 </Container.Inner>
             </div>
         </Container.Outer>
