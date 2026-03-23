@@ -17,12 +17,12 @@ export function Pattern({
   let height = pattern.length * size + (pattern.length - 1) * gapY
 
   return (
-    <svg aria-hidden="true" width={width} height={height} {...props}>
+    <svg aria-hidden="true" width={width} height={height} className="overflow-visible" {...props}>
       <defs>
         <symbol id={`${id}-0`} width={size} height={size}>
-          <rect className="fill-green-200 dark:fill-yellow-200" width={size} height={size} />
+          <rect className="fill-green-200 dark:fill-yellow-200 transition-colors duration-500" width={size} height={size} />
           <circle
-            className="fill-[#00843D]  dark:fill-yellow-400"
+            className="fill-[#00843D] dark:fill-yellow-400 shadow-xl transition-colors duration-500"
             cx={size / 2}
             cy={size / 2}
             r={size * (13 / 40)}
@@ -30,13 +30,13 @@ export function Pattern({
         </symbol>
         <symbol id={`${id}-1`} width={size} height={size}>
           <circle
-            className="fill-green-400 dark:fill-yellow-300 animate-pulse"
+            className="fill-green-300 dark:fill-yellow-300 animate-pulse transition-colors duration-500"
             cx={size / 2}
             cy={size / 2}
             r={size / 2}
           />
           <rect
-            className="fill-[#00843D] dark:fill-yellow-400"
+            className="fill-[#00843D] dark:fill-yellow-400 shadow-xl transition-colors duration-500"
             width={size / 2}
             height={size / 2}
             x={size / 4}
@@ -45,14 +45,27 @@ export function Pattern({
         </symbol>
       </defs>
       {pattern.map((row, rowIndex) =>
-        row.map((shape, columnIndex) => (
-          <use
-            key={`${rowIndex}-${columnIndex}`}
-            href={`#${id}-${shape}`}
-            x={columnIndex * size + columnIndex * gapX}
-            y={rowIndex * size + rowIndex * gapY}
-          />
-        ))
+        row.map((shape, columnIndex) => {
+          const x = columnIndex * size + columnIndex * gapX;
+          const y = rowIndex * size + rowIndex * gapY;
+          
+          // Determine a playful alternating rotation direction based on the grid index
+          const hoverRotation = (rowIndex + columnIndex) % 2 === 0 ? "group-hover:rotate-[15deg]" : "group-hover:-rotate-[15deg]";
+          
+          return (
+            <g key={`${rowIndex}-${columnIndex}`} className="group cursor-pointer">
+              {/* Invisible, static hit area to handle hover without flickering */}
+              <rect x={x} y={y} width={size} height={size} fill="transparent" className="pointer-events-auto" />
+              <use
+                href={`#${id}-${shape}`}
+                x={x}
+                y={y}
+                style={{ transformOrigin: `${x + size / 2}px ${y + size / 2}px` }}
+                className={`transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-[1.4] ${hoverRotation} group-hover:drop-shadow-lg pointer-events-none`}
+              />
+            </g>
+          );
+        })
       )}
     </svg>
   )
