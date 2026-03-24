@@ -90,6 +90,7 @@ export default function Home() {
                 >
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Contact by Mail"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="mailto:aossie.oss@gmail.com"
@@ -98,6 +99,7 @@ export default function Home() {
                   </Link>
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Follow on GitHub"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://github.com/AOSSIE-Org"
@@ -106,6 +108,7 @@ export default function Home() {
                   </Link>
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Join on Discord"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://discord.gg/hjUhu33uAn"
@@ -114,6 +117,7 @@ export default function Home() {
                   </Link>
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Follow on LinkedIn"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://www.linkedin.com/company/aossie/"
@@ -122,6 +126,7 @@ export default function Home() {
                   </Link>
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Follow on X (Twitter)"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://x.com/aossie_org"
@@ -129,6 +134,8 @@ export default function Home() {
                     <FontAwesomeIcon icon={faXTwitter} size="2xl" />
                   </Link>
                   <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Subscribe on YouTube"
                     className="text-zinc-500 transition hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400"
                     href="https://www.youtube.com/@AOSSIE-Org"
