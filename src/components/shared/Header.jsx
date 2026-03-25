@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 
 import { Container } from '@/components/shared/Container'
 
@@ -185,6 +185,10 @@ function DesktopNavigation(props) {
 function ModeToggle() {
   const [mounted, setMounted] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const prefersReducedMotion = useReducedMotion()
+  const iconTransition = prefersReducedMotion
+    ? { duration: 0 }
+    : { duration: 0.5, ease: 'easeInOut' }
 
   useEffect(() => {
     setMounted(true)
@@ -243,7 +247,7 @@ function ModeToggle() {
             initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            transition={iconTransition}
           >
             <MoonIcon className="h-6 w-6 fill-zinc-700 stroke-zinc-500 transition group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
           </motion.div>
@@ -253,7 +257,7 @@ function ModeToggle() {
             initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            transition={iconTransition}
           >
             <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-yellow-400 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-yellow-500" />
           </motion.div>
