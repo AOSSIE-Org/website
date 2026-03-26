@@ -56,7 +56,7 @@ export function Footer() {
               <div>
                 <h3 className="font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100 tracking-wider uppercase mb-4">Connect</h3>
                 <div className="flex flex-wrap gap-6">
-                  <Link aria-label="Contact by Mail" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com'>
+                  <Link aria-label="Contact by Mail" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='mailto:aossie.oss@gmail.com' target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faEnvelope} size='xl' />
                   </Link>
                   <Link aria-label="Follow on GitHub" className='text-zinc-500 hover:text-[#00843D] dark:text-zinc-400 dark:hover:text-yellow-400 transition' href='https://github.com/AOSSIE-Org' target="_blank" rel="noopener noreferrer">
