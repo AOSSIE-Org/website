@@ -221,11 +221,16 @@ export default function Projects() {
             {/* Search Bar */}
             <div className="mt-8 mb-12 flex justify-center">
               <div className="relative w-full max-w-xl group">
+                <label htmlFor="project-search" className="sr-only">
+                  Search projects by name
+                </label>
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
                   <FontAwesomeIcon icon={faSearch} className="h-4 w-4 text-zinc-400 group-focus-within:text-[#00843D] dark:group-focus-within:text-yellow-400 transition-colors duration-300" />
                 </div>
                 <input
-                  type="text"
+                  id="project-search"
+                  type="search"
+                  aria-describedby="project-search-status"
                   className="block w-full pl-11 pr-4 py-3.5 border border-zinc-200 dark:border-zinc-700/50 rounded-2xl leading-5 bg-zinc-50/50 dark:bg-zinc-800/50 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#00843D] dark:focus:ring-yellow-400/50 focus:border-transparent sm:text-sm transition-all duration-300 shadow-sm hover:shadow-md backdrop-blur-sm"
                   placeholder="Search for projects..."
                   value={searchQuery}
@@ -233,6 +238,11 @@ export default function Projects() {
                 />
               </div>
             </div>
+            <p id="project-search-status" className="sr-only" aria-live="polite">
+              {filteredProjects.length === 0
+                ? `No projects found matching ${searchQuery.trim()}.`
+                : `${filteredProjects.length} project${filteredProjects.length === 1 ? '' : 's'} shown.`}
+            </p>
           </div>
 
           <div className="mb-16 grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
