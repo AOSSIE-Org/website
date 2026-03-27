@@ -150,7 +150,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.8 }}
                   className="mt-12 mx-4 md:mx-0 md:mt-8 text-center lg:text-left relative lg:top-[20px]"
                 >
-                  <Link href="/about" target="_blank" className="group relative inline-block text-lg">
+                  <Link href="/about" className="group relative inline-block text-lg">
                     <span className="relative z-10 block overflow-hidden rounded-lg border-2 border-gray-900 px-5 py-3 transition-colors duration-300 ease-in-out group-hover:text-white dark:group-hover:text-black">
                       <span className="absolute inset-0 h-full w-full rounded-lg bg-white px-5 py-3"></span>
                       <span className="absolute left-0 -ml-2 h-48 w-72 origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#00843D] transition-all duration-300 ease-in-out group-hover:-rotate-180 dark:bg-yellow-400"></span>
