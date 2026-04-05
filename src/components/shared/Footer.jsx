@@ -32,10 +32,10 @@ export function Footer() {
         <div className="border-t border-zinc-100 pb-12 pt-16 dark:border-zinc-700/40">
           <Container.Inner>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:gap-12">
-              
+
               {/* Brand and Description */}
               <div className="md:col-span-2">
-                <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">AOSSIE</h3> 
+                <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">AOSSIE</h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 font-mono max-w-md leading-relaxed">
                   AOSSIE is a not-for-profit organization dedicated to project-based innovation-focused and research-intensive education.
                 </p>
@@ -43,16 +43,17 @@ export function Footer() {
 
               {/* Navigation Links */}
               <div>
-                 <h3 className="font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100 tracking-wider uppercase mb-4">Navigation</h3>
-                 <div className="flex flex-col gap-3 font-mono text-sm text-zinc-600 dark:text-zinc-400">
-                    <NavLink href="/about">About Us</NavLink>
-                    <NavLink href="/projects">Our Projects</NavLink>
-                    <NavLink href="/ideas">Project Ideas</NavLink>
-                    <NavLink href="/apply">How to Apply</NavLink>
-                 </div>
+                <h3 className="font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100 tracking-wider uppercase mb-4">Navigation</h3>
+                <div className="flex flex-col gap-3 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                  <NavLink href="/about">About Us</NavLink>
+                  <NavLink href="/projects">Our Projects</NavLink>
+                  <NavLink href="/ideas">Project Ideas</NavLink>
+                  <NavLink href="/apply">How to Apply</NavLink>
+                  <NavLink href="https://opencollective.com/aossie">Support Us</NavLink>
+                </div>
               </div>
 
-               {/* Social Links */}
+              {/* Social Links */}
               <div>
                 <h3 className="font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100 tracking-wider uppercase mb-4">Connect</h3>
                 <div className="flex flex-wrap gap-6">
