@@ -104,14 +104,14 @@ export default function About() {
   // ── gradient fill factory ────────────────────────────────────────────────
   const getGradient = (ctx, chartArea) => {
     const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-    gradient.addColorStop(0,   'rgba(0,132,61,0.35)');
+    gradient.addColorStop(0, 'rgba(0,132,61,0.35)');
     gradient.addColorStop(0.5, 'rgba(0,132,61,0.12)');
-    gradient.addColorStop(1,   'rgba(0,132,61,0.0)');
+    gradient.addColorStop(1, 'rgba(0,132,61,0.0)');
     return gradient;
   };
 
   const rawData = [4, 8, 12, 9, 9, 11, 8, 6, 18, 22];
-  const labels  = ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+  const labels = ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
 
   const data = {
     labels,
@@ -216,13 +216,17 @@ export default function About() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6 text-center'> 
-                    Get to know our <span className="text-[#00843D] dark:text-yellow-400">Community</span>
-                    </h5>
+              <h5 className='font-bold text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 font-mono leading-tight mb-6 text-center'>
+                Get to know our <span className="text-[#00843D] dark:text-yellow-400">Community</span>
+              </h5>
               <span className="text-[#32a852] font-bold">AOSSIE</span> (Australian Open
               Source Software Innovation and Education) is a not-for-profit
               organization dedicated to project-based innovation-focused and
               research-intensive education. Our projects are free and open-source.
+              <br />
+              <Link href="https://opencollective.com/aossie" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-[#00843D] dark:text-yellow-400 font-bold hover:underline">
+                Support our work on Open Collective →
+              </Link>
             </motion.p>
           </div>
 
@@ -259,12 +263,12 @@ export default function About() {
               }}
             >
               {[
-                { value: stats.years,             label: 'years' },
-                { value: stats.projects,           label: 'projects' },
-                { value: 203,                      label: 'repos' },
-                { value: '88',                     label: 'mentors' },
+                { value: stats.years, label: 'years' },
+                { value: stats.projects, label: 'projects' },
+                { value: 203, label: 'repos' },
+                { value: '88', label: 'mentors' },
                 { value: `${stats.contributors}+`, label: 'contributors' },
-                { value: '7500+',                  label: 'community members' },
+                { value: '7500+', label: 'community members' },
               ].map((item, index) => (
                 <motion.div
                   key={index}

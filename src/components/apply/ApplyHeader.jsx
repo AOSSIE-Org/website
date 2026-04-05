@@ -46,6 +46,12 @@ export function ApplyHeader({ children }) {
                     <p className='text-zinc-600 dark:text-zinc-400 text-lg font-mono leading-8 max-w-4xl text-center'>
                         Our application timeline is your step-by-step guide to becoming a part of our open-source community and contributing to projects that are shaping the future of technology. From submitting your proposal to final evaluations, we&apos;ll walk you through the process every step of the way. Don&apos;t miss this opportunity to be a part of something great and apply now!
                     </p>
+                    <p className='text-zinc-500 dark:text-zinc-500 text-sm font-mono mt-4'>
+                        Want to help us keep these projects free and open-source?{' '}
+                        <Link href="https://opencollective.com/aossie" target="_blank" rel="noopener noreferrer" className="text-[#00843D] dark:text-yellow-400 font-bold hover:underline">
+                            Support us on Open Collective
+                        </Link>
+                    </p>
                 </motion.div>
 
                 {/* Horizontal Timeline Steps */}

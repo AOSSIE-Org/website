@@ -135,6 +135,7 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/apply">Apply</MobileNavItem>
                 <MobileNavItem href="https://github.com/AOSSIE-Org">GitHub</MobileNavItem>
                 <MobileNavItem href="https://discord.gg/hjUhu33uAn">Discord</MobileNavItem>
+                <MobileNavItem href="https://opencollective.com/aossie">Support Us</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -177,6 +178,7 @@ function DesktopNavigation(props) {
         <NavItem href="/ideas">Ideas</NavItem>
         <NavItem href="/apply">Apply</NavItem>
         <NavItem href="https://github.com/AOSSIE-Org">GitHub</NavItem>
+        <NavItem href="https://opencollective.com/aossie">Support Us</NavItem>
       </ul>
     </nav>
   )
@@ -193,16 +195,16 @@ function ModeToggle() {
   useEffect(() => {
     setMounted(true)
     setIsDarkMode(document.documentElement.classList.contains('dark'))
-    
+
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains('dark'))
     })
-    
+
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class'],
     })
-    
+
     return () => observer.disconnect()
   }, [])
 
@@ -439,9 +441,9 @@ export function Header() {
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                  <HomeContainer>
-                    <Home />
-                  </HomeContainer>
+                <HomeContainer>
+                  <Home />
+                </HomeContainer>
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
